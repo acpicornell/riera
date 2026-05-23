@@ -1,0 +1,28 @@
+{
+  "vol": "07",
+  "page": 51,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "MARRATXÍ ó MARRACHÍ",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Marratxí",
+      "org_judicial": "Hállase adscrita al part. jud. y aud. de lo criminal y territ. de Palma, de donde dista 8 k.",
+      "org_civil": "Corresponde á la prov. de las Baleares, y al dist. de Palma para las elecciones de diputados provinciales y las de Cortes.",
+      "org_militar": "C. G. de las Baleares y G. M. de Palma de Mallorca.",
+      "org_economica": "Para el pago de contr. depende de la Delegación de Hacienda de la prov.",
+      "org_eclesiastica": "Corresponde á la dióc. de Mallorca, al arciprestazgo de Palma y tiene una iglesia parroquial bajo la advocación de San Marcial, cuyo curato es de 1.er ascenso.",
+      "servicio_publico": "Recibe y expide la corr. por en. m. de Barcelona, Valencia y Alicante á Palma de Mallorca y en. de Alcudia.",
+      "obras_publicas": "Para verificar sus transportes y relacionarse con las demás pob. limítrofes, cuenta con varios caminos vecinales regularmente conservados.",
+      "instruccion_publica": "De fondos municipales se costean las escuelas necesarias para los dos sexos, á las que asiste un número de alumnos en relación con el de hab.",
+      "poblacion": "Ninguna importancia ofrecen las casas que la forman, pues aun cuando todas son de buena construcción y responden perfectamente á las necesidades de sus destinos respectivos, ninguno como hemos dicho merece una descripción detallada, encontrándose en igual caso la iglesia parroquial y casa de ayunt. El vecindario encuéntrase perfectamente surtido de aguas para el consumo doméstico y celebra su principal festividad el día de su santo Patrono.",
+      "industria": "Aun cuando la ind. dominante en esta v. es la agrícola, se ejercen por algunos de sus hab. todas cuantas profesiones y of. mecánicos son de mayor utilidad.",
+      "geografia": "Al NE. de la cap., disfrutando de buena ventilación, su tér. municipal confina por los cuatro puntos cardinales con los de Buñola y Palma. El terreno es de mediana calidad, consistiendo las prod. en cereales, vino, trigo, frutas, aceite, algarrobas y pastos; mantiénese ganado lanar, vacuno, cabrío y caballar y hay caza de liebres, conejos y perdices.",
+      "description": null,
+      "stats": {"habitantes": 3090, "edificios": 687, "habitados_temporalmente": 43, "inhabitados": 49, "casas_y_grupos": 31},
+      "cross_references": ["Buñola", "Palma"],
+      "confidence": "high"
+    }
+  ]
+}

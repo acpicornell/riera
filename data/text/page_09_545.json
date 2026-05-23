@@ -1,0 +1,35 @@
+{
+  "vol": "09",
+  "page": 545,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "SANTA EUGENIA",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Santa Eugènia",
+      "org_civil": "Corresponde á la prov. de Baleares, y al dist. de la Lonja, de la cap., para las elecciones de diputados provinciales y las de Cortes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca, y tiene iglesia, bajo la advocación arriba citada, aneja de la parroquial de Santa María del Camino.",
+      "org_judicial": "Hállase adscrita al part. jud. y aud. de lo criminal y territ. de Palma, de donde dista 17 k.",
+      "org_economica": "Para el pago de contr. depende de la Delegación de Hacienda de su prov., habiendo ascendido su presupuesto municipal en el ejercicio económico de 1885-86 á 10,294'91 pts., nivelados gastos é ingresos.",
+      "servicio_publico": "Recibe y expide la corr. por en. marítima de Barcelona, Valencia y Alicante á Palma y en. de Alcudia.",
+      "obras_publicas": "Para verificar sus transportes y relacionarse con los pueblos limítrofes, cuenta con varios caminos vecinales, carreteros y de herradura, algunos de los cuales se hallan en bastante buen estado de conservación.",
+      "instruccion_publica": "De fondos municipales se costean dos escuelas, una para niños y otra para niñas, á las que asisten unos 40 alumnos de cada sexo.",
+      "industria": "La ind. más importante es la agrícola y las que con ella se relacionan, dedicándose algunos de sus moradores á las profesiones y of. mecánicos de más reconocida utilidad.",
+      "poblacion": "Los 182 edif. que la constituyen, distribuidos en algunas calles y plazas, no se recomiendan ni por sus bellezas arquitectónicas ni por los recuerdos históricos que conservan; construcciones modestas, así los antiguos, como los de época más reciente, responden, mejor ó peor, á las necesidades de sus moradores. La iglesia parroquial y casa en que el ayunt. celebra sus reuniones, no pasan de ser edif. á propósito para el objeto á que se hallan destinados. Cuenta con algunos establecimientos para la venta de artículos más necesarios; está el vecindario perfectamente abastecido de aguas para todos los usos, y celebra su principal festividad, el día del Patrono del pueblo.",
+      "geografia": "En la pendiente de la falda del monte de su cumbre, disfrutando de buena ventilación y clima sano, encuéntrase situada esta v., cuyo tér. municipal confina por N. con el de Alaró; por S. con el de Algaida; por E. con el de Sansellas y con el de Palma de Mallorca, por el O.; comprendiendo en el espacio que éstos abrazan, algunos montes en regular estado, y pertenecientes á propiedad particular. El terreno, que participa de monte y llano, es de mediana calidad, y las prod. consisten en cereales, legumbres, vino, aceite, frutas, hortalizas y pastos; se mantiene ganado de varias clases, y hay caza de pelo y pluma.",
+      "stats": {
+        "habitantes": 1324,
+        "habitantes_padron_1885": 1378,
+        "edificios": 555,
+        "habitados_temporalmente": 61,
+        "inhabitados": 179,
+        "caserios_y_grupos_agregados": 162,
+        "presupuesto_municipal_pts": 10294.91
+      },
+      "cross_references": ["Santa María del Camino", "Alaró", "Algaida", "Sansellas", "Palma de Mallorca"],
+      "confidence": "high"
+    }
+  ]
+}

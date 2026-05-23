@@ -1,0 +1,28 @@
+{
+  "vol": "06",
+  "page": 585,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "LLORITO",
+      "place_type": "agregado",
+      "island": "Mallorca",
+      "municipality": "Sineu",
+      "org_judicial": "Hállase adscrito al part. jud. de Inca y á las aud. de lo criminal y territ. de Palma.",
+      "org_civil": "Corresponde á la prov. de Baleares y contribuye con su ayunt. para las elecciones de diputados provinciales y las de Cortes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma.",
+      "org_economica": "Para el pago [de impuestos depende] de la Delegación de Hacienda de la prov.",
+      "org_eclesiastica": "Pertenece á la dioc. de Mallorca, al arciprestazgo de Manacor, y tiene una iglesia aneja de la parroquial de Sineu, convenientemente servida.",
+      "servicio_publico": "Recibe y emite la corr. por la en. m. de Barcelona, Valencia y Alicante á Palma, en. m. de Alcudia, esf. y pt. de Inca.",
+      "obras_publicas": "Sus caminos son los de que dispone su ayunt.",
+      "instruccion_publica": "De fondos municipales se costea una escuela incompleta para ambos sexos.",
+      "poblacion": "Nada de notable encierran ni sus casas ni la iglesia.",
+      "industria": "Su ind. es la agrícola.",
+      "geografia": "Agregado al ayunt. de Sineu, del que dista 2'7 k. (Véase el artículo referente á su ayunt.).",
+      "description": null,
+      "stats": {"habitantes": 300, "edificios": 243, "habitados_temporalmente": 4, "inhabitados": 21},
+      "cross_references": ["Sineu"],
+      "confidence": "high"
+    }
+  ]
+}

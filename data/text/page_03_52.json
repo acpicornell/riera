@@ -1,0 +1,16 @@
+{
+  "vol": "03",
+  "page": 52,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "CABO DE PERA",
+      "place_type": "cabo",
+      "island": "Mallorca",
+      "municipality": "Capdepera",
+      "description": "Punta rocosa muy saliente, en la costa E. de la prov. de Mallorca. Corresponde al dist. marítimo de 2.a clase de Alcudia, prov. de Mallorca y departamento de Cartagena. En este cabo, extremidad E. de la isla, á 18 m. del mar, y á los 39° 43' latitud N. y los 9° 42' 20\" longitud E. del meridiano de San Fernando, álzase un faro con aparato de los de 3.er órden, cuya luz con destellos rojos de 2 en 2 minutos tiene un alcance de 18 millas. El foco está á la altura de 66 m. sobre el nivel del mar y 16'8 sobre el del terreno; el servicio empezó en el año 1861. La torre, ligeramente cónica, de color pardo oscuro, ocupa el centro de la habitación de los torreros.",
+      "cross_references": [],
+      "confidence": "high"
+    }
+  ]
+}

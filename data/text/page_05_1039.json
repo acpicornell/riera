@@ -1,0 +1,28 @@
+{
+  "vol": "05",
+  "page": 1039,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "LA ALQUERÍA BLANCA",
+      "place_type": "lugar",
+      "island": "Mallorca",
+      "municipality": "Santanyí",
+      "org_judicial": "Part. jud. de Manacor; aud. de lo criminal y territ. de Palma.",
+      "org_civil": "Prov. de Baleares; contribuye con su ayunt. para las elecciones de diputados provinciales y las de Córtes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma de Mallorca.",
+      "org_economica": "Para el pago de sus impuestos depende de la Delegación de Hacienda de su prov.",
+      "org_eclesiastica": "Dióc. de Mallorca, arciprestazgo de Manacor.",
+      "servicio_publico": "Recibe y expide la corr. por la en. m. de Barcelona, Valencia, Alicante, á Palma de Mallorca, en. Palma á Santany.",
+      "obras_publicas": "Para verificar sus transportes y relacionarse con los pueblos limítrofes cuenta con diferentes caminos vecinales en regular estado de conservación.",
+      "instruccion_publica": "Tiene una escuela incompleta costeada por los fondos de la municipalidad, concurrida por regular número de alumnos.",
+      "poblacion": "Ninguna importancia ofrecen los 129 edif. que la forman.",
+      "industria": "La ind. dominante en esta localidad es la agrícola, ejerciéndose por algunos de sus hab. los of. mecánicos de primera necesidad.",
+      "geografia": "(Véase el artículo referente á su ayunt.)",
+      "description": "Agreg. al ayunt. de Santany, del que dista 5'5 k.",
+      "stats": {"habitantes": 430, "edificios": 129, "habitados_temporalmente": 2, "inhabitados": 20},
+      "cross_references": ["Santany"],
+      "confidence": "high"
+    }
+  ]
+}

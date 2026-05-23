@@ -1,0 +1,28 @@
+{
+  "vol": "04",
+  "page": 665,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "ESPORLAS",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Esporles",
+      "org_judicial": "Part. jud., aud. de lo criminal y territ. de Palma, de donde dista 10 k.",
+      "org_civil": "Prov. de Baleares; dist. de Palma para las elecciones de diputados provinciales y las de Cortes. Hay puesto de la Guardia civil, al mando de un oficial, perteneciente al 5.° Tercio y Comandancia de la prov.",
+      "org_militar": "C. G. Baleares y G. M. de Palma de Mallorca.",
+      "org_economica": "Para el pago de contr. depende de la Delegación de Hacienda de la prov. Su presupuesto municipal, nivelado, asciende á la cantidad de 13,000 pts.",
+      "org_eclesiastica": "Dióc. de Mallorca; iglesia parroquial dedicada á San Pedro, apóstol, servida cual corresponde.",
+      "servicio_publico": "Recibe y despacha la corr. por en. m. de Barcelona, Valencia y Alicante á Palma y pt. de Bañalbujar.",
+      "obras_publicas": "Para sus relaciones y transportes dispone esta localidad de tres buenas carreteras, por medio de las cuales se pone en contacto con la cap. de la prov. y las pob. de Bañalbufar, Valldemosa y Establiments, y sobre aquéllas hay tres carruajes con servicio diario de pasajeros, contando igualmente con algunos otros caminos de menor importancia, todos los cuales se encuentran en muy buen estado.",
+      "instruccion_publica": "Sostenidas por el municipio, hay dos escuelas, una para cada sexo, y dos particulares de niñas, siendo la asistencia total de todas ellas, de unos 260 alumnos.",
+      "poblacion": "Formando diferentes agrupaciones hállanse los 576 edif. que la constituyen, varios de ellos de moderna construcción y que no carecen de buenas condiciones. La iglesia parroquial lo mismo que la casa consistorial son buenos edif., pero sin que merezcan que de ellos hagamos una mención particular. Cuenta igualmente esta pob. con un teatro, algunos cafés, casinos de recreo y distintos establecimientos que contribuyen á prestar animación á la v. Esta dedica sus principales festividades á San Pedro, San Marcial y á la Beata Catalina.",
+      "industria": "Aun cuando la agrícola es la ind. principal de esta v. hay otras que también merecen mencionarse, como son: fábricas de cartón, de jabón, papel, de tejas y de yeso y molinos de cortezas y de harinas. Igualmente hay dos batanes, diez carpinteros, varios herreros y finalmente las profesiones y of. más necesarios.",
+      "geografia": "En un valle y en medio de montañas de regular elevación, que no la privan, sin embargo, de bastante ventilación, hállase situada esta v. sirviéndole de límites por el N. los tér. municipales de Bañalbufar y Valldemosa, por S. el de Establiments; por E. los de Palma y Valldemosa, y por O. el de Puigpunyent, extendiéndose unos 4 k. de N. á S. y sobre 5 de E. á O. En este radio hállase la famosa gruta de Canet en la cual se encuentran todas las maravillas que ostenta la naturaleza en esos palacios subterráneos formados por las inmensas convulsiones que ha sufrido nuestro globo en sus tiempos primitivos. Varios montes poblados de encina, en la mayoría, y pertenecientes á particulares, forman parte de este tér. municipal cuyas prod. generales consisten en cereales, habas, legumbres, almendras, aceitunas y frutas de varias clases; críase ganado lanar y de cerda y hay caza de pelo y pluma.",
+      "description": null,
+      "stats": {"habitantes": 2481, "edificios": 576, "habitados_temporalmente": 9, "inhabitados": 53, "presupuesto_municipal_pts": 13000},
+      "cross_references": ["Esglayeta", "Els Balladors", "Bañalbufar", "Valldemosa", "Establiments", "Puigpunyent", "Palma"],
+      "confidence": "high"
+    }
+  ]
+}

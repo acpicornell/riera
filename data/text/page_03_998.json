@@ -1,0 +1,32 @@
+{
+  "vol": "03",
+  "page": 998,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "CONSELL",
+      "place_type": "lugar",
+      "island": "Mallorca",
+      "municipality": "Alaró",
+      "org_judicial": "Hállase adscrito al part. jud. de Inca y corresponde á las aud. de lo criminal y territ. de Palma.",
+      "org_civil": "Corresponde á la prov. de las Baleares y contribuye con su ayunt. á las elecciones de diputados provinciales y de Córtes.",
+      "org_militar": "C. G. de las Baleares y G. M. de Palma de Mallorca.",
+      "org_economica": "Para el pago de impuestos depende, en unión de su ayunt., de la Delegación de Hacienda de la prov.",
+      "org_eclesiastica": "Pertenece á la dióc. de Palma de Mallorca, y tiene una iglesia bajo la advocación de la Visitación de Ntra. Sra. que es aneja de la de su ayunt.",
+      "servicio_publico": "Recibe y expide la corr. por en. m. de Barcelona, Valencia y Alicante á Palma, en. de Alcúdia, car. de Santa María y pt. de su ayunt.",
+      "obras_publicas": "Utiliza para su com. y relaciones los caminos existentes en el tér. municipal.",
+      "instruccion_publica": "De fondos municipales se costea una escuela incompleta para niños de ambos sexos.",
+      "poblacion": "Nada importante podemos consignar respecto á los edif. que la constituyen.",
+      "industria": "La ind. á que se dedican los moradores de esta localidad es agrícola, ejerciendo alguno las profesiones y of. mecánicos más indispensables.",
+      "geografia": "(Véase el artículo referente á su ayunt.).",
+      "description": "Lugar agregado, dista 4'9 k. de su ayunt. Cuenta sobre unos 950 hab. y 263 edif., de los que 26 están inhabitados.",
+      "stats": {
+        "habitantes": 950,
+        "edificios": 263,
+        "edificios_inhabitados": 26
+      },
+      "cross_references": [],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "vol": "04",
+  "page": 798,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "FORNELLS",
+      "place_type": "lugar",
+      "island": "Menorca",
+      "municipality": "es Mercadal",
+      "org_judicial": "Part. jud. de Mahon; aud. de lo criminal y territ. de Palma.",
+      "org_civil": "Prov. de las Baleares; contribuye con su ayunt. para las elecciones de diputados provinciales y las de Córtes.",
+      "org_militar": "C. G. de las Baleares y G. M. de Palma de Mallorca.",
+      "org_economica": "Para el pago de impuestos depende de la Delegación de Hacienda de su prov.",
+      "org_eclesiastica": "Dióc. de Menorca; iglesia parroquial bajo la advocación de San Antonio Abad, servida convenientemente, curato de la categoría de entrada.",
+      "servicio_publico": "Recibe y expide la corr. por en. m. de Barcelona, Valencia y Alicante á Palma, en. m. de Palma y Alcudia á Mahon, en. de Cindadela.",
+      "obras_publicas": "Se sirve de los caminos de que dispone su ayunt.",
+      "instruccion_publica": "De fondos municipales sostiénese una escuela para los dos sexos, á la que asiste un regular número de alumnos.",
+      "poblacion": "Ninguna importancia ofrecen los 88 edif. que la forman.",
+      "industria": "La única ind. de esta localidad es la agricultura.",
+      "geografia": "(Véase el artículo referente á su ayunt.)",
+      "description": "Agreg. al ayunt. de Mercadal, del que dista 9'7 k.",
+      "stats": {"habitantes": 270, "edificios": 88, "habitados_temporalmente": 6},
+      "cross_references": ["Mercadal", "Mahon"],
+      "confidence": "high"
+    }
+  ]
+}

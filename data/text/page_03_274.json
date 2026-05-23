@@ -1,0 +1,34 @@
+{
+  "vol": "03",
+  "page": 274,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "CAMPANET",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Campanet",
+      "org_judicial": "Forma parte del part. jud. de Inca y corresponde á la aud. territ. de Palma de Mallorca.",
+      "org_civil": "Corresponde á la prov. de las Baleares, al dist. de Palma para las de Cortes.",
+      "org_militar": "C. G. de las Baleares y G. M. de Palma de Mallorca. Departamento marítimo de 1.a clase de Palma y ayudantía de 2.a clase de Alcudia.",
+      "org_economica": "Depende de la admon. econ. de la prov. para el pago de contr. El presupuesto municipal del último año económico de 1881-82 asciende á la cantidad de 18,545'88 pts. nivelados gastos é ingresos.",
+      "org_eclesiastica": "Pertenece á la dióc. de Palma de Mallorca y tiene una iglesia parroquial bajo la advocación de San Miguel, servida convenientemente, cuyo curato es de la categoría de 2.° ascenso.",
+      "servicio_publico": "Recibe y emite la corr. por en. m. de Barcelona, Valencia y Alicante á Palma, en. Alcudia.",
+      "obras_publicas": "Las vías de com. que existen, son caminos vecinales practicables para carruajes algunos, y todos en regular estado de conservación.",
+      "instruccion_publica": "De fondos municipales se costean 2 escuelas una para niños y otra para niñas, con asistencia de 55 á 60 niños á cada una.",
+      "poblacion": "El casco de ésta la forman 581 edif. distribuidos en varias calles y una plaza en la que están la casa consistorial é iglesia, cuya construcción carece de importancia, como la generalidad de las casas particulares. La escasez de manantiales, hace que alguna vez tenga el vecindario que hacer uso de las aguas de pozo y de las de los r. denominados de San Miguel y de Corro, ambos en el tér. y con un puente cada uno. Las principales festividades se celebran el 2.° domingo de mayo en honor á San Victoriano, y á San Jaime el 25 de julio. Se hallan agreg. la ald. de Ullaró y 50 cas. y grupos, edif., viv. y alb. ais. Cuenta con 2,854 hab. y 848 edif., de los cuales 21 están habitados temporalmente y 105 inhabitados.",
+      "industria": "Ademas de la agrícola que forma la principal ind., hay molinos harineros y lagares de vino y aceite, varios establecimientos de comercio, fábricas de licores y las profesiones y of. más útiles y necesarios.",
+      "geografia": "Sobre un elevado cerro bien combatido de los vientos, disfrutando clima saludable y benigno, encuéntrase situada esta v. limitándola al N. los tér. de Escorca, y de Pollensa, al S. el de Bujer, al E. el de la Puebla y al O. el de Selva. El terreno es de buena calidad y fértil en general. En la parte N. de la pob. se ven unos montes de propiedad particular, cuyo poblado es de matas y arbustos. Produce cereales, legumbres, frutas, especialmente naranjas, trigos y almendra, vino y aceite, haciendo regular exportación del sobrante de los frutos. Cría algún ganado lanar, vacuno y de cerda; es abundante la caza de conejos, perdices y liebres, á la vez que la pesca de sabrosos peces en los mencionados riachuelos que discurren por el térm.",
+      "description": null,
+      "stats": {
+        "habitantes": 2854,
+        "edificios": 848,
+        "caserios_y_grupos": 50,
+        "casas": 581,
+        "presupuesto_municipal": 18545.88
+      },
+      "cross_references": ["Ullaró"],
+      "confidence": "high"
+    }
+  ]
+}

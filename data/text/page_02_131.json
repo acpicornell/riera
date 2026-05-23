@@ -1,0 +1,36 @@
+{
+  "vol": "02",
+  "page": 131,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "BANALBUFAR",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Banyalbufar",
+      "org_judicial": "Forma parte del part. jud. de Palma de Mallorca y aud. territ. de las Baleares.",
+      "org_civil": "Corresponde á la prov. de Baleares, al dist. para las elecciones de diputados provinciales y al 3.er dist. de Palma para las de Cortes.",
+      "org_militar": "C. G. de las Baleares y G. M. de Mallorca. Pertenece al departamento de Cartagena, á la prov. marítima de 1.a clase de Mallorca y al dist. de 2.a de Sóller.",
+      "org_economica": "Para el pago de impuestos depende este municipio de la admon. econ. de Palma, y abona 7,347 pts. en concepto de contr. terr. y 239 por la ind. Su presupuesto municipal nivelado asciende á la cantidad de 4,879 pts.",
+      "org_eclesiastica": "Corresponde á la dióc. de Mallorca y tiene una iglesia parroquial dedicada á la Natividad de Ntra. Sra. servida cual corresponde á su categoría.",
+      "servicio_publico": "Despacha la corr. por en. m. de Barcelona, á Valencia y Alicante á Palma y pt. de Esporlas.",
+      "obras_publicas": "Posee 2 caminos vecinales y carreteros que se hallan en bastante buen estado y la ponen en relación con otras pob.",
+      "instruccion_publica": "Cuenta con una escuela de ins. primaria para cada sexo, á la que concurren comunmente unos 25 niños y 33 niñas.",
+      "poblacion": "La constituyen 111 casas, inclusa la consistorial, distribuidas formando algunas calles y plazas, siendo de éstas la más importante la que se denomina de la Constitución. El edif. más notable con que cuenta la localidad pertenece al Excmo. Sr. Marqués de la Cenia. El vecindario se surte de las aguas que brotan de un copioso manantial, las cuales también se utilizan para el riego de algunas tierras. En las afueras, y sobre un peñasco, existe una torre llamada Atalaya, propiedad de S. A. I. y R. el Sermo. Sr. Archiduque de Austria, D. Luis Salvador Hapsburg y de Borbón. Se hallan agreg. 36 cas. y grupos, edif., viv. y alb. ais. Cuenta 568 hab. y 149 edif. entre habitados é inhabitados.",
+      "industria": "Consiste su principal ind. en la agricultura y su comercio en el tráfico de los productos agrícolas y la venta de ganados, pues algunos se dedican al ramo de ganadería y ceba de cerdos.",
+      "geografia": "Se encuentra situada á la orilla del mar, en la costa N. de la isla, dejándose sentir con frecuencia los vientos del N. y NE. durante el invierno y los del S. en el verano, disfrutando de clima benigno y saludable. Linda el tér. por el N. con el mar, por el E. con el de Valldemosa, por el S. con Esporlas y por el O. con Estellenchs. El terreno, por regla general, es montañoso, siendo la elevación más importante la que se denomina la Mola, la cual se halla poblada de encinas y es de propiedad particular. Coséchase excelente vino, aceite, frutas, hortalizas y también produce leña para el carboneo; cría ganado de varias especies.",
+      "description": null,
+      "stats": {
+        "habitantes": 568,
+        "edificios": 149,
+        "caserios_y_grupos": 36,
+        "casas": 111,
+        "contr_territorial": 7347,
+        "contr_subsidio": 239,
+        "presupuesto_municipal": 4879
+      },
+      "cross_references": [],
+      "confidence": "high"
+    }
+  ]
+}

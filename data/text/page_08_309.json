@@ -1,0 +1,28 @@
+{
+  "vol": "08",
+  "page": 309,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "PORRERAS",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Porreres",
+      "org_judicial": "Part. jud. de Manacor; aud. de lo criminal y territ. de Palma, distando 17 k. de la primera y 27 de la última.",
+      "org_civil": "Prov. de Baleares; dist. de Manacor para las elecciones de diputados provinciales y al de la cap. para las de Córtes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma.",
+      "org_economica": "Admon. de Hacienda de su prov.",
+      "org_eclesiastica": "Dióc. de Mallorca, arciprestazgo de Manacor; iglesia parroquial bajo la advocación de Ntra. Sra. de los Angeles, curato de término.",
+      "servicio_publico": "Recibe y expide la corr. por en. marítima de Barcelona, Valencia y Alicante á Palma de Mallorca, en. de Manacor y car. de Montuiri.",
+      "obras_publicas": "Para verificar sus transportes y relacionarse con las pob. limítrofes, cuenta con diferentes caminos vecinales en mejor ó peor estado de conservación.",
+      "instruccion_publica": "Costeadas con fondos del municipio hay las escuelas necesarias para niños de ambos sexos, perfectamente atendidas.",
+      "poblacion": "De 900 edif. constaba en la época del Sr. Madoz, el Nomenclátor de 1873 le da 1,001, número que ha aumentado. Distribuidos en varias calles y algunas plazas no muy anchas y tortuosas, irregulares las plazas; construcción sin nada particular. La iglesia parroquial es de regulares proporciones, no obra de arte. Casa consistorial modesta. Buen número de establecimientos para venta. Vecindario abastecido de aguas; celebra con gran pompa la festividad principal el día de su santo Patrono.",
+      "industria": "La ind. que más domina es la agrícola, sin embargo de que por algunos de sus moradores se ejercen todas aquellas profesiones y of. mecánicos de mayor necesidad.",
+      "geografia": "Al E. de la isla, en terreno llano y combatida por los vientos del O., clima templado y sano. Confina por los cuatro puntos cardinales con los de Llummayor, San Juan Bautista, Felanitx y Campos, comprendiendo varios montes, en regular estado de población. Terreno que participa de monte y llano, mediana calidad; corren algunos arroyos que prestan fertilidad é impulsan diversos artefactos. Prod.: cereales, legumbres, hortalizas, frutas y pastos; ganado lanar, vacuno, cabrío y de cerda; caza de pelo y pluma.",
+      "description": null,
+      "stats": {"habitantes": 4934, "edificios": 1506, "habitados_temporalmente": 65, "inhabitados": 444, "casas_y_grupos": 450},
+      "cross_references": ["Llummayor", "San Juan Bautista", "Felanitx", "Campos", "Manacor", "Montuiri"],
+      "confidence": "high"
+    }
+  ]
+}

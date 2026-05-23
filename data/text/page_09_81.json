@@ -1,0 +1,33 @@
+{
+  "vol": "09",
+  "page": 81,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "SAN CRISTÓBAL",
+      "place_type": "lugar",
+      "island": "Menorca",
+      "municipality": "Es Mercadal",
+      "org_civil": "Corresponde á la prov. de Baleares y contribuye, con su ayunt., para las elecciones de diputados provinciales y las de Córtes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma.",
+      "org_eclesiastica": "Pertenece á la dióc. de Menorca, al arciprestazgo de Mahon y tiene una iglesia parroquial, bajo la advocación de San Cristóbal, cuyo curato es de la categoría de ascenso.",
+      "org_judicial": "Hállase adscrito al part. jud. de Mahon y á las aud. de lo criminal y territ. de Palma.",
+      "org_economica": "Para el pago de sus impuestos depende de la Admon. de Hacienda de su prov.",
+      "servicio_publico": "Recibe y expide la corr. por en. marítima de Barcelona, Valencia y Alicante á Palma de Mallorca y Mahon y pt. de Mercadal.",
+      "obras_publicas": "Utiliza los caminos que cruzan por su tér., para verificar sus transportes y relaciones.",
+      "instruccion_publica": "De fondos del municipio se sostienen las escuelas necesarias para los dos sexos, perfectamente atendidas.",
+      "industria": "La única ind. de esta localidad es la agrícola.",
+      "poblacion": "Ninguna importancia ofrecen los edif. que la forman.",
+      "geografia": "(Véase el artículo referente á su ayunt.).",
+      "description": "Lugar agregado al ayunt. de Mercadal, del que dista 7 k. Cuenta sobre unos 800 hab. y 220 edif., de los que 16 están inhabitados.",
+      "stats": {
+        "habitantes": 800,
+        "edificios": 220,
+        "inhabitados": 16,
+        "distancia_km": 7
+      },
+      "cross_references": ["Mercadal", "Mahón"],
+      "confidence": "high"
+    }
+  ]
+}

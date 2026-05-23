@@ -1,0 +1,28 @@
+{
+  "vol": "05",
+  "page": 998,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "JORNETS",
+      "place_type": "agregado",
+      "island": "Mallorca",
+      "municipality": "Costitx",
+      "org_judicial": "Se halla adscrita al part. jud. de Inca y á las aud. de lo criminal y territ. de Palma.",
+      "org_civil": "Corresponde á la prov. de Baleares y contribuye con su ayunt. para las elecciones de diputados provinciales y las de Córtes.",
+      "org_militar": "Corresponde á la C. G. de Baleares y G. M. de Palma de Mallorca.",
+      "org_economica": "Para el pago de sus impuestos depende de la Delegación de Hacienda de su prov.",
+      "org_eclesiastica": "Pertenece al arciprestazgo de Inca y se sirve para sus necesidades espirituales de la iglesia de su ayunt.",
+      "servicio_publico": "Recibe y expide la corr. por la en. m. de Barcelona, Valencia y Alicante á Palma, car. Costitx.",
+      "obras_publicas": "Para verificar sus transportes y relacionarse con los pueblos limítrofes cuenta con diferentes caminos vecinales en regular estado de conservación.",
+      "instruccion_publica": "La escuela radica en la cabeza de su ayunt.",
+      "poblacion": "Ninguna importancia ofrecen los 21 edificios que la forman.",
+      "industria": "La ind. dominante en esta localidad es la agrícola.",
+      "geografia": "Agregado al ayunt. de Costitx. (Véase el artículo referente á su ayunt.).",
+      "description": null,
+      "stats": {"habitantes": 60, "edificios": 21, "habitados_temporalmente": 1, "inhabitados": 5},
+      "cross_references": ["Costitx"],
+      "confidence": "high"
+    }
+  ]
+}

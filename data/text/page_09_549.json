@@ -1,0 +1,35 @@
+{
+  "vol": "09",
+  "page": 549,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "SANTA EULALIA",
+      "place_type": "villa",
+      "island": "Ibiza",
+      "municipality": "Santa Eulària des Riu",
+      "org_civil": "Corresponde á la prov. de Baleares, y al dist. de Ibiza para las elecciones de diputados provinciales y las de Córtes. Hay puesto de la Guardia civil, perteneciente al 5.° Tercio y Comandancia de la prov.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma. Hay Destacamento de Carabineros del Reino, perteneciente á la Comandancia de su prov. y en la parte marítima corresponde al departamento de Cartagena, prov. y dist. marítimo de 3.a clase de Ibiza.",
+      "org_eclesiastica": "Pertenece á la dióc. de Ibiza, que según el Concordato de 1851 se ha de unir á la de Palma, y tiene iglesia parroquial, bajo la advocación de Santa Eulalia, convenientemente servida.",
+      "org_judicial": "Se halla adscrita al part. jud. de Ibiza y á las aud. de lo criminal y territ. de Palma.",
+      "org_economica": "Para el pago de sus impuestos depende de la Delegación de Hacienda de su prov. y su presupuesto municipal, en el ejercicio económico de 1885-86, ascendió á 19,000 pts., nivelados gastos ó ingresos.",
+      "servicio_publico": "Recibe y expide la corr. por en. marítima de Barcelona, Valencia y Alicante á Palma de Mallorca, esf. de Ibiza y cu. de San Juan Bautista.",
+      "obras_publicas": "Cruzan por su tér. dos carreteras que parten de la cabeza del part. y dirigen á San Antonio Abad y San Juan Bautista, y diferentes caminos vecinales, por medio de los cuales verifica sus relaciones y transportes.",
+      "instruccion_publica": "Se costean dos escuelas, una para cada sexo, á las que asisten 70 niños y 30 niñas.",
+      "industria": "La ind. que más domina en esta localidad es la agrícola y por algunos de sus moradores se ejercen todas aquellas profesiones y of. mecánicos de mayor necesidad.",
+      "poblacion": "Ninguna importancia ofrecen los 47 edif. que la forman, incluyendo en este número la iglesia parroquial y casa consistorial, pues aunque son de buena construcción, no hacen más que responder á las necesidades del objeto á que están destinados. Hay establecimientos para la venta de los artículos más necesarios; está el vecindario perfectamente abastecido de aguas para todos los usos y celebra la principal festividad el día del Patrono de la v.",
+      "geografia": "Al N. de la isla, disfrutando de buena ventilación y clima sano, encuéntrase situada esta v., cuyo tér. municipal confina por los cuatro puntos cardinales con los de Ibiza, San Juan Bautista, San Antonio Abad y el mar. El terreno es de mediana calidad, le fertilizan algunas corrientes de poca importancia y las prod. consisten en trigo, vino, aceite, legumbres, frutas, hortalizas y pastos; se mantiene ganado lanar, vacuno, cabrío, de cerda y el necesario para las faenas agrícolas, hay caza de pelo y pluma y la pesca no escasea.",
+      "stats": {
+        "habitantes": 5241,
+        "habitantes_padron_1885": 5288,
+        "edificios": 979,
+        "habitados_temporalmente": 9,
+        "inhabitados": 40,
+        "caserios_y_grupos_agregados": 39,
+        "presupuesto_municipal_pts": 19000
+      },
+      "cross_references": ["Santa Gertrudis", "Ibiza", "San Antonio Abad", "San Juan Bautista"],
+      "confidence": "high"
+    }
+  ]
+}

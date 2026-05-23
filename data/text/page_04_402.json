@@ -1,0 +1,28 @@
+{
+  "vol": "04",
+  "page": 402,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "ESGLAYETA",
+      "place_type": "lugar",
+      "island": "Mallorca",
+      "municipality": "Esporles",
+      "org_judicial": "Part. jud. y aud. de lo criminal y territ. de Palma.",
+      "org_civil": "Prov. de Baleares; contribuye con su ayunt. á las elecciones de diputados provinciales y de Cortes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma.",
+      "org_economica": "Para el pago de sus impuestos depende de la Delegación de Hacienda de su prov.",
+      "org_eclesiastica": "Pertenece á la misma dióc. y arciprestazgo que su ayunt., en el que reside la iglesia parroquial.",
+      "servicio_publico": "Recibe y emite la corr. por en. m. de Barcelona, Valencia y Alicante á Palma, pt. y car. de Esporlas.",
+      "obras_publicas": "Para sus arrastres y com. utiliza los caminos de que dispone su ayunt.",
+      "instruccion_publica": "La escuela radica en Esporlas, cabecera de su ayunt.",
+      "poblacion": "Ninguna importancia ofrece el escaso número de sus edif.",
+      "industria": "La única ind. de esta localidad es la agricultura.",
+      "geografia": "(Véase el artículo referente á su ayunt.)",
+      "description": "Agreg. al ayunt. de Esporlas, del que dista 3'5 k.",
+      "stats": {"habitantes": 90, "edificios": 24},
+      "cross_references": ["Esporlas"],
+      "confidence": "high"
+    }
+  ]
+}

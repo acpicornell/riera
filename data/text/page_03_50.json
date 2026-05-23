@@ -1,0 +1,52 @@
+{
+  "vol": "03",
+  "page": 50,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "CABO BLANCO",
+      "place_type": "cabo",
+      "island": "Ibiza",
+      "municipality": null,
+      "description": "nombre, por el color de la tierra que lo constituye, el cabo que se halla situado al SE. de la isla de Ibiza, tercio marítimo de Mallorca, prov. y dist. de Ibiza y departamento de Cartagena. Está á 1/8 de milla de otro pequeño cabo llamado Negrete, en el puerto Magno ó de San Antonio; es de mediana altura y entre los dos cabos se forma la cala llamada de Gracia, de buen fondeadero para verano.",
+      "cross_references": [],
+      "confidence": "high"
+    },
+    {
+      "title": "CABO CABALLERÍA",
+      "place_type": "cabo",
+      "island": "Menorca",
+      "municipality": null,
+      "description": "Naucélles este cabo, situado al N. y á corta distancia del cabo de Levante, en la isla de Menorca, prov. y part. marítimo de Mahon, dist. de Cindadela, tercio de Mallorca y departamento de Cartagena. Forma una punta bastante saliente; es alto y tajado al mar, pero va siendo ménos su altura para el S., de manera que mirado por el E. ó el O. desde alguna distancia, parece una isla. En la extremidad más saliente de este cabo, á los 40° 5' 40\" latitud N. y los 10° 21' 30\" longitud E. del meridiano de San Fernando álzase un faro con aparato de los de 2.° orden, cuya luz fija alcanza á la distancia de unas 18 millas. El foco se halla á 94'3 m. de altura sobre el nivel del mar y 14'3 sobre el del terreno; habiendo empezado el servicio en el año 1857. Su torre blanca, ligeramente cónica, sobresale 11 m. por encima del frente N. de la habitación de los torreros.",
+      "cross_references": [],
+      "confidence": "high"
+    },
+    {
+      "title": "CABO CALAT FIGUERA",
+      "place_type": "cabo",
+      "island": "Mallorca",
+      "municipality": null,
+      "description": "bajo que el cabo Blanco, y formando la otra punta de la Bahía de Palma, está el que nos ocupa, en la costa SO. de la prov. de Mallorca. Al NO. de dicho cabo se ve una isleta nombrada el Toro y en su parte NE. encuéntrase Palma y departamento de Cartagena. En este cabo, á los 39° 27' 42\" latitud N. y los 8° 46' 10\" longitud E. del meridiano de San Fernando, está colocado un faro con aparato de los de 5.° órden, cuya luz fija alcanzará á unas 12 millas de distancia. La altura del foco es la de 35 m. sobre el nivel del mar y 14'3 m. sobre el del terreno; su servicio empezó en el año 1860. La torre es ligeramente cónica, de color amarillo claro y está situada en el centro de la habitación de los torreros.",
+      "cross_references": [],
+      "confidence": "high"
+    },
+    {
+      "title": "CABO CAMPANICH",
+      "place_type": "cabo",
+      "island": "Ibiza",
+      "municipality": null,
+      "description": "costa E. de la isla de Ibiza, formando un canal con un pequeño islote algo separado de dicha costa. Es alto, escarpado y peligroso. Pertenece al dist. y prov. marítima de 3.a clase de Ibiza, en el departamento de Cartagena.",
+      "cross_references": [],
+      "confidence": "high"
+    },
+    {
+      "title": "CABO DARTUTX",
+      "place_type": "cabo",
+      "island": "Menorca",
+      "municipality": "Ciutadella",
+      "description": "de la isla de Menorca, que es otra de las que forman la boca de la ensenada de Ciudadela. Es bastante saliente y está formada por un monte peñascoso. Pertenece al dist. de 2.a clase de Ciudadela, prov. de 1.a de Mahon y departamento de Cartagena. En este cabo, extremidad SO. de la isla, á 21 m. de la orilla del mar y á los 39° 54' 49\" latitud N. y los 10° 4' 20\" longitud E. del meridiano de San Fernando, álzase un faro con aparato de los de 4.° órden, cuya luz fija con destellos de 3 en 3 minutos, tiene un alcance de 16 millas. En 1859 la habitación de los torreros, que es también blanca con persianas verdes.",
+      "cross_references": [],
+      "confidence": "high"
+    }
+  ]
+}

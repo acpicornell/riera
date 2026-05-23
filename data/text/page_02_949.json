@@ -1,0 +1,33 @@
+{
+  "vol": "02",
+  "page": 949,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "BUÑOLA",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Bunyola",
+      "org_judicial": "Está adscrita al part. jud. y aud. territ. de Palma de Mallorca.",
+      "org_civil": "Corresponde á la prov. de Baleares, al 4.° dist. de su part. jud. para las elecciones de diputados provinciales y al dist. de la cap. para las de Cortes.",
+      "org_militar": "C. G. de las Baleares y G. M. de Palma de Mallorca.",
+      "org_economica": "Para el pago de sus impuestos depende de la admon. econ. de su prov.",
+      "org_eclesiastica": "Está comprendida en la dióc. de Mallorca y tiene una iglesia parroquial dedicada á la Santísima Virgen, la cual está convenientemente servida.",
+      "servicio_publico": "Recibe y emite la corr. por en. m. de Barcelona, Valencia y Alicante á Palma, en. Soller.",
+      "obras_publicas": "Su proximidad á la cap. la permite utilizar los caminos que á ésta conducen, así como también los que la relacionan con otras pob. más ó ménos importantes hallándose todos por lo general en buen estado de conservación.",
+      "instruccion_publica": null,
+      "poblacion": "Más de 400 edif. de mejores ó peores condiciones, constituyen la v. que recorremos, sin que ninguno de ellos llame la atención ni por sus condiciones arquitectónicas, ni por sus recuerdos históricos. La casa consistorial es un edif. que responde á las necesidades del objeto á que está destinado y la iglesia parroquial contiene una imágen de alabastro de Ntra. Sra. de las Nieves, con una especie de encaje, en el cual hay una inscripción árabe. El vecindario se surte de aguas en las varias fuentes que hay dentro y fuera de la pob. Se hallan agreg. el l. de Orient y 76 cas. y grupos, edif., viv. y alb. ais. Cuenta con 2,181 hab. y 572 edif. entre habitados é inhabitados.",
+      "industria": "La única ind. que ocupa á la mayoría del vecindario, es la agrícola y sus derivadas, constituyendo uno de los importantes ramos de su riqueza, la ganadería. Sin embargo de esto, hay algunos establecimientos comerciales de más ó ménos importancia, fábricas de jabón, almazaras, hornos de cal y yeso, y los of. mecánicos y profesiones más indispensables.",
+      "geografia": "Reclinada sobre la falda del monte Castellet y rodeada de algunos otros ménos importantes, se encuentra la v. que nos ocupa, combatiéndola los vientos del N. en el invierno y los del S. en el estío, razón por la cual su clima es benigno y sano. Sírvenle de límites por el N. los de Soller, por el E. y S. los de Maro y Marratxi y por O. los de Valldemosa, siendo el terreno comprendido entre estas pob. de bastante buena calidad á lo cual contribuyen en gran manera las aguas de varios riachuelos que discurren ora unidos, ora separados, por todo el tér. La parte de monte que comprende algo de la sierra de Alfavia está poblada de pinos, encinas y mucha mata baja. Sus prod. consisten en cereales, legumbres, hortalizas, bastante aceite y algún vino. Merced á los pastos, que son abundantes y sabrosos, críase ganado de todas especies, siendo variada también la caza que existe en la parte montañosa.",
+      "description": null,
+      "stats": {
+        "habitantes": 2181,
+        "edificios": 572,
+        "caserios_y_grupos": 76,
+        "casas": 400
+      },
+      "cross_references": ["Orient"],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "vol": "09",
+  "page": 477,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "SANSELLAS",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Sencelles",
+      "org_civil": "Corresponde á la prov. de Baleares, al dist. de Inca para las elecciones de diputados provinciales y al de la cap. para las de Córtes.",
+      "org_militar": "C. G. de las Islas Baleares y G. M. de Palma.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca, al arciprestazgo de Inca y tiene una iglesia parroquial, bajo la advocación de San Pedro, cuyo curato es de la categoría de 2.° ascenso.",
+      "org_judicial": "Hállase adscrita al part. jud. de Inca y á las aud. de lo criminal y territ. de Palma.",
+      "org_economica": "Para el pago de sus impuestos depende de la Delegación de Hacienda de su prov.",
+      "servicio_publico": "Recibe y expide la corr. por en. m. de Barcelona, Valencia y Alicante á Palma de Mallorca; en. de Alcudia.",
+      "obras_publicas": "Cuenta con diferentes caminos, ya carreteros, ya de herradura, en mejor ó peor estado de conservación, que la relacionan con las pob. limítrofes y por medio de los que verifica sus transportes y sostiene sus relaciones.",
+      "instruccion_publica": "Con fondos del municipio se costean las escuelas necesarias para los dos sexos, perfectamente atendidas y á las que asiste un número de alumnos en relación con el de hab.",
+      "industria": "La ind. que más domina en esta localidad es la agrícola, sin embargo de que por algunos de sus moradores se ejercen todas aquellas profesiones y of. mecánicos de mayor necesidad.",
+      "poblacion": "Distribuidos en algunas calles irregulares y formando plazoletas, están los edif. que la constituyen. La generalidad de ellos son de pobre aspecto y escasas comodidades interiores y si bien hay algunos de más solidez y amplitud, ninguno reúne circunstancias dignas de ser mencionadas. La iglesia parroquial y casa en que el ayunt. celebra sus reuniones, no hacen más que responder á las necesidades del objeto á que se hallan destinados. Cuenta con varios establecimientos para la venta de los artículos más necesarios, está el vecindario perfectamente abastecido de aguas para todos los usos y celebra la principal festividad el día del Patrono de la v.",
+      "geografia": "En una altura combatida libremente por todos los vientos y disfrutando de clima templado y sano, encuéntrase situada esta v., cuyo tér. municipal confina por los cuatro puntos cardinales con los de Inca, Sinen, Algaida y Llubi, comprendiendo en su jurisdicción alguna parte de monte en regular estado de población. El terreno, fertilizado por las aguas de tres arroyos, es de mediana calidad y las prod. consisten en trigo, cebada, avena, legumbres, vino, almendras, higos, azafrán, algarrobas, hortalizas y frutas; se mantiene ganado lanar, vacuno y de cerda y la caza de pelo y pluma es tan abundante como variada.",
+      "stats": {
+        "habitantes": 2974,
+        "edificios": 1264,
+        "habitados_temporalmente": 4,
+        "inhabitados": 516,
+        "caserios_y_grupos_agregados": 518
+      },
+      "cross_references": ["Biniali", "Inca", "Sinen", "Algaida", "Llubi"],
+      "confidence": "high"
+    }
+  ]
+}

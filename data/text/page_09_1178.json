@@ -1,0 +1,28 @@
+{
+  "vol": "09",
+  "page": 1178,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "SINEU",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Sineu",
+      "org_judicial": "Part. jud. de Inca; aud. de lo criminal y territ. de Palma, distando 12 k. de la primera y 30 de la última.",
+      "org_civil": "Prov. de Baleares; dist. de Inca para las elecciones de diputados provinciales y al de la cap. para las de Córtes. Hay puesto de la Guardia civil perteneciente al 5.° Tercio y Comandancia de la prov., residencia de un oficial jefe de la línea.",
+      "org_militar": "C. G. de las Islas Baleares y G. M. de Palma.",
+      "org_economica": "Delegación de Hacienda de su prov.; presupuesto municipal 1885-86: 39,156 pts.",
+      "org_eclesiastica": "Dióc. de Mallorca, arciprestazgo de Inca; iglesia parroquial bajo la advocación de Ntra. Sra. de los Angeles, curato de término. Convento de monjas Concepcionistas con iglesia abierta al [culto].",
+      "servicio_publico": "Recibe y expide la corr. por en. m. de Barcelona, Valencia y Alicante á Palma, en. de Inca á Manacor.",
+      "obras_publicas": "Cruzan por su tér. municipal tres carreteras que conducen á Inca, Manacor y Campos, y diferentes caminos vecinales.",
+      "instruccion_publica": "Sostenidas con fondos del municipio hay cuatro escuelas, dos para cada sexo, todas perfectamente atendidas, asistencia unos 189 alumnos.",
+      "poblacion": "Edif. generalmente de sencilla aun cuando buena fábrica; responden á necesidades del objeto, ninguno digno de mención especial. Iglesia parroquial y casa consistorial igual. Varios establecimientos para venta; un teatro, dos casinos y un café; vecindario perfectamente abastecido de aguas; celebra la principal festividad el día del Patrono de la v.",
+      "industria": "La ind. que más domina es la agrícola, y por algunos de sus moradores se ejercen todas aquellas profesiones y of. mecánicos de mayor necesidad. Se celebran tres ferias anuales y un mercado todos los domingos, todos muy concurridos.",
+      "geografia": "En el centro de la isla, en terreno llano, buena ventilación y clima sano. Confina por N. con Inca; por S. con San Juan; por E. con Petra y con Sansellas por el O.; varios montes en regular estado de población, unos del común de vec. y otros particulares. Terreno de mediana calidad; prod.: cereales, legumbres, hortalizas, frutas y pastos; ganado lanar, vacuno, cabrío, de cerda y el necesario para las faenas agrícolas; caza de pelo y pluma.",
+      "description": null,
+      "stats": {"habitantes": 4881, "habitantes_padron_1885": 4804, "edificios": 1839, "habitados_temporalmente": 38, "inhabitados": 930, "casas_y_grupos": 929, "presupuesto_municipal_pts": 39156, "alumnos": 189},
+      "cross_references": ["Llorito", "Inca", "San Juan", "Petra", "Sansellas", "Manacor", "Campos"],
+      "confidence": "high"
+    }
+  ]
+}

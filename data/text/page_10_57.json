@@ -1,0 +1,33 @@
+{
+  "vol": "10",
+  "page": 57,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "SON SARDINA",
+      "place_type": "lugar",
+      "island": "Mallorca",
+      "municipality": "Palma",
+      "org_civil": "Corresponde á la prov. de Baleares y contribuye, con su ayunt., para las elecciones de diputados provinciales y las de Córtes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca, al arciprestazgo de Palma, y tiene una iglesia que es aneja de la parroquial de San Jaime, apóstol, de Palma.",
+      "org_judicial": "Hállase adscrito al part. jud. y aud. de lo criminal y territ. de Palma.",
+      "org_economica": "Para el pago de sus impuestos depende de la Delegación de Hacienda de su prov.",
+      "servicio_publico": "Recibe y expide la corr. por en. m. de Barcelona, Valencia y Alicante á Palma.",
+      "obras_publicas": "Para verificar sus transportes y mantener sus relaciones, utiliza la vía marítima mencionada y los diferentes caminos que cruzan por su tér. municipal.",
+      "instruccion_publica": "La escuela radica en la cabecera de su ayunt.",
+      "industria": "La ind. única es la agrícola.",
+      "poblacion": "Ninguna particularidad ofrecen los 25 edif. que la forman.",
+      "geografia": "(Véase el artículo referente á su ayunt.).",
+      "description": "Lugar agregado, dista 6'9 k. de Palma. Cuenta sobre unos 80 hab. y 25 edif., de los que 3 están habitados temporalmente.",
+      "stats": {
+        "habitantes": 80,
+        "edificios": 25,
+        "habitados_temporalmente": 3,
+        "distancia_km": 6.9
+      },
+      "cross_references": ["Palma", "San Jaime"],
+      "confidence": "high"
+    }
+  ]
+}

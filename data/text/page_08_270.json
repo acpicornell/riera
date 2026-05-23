@@ -1,0 +1,28 @@
+{
+  "vol": "08",
+  "page": 270,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "POLLENSA",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Pollença",
+      "org_judicial": "Part. jud. de Inca; aud. de lo criminal y territ. de Palma, distando 18 k. de la primera y 47 de la última.",
+      "org_civil": "Prov. de Baleares; dist. de Inca para las elecciones de diputados provinciales y las de Córtes. Hay puesto de la Guardia civil perteneciente al 5.° Tercio y Comandancia de la prov.",
+      "org_militar": "C. G. de las islas Baleares y G. M. de Palma de Mallorca. Hay destacamento de Carabineros del reino compuesto de ocho individuos y un cabo perteneciente á la Comandancia de su prov. En la parte marítima corresponde al departamento de Cartagena, Comandancia marítima de 1.a clase de Mallorca y dist. de 2.a de Alcudia.",
+      "org_economica": "Admon. de Hacienda de su prov.; presupuesto municipal 1885-86: 52,900 pts. Hay aduana de 2.a clase.",
+      "org_eclesiastica": "Dióc. de Mallorca, arciprestazgo de Inca; iglesia parroquial bajo la advocación de Ntra. Sra. de los Angeles, curato de 2.° ascenso. Comunidad de Hermanas de la Caridad; ermitas y capillas del Rosario, Monte Sien, San Jorge, Roser Vell, Calvario, Puig de María, San March, San Serra y San Axartell.",
+      "servicio_publico": "Recibe y expide la corr. por en. m. de Barcelona, Valencia y Alicante á Palma de Mallorca, en. de Alcudia. Costeado con fondos del municipio hay un establecimiento benéfico que sirve á la vez de hospicio y hospital. Hay un faro catadrióptico de 2.° orden en el cabo de Fermentó, parte N. de la isla, 60 m. de la orilla del mar, de luz giratoria con eclipses de 30 en 30 segundos, alcance de 19 millas, situado á los 39° 57' 45\" lat. N. y 9° 27' 8\" long. E. del meridiano de San Fernando; elévase sobre el nivel del mar 180 m. y sobre el terreno 25. Torre pardo oscuro, ligeramente cónica.",
+      "obras_publicas": "Cruzan por su tér. la carretera que de Petra conduce á Pollensa, y diferentes caminos vecinales.",
+      "instruccion_publica": "Costeadas con fondos del municipio hay dos escuelas para cada sexo, perfectamente atendidas y á las que asisten unos 420 niños y niñas. Hay además una escuela particular para niños y dos para adultos, estas últimas nocturnas.",
+      "poblacion": "8,547 hab. y 2,416 edif., de los que 131 habitados temporalmente y 422 inhabitados; pero por los datos del Secretario del ayunt., padrón de 1884, tiene 9,000 hab. Agreg. 914 cas. y grupos, edif., viv. y alb. ais.",
+      "industria": "Aun cuando la ind. que más domina es la agrícola, también la manufacturera está representada por un buen número de [telares/fábricas].",
+      "geografia": null,
+      "description": null,
+      "stats": {"habitantes": 8547, "habitantes_padron_1884": 9000, "edificios": 2416, "habitados_temporalmente": 131, "inhabitados": 422, "casas_y_grupos": 914, "presupuesto_municipal_pts": 52900},
+      "cross_references": ["Alcudia", "Petra", "Cabo de Formentor"],
+      "confidence": "high"
+    }
+  ]
+}

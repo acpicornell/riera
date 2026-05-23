@@ -1,0 +1,28 @@
+{
+  "vol": "12",
+  "page": 388,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "MENORCA (OBISPADO DE)",
+      "place_type": "obispado",
+      "island": "Menorca",
+      "municipality": null,
+      "org_judicial": null,
+      "org_civil": null,
+      "org_militar": null,
+      "org_economica": null,
+      "org_eclesiastica": null,
+      "servicio_publico": null,
+      "obras_publicas": null,
+      "instruccion_publica": null,
+      "poblacion": null,
+      "industria": null,
+      "geografia": null,
+      "description": "Algunos años después de haber sido recobrada esta isla del poder inglés, al objeto de reparar con celo y prudencia las quiebras que en la fé y costumbres de sus hab. hubiese causado el anglicanismo, se promovió la creación de un obispado, como tuvo efectivamente lugar por Bula de 23 de julio de 1795, expedida por el Papa Pío VI. Es sufragáneo este obispado del arz. de Valencia, quedando del mismo modo según el último Concordato de 1851. Constituye la dióc. la isla de su nombre, siendo la residencia del Prelado y por consiguiente la capital de ella, Ciudadela. En la parte civil encuentra circunscrita á un solo arciprestazgo, que comprende el número de parroquias que se expresan en el siguiente estado, así como igualmente las advocaciones de todas y categoría de sus curatos. Arciprestazgo de Ciudadela: Ciudadela (Ntra. Sra. del Rosario, Término; San Francisco de Asís; San Antonio abat.; San Juan Bautista); Ferrerías (Ntra. Sra. del Rosario, Ascenso); Fornells (San Martín); Mahon (Santa María, Término; Nuestra Señora del Cármen; San Francisco de Asís; La Concepción); Alayor (Santa Eulalia, Ascenso; San Diego); Mercadal (San Bartolomé, Entrada); San Clemente (San Antonio abat., Ascenso); San Cristóbal (San Cristóbal, Entrada; San Juan dels Horts); San Clemente (Ascenso); San Luis Rey (San Luis, Rural de 1.a); Villacarlos (San Juan). Hay en la dióc. de Menorca un Seminario Conciliar bajo la advocación de San Ildefonso, y las comunidades religiosas de Santa Clara y Hermanas Terciarias Carmelitas, en Ciudadela; Concepcionistas y Hermanas Terciarias de San Vicente de Paúl, en Mahon; Hermanas Carmelitas, en Fornells, y Hermanas Terciarias, en Alayor. Mahon es residencia de Padres Jesuitas. Todas las anteriores comunidades se ocupan en obras de beneficencia y enseñanza.",
+      "stats": {},
+      "cross_references": ["Ciudadela", "Ferrerías", "Fornells", "Mahon", "Alayor", "Mercadal", "San Clemente", "San Cristóbal", "San Luis", "Villacarlos"],
+      "confidence": "high"
+    }
+  ]
+}

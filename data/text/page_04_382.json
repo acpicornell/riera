@@ -1,0 +1,31 @@
+{
+  "vol": "04",
+  "page": 382,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "ESCAPDELLÁ",
+      "place_type": "lugar",
+      "island": "Mallorca",
+      "municipality": "Calvià",
+      "org_judicial": "Hállase comprendido en el part. jud., y aud. de lo criminal y territ. de Palma, distante 22 k.",
+      "org_civil": "Corresponde á la prov. de Baleares, y contribuye con su ayunt. á las elecciones de diputados provinciales y de Córtes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma.",
+      "org_economica": "Para el pago de sus impuestos, depende, junto con su municipio, de la Delegación de Hacienda de la prov.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca, y tiene una iglesia parroquial, servida convenientemente, bajo la advocación de Ntra. Sra. del Cármen.",
+      "servicio_publico": "Recibe y expide la corr. por en. m. de Barcelona á Valencia y Alicante á Palma, pt. de Calviá.",
+      "obras_publicas": "Utiliza para sus com. y transportes los caminos que cruzan su tér. municipal.",
+      "instruccion_publica": "El ayunt. sostiene de fondos municipales una escuela incompleta para niños de ambos sexos.",
+      "poblacion": "Unos 227 edif. de construcción poco importante cuenta la que nos ocupa, incluso el templo.",
+      "geografia": "(Véase el artículo referente á su ayunt.).",
+      "description": "Lugar agregado al ayunt. de Calviá, del que dista la localidad que describimos 2'8 k. Cuenta sobre unos 900 hab. y 227 edif., de los que 16 están inhabitados.",
+      "stats": {
+        "habitantes": 900,
+        "edificios": 227,
+        "edificios_inhabitados": 16
+      },
+      "cross_references": ["Calviá"],
+      "confidence": "high"
+    }
+  ]
+}

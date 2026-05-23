@@ -1,0 +1,36 @@
+{
+  "vol": "09",
+  "page": 959,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "SELVA Ó SEUVA",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Selva",
+      "org_civil": "Corresponde á la prov. de Baleares, y al dist. de Inca para las elecciones de diputados provinciales y las de Córtes. Hay puesto de la Guardia civil, perteneciente al 5.° Tercio y Comandancia de la prov.",
+      "org_militar": "C. G. de las Islas Baleares y G. M. de Palma.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca, al arciprestazgo de Inca, y tiene una iglesia parroquial, bajo la advocación de San Lorenzo, cuyo curato es de la categoría de 2.° ascenso.",
+      "org_judicial": "Se halla adscrita al part. jud. de Inca y á las aud. de lo criminal y territ. de Palma.",
+      "org_economica": "Para el pago de sus impuestos depende de la Delegación de Hacienda de su prov., y su presupuesto municipal en el ejercicio económico de 1885-86 ascendió, nivelados gastos é ingresos, á 27,577 pts.",
+      "servicio_publico": "Recibe y expide la corr. por en. m. de Barcelona, Valencia y Alicante á Palma de Mallorca, en. de Inca.",
+      "obras_publicas": "Cruzan por su tér. municipal la carretera de 3.er órden de Selva á Inca, y diferentes caminos vecinales, en regular estado de conservación, por medio de los que verifica sus transportes y mantiene sus relaciones, tanto con la cap. del part. como con (las pob. limítrofes).",
+      "instruccion_publica": "De fondos del municipio se sostienen diez escuelas para los dos sexos, las cuales están distribuidas por todo el dist., todas perfectamente atendidas y á las que asiste un buen número de alumnos.",
+      "industria": "La ind. que más domina en esta localidad es la agrícola; se entretiene un buen número de brazos en la explotación de una mina de lignito, y por algunos de sus moradores se ejercen todas aquellas profesiones y of. mecánicos de mayor necesidad.",
+      "poblacion": "Distribuidos en diferentes calles y algunas plazas irregulares y mal empedradas, en su mayoría, encuéntranse los 440 edif. que la forman. Estos, generalmente, son de buena fábrica, pero ninguno hay entre ellos, á pesar del gran número que se han construido durante estos últimos años, que reúna circunstancias dignas de una mención especial, si bien responden todos cumplidamente á las necesidades de sus moradores. La iglesia parroquial y casa en que el ayunt. celebra sus reuniones son á propósito para el objeto á que se hallan destinados. Cuenta con varios establecimientos para la venta de diferentes artículos; hay dos cafés y algunas sociedades de socorros mutuos; está el vecindario perfectamente abastecido de aguas para todos los usos, y celebra la principal festividad el día del Patrono de la v.",
+      "geografia": "En el centro de la Isla, en terreno montuoso, disfrutando de buena ventilación y clima templado y sano, encuéntrase situada esta v., cuyo tér. municipal confina por N. con el de Escorca; por S. con el de Inca; por E. con el de Campanet, y con el de Lloseta por el O., comprendiendo en el espacio que éstos abrazan 500 hectáreas de monte pinar, propio del ayunt. Hay una mina en explotación, en la cual se entretiene un buen número de brazos. El terreno, que participa de monte y llano, es de buena calidad; le fertilizan algún tanto las aguas de varios arroyos, y las prod. consisten en cereales, legumbres, hortalizas, frutas y pastos; se mantiene ganado de varias clases; además del necesario para las faenas agrícolas, hay caza de pelo y pluma, y los animales dañinos no escasean.",
+      "stats": {
+        "habitantes": 4870,
+        "habitantes_padron_1885": 4780,
+        "edificios": 1821,
+        "habitados_temporalmente": 27,
+        "inhabitados": 564,
+        "caserios_y_grupos_agregados": 506,
+        "presupuesto_municipal_pts": 27577,
+        "monte_pinar_hectareas": 500
+      },
+      "cross_references": ["Caimarí", "Mancor", "Biniamar", "Moscari", "Inca", "Escorca", "Campanet", "Lloseta"],
+      "confidence": "high"
+    }
+  ]
+}

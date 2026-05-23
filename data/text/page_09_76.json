@@ -1,0 +1,34 @@
+{
+  "vol": "09",
+  "page": 76,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "SAN CLEMENTE",
+      "place_type": "lugar",
+      "island": "Menorca",
+      "municipality": "Maó",
+      "org_civil": "Corresponde á la prov. de Baleares y contribuye, con su ayunt., para las elecciones de diputados provinciales y las de Córtes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma.",
+      "org_eclesiastica": "Pertenece á la dióc. de Menorca y tiene una iglesia parroquial, bajo la advocación de San Antonio Abad, cuyo curato es de entrada.",
+      "org_judicial": "Hállase adscrita al part. jud. de Mahon y á las aud. de lo criminal y territ. de Palma.",
+      "org_economica": "Para el pago de contr. depende, con su ayunt., de la Admon. de Hacienda de su prov.",
+      "servicio_publico": "Recibe y expide la corr. por en. marítima de Barcelona, Valencia y Alicante á Palma de Mallorca, en. de Manacor.",
+      "obras_publicas": "Para sus transportes y relaciones, utiliza los caminos que cruzan por su tér.",
+      "instruccion_publica": "La escuela se halla en la cabecera de su ayunt.",
+      "industria": "La única ind. es la agrícola.",
+      "poblacion": "Nada de notable ofrecen los edif. que la forman.",
+      "geografia": "(Véase el artículo referente á su ayunt.).",
+      "description": "Lugar agregado, dista 5'7 k. de Mahon. Cuenta sobre unos 100 hab. y 26 edif., de los que 1 está habitado temporalmente y 2 inhabitados.",
+      "stats": {
+        "habitantes": 100,
+        "edificios": 26,
+        "habitados_temporalmente": 1,
+        "inhabitados": 2,
+        "distancia_km": 5.7
+      },
+      "cross_references": ["Mahón"],
+      "confidence": "high"
+    }
+  ]
+}

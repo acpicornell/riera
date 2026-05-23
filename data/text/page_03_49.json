@@ -1,0 +1,25 @@
+{
+  "vol": "03",
+  "page": 49,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "CABO BAJOLÍ",
+      "place_type": "cabo",
+      "island": "Menorca",
+      "municipality": "Ciutadella",
+      "description": "las puntas ó bocas que cierran la ensenada de Cindadela, en la isla de Menorca. Forma la punta E. de su costa; es escarpado y en su cúspide se ve una torre telegráfica.",
+      "cross_references": [],
+      "confidence": "high"
+    },
+    {
+      "title": "CABO BLANCO",
+      "place_type": "cabo",
+      "island": "Mallorca",
+      "municipality": null,
+      "description": "cio y dist. marítimo de Mallorca, en el departamento de Cartagena. Su altura es mediana, está cortado á pico y es blanquizo el color de sus rocas; vese en su altura una torre telegráfica y desde él puede ir en demanda recta del fondeadero de Palma, pues toda la costa está cortada del mismo modo, sin bajos ni rocas que hagan peligrosa la navegación. En este cabo, en la parte SO. de la isla, á 30 m. de la orilla del mar y á los 39° 22' latitud N. y á los 9° 2' 10\" longitud E. del meridiano de San Fernando, hállase un faro con aparato de los de 6.° órden cuya luz fija tiene un alcance de 10 millas. La altura del foco es la de 89 m. sobre el nivel del mar y 11 m. sobre el del terreno, datando el servicio que presta del año 1863. Su torre cuadrangular, de color ceniciento, está adosada á la habitación de los torreros, en la parte que mira al mar.",
+      "cross_references": [],
+      "confidence": "high"
+    }
+  ]
+}

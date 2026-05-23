@@ -1,0 +1,31 @@
+{
+  "vol": "03",
+  "page": 184,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "CAIMARI",
+      "place_type": "lugar",
+      "island": "Mallorca",
+      "municipality": "Selva",
+      "org_judicial": "Corresponde al part. jud. de Inca, aud. territ. de Palma.",
+      "org_civil": "Corresponde á la prov. de Baleares, al 3.er dist. de su part. jud. para las elecciones de diputados provinciales y á la circunscripción de Palma para las de Cortes.",
+      "org_militar": "C. G. de las Baleares y G. M. de Palma.",
+      "org_economica": "Para el pago de contr. se halla sujeta á la admon. econ. de la prov.",
+      "org_eclesiastica": "Pertenece á la misma dióc. que su ayunt. Tiene una iglesia parroquial bajo la advocación de la Purísima Concepción, que es aneja de la de Selva.",
+      "servicio_publico": "Recibe y expide la corr. por en. m. de Barcelona, Valencia y Alicante á Palma, en. de Alcudia, esf. de Inca, pt. de Escorca.",
+      "obras_publicas": "Para sus transportes y com. utiliza los caminos que cruzan el tér. de su ayunt.",
+      "instruccion_publica": null,
+      "poblacion": "Compuesta del número de edif. en otro lugar citados, ninguno de ellos se recomienda por especialidad alguna que llame nuestra atención. Cuya casa consistorial está en la v. de Selva ó Séuva y de la que dista la pob. que describimos 1'5 k. Cuenta sobre unos 852 hab. y 232 edif. entre habitados é inhabitados.",
+      "industria": "La única ind. de este agreg., es la agrícola.",
+      "geografia": "(Véase de Selva).",
+      "description": null,
+      "stats": {
+        "habitantes": 852,
+        "edificios": 232
+      },
+      "cross_references": ["Selva"],
+      "confidence": "high"
+    }
+  ]
+}

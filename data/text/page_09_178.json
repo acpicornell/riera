@@ -1,0 +1,28 @@
+{
+  "vol": "09",
+  "page": 178,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "SAN JOSE",
+      "place_type": "ayuntamiento",
+      "island": "Ibiza",
+      "municipality": "Sant Josep de sa Talaia",
+      "org_judicial": "Part. jud. de Ibiza; aud. de lo criminal y territ. de Palma, distando 17 k. de la primera.",
+      "org_civil": "Prov. de Baleares; dist. de Ibiza para las elecciones de diputados provinciales y las de Córtes.",
+      "org_militar": "C. G. de las Islas Baleares y G. M. de Mallorca. Hay destacamento de Carabineros del Reino, perteneciente á la Comandancia de su prov.; en la parte marítima corresponde al Departamento de Cartagena, prov. y dist. de 3.a de Ibiza.",
+      "org_economica": "Delegación de Hacienda de su prov.; presupuesto municipal 1885-86: 16,516 pts.",
+      "org_eclesiastica": "Dióc. de Ibiza, que según el último Concordato se ha de unir á la de Mallorca; tiene tres iglesias parroquiales, una ayuda de parroquia y una ermita bajo las advocaciones de San José, San Jorge, San Agustín y San Francisco de Paula; curatos de l.er ascenso las dos primeras y de 2.° la tercera.",
+      "servicio_publico": "Recibe y expide la corr. por en. marítima de Alicante á Palma de Mallorca y esf. de Ibiza.",
+      "obras_publicas": "Cruza por su tér. municipal la carretera del Estado que conduce á Ibiza y diferentes caminos vecinales, en regular estado de conservación.",
+      "instruccion_publica": "Costeadas con fondos del municipio hay dos escuelas, una para cada sexo, perfectamente atendidas, asistencia unos 30 niños y 20 niñas.",
+      "poblacion": "Ayunt. formado por 24 cas. y grupos, edif., viv. y alb. ais. La casa consistorial está en el sitio conocido con el nombre de Casa de la Villa. Caserío en general bueno; vecindario perfectamente abastecido de aguas; celebra en cada entidad la principal festividad el día del Patrono respectivo.",
+      "industria": "La ind. que más domina es la agrícola, sin embargo de que por algunos de sus moradores se ejercen todas aquellas profesiones y of. mecánicos de mayor necesidad.",
+      "geografia": "En terreno desigual y á corta distancia del mar, buena ventilación y clima sano. Confina por N. con San Antonio Abad; por S. y O. con el mar y con el tér. de Ibiza por el O., comprendiendo varios montes en regular estado y á propiedad particular. Dentro del tér. la fuente de aguas minero-medicinales de Fuente Amarga, cuyos componentes químicos incluyen cloruro, sulfato, fosfato, bicarbonato y silicato sódicos; sulfato, cloruro y bicarbonato magnésicos; bicarbonato ferroso y potásico. Dominan las sódicas (cloruro 2/3, sulfato 1/10); luego magnesianas, cálcicas, ferrosas. Indicios de iodo y bromo. Residuo salino 10'528 g/litro. Usos: purgante (vaso grande 400 g + medio vaso agua azucarada); otros casos medio á un vaso, tres veces al día antes de comidas; niños media a una jicara; lactantes 1-3 cucharadas/día. Indicaciones: dispepsias, sufrimientos crónicos estómago/intestinos, cálculos hepáticos, ictericia, congestiones pasivas pulmón/hígado/bazo/cerebro, debilidad general, convalecencia, afecciones uterinas, clorosis rebelde, intermitentes antiguas, escrófulas. Embotellada en Ibiza en casa del agrimensor D. Juan Vich y Nogueras y en Palma en la farmacia de D. Víctor Valcuruela, plaza de la Libertad. Terreno mediana calidad; prod.: cereales, legumbres, hortalizas, vino, aceite, frutas y pastos; ganado lanar, vacuno, cabrío, de cerda y el necesario para las faenas agrícolas; caza de pelo y pluma; pesca abundante.",
+      "description": null,
+      "stats": {"habitantes": 3730, "edificios": 769, "inhabitados": 110, "casas_y_grupos": 24, "presupuesto_municipal_pts": 16516},
+      "cross_references": ["Ibiza", "San Antonio Abad", "Fuente Amarga"],
+      "confidence": "high"
+    }
+  ]
+}

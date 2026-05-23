@@ -1,0 +1,28 @@
+{
+  "vol": "05",
+  "page": 727,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "ISLA",
+      "place_type": "isla",
+      "island": "Ibiza",
+      "municipality": null,
+      "org_judicial": null,
+      "org_civil": null,
+      "org_militar": null,
+      "org_economica": null,
+      "org_eclesiastica": null,
+      "servicio_publico": null,
+      "obras_publicas": null,
+      "instruccion_publica": null,
+      "poblacion": null,
+      "industria": null,
+      "geografia": null,
+      "description": "Pertenece al part. jud. de Ibiza y se halla situada al N. del cabo Pelat. Es de escasa importancia.",
+      "stats": {},
+      "cross_references": [],
+      "confidence": "low"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "vol": "10",
+  "page": 740,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "ULLARO",
+      "place_type": "aldea",
+      "island": "Mallorca",
+      "municipality": "Campanet",
+      "org_judicial": "Hállase adscrita al part. jud. de Inca y á las aud. de lo criminal y territ. de Palma.",
+      "org_civil": "Corresponde á la prov. de Baleares y contribuye, con su ayunt., para las elecciones de diputados provinciales y las de Córtes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma.",
+      "org_economica": "Para el pago de contr. depende, con su ayunt., de la Delegación de Hacienda de su prov.",
+      "org_eclesiastica": "Pertenece á la dióc. de Palma de Mallorca, y al arciprestazgo de Inca y para sus atenciones religiosas se sirve de la iglesia más inmediata.",
+      "servicio_publico": "Recibe y expide la corr. por en. m. de Barcelona, Valencia y Alicante á Palma de Mallorca y en. de Alcudia.",
+      "obras_publicas": "Para sus transportes y relaciones, se sirve de los caminos que cruzan por su tér.",
+      "instruccion_publica": "De fondos del municipio se sostiene una escuela incompleta para niños de ambos sexos.",
+      "poblacion": "Nada de notable ofrecen los edif. que la forman.",
+      "industria": "La ind. agrícola, es la única en esta localidad.",
+      "geografia": "(Véase el artículo referente á su ayunt.).",
+      "description": null,
+      "stats": {},
+      "cross_references": [],
+      "confidence": "medium"
+    }
+  ]
+}

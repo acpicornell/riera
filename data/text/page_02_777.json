@@ -1,0 +1,105 @@
+{
+  "vol": "02",
+  "page": 777,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "BINIÁLI",
+      "place_type": "lugar",
+      "island": "Mallorca",
+      "municipality": "Sencelles",
+      "org_judicial": "Adscrito al part. jud. de Inca, corresponde á la aud. territ. de Palma de Mallorca.",
+      "org_civil": "Corresponde á la prov. de Baleares, al 1.er dist. de su part. jud. para las elecciones de diputados provinciales y al dist. de Palma para las de Cortes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma. Prov. marítima de 1.a clase de Mallorca y dist. de 2.a de Alcudia.",
+      "org_economica": "Para el pago de sus tributos depende, con su ayunt., de la admon. econ. de su prov.",
+      "org_eclesiastica": "Pertenece á la dióc. y arciprestazgo de su municipio.",
+      "servicio_publico": "Recibe y emite su corr. por en. marítima de Barcelona, Valencia y Alicante á Palma, en. Santa María á Costrix.",
+      "obras_publicas": "Se sirve de los caminos del tér. de su ayunt.",
+      "instruccion_publica": null,
+      "poblacion": "Fórmanla 138 edif. de pobre y antigua construcción. Está agreg. al ayunt. de Sancellas, de donde dista 3'4 k. Cuenta sobre unos 552 hab. y 138 edif.",
+      "industria": "Dedícase el vecindario á la agricultura.",
+      "geografia": "(Véase Sanséllas).",
+      "description": null,
+      "stats": {
+        "habitantes": 552,
+        "edificios": 138
+      },
+      "cross_references": ["Sanséllas"],
+      "confidence": "high"
+    },
+    {
+      "title": "BINIAMAR",
+      "place_type": "lugar",
+      "island": "Mallorca",
+      "municipality": "Selva",
+      "org_judicial": "Forma parte del part. jud. de Inca y corresponde á la aud. territ. de Palma de Mallorca.",
+      "org_civil": "Corresponde á la prov. de Baleares, al 3.er dist. de su part. jud. para las elecciones de diputados provinciales y al dist. de Inca para las de Cortes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma. Prov. marítima de 1.a clase de Mallorca y dist. de 2.a de Alcudia.",
+      "org_economica": "Para el pago de contr. depende de la admon. econ. de su prov.",
+      "org_eclesiastica": "Se sirve de la iglesia parroquial de su ayunt.",
+      "servicio_publico": "Recibe y envía la corr. por en. marítima de Barcelona, Valencia y Alicante á Palma, en. Alcudia, pt. Inca á Escorca.",
+      "obras_publicas": "Se sirve de los caminos de su tér. municipal.",
+      "instruccion_publica": null,
+      "poblacion": "La forman los edif. mencionados, que nada de particular ofrecen. Está agreg. al ayunt. de Selva, del que dista 5'5 k. Cuenta sobre unos 504 hab. y 126 edif.",
+      "industria": "No hay más ind. que la agrícola.",
+      "geografia": "(Véase el artículo de su ayunt.).",
+      "description": null,
+      "stats": {
+        "habitantes": 504,
+        "edificios": 126
+      },
+      "cross_references": ["Selva"],
+      "confidence": "high"
+    },
+    {
+      "title": "BINIARÁIX",
+      "place_type": "lugar",
+      "island": "Mallorca",
+      "municipality": "Sóller",
+      "org_judicial": "Está con éste incluido en el part. jud. y aud. territ. de Palma.",
+      "org_civil": "Corresponde á la prov. de Baleares, al 4.° dist. de su part. jud. para las elecciones de diputados provinciales y al dist. de Palma para las de Cortes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma de Mallorca. Prov. marítima de 1.a clase de Mallorca y dist. de 2.a de Soller.",
+      "org_economica": "Depende de la admon. econ. de su prov. para el pago de contr.",
+      "org_eclesiastica": "Dióc. de Mallorca, sirviéndose para las necesidades del culto de la parroquia de su ayunt.",
+      "servicio_publico": "Recibe y emite la corr. por en. marítima de Barcelona, Valencia y Alicante á Palma, en. Soller.",
+      "obras_publicas": "Se sirve de los caminos del tér. municipal.",
+      "instruccion_publica": null,
+      "poblacion": "Consta de 152 edif. de construcción pobre y mediano aspecto, formando calles irregulares y feas. Está agreg. al ayunt. de Sóller, del que dista 2 k. Cuenta sobre unos 608 hab. y 152 edif.",
+      "industria": "Su única ind. es la agrícola.",
+      "geografia": "(Véase el artículo de su ayunt.).",
+      "description": null,
+      "stats": {
+        "habitantes": 608,
+        "edificios": 152
+      },
+      "cross_references": ["Sóller"],
+      "confidence": "high"
+    },
+    {
+      "title": "BINISALEM",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Binissalem",
+      "org_judicial": "Corresponde al part. jud. de Inca y á la aud. territ. de Palma de Mallorca.",
+      "org_civil": "Corresponde á la prov. de Baleares, al 2.° dist. de su part. jud. para las elecciones de diputados provinciales y al dist. de Inca para las de Cortes. Tiene puesto de Guardia civil con 6 hombres al mando de un sargento, pertenecientes al 5.° tercio y Comandancia de las Baleares.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma, prov. marítima de 1.a clase de Mallorca y dist. de 2.a de Alcudia.",
+      "org_economica": "Depende de la admon. econ. de su prov. para el pago de contr. Su presupuesto municipal asciende á la suma de 16,676'63 pts., nivelados los gastos al ingreso.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca, y bajo la advocación de San Jaime tiene una iglesia parroquial que se halla convenientemente servida.",
+      "servicio_publico": "Verifica el servicio de corr. por en. marítima de Barcelona, Valencia y Alicante á Palma, en. Alcudia. Tiene un hospital á cargo de Hermanas de la Caridad, bastante bien organizado.",
+      "obras_publicas": "Atraviesa el tér. la carretera de 2.° orden que de Palma conduce á Alcudia, existiendo ademas caminos vecinales en regular estado hasta Alaró, Selva, Sineu y Sanséllas, los que facilitan la com. con los demás de su part.",
+      "instruccion_publica": "Costeadas por el municipio, hay 2 escuelas de primeras letras, una para niños y otra de niñas, asistiendo por lo general unos 65 á 70 á la primera y sobre 25 á la segunda.",
+      "poblacion": "Esta v., que progresivamente aumenta y hermosea su cas., está formada de calles y plazas, guardando regular simetría y ofreciendo buen aspecto en lo general. Entre sus edif. los hay notables por su solidez y bella distribución. La casa consistorial es espaciosa y bien construida; pero la iglesia parroquial es un templo notabilísimo por más de un concepto. De arquitectura jónica y una solidez á toda prueba, tiene multitud de adornos que ostentan la perfección del arte. Está dividido por 3 naves de unos 40 m. de elevación las laterales, y la del centro no tendrá ménos de 50, admirándose en su cúpula la más atrevida y delicada construcción. Contiene 12 altares; el mayor está sostenido por columnas de mármol, no careciendo de mérito las estatuas que hay en él. Este y los restantes ofrecen á la vista preciosos trabajos en piedra mármol. La festividad de San Jaime, titular de este hermoso templo, se celebra con gran pompa y magnificencia, siendo la principal de esta pob. También celebra 2 fer., una en el mes de mayo y otra en noviembre, sin que estén consideradas como dignas de particular mención. Se hallan agreg. 211 cas. y grupos, edif., viv. y alb. ais. Cuenta con 3,617 hab. y 1,139 edif. entre habitados é inhabitados.",
+      "industria": "La agrícola es su más importante ind., aunque también merece particular mención la de las canteras de mármol y jaspe, á cuya explotación se dedican algunos de sus hab., igualmente que al comercio, entre el que se cuentan establecimientos bien surtidos para el consumo de la pob. Hay el número suficiente de profesiones y of. mecánicos más indispensables, como sastres, zapateros, carpinteros, etc., etc.",
+      "geografia": "Al pié de una montaña de corta elevación y sobre una llanura que presenta pintoresca y agradable perspectiva, encuéntrase la v. que describimos, confinando al N. con terreno de Alaró, S. con el de Sanséllas, E. con el de Inca y O. con el de Alaró. Casi todo el espacio es llano, y aunque productivo, no lo es tanto por carecer de agua, de la que solo existen las fuentes de que se surten para el consumo doméstico. La prod. es fuerte en cereales, regular.",
+      "description": null,
+      "stats": {
+        "habitantes": 3617,
+        "edificios": 1139,
+        "caserios_y_grupos": 211,
+        "presupuesto_municipal": 16676.63
+      },
+      "cross_references": [],
+      "confidence": "high"
+    }
+  ]
+}

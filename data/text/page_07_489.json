@@ -1,0 +1,28 @@
+{
+  "vol": "07",
+  "page": 489,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "MOSCARÍ",
+      "place_type": "lugar",
+      "island": "Mallorca",
+      "municipality": "Selva",
+      "org_judicial": "Hállase adscrita al part. jud. de Inca y á las aud. de lo criminal y territ. de Palma.",
+      "org_civil": "Corresponde á la prov. de Baleares y contribuye, con su ayunt., para las elecciones de diputados provinciales y las de Cortes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma de Mallorca.",
+      "org_economica": "Para el pago de sus impuestos depende de la Delegación de Hacienda de su prov.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca, al arciprestazgo de Manacor, y tiene una iglesia aneja de la de Selva.",
+      "servicio_publico": "Recibe y expide la corr. por en. m. de Barcelona, Valencia y Alicante á Palma de Mallorca, y en. de Alcudia.",
+      "obras_publicas": "Utiliza para verificar sus transportes y sostener sus relaciones con los pueblos limítrofes, los caminos vecinales que cruzan su tér. municipal.",
+      "instruccion_publica": "Costeada con fondos del municipio tiene una escuela incompleta, para niños de ambos sexos, á la que asiste un regular número de alumnos.",
+      "poblacion": "Nada de particular ofrecen los edif. que la forman.",
+      "industria": "Su ind. es la agrícola y las que con ella se relacionan, ejerciéndose sin embargo por algunos de sus moradores los of. mecánicos y profesiones de mayor utilidad.",
+      "geografia": "(Véase el artículo referente á su ayunt.).",
+      "description": "Agregado al ayunt. de Selva, del que dista 2'7 k. Cuenta sobre unos 250 hab. y 63 edif., de los que 1 está inhabitado.",
+      "stats": {"habitantes": 250, "edificios": 63, "inhabitados": 1, "distancia_ayunt_km": 2.7},
+      "cross_references": ["Selva", "Inca", "Manacor"],
+      "confidence": "high"
+    }
+  ]
+}

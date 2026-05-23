@@ -1,0 +1,33 @@
+{
+  "vol": "01",
+  "page": 882,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "ARTÁ",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Artà",
+      "org_judicial": "Está sujeta al part. jud. de Manacor, distante 22 k., y á la aud. territ. de Baleares.",
+      "org_civil": "Corresponde á la prov. de Baleares, y pertenece al 1.er dist. de su part. jud. para las elecciones de diputados provinciales y al dist. de Manacor para las de Cortes.",
+      "org_militar": "Comandancia de Palma. Departamento marítimo de Cartagena, prov. de 1.a clase de Mallorca y dist. de 2.a de Alcúdia.",
+      "org_economica": "Admon. econ. de su prov.",
+      "org_eclesiastica": "Corresponde á la dióc. de Mallorca y su iglesia parroquial está consagrada á Ntra. Sra. y San Salvador, servida cual corresponde al buen desempeño del culto.",
+      "servicio_publico": "Recibe la corr. por en. m. de Barcelona, Valencia y Alicante á Palma de Mallorca y en. de Inca á Capdepera.",
+      "obras_publicas": "Pasa por esta pob. la carretera de 2.° orden que de Palma se dirige á Capdepera, pasando también por Algaida y Manacor; tiene ademas caminos vecinales y de herradura en regular estado de conservación.",
+      "instruccion_publica": "Tiene escuelas á las que concurren un número bastante regular de niños de ambos sexos.",
+      "poblacion": "La componen 1,062 casas de regular construcción, debiendo particularizar la del ayunt., que es bastante espaciosa y tiene buen aspecto; todas ellas están distribuidas formando varias calles muy cómodas, no obstante estar en declive, y sus plazas son espaciosas. Se hallan agreg. 73 cas. y grupos, edif., viv. y alb. ais. Cuenta 5,143 hab. y 1,224 edif. entre habitados é inhabitados.",
+      "industria": "Aunque su mayor ind. es la agrícola, cuenta esta pob. con fábricas de chocolate, cal, de objetos cerámicos, de yeso y de jabón; hay varios establecimientos comerciales, molinos harineros y multitud de of. mecánicos, como también algunas profesiones.",
+      "geografia": "En la falda de un cerro que dominan otros de mayor elevación y no léjos del mar, está fundada, combatiéndola frecuentemente los vientos del N. y E., y disfruta de clima sumamente saludable. Linda el tér. por N. y E. con el mar, por S. con el de Manacor y por O. con los de Santa Margarita y Petra, midiendo su extensión unos 14 k. aproximadamente; en su radio se encuentran multitud de predios y muchas casas de campo, la mayor parte de las cuales están construidas á la moderna y tienen toda clase de comodidades. Feraz y de buena calidad es el terreno, que riegan las abundantes aguas de los sobrantes del gran número de fuentes que brotan en distintos parajes. Los montes que dominan la pob. ofrecen puntos de vista bellísimos y sus cimas y faldas están pobladas de árboles de diferentes clases, encontrándose también plantas aromáticas y medicinales, arbustos, mata baja y hierbas de pasto, y en algunos cerros canteras de varias clases, siendo una de éstas muy especial para la construcción de ruedas de molino. La cosecha que rinden las tierras consiste en trigo candeal y común, avena, cebada, cáñamo, guijas, judías, habas, garbanzos, hortalizas. No podemos terminar este artículo sin hablar de las famosas cuevas que tanta celebridad han adquirido y que realmente merecen ser visitadas. En la montaña, sobre cuya cima se encuentra la torre de Moscot, hállanse aquellos incomparables salones divididos por columnas y por distintas caprichosas cristalizaciones, pudiéndose admirar allí el delicado trabajo de la naturaleza; cornisas, arcos, columnas de diferentes órdenes y multitud de objetos que allí compone y levanta el agua con la formación continua de estalácticas, todo se halla reunido y todo contribuye poderosamente á llenar de admiración al viajero, pues comenzando por la entrada, que ya es un tanto imponente, y concluyendo por el fantástico efecto producido por la luz de las antorchas entre los calados de las aéreas columnas y los primorosos artesonados de sus bóvedas, todo es verdaderamente maravilloso.",
+      "description": null,
+      "stats": {
+        "habitantes": 5143,
+        "edificios": 1224,
+        "caserios_y_grupos": 73,
+        "casas": 1062
+      },
+      "cross_references": [],
+      "confidence": "high"
+    }
+  ]
+}

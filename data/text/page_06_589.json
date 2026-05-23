@@ -1,0 +1,28 @@
+{
+  "vol": "06",
+  "page": 589,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "LLUMMAYOR ó LLUCH-MAYOR",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Llucmajor",
+      "org_judicial": "Hállase adscrita al part. jud. y aud. de lo criminal y territ. de Palma, de donde dista 20 k.",
+      "org_civil": "Corresponde á la prov. de Baleares y al dist. de Palma para las elecciones de diputados provinciales y las de Cortes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma.",
+      "org_economica": "Para el pago de sus impuestos depende de la Delegación de Hacienda de su prov.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca, al arciprestazgo de Palma y tiene una iglesia parroquial bajo la advocación de San Miguel, cuyo curato es de la categoría de término.",
+      "servicio_publico": "Recibe y expide la corr. por la en. m. de Barcelona, Valencia y Alicante á Palma y en. de Santany.",
+      "obras_publicas": "Para verificar sus transportes y relacionarse con las demás pob. limítrofes, cuenta con diversos caminos vecinales, los que se encuentran en regular estado de conservación.",
+      "instruccion_publica": "Sostiénense con fondos del municipio las escuelas necesarias para los dos sexos, las que están bien atendidas.",
+      "poblacion": "Distribuidas en diferentes calles y algunas plazas, anchas las primeras y perfectamente limpias todas, encuéntranse las 256 casas que la forman, habiendo entre éstas un gran número de moderna construcción, respondiendo todas perfectamente á las necesidades de sus respectivos destinos. La iglesia parroquial, lo mismo que la casa del ayunt., son dos buenos edif. á propósito para el objeto á que están destinados. El vecindario se encuentra bien surtido de aguas para el consumo doméstico, merced á las fuentes que, tanto dentro como fuera de la pob. brotan; hay Casinos, Sociedad de socorros mutuos, Casa de Beneficencia y celebra su principal festividad el día de su santo Patrón.",
+      "industria": "Aunque la ind. dominante en esta localidad es la agrícola, también la manufacturera tiene su representación; así es que cuenta con fábricas de tejidos, de fósforos, de licores, alfarerías, establecimientos para la venta de artículos, tanto de lujo como de primera necesidad, y todas cuantas conocida utilidad. Del 29 de setiembre al 17 de octubre de cada año, tiene lugar una fer. en esta v., á la que afluye gran número de hab. de toda la prov., verificándose en ella transacciones de bastante importancia.",
+      "geografia": "En un llano á la falda del monte denominado Ronda, disfrutando de buena ventilación y clima saludable, encuéntrase situada esta v., cuyo tér. municipal confina por los cuatro puntos cardinales con los de Porrera, Algaida y Palma. El terreno es de regular calidad, consistiendo las prod. en granos, frutas, legumbres, hortalizas y pastos; mantiénese ganado de todas especies y abunda la caza de pelo y pluma.",
+      "description": null,
+      "stats": {"habitantes": 8858, "edificios": 3195, "habitados_temporalmente": 161, "inhabitados": 752, "casas_y_grupos": 967, "casas_centro": 256},
+      "cross_references": ["Porrera", "Algaida", "Palma"],
+      "confidence": "high"
+    }
+  ]
+}

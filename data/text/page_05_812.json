@@ -1,0 +1,28 @@
+{
+  "vol": "05",
+  "page": 812,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "ISLA DE MALLORCA",
+      "place_type": "isla",
+      "island": "Mallorca",
+      "municipality": null,
+      "org_judicial": null,
+      "org_civil": null,
+      "org_militar": null,
+      "org_economica": null,
+      "org_eclesiastica": null,
+      "servicio_publico": null,
+      "obras_publicas": null,
+      "instruccion_publica": null,
+      "poblacion": null,
+      "industria": null,
+      "geografia": "Esta isla hállase al E. de la de Ibiza, y se halla separada de ella por un espacio de 81 k. en dirección NE.: su mayor longitud es de 99 k. entre las puntas Rebasada ó de Juéu, y el Cabo de Pera, que son sus puntos más salientes por O. y E. El Cabo Formentor es el más avanzado al N., y el de Salinas al S., mediando entre ambos una extensión de 79 k. Desde la punta Rebasada al Cabo Formentor, la costa corre en dirección NE., y en línea muy seguida, con pequeñas entradas de las que sólo merece nombrarse el puerto de Sóller: el segundo cabo forma una península muy angosta y al S. de ella se encuentra una bahía considerable llamada el puerto Menor ó de Pollensa: otro gran saliente peninsular en cuyo istmo se halla la c. de Alcudia y que termina en el Cap del Pinar, cierra esta bahía por el S., y la separa de otra más extensa, denominada Puerto Mayor ó de Alcudia; también se designa con el nombre de bahía de Alcudia al conjunto de las dos ensenadas, comprendidas entre el cabo Formentor y el de Ferrutx que limita al S. la última, formando una península terminada en el Cap del Pinar. Desde el cabo Ferrutx al de Pera, la costa es también seguida en dirección NO. á SE. y sin abrigos notables: luégo hasta el de Salinas va hacia el SO. y en línea cási recta con diversas entradas, de las que sólo debemos citar el puerto Colom. La última parte del perímetro entre el cabo de Salinas y la punta Rebasada, que están en dirección SE. NO., presenta grandes inflexiones, marcándose en ella los cabos Blanco, Regana y el de Calafiguera: entre los dos últimos está la muy extensa y abierta bahía de Palma, cuyo fondo ocupa la pob. y puerto artificial de su nombre, hallándose ántes y después de ella pequeñas caletas, de las que sólo nombraremos el puerto Pí. Pasado el cabo de Calafiguera, se encuentran otras entradas más profundas y el cabo de la Mola, cerrando al S. el puerto de Andraitx, bastante concurrido. Tocando á la punta Rebasada se halla la isleta Dragonera, elevada 320 m. sobre el mar, que es la mayor de todas las que circundan las Islas Baleares: en todo el perímetro de Mallorca, sólo se ven reducidos islotes ó peñascos muy inmediatos á las costas, y en corto número. La superficie de Mallorca y Dragonera es de 3,391 k. cuadrados. Una gran cord. corre bastante seguida de la Punta Rebasada al cabo Formentor marchando siempre paralela y muy próxima á la costa del N.: en la parte occidental domina en ella el Puig den Galatzó de 980 m. de altitud: en la central el Puig den Torrella de 1,463 y la Silla de Torrellas de 1,570 m.: este es el punto más elevado de toda la isla. El Puig Major de Lluch, en la cumbre y algo al E., alcanza todavía 1,163 m. Entre Galatzó y Torrellas se halla el Coll de Sóller á 562 m., por donde comunica el puerto de este nombre con el de Palma: y el Puig de Tex de 426. Otros estribos se desprenden también de esta cadena, siendo el principal y más extenso, el que arranca perpendicularmente de Galatzó, y pasando por la Mola del Esclop de 794 m., tuerce luego con el nombre de Sierra de Sa Burguesa. El ancho de la zona montañosa inmediata á la costa del N., es de 14 k., cuando más, y luégo sigue una gran llanura con suaves ondulaciones, cuyo nivel general es de unos 50 m. Sobre esta planicie sólo se elevan algunos cerrillos ó colinas, siendo los más notables el Puig de Bon-any, el de Randa, el Montesion de 95 m., el Puig de Consolación, el de San Salvador y el de Llodrá que forman una especie de círculo. En el trozo que media entre la parte meridional de la bahía de Alcudia y el Cap de Pera, se alza una cadena más seguida é importante, dominando en ella el Bec de Ferrutx de 538 m. Citaremos los torrentes de San Miguel y de Muro que desembocan en la insalubre Albufera Mayor, próxima á las playas de Alcudia; los de Banderola y Borja, que van á estas algo más al S., y el de Juca que vierte en la bahía de Palma. Además de la albufera mencionada hay varios estanques más pequeños en las playas de Pollensa: el del Prat, desaguado recientemente en los arenales al E. de Palma y otros en diversos puntos, convertidos algunos de ellos en salinas.",
+      "description": null,
+      "stats": {"superficie_km2": 3391, "longitud_max_km": 99, "ancho_max_km": 79},
+      "cross_references": ["Ibiza", "Dragonera", "Palma", "Alcudia", "Pollensa", "Sóller", "Andraitx", "Lluch"],
+      "confidence": "high"
+    }
+  ]
+}

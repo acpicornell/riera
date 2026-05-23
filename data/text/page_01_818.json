@@ -1,0 +1,31 @@
+{
+  "vol": "01",
+  "page": 818,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "ARIANI",
+      "place_type": "lugar",
+      "island": "Mallorca",
+      "municipality": "Petra",
+      "org_judicial": "Part. jud. de Manacor y aud. territ. de las Baleares.",
+      "org_civil": "Corresponde á la prov. de las Baleares, y pertenece al 3.er dist. de su part. jud. para las elecciones de diputados provinciales y al dist. de Manacor para las de Cortes.",
+      "org_militar": "C. G. de las Baleares y G. M. de Palma.",
+      "org_economica": "Admon. de su prov., lo mismo que su ayunt.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca.",
+      "servicio_publico": "Recibe y emite la corr. por en. m. de Barcelona, Valencia y Alicante á Palma de Mallorca, en. de Manacor y pt. de Petra.",
+      "obras_publicas": "Este l. se pone de los caminos que posee su municipalidad.",
+      "instruccion_publica": null,
+      "poblacion": "Tiene los edif. arriba mencionados y entre ellos no hay ninguno que merezca especial descripción. Cuenta sobre unos 320 hab. y 137 edif. Está agreg. al ayunt. de Petra, del que dista 3'4 k.",
+      "industria": "La más importante de sus ind. la forma la agricultura; hay algunos establecimientos comerciales para la expendicion de los artículos más necesarios y existen también un corto número of. mecánicos.",
+      "geografia": "Encuéntrase fundado en una extensa llanura, libre de la influencia de todos los vientos y disfrutando alegre cielo y sano clima; carece de tér. propio por hallarse enclavado en el territorio del ayunt. ántes mencionado.",
+      "description": null,
+      "stats": {
+        "habitantes": 320,
+        "edificios": 137
+      },
+      "cross_references": ["Petra"],
+      "confidence": "high"
+    }
+  ]
+}

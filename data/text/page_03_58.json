@@ -1,0 +1,16 @@
+{
+  "vol": "03",
+  "page": 58,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "CABO SALINAS",
+      "place_type": "cabo",
+      "island": "Mallorca",
+      "municipality": "Santanyí",
+      "description": "de la prov. de Mallorca. Corresponde al dist. marítimo de 2.a clase de Felanitx, prov. de Mallorca y departamento de Cartagena. En la punta más saliente de este cabo se proyectó en el año 1860 construir un faro con aparato de 3.° ó 4.° órden; pero en el año 1879 no se había empezado la construcción del mismo, y no sabemos en el momento en que escribimos estas líneas que haya vuelto á hablarse del asunto.",
+      "cross_references": [],
+      "confidence": "high"
+    }
+  ]
+}

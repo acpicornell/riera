@@ -1,0 +1,28 @@
+{
+  "vol": "05",
+  "page": 811,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "ISLA DE IBIZA",
+      "place_type": "isla",
+      "island": "Ibiza",
+      "municipality": null,
+      "org_judicial": null,
+      "org_civil": null,
+      "org_militar": null,
+      "org_economica": null,
+      "org_eclesiastica": null,
+      "servicio_publico": null,
+      "obras_publicas": null,
+      "instruccion_publica": null,
+      "poblacion": null,
+      "industria": null,
+      "geografia": "Esta isla tiene una longitud máxima de 39 k. entre la Punta Grosa y el cabo de Llentrisca, puntos situados al NE. y SO. de ella: su ancho medio es sólo de 18 k. Los cabos más salientes son: al N. la punta Sierra, al S. la de las Portas, al E. el cabo Campanich y al O. el Pelat. Próxima al Campanich se halla la isleta de Tagomago y también hay algunos islotes cercanos á la costa del E.: al N. del cabo Pelat, é inmediata igualmente á la parte del O. se vé la isleta Cunillera ó Conejera y los islotes Bledas que ya hemos nombrado: al S. del mismo cabo se encuentran las isletas del Vedrá y Vedranell, ambas de escasa importancia. En las costas orientales de la Isla se halla el puerto de Ibiza á que da nombre la cap. de ella, que es de corto abrigo y extensión; en las occidentales existe el de San Antonio ó Puerto Magno más extenso aunque tampoco muy abrigado. También hay varias calas en todo su perímetro y algunas playas; pero ninguna merece especial mención. La superficie de Ibiza, incluyendo las isletas y rocas inmediatas, es de 572 k. cuadrados. Una cord. seguida, pero formando distintas inflexiones, media entre el cabo Pelat y la punta Grosa; hacia el centro se deprime en el Coll de San Rafael, de 161 m. de altitud, comunicación entre los puertos de Ibiza y San Antonio; después se acerca más á las costas del N., y de aquí se desprenden algunos ramales que terminan en las puntas salientes del perímetro; en uno de estos se halla la cumbre llamada Camp-Vey de 396 m. de altitud tocando cási al mar, y que, sin embargo, es uno de los puntos más altos de toda la isla. Por los lados del S. y del O. los estribos son más cortos y ménos importantes y sólo se ven algunas colinas poco enlazadas, dominando los llanos que ocupan gran parte de la isla. Ningún arroyo de consideración se ve en toda ella siendo los más notables el llamado r. de Santa Eulalia, hacia la parte del E., el torrente de Fruitera que desemboca cerca de Ibiza y el Torrent-Gros, que desemboca en el puerto de San Antonio. También hay algunos terrenos pantanosos cerca de los puertos mencionados y grandes salinas inmediatas á la punta meridional de las Portas.",
+      "description": null,
+      "stats": {"superficie_km2": 572},
+      "cross_references": ["Tagomago", "Conejera", "Bledas", "Vedrá", "Vedranell", "San Antonio"],
+      "confidence": "high"
+    }
+  ]
+}

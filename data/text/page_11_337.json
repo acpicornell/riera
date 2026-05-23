@@ -1,0 +1,34 @@
+{
+  "vol": "11",
+  "page": 337,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "VILLAFRANCA",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Vilafranca de Bonany",
+      "org_judicial": "Hállase adscrita al part. jud. de Manacor y á las aud. de lo criminal y territ. de Palma, distando 8 k. de la primera de dichas pob. y 26 de la última.",
+      "org_civil": "Corresponde á la prov. de Baleares, al dist. de Manacor para las elecciones de diputados provinciales y al de la cap. para las de Córtes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma.",
+      "org_economica": "Para el pago de contr. depende de la Delegación de Hacienda de la prov.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca, al arciprestazgo de Manacor y tiene una iglesia, bajo la advocación de San Agustín, que es aneja de la parroquial de Petra, y está servida convenientemente.",
+      "servicio_publico": "Recibe y emite la corr. por en. m. de Barcelona, Valencia y Alicante á Palma de Mallorca y en.",
+      "obras_publicas": "Los caminos son vecinales, y conducen á los pueblos limítrofes.",
+      "instruccion_publica": "De fondos municipales se costean dos escuelas, una para cada sexo.",
+      "poblacion": "Distribuidos en diferentes calles y algunas plazas, irregulares y mal empedradas las primeras y poco capaces y de mal piso las últimas, están los 239 edif. que la forman. Son generalmente de sencilla construcción, pero dotados todos de buena distribución interior. Como verdaderamente notables, ora bajo el punto de vista arquitectónico, ora bajo el histórico, no existe ninguno, concretándose todos ellos á responder mejor ó peor á las necesidades de sus moradores. La iglesia parroquial y casa en que el ayunt. celebra sus reuniones, no pasan de ser edif. á propósito para el objeto á que se hallan destinados. Cuenta con algunos establecimientos para la venta de aquellos artículos de mayor necesidad; está el vecindario perfectamente abastecido de aguas para todos los usos, y celebra la principal festividad el día del Patrono de la v.",
+      "industria": "Su ind. es la agrícola y cuenta con las profesiones y of. mecánicos más indispensables para el servicio del vecindario.",
+      "geografia": "En la falda del monte denominado Boneny y á corta distancia de un torrente, disfrutando de buena ventilación y clima sano, encuéntrase situada esta v., cuyo tér. municipal confina por los cuatro puntos cardinales, con los de Petra, San Juan, Felanitx y Manacor; comprendiendo en el espacio que éstos abrazan algunos montes, en regular estado de población, pertenecientes á propiedad particular. El terreno, aunque de secano, es de buena calidad, y las prod. consisten en cereales, vino, higos, hortalizas y pastos; se mantiene ganado de varias clases, además del necesario para las faenas agrícolas, y hay caza de pelo y pluma.",
+      "description": null,
+      "stats": {
+        "habitantes": 1165,
+        "edificios": 283,
+        "edificios_habitados_temporalmente": 14,
+        "edificios_inhabitados": 43,
+        "caserios_y_grupos": 27
+      },
+      "cross_references": [],
+      "confidence": "high"
+    }
+  ]
+}

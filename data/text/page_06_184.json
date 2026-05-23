@@ -1,0 +1,28 @@
+{
+  "vol": "06",
+  "page": 184,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "LA VILETA",
+      "place_type": "agregado",
+      "island": "Mallorca",
+      "municipality": "Palma",
+      "org_judicial": "Hállase adscrito al part. jud. y aud. de lo criminal y territ. de Palma.",
+      "org_civil": "Corresponde á la prov. de las Baleares y contribuye con su ayunt. para las elecciones de diputados provinciales y las de Cortes.",
+      "org_militar": "C. G. de las Baleares y G. M. de Palma.",
+      "org_economica": "Para el pago de contr. depende, con su ayunt., de la Delegación de Hacienda de la prov.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca y tiene una iglesia que es ayuda de la parroquial de Santa Cruz, de Palma.",
+      "servicio_publico": "Recibe y emite la corr. por en. m. de Barcelona, Valencia y Alicante á Palma.",
+      "obras_publicas": "Se comunica con los pueblos limítrofes, por medio de los caminos que atraviesan el tér. del ayunt. de que forma parte.",
+      "instruccion_publica": "De fondos municipales se costean escuelas para niños y niñas, asistiendo á ellas un número de alumnos que está en relación con el de vec.",
+      "poblacion": "La constituye el número de casas expresado, que por regla general, son de construcción sencilla, sin otras comodidades interiores que las puramente indispensables al género de vida de sus moradores y se hallan distribuidas en calles, algunas de ellas regulares. La iglesia nada de particular encierra.",
+      "industria": "La ind. dominante en esta localidad es la agrícola; cuenta con las profesiones y of. mecánicos de más reconocida utilidad para el servicio del vecindario y con varios establecimientos de venta de diversos artículos.",
+      "geografia": "Agregado al ayunt. de Palma, del que dista 5'5 k. Enclavado en el tér. de su ayunt., véanse sus límites y demás en el artículo de su referencia.",
+      "description": null,
+      "stats": {"habitantes": 960, "edificios": 338, "habitados_temporalmente": 96, "inhabitados": 2},
+      "cross_references": ["Palma", "Santa Cruz"],
+      "confidence": "high"
+    }
+  ]
+}

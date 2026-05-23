@@ -1,0 +1,28 @@
+{
+  "vol": "04",
+  "page": 797,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "FORNALUTX",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Fornalutx",
+      "org_judicial": "Part. jud., aud. de lo criminal y territ. de Palma, de la que dista 22 k.",
+      "org_civil": "Prov. de Baleares; dist. de Palma para las elecciones de diputados provinciales y de Córtes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma de Mallorca; marítima: departamento de Cartagena, prov. marítima de Mallorca (a Sóller dist.), á cargo de un ayudante, teniente de navío.",
+      "org_economica": "Para el pago de contr. depende de la Delegación de Hacienda de su prov.",
+      "org_eclesiastica": "Dióc. de Mallorca; iglesia parroquial dedicada á la Natividad de Ntra. Sra., convenientemente servida.",
+      "servicio_publico": "Recibe y emite la corr. por en. m. de Barcelona, Valencia y Alicante á Palma y en. de Sóller.",
+      "obras_publicas": "Para sus com. y arrastres cuenta con varios caminos vecinales y de herradura que se hallan regularmente conservados.",
+      "instruccion_publica": "De fondos municipales se costea una escuela para cada sexo, cuya asistencia está en relación con el número de vec.",
+      "poblacion": "Formando una especie de gradería hállanse las casas que la componen, lo cual les da un aspecto bastante original y pintoresco. Lo mismo el antiguo que el moderno caserío y de igual manera éste que la casa capitular é iglesia parroquial, no hacen más que responder á las necesidades de sus moradores los unos, y á las de sus destinos especiales los otros dos edif. Varias fuentes que brotan en el tér. entre las cuales hay una que lleva tan copioso caudal que su derrame forma un arroyo que impulsa un molino harinero, abastecen al vecindario del indispensable líquido para todas las necesidades domésticas.",
+      "industria": "La agricultura es la principal ocupación de estos naturales, dedicándose varios de ellos á las profesiones y of. mecánicos más indispensables, y á la pesca.",
+      "geografia": "En un valle formado por las estribaciones de varias montañas y al pié del monte denominado Puigmajor, disfrutando de clima templado y saludable, está situada la v. que recorremos, cuyos límites por los cuatro vientos son los de Sóller, Escorca y el mar. El terreno es arcilloso y más propio para arbolado que para plantíos, así es que sus prod. se reducen á algarrobas, naranjas, toda clase de frutas y algunas legumbres y hortalizas; elabórase gran cantidad de aceite y se mantiene ganado lanar.",
+      "description": null,
+      "stats": {"habitantes": 1110, "edificios": 511, "habitados_temporalmente": 52, "inhabitados": 192, "casas_y_grupos": 187},
+      "cross_references": ["Sóller", "Escorca", "Puigmajor"],
+      "confidence": "high"
+    }
+  ]
+}

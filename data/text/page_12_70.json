@@ -1,0 +1,33 @@
+{
+  "vol": "12",
+  "page": 70,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "ALAYOR Ó ALAÓ",
+      "place_type": "villa",
+      "island": "Menorca",
+      "municipality": "Alaior",
+      "org_judicial": "Pertenece á la aud. de lo criminal de Palma.",
+      "org_civil": "Para las elecciones de diputados provinciales pertenece al dist. de su nombre y al de Mahon para las de Córtes.",
+      "org_militar": null,
+      "org_economica": null,
+      "org_eclesiastica": "Dióc. de Menorca, iglesia parroquial de Santa Eulalia y curato de ascenso. Tiene otra iglesia que es sufragánea de la de Santa Eulalia, bajo la advocación de San Diego. Hay un hospital con Hermanas Terciarias del Cármen.",
+      "servicio_publico": "Recibe la corr. por en. marítima de Barcelona, Valencia y Alicante á Palma de Mallorca y Palma á Mahon, en. de Ciudadela.",
+      "obras_publicas": null,
+      "instruccion_publica": null,
+      "poblacion": null,
+      "industria": null,
+      "geografia": null,
+      "description": null,
+      "stats": {
+        "habitantes": 4980,
+        "edificios": 2356,
+        "edificios_habitados_temporalmente": 57,
+        "edificios_inhabitados": 1278
+      },
+      "cross_references": [],
+      "confidence": "high"
+    }
+  ]
+}

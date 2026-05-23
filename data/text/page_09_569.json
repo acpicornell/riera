@@ -1,0 +1,33 @@
+{
+  "vol": "09",
+  "page": 569,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "SANTA GERTRUDIS",
+      "place_type": "lugar",
+      "island": "Ibiza",
+      "municipality": "Santa Eulària des Riu",
+      "org_civil": "Corresponde á la prov. de Baleares y contribuye, con su ayunt., para las elecciones de diputados provinciales y las de Córtes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma.",
+      "org_eclesiastica": "Pertenece á la dióc. de Ibiza, que según el Concordato de 1851 debe unirse á la de Mallorca, y para sus necesidades religiosas se sirve de la iglesia más inmediata.",
+      "org_judicial": "Hállase adscrito al part. jud. de Ibiza y á las aud. de lo criminal y territ. de Palma.",
+      "org_economica": "Para el pago de contr. depende, con su ayunt., de la Delegación de Hacienda de su prov.",
+      "servicio_publico": "Recibe y expide la corr. por en. m. de Barcelona, Valencia y Alicante á Palma de Mallorca, esf. de Ibiza y en. de San Juan Bautista.",
+      "obras_publicas": "Para verificar sus transportes y relacionarse con los pueblos limítrofes, utiliza los caminos que cruzan por su tér.",
+      "instruccion_publica": "La escuela se halla en la cabecera de su ayunt.",
+      "industria": "La ind. única es la agrícola.",
+      "poblacion": "Ninguna particularidad ofrecen los edif. que la forman.",
+      "geografia": "(Véase el artículo referente á su ayunt.).",
+      "description": "Lugar agregado al municipio de Santa Eulalia, del que dista 11'2 k. Cuenta sobre unos 50 hab. y 13 edif., de los que 1 está habitado temporalmente.",
+      "stats": {
+        "habitantes": 50,
+        "edificios": 13,
+        "habitados_temporalmente": 1,
+        "distancia_km": 11.2
+      },
+      "cross_references": ["Santa Eulalia", "Ibiza", "San Juan Bautista"],
+      "confidence": "high"
+    }
+  ]
+}

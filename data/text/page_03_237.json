@@ -1,0 +1,33 @@
+{
+  "vol": "03",
+  "page": 237,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "CALVIÁ",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Calvià",
+      "org_judicial": "Forma parte del part. jud. y aud. territ. de Palma.",
+      "org_civil": "Corresponde á la prov. de las Baleares, al 5.° dist. de su part. jud. para las elecciones de diputados provinciales y á la circunscripción de Palma para las de Cortes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma. Departamento marítimo y dist. de 1.a clase de Palma de Mallorca.",
+      "org_economica": "Depende para el pago de contr. de la admon. econ. de la prov.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca y tiene una iglesia parroquial bajo la advocación de San Juan Bautista, siendo aneja de ésta la del agreg. Escapdellá.",
+      "servicio_publico": "Recibe y emite la corr. por en. m. de Barcelona, Valencia y Alicante á Palma.",
+      "obras_publicas": "Varios caminos vecinales, algunos asequibles al paso de carruajes, sirven para la com. con los pueblos limítrofes, siendo de lamentar el mal estado de conservación en que se hallan.",
+      "instruccion_publica": "De fondos municipales se costea una escuela de primeras letras para niños de ambos sexos, viéndose regularmente asistida.",
+      "poblacion": "La forman 300 edif., esparcidos sin orden ni uniformidad de plazas ni calles, no muy espaciosos y de construcción sencilla, incluyendo en ellos así la casa consistorial como la iglesia que ninguna importancia ofrecen. En el radio hay varias fuentes de cuya agua se sirve el vecindario. Se hallan agreg. el l. de Escapdellá y 132 cas. y grupos, edif., viv. y alb. ais. Cuenta con 2,577 hab. y 785 edif., de los cuales 12 están habitados temporalmente y 16 inhabitados.",
+      "industria": "La principal ind. es agrícola, ejerciéndose algunas profesiones y of. mecánicos útiles é indispensables.",
+      "geografia": "Sobre una llanura circuida casi toda de montes pero bien combatida de los vientos, disfrutando clima sano y benigno, hállase situada esta v. teniendo por límites al N. el tér. de Puigpuñent, al E. el de Palma, al S. el mar y al O. el de Andraitx, con una extensión de 22 k. de N. á S. y 17 de E. á O. El terreno es de regular calidad y casi de secano, pues aunque discurren algunos arroyos, suelen secarse en el estío. La prod. consiste en cereales, aceite y almendra principalmente. Los montes son estériles, conteniendo solo maleza y abrojo. Se cría ganado lanar, vacuno y cabrío y hay alguna caza de conejos y perdices.",
+      "description": null,
+      "stats": {
+        "habitantes": 2577,
+        "edificios": 785,
+        "caserios_y_grupos": 132,
+        "casas": 300
+      },
+      "cross_references": ["Escapdellá"],
+      "confidence": "high"
+    }
+  ]
+}

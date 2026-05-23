@@ -1,0 +1,32 @@
+{
+  "vol": "04",
+  "page": 320,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "ELS BALLADORS",
+      "place_type": "lugar",
+      "island": "Mallorca",
+      "municipality": "Esporles",
+      "org_judicial": "Part. jud. de Palma y aud. de lo criminal y territ. del mismo nombre.",
+      "org_civil": "Corresponde á la prov. de Baleares, y contribuye con su ayunt. á las elecciones de diputados provinciales y las de Cortes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma de Mallorca.",
+      "org_economica": "Para el pago de contr. depende, con su ayunt., de la Delegación de Hacienda de su prov.",
+      "org_eclesiastica": "Pertenece á la misma dióc. y arciprestazgo que su ayunt., en cuya cabecera reside la iglesia parroquial.",
+      "servicio_publico": "Recibe y emite la corr. por en. m. de Barcelona, Valencia y Alicante á Palma y pt. de Esporlas.",
+      "obras_publicas": "Se comunica con los pueblos limítrofes por medio de los caminos de que dispone su municipio.",
+      "instruccion_publica": "Tiene una escuela incompleta para niños y niñas.",
+      "poblacion": "La constituyen 64 casas, según se ha manifestado, ninguna de las cuales ofrece particularidad alguna.",
+      "industria": "Su principal ind. es la agrícola.",
+      "geografia": "(Véase el artículo referente á su ayunt.).",
+      "description": "Lugar agregado al ayunt. de Esporlas, del que dista 0'8 k. Cuenta sobre unos 220 hab. y 64 edif., de los que 9 están inhabitados.",
+      "stats": {
+        "habitantes": 220,
+        "edificios": 64,
+        "edificios_inhabitados": 9
+      },
+      "cross_references": ["Esporlas"],
+      "confidence": "high"
+    }
+  ]
+}

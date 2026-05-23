@@ -1,0 +1,28 @@
+{
+  "vol": "05",
+  "page": 880,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "ISLOTES BLEDAS",
+      "place_type": "islotes",
+      "island": "Ibiza",
+      "municipality": null,
+      "org_judicial": null,
+      "org_civil": null,
+      "org_militar": null,
+      "org_economica": null,
+      "org_eclesiastica": null,
+      "servicio_publico": null,
+      "obras_publicas": null,
+      "instruccion_publica": null,
+      "poblacion": null,
+      "industria": null,
+      "geografia": null,
+      "description": "(Baleares) — (Véase Isla de Ibiza).",
+      "stats": {},
+      "cross_references": ["Isla de Ibiza"],
+      "confidence": "high"
+    }
+  ]
+}

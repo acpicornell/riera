@@ -1,0 +1,28 @@
+{
+  "vol": "06",
+  "page": 1067,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "MANCOR",
+      "place_type": "agregado",
+      "island": "Mallorca",
+      "municipality": "Selva",
+      "org_judicial": "Hállase adscrito al part. jud. de Inca y á las aud. de lo criminal y territ. de Palma.",
+      "org_civil": "Corresponde á la prov. de Baleares y contribuye con su ayunt. para las elecciones de diputados provinciales y las de Cortes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma.",
+      "org_economica": "Para el pago de contr. depende, con su ayunt., de la Delegación de Hacienda de la prov.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca, al arciprestazgo de Inca y tiene una iglesia bajo la advocación de San Juan Bautista, aneja de la de Selva, la cual se halla convenientemente servida.",
+      "servicio_publico": "Recibe y emite la corr. por en. m. de Barcelona, Valencia y Alicante á Palma de Mallorca, en. de Alcudia y pt. de Inca.",
+      "obras_publicas": "Sus caminos son los que atraviesan el tér. de su ayunt.",
+      "instruccion_publica": "De fondos municipales se costea una escuela para ambos sexos.",
+      "poblacion": "Su caserío es de construcción sencilla, sin otras comodidades interiores que las puramente indispensables al género de vida de sus moradores.",
+      "industria": "Su ind. es la agrícola y of. que con ella se relacionan.",
+      "geografia": "Agregado al ayunt. de Selva, del que dista 7'7 k. (Véase el artículo referente á su ayunt.).",
+      "description": null,
+      "stats": {"habitantes": 500, "edificios": 254, "inhabitados": 18},
+      "cross_references": ["Selva"],
+      "confidence": "high"
+    }
+  ]
+}
