@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<title>Riera · Diccionari geogràfic-estadístic · Balears</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Explorador dels articles balears del Diccionario geográfico-estadístico de España y Portugal de Pablo Riera (1881–1887). Extracció estructurada des del facsímil de l'Biblioteca Digital de Castilla i Lleó.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Diccionari Riera · Balears">
+<meta property="og:description" content="Articles balears del Diccionario geográfico-estadístico de España y Portugal (1881–1887) de Pablo Riera, amb facsímils i text estructurat.">
+<meta property="og:locale" content="ca_ES">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📜%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<!-- Leaflet for the Mapa tab — loaded lazily by app.js on first tab click -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin="">
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <h1>Diccionari Riera · Balears</h1>
+    <p class="subtitle">Articles balears del <em>Diccionario geográfico-estadístico de España y Portugal</em> · Pablo Riera, 1881–1887</p>
+  </div>
+</header>
+
+<nav class="tabs tabs-main">
+  <button class="tab active" data-toptab="home">Inici</button>
+  <button class="tab" data-toptab="explore">Explorar</button>
+  <button class="tab" data-toptab="map">Mapa</button>
+  <button class="tab" data-toptab="stats">Estadístiques</button>
+  <button class="tab" data-toptab="notes">Notes</button>
+</nav>
+
+<!-- ===== HOME / INICI ===== -->
+<section id="tab-home" class="tab-content active" data-toptab="home">
+  <div class="home-hero">
+    <h1>Diccionari Riera · Balears</h1>
+    <p class="lead">Primer diccionari geogràfic-estadístic modern de la Península Ibèrica, publicat vint anys abans del Madoz. Aquesta edició digital posa a disposició, en format cercable, la totalitat dels articles referits al territori balear.</p>
+    <div class="home-stats">
+      <div class="home-stat"><span class="num" id="home-stat-entries">…</span><span class="label">articles balears</span></div>
+      <div class="home-stat"><span class="num">12</span><span class="label">volums (1881–1887)</span></div>
+      <div class="home-stat"><span class="num" id="home-stat-tomos-done">…</span><span class="label">toms indexats</span></div>
+      <div class="home-stat"><span class="num" id="home-stat-toptype">…</span><span class="label" id="home-stat-toptype-label">…</span></div>
+    </div>
+  </div>
+
+  <aside class="home-featured" id="home-featured" hidden>
+    <p class="featured-eyebrow">Mostra aleatòria del corpus</p>
+    <h2 class="featured-title" id="featured-title">…</h2>
+    <p class="featured-meta" id="featured-meta">…</p>
+    <p class="featured-excerpt" id="featured-excerpt">…</p>
+    <button class="featured-open" id="featured-open" type="button">Consultar l'article complet →</button>
+  </aside>
+
+  <div class="home-prose">
+    <h2>L'obra</h2>
+    <p>
+      El <em>Diccionario geográfico, estadístico, histórico, biográfico, postal,
+      municipal, marítimo y eclesiástico de España y sus posesiones de ultramar</em>
+      es publicà a <strong>Barcelona</strong> entre 1881 i 1887, en dotze volums, per
+      la <em>Imprenta y librería religiosa y científica del heredero de D. Pablo Riera</em>.
+      L'obra fou iniciada per Ricardo de Faura y Dávila i Eduardo Gutiérrez y García i,
+      a partir del quadern 11è, continuada sota la direcció de <strong>Pablo Riera y
+      Sans</strong>, amb la col·laboració de diversos escriptors. Representa el darrer
+      gran diccionari geogràfic-estadístic de la Restauració, posterior a Madoz
+      (1845–1850) i contemporani a la consolidació del cadastre Ibáñez (1856–1875)
+      i a la xarxa ferroviària espanyola.
+    </p>
+    <p>
+      La lectura comparada de Madoz i Riera permet documentar la transformació
+      d'Espanya durant la segona meitat del segle XIX: des de la <strong>desamortització
+      civil de Madoz (1855)</strong> i l'abolició del foralisme balear (1873) fins a la
+      modernització administrativa de la Restauració. Riera adopta el <strong>cens del
+      1877</strong> com a base demogràfica i s'organitza al voltant del nou esquema
+      administratiu —audiència territorial, partit judicial, governs civil/militar/marítim,
+      diòcesis— que ha desplaçat per complet les antigues jurisdiccions senyorials de
+      l'Antic Règim que Miñano i Madoz encara documentaven.
+    </p>
+
+    <h2>Abast d'aquesta edició digital</h2>
+    <p>
+      Aquesta plataforma recull la totalitat dels articles referits a les Illes Balears
+      identificats als dotze volums del Diccionari. L'extracció s'ha articulat en dues
+      fases: en primer lloc, una indexació basada en l'<strong>indent tipogràfic</strong>
+      preservat per <a href="https://pymupdf.readthedocs.io/" target="_blank"
+      rel="noopener">PyMuPDF</a> identifica els articles als facsímils PDF de la
+      <a href="https://bibliotecadigital.jcyl.es/" target="_blank" rel="noopener">Biblioteca
+      Digital de Castella i Lleó</a> (CC0); en segon lloc, un model de llenguatge
+      d'<a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>
+      llegeix cada article i el descompon en els camps de la fitxa: títol, tipologia,
+      illa, <strong>municipi modern</strong>, les <strong>nou seccions administratives
+      templade</strong> de Riera (Org. judicial / civil / militar / econòmica /
+      eclesiàstica + Servei públic + Obres públiques + Instrucció pública +
+      Població / Indústria / Geografia), dades estadístiques del cens del 1877
+      (habitants, edificis, viviendes, albergues) i referències creuades. La descripció
+      detallada del procediment es troba a la pestanya
+      <a href="#" data-goto="notes">Notes</a>.
+    </p>
+    <p>
+      <strong>Estat actual:</strong> els dotze volums (1881–1887) han estat processats
+      íntegrament i 114 entrades balears han estat extretes amb estructura completa.
+      El corpus comprèn els municipis amb ajuntament (Alaró, Calvià, Manacor, Pollença,
+      Sóller, Felanitx, Maó, Ciutadella, Alaior, Mercadal, Ferreries, Sant Lluís, Es
+      Castell, Eivissa, Sant Antoni, Sant Josep, Sant Joan, Santa Eulària), els lugars
+      agregats (Ariany, Llorito, Llombards, La Vileta, Establiments…), les capes
+      catalogades autònomament (Cabo Pinar, Cabo Formentor, Cabo Caballería, Cabo
+      d'Artrutx, Cabo Favàritx…) i els articles supramunicipals (Baleares, Isla de
+      Mallorca / Menorca / Ibiza, Isla Dragonera, Cabrera).
+    </p>
+  </div>
+
+  <div class="sources-grid">
+    <div class="source-card">
+      <h3>Mallorca</h3>
+      <p><span class="num" id="home-src-mallorca">…</span> entrades. Inclouen els <strong>municipis amb ajuntament</strong> de la lletra A (Alaró, Algaida, Andratx, Artà) fins a la V (Valldemossa, Vilafranca), passant per les capitals comarcals (Manacor, Sóller, Felanitx, Pollença, Inca, Llucmajor, Sa Pobla, Selva, Sineu) i les villes mitjanes (Bunyola, Marratxí, Calvià, Campanet, Campos, Capdepera, Consell, Costitx, Esporles, Estellencs, Fornalutx, Lloseta, Maria de la Salut, Montuïri, Muro, Petra, Porreres, Puigpunyent, Sant Joan, Santa Eugènia, Santa Maria del Camí, Son Servera, ...). S'inclouen també els nuclis agregats (Ariany, Caimari, Llorito, Llombards, La Vileta…) i les <strong>13 capes mallorquines catalogades autònomament</strong> al Tom III (Cabo Pinar, Formentor, Salinas, Ferrutx, de Pera, Calat-Figuera…).</p>
+    </div>
+    <div class="source-card">
+      <h3>Menorca</h3>
+      <p><span class="num" id="home-src-menorca">…</span> entrades. Comprenen tots els municipis menorquins (Ciutadella, Maó, Alaior, Mercadal, Ferreries, Es Castell, Sant Lluís, Sant Cristòfol) i les principals capes amb far (Cabo Caballería, Cabo d'Artrutx, Cabo de la Mola, Cabo Favàritx, Cabo Pontinat, Cabo Bajolí, Cabo Campanich). El Suplement (Tom XII) inclou una entrada singular: l'<em>Obispado de Menorca</em>, descripció eclesiàstica de la diòcesi amb seu a Ciutadella.</p>
+    </div>
+    <div class="source-card">
+      <h3>Eivissa</h3>
+      <p><span class="num" id="home-src-ibiza">…</span> entrades. Riera hi adopta la grafia <em>Ibiza</em>. El corpus comprèn les parròquies eivissenques (Sant Antoni Abad, Sant Josep, Sant Joan Bautista, Santa Eulalia, Santa Gertrudis) i la descripció general de l'illa al Tom V. Riera s'organitza pel <strong>nou esquema de parròquies rurals</strong> (1785) en comptes dels antics quartons que Madoz documentava.</p>
+    </div>
+    <div class="source-card">
+      <h3>Formentera</h3>
+      <p><span class="num" id="home-src-formentera">…</span> entrades. La descripció general de l'illa (Tom V) i el cross-reference a Ibiza com a entrada principal. Riera tracta les Pitiüses de manera conjunta sota la diòcesi d'Eivissa.</p>
+    </div>
+    <div class="source-card">
+      <h3>Cabrera</h3>
+      <p><span class="num" id="home-src-cabrera">…</span> entrada. L'illa al sud de Mallorca disposa d'un article propi al Tom III («<em>CABRERA ó SAN FELITJ DE CABRERA</em>»), amb la descripció del castell i de les tres fonts d'aigua dolça, més una entrada per al <em>Cabo Falcón</em>, situat dins el grup balear.</p>
+    </div>
+  </div>
+
+  <div class="home-prose">
+    <h2>Accés al corpus</h2>
+  </div>
+  <div class="home-actions">
+    <button class="home-action" data-goto="explore"><strong>Explorar →</strong><span>Consulta del corpus mitjançant filtres per illa, règim senyorial, tipologia d'alcaldia, tipus de lloc, volum i nivell de confiança.</span></button>
+    <button class="home-action" data-goto="notes"><strong>Notes →</strong><span>Biografia de Riera, mètode d'elaboració de l'obra, recepció crítica i abreviatures emprades en el text.</span></button>
+  </div>
+
+  <div class="home-prose">
+    <h2 id="fonts">Fonts: els dotze toms a la BDCyL</h2>
+    <p>
+      Tots dotze volums del Diccionari Riera estan dipositats a la
+      <a href="https://bibliotecadigital.jcyl.es/" target="_blank" rel="noopener">Biblioteca
+      Digital de Castella i Lleó</a> sota la referència
+      <a href="https://bibliotecadigital.jcyl.es/es/consulta/registro.cmd?id=24173"
+      target="_blank" rel="noopener"><code>id=24173</code></a>, en domini públic (CC0).
+      A diferència del corpus de Madoz o Miñano allotjats a Internet Archive sota
+      identificadors heterogenis, la BDCyL utilitza un identificador propi per a cada
+      volum. La taula següent recull el rang alfabètic de cada tom i el seu identificador
+      a la BDCyL.
+    </p>
+  </div>
+
+  <div class="tomos-table-wrap">
+    <table class="tomos-table">
+      <thead>
+        <tr>
+          <th>Tom</th>
+          <th>Any</th>
+          <th>Rang</th>
+          <th>Identificador BDCyL</th>
+          <th class="num-col">Pàg.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tom-num">I</td>
+          <td>1881</td>
+          <td>A — AZ</td>
+          <td><a href="https://bibliotecadigital.jcyl.es/es/catalogo_imagenes/grupo.do?path=10132396" target="_blank" rel="noopener"><code>path=10132396</code></a></td>
+          <td class="num-col">1021</td>
+        </tr>
+        <tr>
+          <td class="tom-num">II</td>
+          <td>1882</td>
+          <td>B — BU</td>
+          <td><a href="https://bibliotecadigital.jcyl.es/es/catalogo_imagenes/grupo.do?path=10132397" target="_blank" rel="noopener"><code>path=10132397</code></a></td>
+          <td class="num-col">1071</td>
+        </tr>
+        <tr>
+          <td class="tom-num">III</td>
+          <td>1882</td>
+          <td>C — CUZ</td>
+          <td><a href="https://bibliotecadigital.jcyl.es/es/catalogo_imagenes/grupo.do?path=10132398" target="_blank" rel="noopener"><code>path=10132398</code></a></td>
+          <td class="num-col">1259</td>
+        </tr>
+        <tr>
+          <td class="tom-num">IV</td>
+          <td>1883</td>
+          <td>D — F</td>
+          <td><a href="https://bibliotecadigital.jcyl.es/es/catalogo_imagenes/grupo.do?path=10132399" target="_blank" rel="noopener"><code>path=10132399</code></a></td>
+          <td class="num-col">943</td>
+        </tr>
+        <tr>
+          <td class="tom-num">V</td>
+          <td>1884</td>
+          <td>G — J</td>
+          <td><a href="https://bibliotecadigital.jcyl.es/es/catalogo_imagenes/grupo.do?path=10132400" target="_blank" rel="noopener"><code>path=10132400</code></a></td>
+          <td class="num-col">1239</td>
+        </tr>
+        <tr>
+          <td class="tom-num">VI</td>
+          <td>1884</td>
+          <td>L — LL</td>
+          <td><a href="https://bibliotecadigital.jcyl.es/es/catalogo_imagenes/grupo.do?path=10132348" target="_blank" rel="noopener"><code>path=10132348</code></a></td>
+          <td class="num-col">1141</td>
+        </tr>
+        <tr>
+          <td class="tom-num">VII</td>
+          <td>1885</td>
+          <td>M — O</td>
+          <td><a href="https://bibliotecadigital.jcyl.es/es/catalogo_imagenes/grupo.do?path=10132349" target="_blank" rel="noopener"><code>path=10132349</code></a></td>
+          <td class="num-col">1199</td>
+        </tr>
+        <tr>
+          <td class="tom-num">VIII</td>
+          <td>1885</td>
+          <td>P</td>
+          <td><a href="https://bibliotecadigital.jcyl.es/es/catalogo_imagenes/grupo.do?path=10132350" target="_blank" rel="noopener"><code>path=10132350</code></a></td>
+          <td class="num-col">1047</td>
+        </tr>
+        <tr>
+          <td class="tom-num">IX</td>
+          <td>1886</td>
+          <td>S (sants)</td>
+          <td><a href="https://bibliotecadigital.jcyl.es/es/catalogo_imagenes/grupo.do?path=10132351" target="_blank" rel="noopener"><code>path=10132351</code></a></td>
+          <td class="num-col">1197</td>
+        </tr>
+        <tr>
+          <td class="tom-num">X</td>
+          <td>1886</td>
+          <td>S — T</td>
+          <td><a href="https://bibliotecadigital.jcyl.es/es/catalogo_imagenes/grupo.do?path=10132352" target="_blank" rel="noopener"><code>path=10132352</code></a></td>
+          <td class="num-col">1069</td>
+        </tr>
+        <tr>
+          <td class="tom-num">XI</td>
+          <td>1887</td>
+          <td>V — Z</td>
+          <td><a href="https://bibliotecadigital.jcyl.es/es/catalogo_imagenes/grupo.do?path=10132353" target="_blank" rel="noopener"><code>path=10132353</code></a></td>
+          <td class="num-col">997</td>
+        </tr>
+        <tr class="tomo-row-supl">
+          <td class="tom-num">XII</td>
+          <td>1887</td>
+          <td>Suplement <span class="tag tag-supl">addicions a I–XI</span></td>
+          <td><a href="https://bibliotecadigital.jcyl.es/es/catalogo_imagenes/grupo.do?path=10132354" target="_blank" rel="noopener"><code>path=10132354</code></a></td>
+          <td class="num-col">509</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="home-prose">
+    <h2>Sobre les dades i el codi</h2>
+    <p>
+      Font primària: l'edició original de Riera a Madrid (1881–1887), 12 vols.ums, en <strong>domini
+      públic</strong>. Els facsímils provenen de digitalitzacions de la <strong>Universitat de
+      Toronto</strong>, <strong>Universitat Complutense de Madrid</strong>, <strong>Bayerische
+      Staatsbibliothek</strong> de Munic i <strong>Google Books</strong>, tots allotjats a
+      l'<a href="https://bibliotecadigital.jcyl.es/" target="_blank" rel="noopener">Biblioteca Digital de Castilla i Lleó</a>
+      sota identificadors heterogenis — veieu la secció <a href="#fonts">Fonts</a> més amunt
+      per al detall de cada tom.
+    </p>
+    <p>
+      Web 100% estàtica: HTML + CSS + un sol fitxer JSON, JS vanilla, sense backend ni WASM.
+    </p>
+  </div>
+</section>
+
+<!-- ===== EXPLORE ===== -->
+<section id="tab-explore" class="tab-content" data-toptab="explore">
+  <div class="source-stats" data-source="minano">
+    <span><strong id="stat-text">…</strong> entrades extretes</span>
+    <span><strong id="stat-volumes">…</strong> toms</span>
+    <span><strong id="stat-islands">…</strong> illes</span>
+    <span><strong id="stat-types">…</strong> tipus de lloc</span>
+  </div>
+  <div class="modern-intro">
+    <p>
+      Els filtres de la barra lateral permeten restringir el corpus segons els criteris
+      desitjats. La selecció d'una fila desplega el text íntegre de l'article corresponent.
+    </p>
+    <p>
+      Cada registre conté la tipologia del lloc, l'illa, el municipi modern i les
+      <strong>nou seccions administratives</strong> que estructuren l'article (Organització
+      judicial, civil, militar, econòmica, eclesiàstica, Servei públic, Obres públiques,
+      Instrucció pública, Població, Indústria, Situació geogràfica i topogràfica). S'hi afegeixen
+      les xifres del cens del 1877 (habitants, edificis, viviendes, albergues) i les
+      referències creuades.
+    </p>
+    <p>
+      La columna <strong>Tom/Pàg.</strong> identifica la ubicació de l'entrada dins dels
+      dotze volums originals (1881–1887). La icona ↗ obre el volum a la Biblioteca Digital
+      de Castella i Lleó (BDCyL no permet enllaços directes a una pàgina concreta, així que
+      cal navegar fins a la pàgina indicada).
+    </p>
+  </div>
+  <div class="modern-explorer">
+    <aside class="filters filters-modern">
+      <h3>Filtres</h3>
+      <div class="filter-group">
+        <label for="f-search">Cerca (per títol o text)</label>
+        <input id="f-search" type="text" placeholder="P. ex.: Mallorca, Palma, castillo…" autocomplete="off">
+      </div>
+      <div class="filter-group">
+        <label for="f-island">Illa</label>
+        <select id="f-island"><option value="">— Totes —</option></select>
+      </div>
+      <div class="filter-group">
+        <label for="f-municipality">Municipi</label>
+        <select id="f-municipality"><option value="">— Tots —</option></select>
+      </div>
+      <div class="filter-group">
+        <label for="f-type">Tipus de lloc</label>
+        <select id="f-type"><option value="">— Tots —</option></select>
+      </div>
+      <div class="filter-group">
+        <label for="f-vol">Tom</label>
+        <select id="f-vol"><option value="">— Tots —</option></select>
+      </div>
+      <div class="filter-group">
+        <label for="f-conf">Confiança</label>
+        <select id="f-conf">
+          <option value="">— Totes —</option>
+          <option value="high">Alta</option>
+          <option value="medium">Mitjana</option>
+          <option value="low">Baixa</option>
+        </select>
+      </div>
+      <button id="f-clear" class="ghost">Netejar filtres</button>
+      <button id="f-export" class="ghost btn-export" title="Descarrega un CSV amb tots els resultats actuals">Descarregar CSV</button>
+      <div class="filter-group" style="margin-top:1.4em">
+        <p id="count" style="font-size:0.88em;color:var(--text-muted);margin:0">—</p>
+      </div>
+    </aside>
+    <main class="results">
+      <div class="table-wrap">
+        <table id="table-minano">
+          <thead>
+            <tr>
+              <th>Títol</th>
+              <th>Tipus</th>
+              <th>Illa</th>
+              <th>Municipi</th>
+              <th>Tom/Pàg.</th>
+              <th>Conf.</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-minano">
+            <tr><td colspan="6" class="empty">Carregant…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</section>
+
+<!-- ===== MAPA ===== -->
+<section id="tab-map" class="tab-content" data-toptab="map">
+  <div class="modern-intro">
+    <h2>Distribució geogràfica de les entrades balears (1881)</h2>
+    <p>
+      Representació cartogràfica de les <strong>114</strong> entrades balears del Diccionari,
+      georeferenciades per contrast amb la base toponímica oficial
+      <a href="https://ideib.caib.es/ngib/" target="_blank" rel="noopener"><strong>NGIB</strong></a>
+      (Nomenclàtor Geogràfic de les Illes Balears, 55.531 topònims). Cada cercle correspon a
+      una entrada; el diàmetre és proporcional al nombre d'habitants declarat al cens del
+      1877 i el color identifica l'illa. La selecció d'un punt mostra el text complet de
+      l'article amb les nou seccions templade de Riera, i ofereix accés al volum corresponent
+      a la Biblioteca Digital de Castella i Lleó.
+    </p>
+    <p style="font-size:0.88em;color:var(--text-muted);margin-top:0.4em">
+      Mètode d'assignació de coordenades: emparellament del títol normalitzat contra la base
+      NGIB (55 entrades resolades), amb retorn al centroide insular per als accidents
+      geogràfics que Riera escriu en grafia castellana sense equivalent NGIB exacta (CABO
+      PINAR vs <em>Cap de Pinar</em>, ISLETA DEL AIRE vs <em>l'Illa de l'Aire</em>): 59
+      entrades.
+    </p>
+  </div>
+  <div class="map-controls">
+    <label>
+      <input type="checkbox" id="map-toggle-fallback" checked>
+      Incloure les entrades amb coordenades aproximades (centroide insular o topònim ambigu)
+    </label>
+    <div class="map-legend">
+      <span class="map-legend-item"><span class="map-dot" style="background:#0070b8"></span>Mallorca</span>
+      <span class="map-legend-item"><span class="map-dot" style="background:#0f766e"></span>Menorca</span>
+      <span class="map-legend-item"><span class="map-dot" style="background:#c2410c"></span>Eivissa</span>
+      <span class="map-legend-item"><span class="map-dot" style="background:#a04545"></span>Formentera</span>
+      <span class="map-legend-item"><span class="map-dot" style="background:#7c3aed"></span>Cabrera</span>
+    </div>
+  </div>
+  <div id="map-canvas" class="map-canvas"></div>
+</section>
+
+<!-- ===== ESTADÍSTIQUES ===== -->
+<section id="tab-stats" class="tab-content" data-toptab="stats">
+  <div class="modern-intro">
+    <h2>Estadístiques balears segons Riera (1881–1887)</h2>
+    <p>
+      Dades quantitatives extretes directament dels articles del Diccionari. Les xifres
+      demogràfiques de Riera procedeixen del <strong>cens del 1877</strong> (Instituto
+      Geográfico-Estadístico, dirigit pel general Carlos Ibáñez e Ibáñez de Ibero); Riera
+      hi adopta sistemàticament la categoria <em>habitantes</em> (persones físiques)
+      en lloc del <em>vecinos</em> (caps de família) que Madoz encara feia servir trenta
+      anys abans. Cada article reporta també l'inventari <em>edificios / viviendas /
+      albergues</em>: edificis habitats de manera estable, temporal i no habitats.
+    </p>
+    <p class="demo-coverage" id="stats-coverage">…</p>
+  </div>
+
+  <div class="demo-charts">
+    <div class="demo-card">
+      <h3>Diagrama sunburst: illa → tipologia de lloc</h3>
+      <div class="demo-caption">
+        <p>
+          El diagrama es llegeix de dins cap a fora en dos anells concèntrics:
+        </p>
+        <ul class="sunburst-legend">
+          <li><strong>Anell intern</strong> — illa.</li>
+          <li><strong>Anell extern</strong> — tipologia del lloc (villa, lugar, ciutat, barrio, aldea, cabo, isla, etc.).</li>
+        </ul>
+        <p>
+          L'amplada de cada arc és proporcional al nombre d'entrades que hi corresponen.
+          En situar el cursor sobre un segment —o en seleccionar-lo— es mostren la ruta
+          jeràrquica completa i el comptatge associat. La presència significativa de
+          <em>cabo</em> i <em>isla/islote</em> reflecteix que Riera, contràriament a
+          la primera lectura del seu pròleg, sí inclou accidents geogràfics costaners
+          de relleu (capes amb far, illes amb població o castell).
+        </p>
+      </div>
+      <div id="stats-chart-sunburst" class="demo-chart"><p class="empty">Carregant…</p></div>
+      <div id="stats-sunburst-info" class="sunburst-info">
+        <span class="sunb-info-prompt">Situï el cursor sobre un segment per consultar-ne el detall ↑</span>
+      </div>
+    </div>
+
+    <div class="demo-card">
+      <h3>Entrades amb major nombre d'habitants (20 primeres)</h3>
+      <p class="demo-caption">Xifres absolutes d'habitants declarades pel Diccionari cap a 1881. Comprèn la totalitat d'entrades que aporten dada d'habitants: viles, lugares i agregats insulars.</p>
+      <div id="stats-chart-hab" class="demo-chart"><p class="empty">Carregant…</p></div>
+    </div>
+
+    <div class="demo-card">
+      <h3>Entrades amb major nombre d'edificis (20 primeres)</h3>
+      <p class="demo-caption">Riera reporta el nombre total d'edificis del nucli (habitats, temporals i inhabitats). Els centres més grans —Palma, Maó, Manacor— es destaquen amb diferència respecte de les villes mitjanes i els lugars agregats.</p>
+      <div id="stats-chart-vec" class="demo-chart"><p class="empty">Carregant…</p></div>
+    </div>
+
+    <div class="demo-card">
+      <h3>Habitants per illa (suma del corpus)</h3>
+      <p class="demo-caption">Suma dels habitants declarats a les entrades insulars. Mallorca concentra gairebé tres quartes parts del corpus. L'article general de l'illa al Tom V de Riera dona ~ 245.000 habitants per a Mallorca el 1877; el corpus balear suma valors per a les viles i lugars principalment.</p>
+      <div id="stats-chart-riq" class="demo-chart"><p class="empty">Carregant…</p></div>
+    </div>
+
+    <div class="demo-card">
+      <h3>Entrades per illa</h3>
+      <p class="demo-caption">Distribució numèrica del corpus: Mallorca 75, Menorca 23, Ibiza 11, Formentera 2, Cabrera 1 i 2 entrades generals de Baleares. La densitat menorquina és proporcionalment alta perquè inclou les vuit "villes" del partit (Maó, Ciutadella, Alaior, Mercadal, Ferreries, Sant Lluís, Es Castell, Sant Cristòfol) i el conjunt de capes amb far.</p>
+      <div id="stats-chart-illa" class="demo-chart"><p class="empty">Carregant…</p></div>
+    </div>
+
+    <div class="demo-card">
+      <h3>Habitants per edifici (top 20)</h3>
+      <p class="demo-caption">Ràtio mitjana d'ocupació (habitants / edifici). Els valors típics balears se situen entre 3 i 5 persones per edifici. Els valors extrems solen indicar OCR imprecís o entrades amb una elevada proporció d'edificis temporals/inhabitats.</p>
+      <div id="stats-chart-ratio" class="demo-chart"><p class="empty">Carregant…</p></div>
+    </div>
+
+    <div class="demo-card">
+      <h3>Distribució de confiança de l'extracció</h3>
+      <p class="demo-caption">Cada entrada té un nivell de confiança assignat per l'extractor: <strong>alta</strong> quan l'OCR era net i totes les seccions s'han pogut completar; <strong>mitjana</strong> quan hi ha hagut alguna ambigüitat numèrica; <strong>baixa</strong> quan camps clau s'han hagut d'inferir per context.</p>
+      <div id="stats-chart-reg" class="demo-chart"><p class="empty">Carregant…</p></div>
+    </div>
+
+    <div class="demo-card">
+      <h3>Tipologies de lloc més freqüents</h3>
+      <p class="demo-caption">Tipologia assignada per Riera. <em>Villa</em>: nucli amb ajuntament propi; <em>lugar</em>: nucli dependent d'un ajuntament matriu; <em>caserío</em>: població menor agregada. La presència significativa de <em>cabo</em> (~ 13 entrades) reflecteix la inclusió a Riera dels accidents costaners principals com a entrades autònomes.</p>
+      <div id="stats-chart-types" class="demo-chart"><p class="empty">Carregant…</p></div>
+    </div>
+
+    <div class="demo-card">
+      <h3>Distribució per volum</h3>
+      <p class="demo-caption">Nombre d'entrades balears en cadascun dels dotze volums. El <strong>Tom III</strong> (lletra C) és el més abundant: hi conviuen totes les villes mallorquines amb inicial C (Calvià, Campanet, Campos, Capdepera, Consell, Costitx) i les tretze capes balears que Riera cataloga com a entrades autònomes.</p>
+      <div id="stats-chart-vol" class="demo-chart"><p class="empty">Carregant…</p></div>
+    </div>
+
+    <div class="demo-card">
+      <h3>Tipologia: top 12</h3>
+      <p class="demo-caption">Detall dels tipus de lloc més freqüents al corpus. Els accidents geogràfics no inhabitats (cabos, illots, illes) entren clarament dins l'abast editorial de Riera, contràriament al que el seu pròleg podria fer pensar.</p>
+      <div id="stats-chart-eccl" class="demo-chart"><p class="empty">Carregant…</p></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== NOTES ===== -->
+<section id="tab-notes" class="tab-content" data-toptab="notes">
+
+  <article class="notes-prose">
+
+    <h2>L'obra i el seu context editorial</h2>
+    <p>
+      El <em>Diccionario geográfico, estadístico, histórico, biográfico, postal, municipal,
+      marítimo y eclesiástico de España y sus posesiones de ultramar</em> fou publicat a
+      <strong>Barcelona</strong> entre 1881 i 1887 per la <em>Imprenta y librería religiosa
+      y científica del heredero de D. Pablo Riera</em>. L'obra completa comprèn
+      <strong>dotze volums</strong> d'ordenació alfabètica i ascendeix a més de 12.000
+      pàgines. La direcció editorial passà per dues etapes: els deu primers quaderns
+      foren obra dels iniciadors <strong>Ricardo de Faura y Dávila</strong> i
+      <strong>Eduardo Gutiérrez y García</strong>; del quadern 11è en endavant, la
+      continuació recau <em>"única y exclusivamente"</em> en la casa Riera, sota la
+      direcció de <strong>Pablo Riera y Sans</strong> i amb col·laboració de
+      <em>"varios distinguidos escritores"</em>.
+    </p>
+
+    <h2>El criteri editorial: el cens de 1877 com a base</h2>
+    <p>
+      A diferència del Madoz (1845–1850), que catalogava de manera exhaustiva qualsevol
+      topònim cartogràfic —predis, possessions, alqueries, capes, atalaies, illots—,
+      Riera adopta un criteri d'inclusió molt més restrictiu, declarat explícitament al
+      pròleg del Tom I (<em>Cuatro palabras del editor</em>, p. XIV):
+    </p>
+    <blockquote class="riera-quote">
+      «Como base para nuestro DICCIONARIO hemos tomado el censo de población de 1877,
+      publicado por el Instituto Geográfico-Estadístico; por lo tanto <strong>no debe
+      extrañarse si en el nuestro no se encuentran muchos lugares que en el de Madoz y
+      en otros aparecen</strong>. Estos lugares hoy se han agregado á otros para
+      constituir una entidad de población, y esto es lo que en nuestro libro consignamos.»
+    </blockquote>
+    <p>
+      Aquesta opció editorial té conseqüències quantitatives importants: a la lletra A,
+      Madoz catalogava 104 entrades balears (44 villas/lugars/ciutats + 35 predis/possessions
+      + 25 accidents naturals); Riera, en aplicar el filtre del cens del 1877, en consigna
+      només 7 (els municipis amb ajuntament + el lugar agregat d'Ariany). El gap
+      proporcional s'observa a totes les lletres del corpus.
+    </p>
+
+    <h2>La regla de la «verdadera denominación»</h2>
+    <p>
+      Una segona innovació editorial de Riera respecte a Madoz és la regla d'ordenació
+      alfabètica per la inicial real del topònim, no per la convencional:
+    </p>
+    <blockquote class="riera-quote">
+      «hemos colocado los pueblos en la inicial con que principia su verdadera denominación
+      ó las con que generalmente se les conoce; así por ejemplo, San Vicente de la Barquera,
+      que en otros Diccionarios se encuentra colocado en la V, nosotros le ponemos en la S.;
+      La Almunia, que en aquéllos se le cita en la A, nosotros lo ponemos en la L.»
+    </blockquote>
+    <p>
+      Per a les Illes, això significa que entrades com <em>La Pobla</em>, <em>La Vileta</em>
+      o <em>Sant Joan de Labritja</em> apareixen a les lletres L i S respectivament, no a la
+      P. Per recuperar el corpus balear cal travessar els 12 volums sencers en lloc de
+      concentrar-se en uns pocs.
+    </p>
+
+    <h2>L'estructura de la fitxa: nou seccions</h2>
+    <p>
+      Cada entrada de població segueix un esquema templat de <strong>nou seccions
+      administratives</strong> (en versió completa) o <strong>nou abreviatures equivalents</strong>
+      (en versió compacta, per a agregats):
+    </p>
+    <ol class="riera-template">
+      <li><em>Organización judicial</em> — partido judicial, audiencia territorial, distàncies</li>
+      <li><em>Organización civil</em> — gobierno civil, província, puesto de Guardia Civil</li>
+      <li><em>Organización militar</em> — capitanía general, gobierno militar</li>
+      <li><em>Organización económica</em> — administración de hacienda, contribuciones, presupuesto municipal</li>
+      <li><em>Organización eclesiástica</em> — diòcesis, parroquia, advocació, ermites, convents</li>
+      <li><em>Servicio público</em> — estafetes, conduccions de correu, estacions de ferrocarril i telègraf</li>
+      <li><em>Obras públicas y medios de comunicación</em> — carreteres, camins, ferrocarril, port</li>
+      <li><em>Instrucción pública</em> — escoles, alumnes</li>
+      <li><em>Población · Artes, oficios, industria · Situación geográfica y topográfica</em> — descripció arquitectònica i urbanística, indústria, agricultura, clima, hidrografia, límits</li>
+    </ol>
+    <p>
+      Els accidents geogràfics autònoms (capes, illots, illes) i els articles supramunicipals
+      (l'article general de Baleares, els obispats) prescindeixen del template administratiu:
+      són un paràgraf descriptiu únic amb coordenades, profunditat de fondejos i, en el cas
+      de les capes principals, les característiques del far.
+    </p>
+
+    <h2>Recepció crítica i posició respecte a Madoz</h2>
+    <p>
+      A diferència de Madoz, Riera no ha generat una bibliografia secundària significativa.
+      L'obra ha estat utilitzada com a font puntual de verificació però rarament com a
+      corpus susceptible d'anàlisi sistemàtica. Una de les causes pot ser la pròpia
+      consideració que els autors expressen sobre el seu antecedent: el pròleg de Riera
+      qualifica el Diccionari de Madoz com «<em>en el día completamente inútil</em>»
+      a causa dels canvis polítics (la Sexenni Democràtic de 1868–1874, l'abolició de
+      la jurisdicció senyorial el 1873, la culminació del cadastre Ibáñez) ocorreguts
+      en els trenta anys que separen totes dues obres. Sigui com sigui, en el cas de
+      les Balears el Diccionari de Riera ofereix la imatge més detallada de l'estat
+      municipal i eclesiàstic insular en el període <strong>previ a la fil·loxera
+      (1891)</strong> i a la primera onada de transformacions turístiques.
+    </p>
+
+    <h2>Mètode d'extracció</h2>
+    <p>
+      Els facsímils provenen de la <a href="https://bibliotecadigital.jcyl.es"
+      target="_blank" rel="noopener">Biblioteca Digital de Castella i Lleó</a>
+      (referència <code>id=24173</code>, CC0). Els PDFs serien il·legibles al
+      <em>pdftotext -raw</em> que aplana l'indent original, però gràcies a
+      <a href="https://pymupdf.readthedocs.io/" target="_blank" rel="noopener">PyMuPDF</a>
+      es preserva la coordenada <code>x0</code> de cada línia. La detecció dels articles
+      utilitza aquesta coordenada com a senyal primari: una línia és <strong>opener</strong>
+      d'una entrada nova si està indentada ~10-12 pt respecte de la línia base de la
+      columna, comença amb dues o més majúscules, i conté el separador <code>.—</code>
+      o <code>. —</code> dins dels primers 70 caràcters.
+    </p>
+    <p>
+      Cada article identificat com a balear (cos amb almenys una menció inequívoca de
+      Mallorca/Menorca/Ibiza/Eivissa/Formentera/Cabrera/Baleares dins de les primeres
+      40 línies) és processat per un model de llenguatge d'<a href="https://www.anthropic.com"
+      target="_blank" rel="noopener">Anthropic</a>, que llegeix el cos i el descomposa
+      en les nou seccions templade de Riera + estadístiques + referències creuades. Una
+      validació posterior contra el <a href="https://catastre.caib.es/" target="_blank"
+      rel="noopener">Nomenclàtor Geogràfic de les Illes Balears</a> (NGIB) permet
+      verificar la grafia i resoldre la geolocalització.
+    </p>
+
+    <h2>Abreviatures emprades a l'obra</h2>
+    <p>
+      El Diccionari adopta un sistema d'abreviatures regular, més extens que el de Madoz
+      degut a la voluntat editorial de concentrar el text. La taula següent en recull les
+      més habituals, a fi de facilitar la lectura dels articles consultables a la pestanya
+      <a href="#" data-goto="explore">Explorar</a>.
+    </p>
+  </article>
+
+  <div class="abbreviations">
+    <div class="abbreviation-section">
+      <h3>Tipus d'entitat (després del títol)</h3>
+      <dl>
+        <dt><code>V.</code></dt><dd>Villa (nucli amb ajuntament propi)</dd>
+        <dt><code>L.</code></dt><dd>Lugar (nucli dependent d'un ajuntament matriu)</dd>
+        <dt><code>C.</code></dt><dd>Ciudad</dd>
+        <dt><code>B.</code></dt><dd>Barrio</dd>
+        <dt><code>Ald.</code> <span class="alt">(sovint OCR'd <code>Aid.</code>)</span></dt><dd>Aldea</dd>
+        <dt><code>Cas.</code></dt><dd>Caserío</dd>
+        <dt><code>Cot.</code></dt><dd>Coto</dd>
+        <dt><code>Cor.</code></dt><dd>Corregimiento</dd>
+        <dt><code>Felig.</code></dt><dd>Feligresía</dd>
+        <dt><code>Desp.</code></dt><dd>Despoblado</dd>
+        <dt><em>Cabo / Cala / Isla / Islote / Punta</em></dt><dd>Accidents costaners autònoms</dd>
+      </dl>
+    </div>
+
+    <div class="abbreviation-section">
+      <h3>Seccions administratives de l'article (versió compacta)</h3>
+      <dl>
+        <dt><code>Org. jud.</code></dt><dd>Organización judicial</dd>
+        <dt><code>Org. civ.</code></dt><dd>Organización civil</dd>
+        <dt><code>Org. mil.</code></dt><dd>Organización militar</dd>
+        <dt><code>Org. econ.</code></dt><dd>Organización económica</dd>
+        <dt><code>Org. ecle.</code></dt><dd>Organización eclesiástica</dd>
+        <dt><code>S. púb.</code></dt><dd>Servicio público</dd>
+        <dt><code>Ob. púb. y med. de com.</code></dt><dd>Obras públicas y medios de comunicación</dd>
+        <dt><code>Ins. púb.</code></dt><dd>Instrucción pública</dd>
+        <dt><code>Pob.</code></dt><dd>Población</dd>
+        <dt><code>Art., of. ind.</code></dt><dd>Artes, oficios, industria</dd>
+        <dt><code>Sit. geog. y top.</code></dt><dd>Situación geográfica y topográfica</dd>
+        <dt><code>Fer. y merc.</code></dt><dd>Ferias y mercados</dd>
+      </dl>
+    </div>
+
+    <div class="abbreviation-section">
+      <h3>Administració civil i territorial</h3>
+      <dl>
+        <dt><code>prov.</code></dt><dd>Provincia</dd>
+        <dt><code>part. jud.</code></dt><dd>Partido judicial</dd>
+        <dt><code>aud. territ.</code></dt><dd>Audiencia territorial</dd>
+        <dt><code>C. G.</code></dt><dd>Capitanía General</dd>
+        <dt><code>G. M.</code></dt><dd>Gobierno militar</dd>
+        <dt><code>ayunt.</code></dt><dd>Ayuntamiento</dd>
+        <dt><code>agreg.</code></dt><dd>Agregado a (entrada dependent)</dd>
+        <dt><code>admon. econ.</code></dt><dd>Administración económica de la provincia</dd>
+        <dt><code>dióc.</code></dt><dd>Diócesis</dd>
+        <dt><code>arz.</code></dt><dd>Arzobispado</dd>
+      </dl>
+    </div>
+
+    <div class="abbreviation-section">
+      <h3>Demografia (segons el cens del 1877)</h3>
+      <dl>
+        <dt><code>hab.</code></dt><dd>Habitantes (persones físiques)</dd>
+        <dt><code>edif.</code></dt><dd>Edificios (totals: habitats + temporals + inhabitats)</dd>
+        <dt><code>cas. y grupos</code></dt><dd>Caseríos y grupos (hamlets agregats)</dd>
+        <dt><code>viv. y alb. ais.</code></dt><dd>Viviendas y albergues aislados</dd>
+        <dt><code>contr. terr.</code></dt><dd>Contribución territorial (pessetes)</dd>
+        <dt><code>contr. subsidio</code></dt><dd>Contribución de subsidio industrial</dd>
+      </dl>
+    </div>
+
+    <div class="abbreviation-section">
+      <h3>Geografia i comunicacions</h3>
+      <dl>
+        <dt><code>Sit.</code></dt><dd>Situado / Situada</dd>
+        <dt><code>conf.</code></dt><dd>Confina</dd>
+        <dt><code>tér.</code></dt><dd>Término municipal</dd>
+        <dt><code>terr.</code></dt><dd>Terreno</dd>
+        <dt><code>k.</code></dt><dd>Kilómetros (Riera ja usa el sistema mètric, a diferència de Madoz)</dd>
+        <dt><code>f. c.</code></dt><dd>Ferrocarril</dd>
+        <dt><code>est.</code></dt><dd>Estación (de ferrocarril o telègraf)</dd>
+        <dt><code>cn.</code></dt><dd>Conducción (de correu)</dd>
+        <dt><code>cn. m.</code></dt><dd>Conducción marítima</dd>
+        <dt><code>pt.</code></dt><dd>Peatón (cartero a peu)</dd>
+        <dt><code>car.</code></dt><dd>Cartería</dd>
+      </dl>
+    </div>
+
+    <div class="abbreviation-section abbreviation-section--stacked">
+      <h3>Referències creuades</h3>
+      <dl>
+        <dt><code>V.</code></dt><dd>Véase — remissió a un altre article del Diccionari.</dd>
+        <dt><em>(V. su artículo)</em></dt><dd>Remissió a l'article propi.</dd>
+        <dt><em>Véase</em></dt><dd>Forma plena, freqüent en accidents geogràfics que es descriuen sota un altre lema.</dd>
+      </dl>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <p>
+    Edició digital dels articles balears del <em>Diccionario geográfico-estadístico de España
+    y Portugal</em> de Sebastián de Riera y Sans (Madrid, 1881–1887), elaborada a partir
+    dels facsímils dipositats a Biblioteca Digital de Castilla i Lleó.
+  </p>
+  <p>Llicència del codi: AGPL-3.0. Text original (1881–1887): domini públic.</p>
+  <p class="footer-repo">
+    <a class="repo-link" href="https://github.com/acpicornell/minano" target="_blank" rel="noopener" aria-label="Repositori a GitHub">
+      <svg class="repo-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+      </svg>
+      Codi al repositori
+    </a>
+  </p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

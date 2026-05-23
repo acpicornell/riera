@@ -1,0 +1,133 @@
+"""Export text_entries to web/data.json — consumed directly by the
+static web (no DuckDB-WASM, no server).
+
+Format mirrors ``../minano/scripts/export_web_data.py`` with Riera-
+specific schema diffs:
+
+- Drops Miñano's ``seigneurial_regime`` and ``mayor_type`` (abolished
+  by 1881).
+- Adds Riera's nine-section template (``org_judicial``, ``org_civil``,
+  ``org_militar``, ``org_economica``, ``org_eclesiastica``,
+  ``servicio_publico``, ``obras_publicas``, ``instruccion_publica``,
+  ``poblacion``, ``industria``, ``geografia``).
+- ``bdcyl_url`` (Biblioteca Digital de Castilla y León viewer) instead
+  of ``ia_url`` (Internet Archive).
+- Coordinates are merged from ``data/coords.json`` (NGIB-resolved or
+  island-centroid fallback).
+
+Run after any data refresh:
+  python scripts/export_web_data.py
+"""
+from __future__ import annotations
+
+import importlib.util
+import json
+import sys
+from pathlib import Path
+
+import duckdb
+
+PROJECT = Path(__file__).resolve().parent.parent
+DB = PROJECT / "db" / "riera.duckdb"
+COORDS = PROJECT / "data" / "coords.json"
+OUT = PROJECT / "web" / "data.json"
+
+
+def _load_vol_to_path() -> dict[str, str]:
+    """Pull the vol→BDCyL-PDF-path map from fetch_volume.py."""
+    spec = importlib.util.spec_from_file_location(
+        "_fetch_volume", PROJECT / "scripts" / "fetch_volume.py"
+    )
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)  # type: ignore[union-attr]
+    return mod.VOL_TO_PDF_PATH
+
+
+def _load_coords() -> dict[tuple[str, int, str], dict]:
+    if not COORDS.exists():
+        return {}
+    rows = json.loads(COORDS.read_text())
+    return {(r["vol"], int(r["page"]), r["title"]): r for r in rows}
+
+
+def main() -> None:
+    if not DB.exists():
+        sys.exit(f"DB not found at {DB}. Run scripts/load_text.py first.")
+    vol_to_path = _load_vol_to_path()
+    coords_by_key = _load_coords()
+
+    con = duckdb.connect(str(DB), read_only=True)
+    rows = con.execute(
+        """
+        SELECT id, vol, leaf AS page, title, place_type, island,
+               municipality,
+               org_judicial, org_civil, org_militar, org_economica,
+               org_eclesiastica, servicio_publico, obras_publicas,
+               instruccion_publica, poblacion, industria, geografia,
+               description, stats, cross_references, confidence
+        FROM text_entries
+        ORDER BY title
+        """
+    ).fetchall()
+    cols = [
+        "id", "vol", "page", "title", "place_type", "island",
+        "municipality",
+        "org_judicial", "org_civil", "org_militar", "org_economica",
+        "org_eclesiastica", "servicio_publico", "obras_publicas",
+        "instruccion_publica", "poblacion", "industria", "geografia",
+        "description", "stats", "cross_references", "confidence",
+    ]
+
+    entries = []
+    for row in rows:
+        d = dict(zip(cols, row))
+        if isinstance(d["stats"], str) and d["stats"]:
+            try:
+                d["stats"] = json.loads(d["stats"])
+            except json.JSONDecodeError:
+                d["stats"] = None
+        if d["cross_references"] is None:
+            d["cross_references"] = []
+        # BDCyL viewer link to the PDF at the per-volume entrypoint.
+        # We cannot deep-link to a specific page (the viewer takes a
+        # `posicion` query param against an opaque path id, not a PDF
+        # page number) so we point to the volume PDF and let the user
+        # navigate to the page printed in the entry header.
+        path_id = vol_to_path.get(d["vol"])
+        if path_id:
+            d["bdcyl_url"] = (
+                f"https://bibliotecadigital.jcyl.es/es/catalogo_imagenes/"
+                f"grupo.do?path={path_id}"
+            )
+        # Coordinates
+        c = coords_by_key.get((d["vol"], int(d["page"]), d["title"]))
+        if c:
+            d["lon"] = c["lon"]
+            d["lat"] = c["lat"]
+            if c.get("matched"):
+                d["matched_toponym"] = c["matched"]
+            if c.get("fallback"):
+                d["coord_fallback"] = c["fallback"]
+        # Drop empty/falsy fields to keep JSON compact
+        for k in list(d):
+            if d[k] in (None, "", []):
+                del d[k]
+        entries.append(d)
+
+    payload = {
+        "generated_with": "scripts/export_web_data.py",
+        "text_total": len(entries),
+        "entries": entries,
+    }
+
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    OUT.write_text(
+        json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8",
+    )
+    print(f"Wrote {OUT.relative_to(PROJECT)}  "
+          f"({OUT.stat().st_size/1024:.1f} KB, {len(entries)} entries)")
+
+
+if __name__ == "__main__":
+    main()
