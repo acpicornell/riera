@@ -1,0 +1,15 @@
+[project]
+name = "riera"
+version = "0.1.0"
+description = "Re-digitalisation of the Balearic subset of Pablo Riera y Sans' Diccionario geográfico, estadístico, histórico, biográfico, postal, municipal, marítimo y eclesiástico de España y sus posesiones de ultramar (Barcelona, 1881-1887, 12 vols.)"
+requires-python = ">=3.12"
+dependencies = [
+    "duckdb>=1.5.0",
+    "anthropic>=0.100",
+    "python-dotenv>=1.0",
+    "pymupdf>=1.27",
+    "rapidfuzz>=3.0",
+]
+
+[tool.uv]
+package = false
