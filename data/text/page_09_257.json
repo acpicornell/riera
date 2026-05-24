@@ -5,25 +5,32 @@
   "entries": [
     {
       "title": "SAN LTJIS",
-      "place_type": null,
-      "island": null,
-      "municipality": null,
-      "org_judicial": null,
-      "org_civil": "Corresponde álaprov. de Baleares y contribuye, con su ayunt., para las elecciones de\ndiputados provinciales y las de Córtes. -",
-      "org_militar": null,
-      "org_economica": null,
-      "org_eclesiastica": null,
-      "servicio_publico": null,
-      "obras_publicas": null,
-      "instruccion_publica": null,
-      "poblacion": null,
-      "industria": null,
-      "geografia": null,
-      "description": "hon, del que dista 4'.2 k. Cuenta sobre unos 550 hab. y 166 edif., de los que 16 están ha- bitados temporalmente y 11inhabitados.-(M?. civ. Corresponde álaprov. de Baleares y con- tribuye, con su ayunt., para las elecciones de diputados provinciales y las de Córtes. -Org. mil. C. G. de Baleares y G. M. de Palma.- Org, ecle. Pertenece á la dióc. de Menorca, y tiene iglesia parroquial bajo la advocación de San Luis Rey, cuyo curato es de término. -Org. jud. Hállase adscrito al part. jud. de Mahon, y á las aud. de lo criminal y territ. de Palma.-Or^. econ. Para el pago de contr. depende, con su a",
-      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
-      "stats": null,
-      "cross_references": [],
-      "confidence": "low"
+      "place_type": "villa",
+      "island": "Menorca",
+      "municipality": "Sant Lluís / San Luis",
+      "org_judicial": "Hállase adscrito al part. jud. de Mahon, y á las aud. de lo criminal y territ. de Palma.",
+      "org_civil": "Corresponde á la prov. de Baleares y contribuye, con su ayunt., para las elecciones de diputados provinciales y las de Córtes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma.",
+      "org_economica": "Para el pago de contr. depende, con su ayunt., de la Delegación de Hacienda de su prov.",
+      "org_eclesiastica": "Pertenece á la dióc. de Menorca, y tiene iglesia parroquial bajo la advocación de San Luis Rey, cuyo curato es de término.",
+      "servicio_publico": "Recibe y expide la corr. por en. marítima de Barcelona, Valencia y Alicante á Palma de Mallorca y Mahon.",
+      "obras_publicas": "Para sus transportes y relaciones utiliza los caminos que cruzan su tér.",
+      "instruccion_publica": "De fondos municipales se costean dos escuelas, una para niños y para niñas otra, á las que asiste un regular número de alumnos.",
+      "poblacion": "Ninguna particularidad ofrecen los edif. que la forman.",
+      "industria": "La ind. única es la agrícola.",
+      "geografia": "(Véase el artículo referente á su ayunt.).",
+      "description": "Vila de Menorca situada a uns 4,2 km de Maó, amb uns 550 habitants i 166 edificis. Pertany a la diòcesi de Menorca i té església parroquial dedicada a Sant Lluís Rei, amb economia agrícola.",
+      "ocr_note": "OCR garbled 'LTJ' for 'LU' in title (SAN LTJIS = SAN LUIS); section markers degraded (e.g. '(M?.' for 'Org.', 'álaprov.' for 'á la prov.', '11inhabitados' missing space); entry begins mid-word ('hon,' = end of 'Mahon') indicating prior page context; '4'.2 k.' likely 4.2 km.",
+      "stats": {
+        "habitantes": 550,
+        "edificios": 166,
+        "casas": null,
+        "caserios_y_grupos": null
+      },
+      "cross_references": [
+        "Véase el artículo referente á su ayunt."
+      ],
+      "confidence": "high"
     }
   ]
 }

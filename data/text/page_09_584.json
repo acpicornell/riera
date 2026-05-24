@@ -5,25 +5,30 @@
   "entries": [
     {
       "title": "SANTA MARIA",
-      "place_type": null,
-      "island": "Menorca",
-      "municipality": "Ferreries",
-      "org_judicial": null,
-      "org_civil": "Corresponde á la prov. de Baleares,\ny al dist. de Palma para las elecciones de diputados provinciales y las de Cortes. Hay puesto de la Guardia civil perteneciente al 5.° Tercio y Comandancia de la prov. -",
-      "org_militar": null,
-      "org_economica": null,
-      "org_eclesiastica": null,
-      "servicio_publico": null,
-      "obras_publicas": null,
-      "instruccion_publica": null,
-      "poblacion": null,
-      "industria": null,
-      "geografia": null,
-      "description": "se hallan agreg. 98 cas. y grupos, edif., viv. y alb. ais. Cuenta con 2,676 hab. y 780 edif., de los que 37 están habitados temporalmente y 177 inhabitados; pero por los datos facilita- dos por el señor Secretario de este ayunt., re- firiéndose al padrón de 1885, tiene 2,700 hab. -Org. civ. Corresponde á la prov. de Baleares, y al dist. de Palma para las elecciones de di- putados provinciales y las de Cortes. Hay pues- to de la Guardia civil perteneciente al 5.° Ter- cio y Comandancia de la prov. - Org. mil. C. G. de Baleares y G. M.de Palma. Hay des- tacamento de Carabineros, compuesto de un ",
-      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
-      "stats": null,
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Santa Maria del Camí",
+      "org_judicial": "Hállase adscrita al part. jud. y aud. de lo criminal y territ. de Palma.",
+      "org_civil": "Corresponde á la prov. de Baleares, y al dist. de Palma para las elecciones de diputados provinciales y las de Cortes. Hay puesto de la Guardia civil perteneciente al 5.° Tercio y Comandancia de la prov.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma. Hay destacamento de Carabineros, compuesto de un capitán y trece individuos, dependiente de la Comandancia de la prov.",
+      "org_economica": "Para el pago de contr. depende de la Delegación de Hacienda de su prov., habiendo ascendido su presupuesto municipal en el ejercicio económico de 1885-86 á 15,791'52 pts., nivelados gastos é ingresos.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca, al arciprestazgo de Palma y tiene iglesia parroquial, bajo la advocación de Santa María del Camino, cuyo curato es de 2.° ascenso.",
+      "servicio_publico": "Recibe y expide la corr. por en. m. de Barcelona, Valencia y Alicante á Palma y en. de Alcudia.",
+      "obras_publicas": "Para verificar sus transportes y relacionarse con las pob. limítrofes, cuenta con dos carreteras de 3.er orden, una que conduce de Palma á Alcudia y otra de Santa María á Montuiri, sobre las que corren coches diarios, y varios caminos vecinales en regular estado de conservación. Tiene además estación en la vía-férrea que conduce de Palma á Inca.",
+      "instruccion_publica": "De fondos municipales se costean tres escuelas para niños y niñas, á las que asiste un buen número de alumnos, contando además con un colegio de 1.a y 2.a enseñanza agreg. al Instituto Balear.",
+      "poblacion": "Constitúyenla 396 edif. distribuidos en diferentes calles y plazas, irregulares las primeras y poco capaces las últimas. La construcción de aquéllos en general es sencilla, aunque bastante sólida, y si bien sus interiores no reúnen todas aquellas comodidades que fueran de desear, la generalidad responden, mejor ó peor, á las necesidades de sus moradores. La iglesia parroquial y casa en que el ayunt. celebra sus reuniones, no pasan de ser edif. á propósito para el objeto á que se hallan destinados. Cuenta con varios establecimientos para la venta de diferentes artículos, con un buen casino, y dos sociedades de socorros mutuos. Está el vecindario perfectamente abastecido de aguas para todos los usos, y celebra su principal festividad el día del Patrono de la v.",
+      "industria": "La ind. más importante es la agrícola y las que con ella se relacionan; hay fábricas de tejas, yeso, aguardiente y licores, cosecheros de vinos, molinos de harina y prensas de aceite, tiendas para la venta de tejidos, quincalla, comestibles y otros géneros y las profesiones y of. mecánicos de más reconocida utilidad, á que algunos de sus moradores se dedican. Anualmente celebra fer. el último domingo de abril, bastante importante por las transacciones que en ella se verifican y por la afluencia de mercaderes que concurren.",
+      "geografia": "En una extensa llanura al N. de la capital, combatida por todos los vientos y disfrutando de clima templado y sano, encuéntrase situada la v. Se hallan agreg. 98 cas. y grupos, edif., viv. y alb. ais.",
+      "description": "Vila mallorquina de l'arxiprestat de Palma, amb església parroquial dedicada a Santa Maria del Camí, estació del ferrocarril Palma-Inca i economia basada en l'agricultura, vinya, oli i fàbriques de teules, guix i aiguardent. Celebra una fira important el darrer diumenge d'abril.",
+      "ocr_note": "OCR generally legible; section markers garbled (e.g. 'Or^.', 'O&.', 'iSit.'). Budget figure '15,79r52' read as 15,791'52 pts. Padrón de 1885 cites alternative figure of 2,700 hab.",
+      "stats": {
+        "habitantes": 2676,
+        "edificios": 780,
+        "casas": 396,
+        "caserios_y_grupos": 98
+      },
       "cross_references": [],
-      "confidence": "low"
+      "confidence": "high"
     }
   ]
 }

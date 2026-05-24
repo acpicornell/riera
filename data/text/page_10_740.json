@@ -5,25 +5,32 @@
   "entries": [
     {
       "title": "TJLLARO",
-      "place_type": null,
-      "island": null,
-      "municipality": null,
-      "org_judicial": null,
-      "org_civil": "Corresponde á la prov. de Baleares y contribuye, con su ayunt., para las elecciones de\ndiputados provinciales y las de Córtes. -",
-      "org_militar": null,
-      "org_economica": null,
-      "org_eclesiastica": null,
-      "servicio_publico": null,
-      "obras_publicas": null,
-      "instruccion_publica": null,
-      "poblacion": null,
-      "industria": null,
+      "place_type": "lugar",
+      "island": "Mallorca",
+      "municipality": "Campanet",
+      "org_judicial": "Hállase adscrita al part. jud. de Inca y á las aud. de lo criminal y territ. de Palma.",
+      "org_civil": "Corresponde á la prov. de Baleares y contribuye, con su ayunt., para las elecciones de diputados provinciales y las de Córtes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma.",
+      "org_economica": "Para el pago de contr. depende, con su ayunt., de la Delegación de Hacienda de su prov.",
+      "org_eclesiastica": "Pertenece á la dióc. de Palma de Mallorca, y al arciprestazgo de Inca y para sus atenciones religiosas se sirve de la iglesia más inmediata.",
+      "servicio_publico": "Recibe y expide la corr. por en. m. de Barcelona, Valencia y Alicante á Palma de Mallorca y en. de Alcudia.",
+      "obras_publicas": "Para sus transportes y relaciones, se sirve de los caminos que cruzan por su tér.",
+      "instruccion_publica": "De fondos del municipio se sostiene una escuela incompleta para niños de ambos sexos.",
+      "poblacion": "Nada de notable ofrecen los edif. que la forman.",
+      "industria": "La ind. agrícola, es la única en esta localidad.",
       "geografia": null,
-      "description": "panet, del que dista 2'8k. Cuenta sobre unos 200 hab. y 55 edif., de los que 3 están habi- tados temporalmente y 4 inhabitados. - Org. civ. Corresponde á la prov. de Baleares y con- tribuye, con su ayunt., para las elecciones de diputados provinciales y las de Córtes. - Org. mil. C. G. de Baleares y G. M. de Palma. - Org. ecle. Pertenece á la dióc. de Palma de Mallorca, y al arciprestazgo de Inca y para sus atenciones religiosas se sirve de la iglesia más inmediata. - Or^. Hállase adscrita al part. jad. de Inca y á las aud. de lo crimi- nal y territ. de Palma. - Org. econ. Para el pago de cont",
-      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
-      "stats": null,
-      "cross_references": [],
-      "confidence": "low"
+      "description": "Llogaret agregat al municipi de Campanet (Mallorca), a 2,8 km del cap de municipi, amb uns 200 habitants i 55 edificis. Pertany a la diòcesi de Mallorca i al partit judicial d'Inca; la indústria és exclusivament agrícola.",
+      "ocr_note": "Title OCR'd as 'TJLLARO' (TJ→U: should be ULLARÓ, an agregat of Campanet, Mallorca).",
+      "stats": {
+        "habitantes": 200,
+        "edificios": 55,
+        "casas": null,
+        "caserios_y_grupos": null
+      },
+      "cross_references": [
+        "Campanet"
+      ],
+      "confidence": "medium"
     }
   ]
 }

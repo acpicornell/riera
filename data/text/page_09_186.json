@@ -5,25 +5,30 @@
   "entries": [
     {
       "title": "SAN JUAN",
-      "place_type": null,
-      "island": "Mallorca",
-      "municipality": "Sant Joan",
-      "org_judicial": null,
-      "org_civil": "Corresponde á la prov. de Baleares y al dist. de\nIbiza para las elecciones de diputados provinciales y las de Cortes.-",
-      "org_militar": null,
-      "org_economica": null,
-      "org_eclesiastica": null,
-      "servicio_publico": null,
-      "obras_publicas": null,
-      "instruccion_publica": null,
-      "poblacion": null,
-      "industria": null,
-      "geografia": null,
-      "description": "al que se hallan agreg. 39 cas. y grupos, edif., viv. y alb. ais. Cuenta con 4,238 hab. y 733 edif., de los que 8 están habitados tem- poralmente y 36 inhabitados. - Org. civ.Co- rresponde á la prov. de Baleares y al dist. de Ibiza para las elecciones de diputados provin- ciales y las de Cortes.-O^. mil. y marítima. C. G. délas Islas Baleares y G. M. de Mallor- ca. Hay destacamento de Carabineros del Rei- no, perteneciente á la Comandancia de su prov. y en la parte marítima corresponde al departamento de Cartagena, prov. y dist. ma- rítimo de 3.a de Ibiza.-Oy. ecle. Pertenece á la dióc. de Ibi",
-      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
-      "stats": null,
+      "place_type": "villa",
+      "island": "Eivissa",
+      "municipality": "Sant Joan de Labritja",
+      "org_judicial": "Hállase adscrito al part. jud. de Ibiza y á las aud. de lo criminal y territ. de Palma, distando 15 k. de la primera de dichas pob.",
+      "org_civil": "Corresponde á la prov. de Baleares y al dist. de Ibiza para las elecciones de diputados provinciales y las de Cortes.",
+      "org_militar": "C. G. de las Islas Baleares y G. M. de Mallorca. Hay destacamento de Carabineros del Reino, perteneciente á la Comandancia de su prov., y en la parte marítima corresponde al departamento de Cartagena, prov. y dist. marítimo de 3.a de Ibiza.",
+      "org_economica": "Para el pago de sus impuestos depende de la Delegación de Hacienda de su prov.",
+      "org_eclesiastica": "Pertenece á la dióc. de Ibiza, que según el último Concordato se ha de unir á la de Mallorca, y tiene una iglesia parroquial, bajo la advocación de San Juan Bautista, convenientemente servida.",
+      "servicio_publico": "Recibe y expide la corr. por en. marítima de Alicante á Palma de Mallorca, esf. y en. de Ibiza.",
+      "obras_publicas": "Cuenta con diferentes caminos, ya carreteros, ya de herradura, en mejor ó peor estado de conservación, que lo relacionan tanto con la cap. del part. cuanto con las demás pob. limítrofes, en regular estado de conservación.",
+      "instruccion_publica": "Costeadas con fondos del municipio hay las escuelas necesarias para los dos sexos, perfectamente atendidas, y á las que asiste un número de alumnos en relación con el de hab.",
+      "poblacion": "Ninguna importancia ofrecen los edif. que la constituyen, hallándose en el mismo caso la iglesia parroquial y casa en que el ayunt. celebra sus reuniones, puesto que tanto unos como otros, aun cuando son de buena construcción, no hacen más que responder á las necesidades de sus moradores. Cuenta con algunos establecimientos para la venta de los artículos más necesarios; está el vecindario perfectamente abastecido de aguas para todos los usos, y celebra la principal festividad el día del Patrono del ayunt.",
+      "industria": "La ind. que más domina en esta localidad es la agrícola, sin embargo de que por algunos de sus moradores se ejercen todas aquellas profesiones y of. mecánicos de mayor necesidad.",
+      "geografia": "En terreno algún tanto accidentado, disfrutando de buena ventilación y clima sano, encuéntrase situado el que nos ocupa, cuyo tér. municipal confina por los cuatro puntos cardinales con los de Ibiza, Santa Eulalia y el mar, comprendiendo en el espacio que éstos abrazan, varios montes, en regular estado de conservación, y de los que unos pertenecen al común de vec. y á propiedad particular otros. El terreno es de mediana calidad y las prod. consisten en cereales, legumbres, hortalizas, frutas.",
+      "description": "Vila de l'illa d'Eivissa amb 4.238 habitants i 733 edificis, amb església parroquial dedicada a Sant Joan Baptista. El terme municipal confina amb els d'Eivissa, Santa Eulària i el mar, amb terreny mitjanament fèrtil dedicat sobretot a l'agricultura.",
+      "ocr_note": "OCR markers garbled (Or^., Oy., O^., J^., i^oJ.); body begins mid-sentence with truncated lead-in. Production list ends mid-word ('fru-').",
+      "stats": {
+        "habitantes": 4238,
+        "edificios": 733,
+        "casas": null,
+        "caserios_y_grupos": 39
+      },
       "cross_references": [],
-      "confidence": "low"
+      "confidence": "high"
     }
   ]
 }

@@ -17,13 +17,85 @@
       "obras_publicas": null,
       "instruccion_publica": null,
       "poblacion": null,
-      "industria": null,
+      "industria": "Estadística del moviment de cabotatge per la duana d'Andratx l'any 1883. Entrada (articles estrangers i colonials: bacallà, drogues, fusta sense llaurar — procedents del Mediterrani o de l'Oceà, amb un total de 522 unitats per al grup principal; articles nacionals: oli comú, drogues, ordi, blat, farina de blat, faves, segó i altres varis, amb totals que arriben fins a 177,324). Sortida (articles nacionals: oli comú, carbó vegetal, ametlles, civada, llenya, garrofes, sabó, palma obrada, peces de cèrcols i altres varis), seguida d'un resum general.",
       "geografia": null,
-      "description": "174 ANG DICCIONARIO ANG miento puede juzgarse por los estados que damos á continuación: MOVIMIENTO DE CABOTAJE POR LA ADUANA DE A N D R A I X , E N 1883. E N T R A D A . Artículos extranjeros y coloniales. Bacalao,. . Drogas. . . Madera sin la brar. . . . Procedente del Mediterráneo o del Océano. Total.. Artículos nacionales. A.ceite común Drogas. . . . Cebada. . . . Trigo Harina de tri- go Habas. . . Salvado.. , Otros v a r i os, extranjeros, coloniales y nacionales- Cantida- des. Procedentes del M. 25 215 282 522 Total. 676 821 327 235 1,423 195 451 1,222 5,350 2,717 3,639 5,385 11,741 67,63",
-      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
-      "stats": null,
-      "cross_references": [],
-      "confidence": "low"
+      "description": "Suplement del Tom XII de Riera: dades estadístiques de cabotatge per la duana d'Andratx (Mallorca) l'any 1883. Conté quadres d'entrada i sortida d'articles estrangers, colonials i nacionals, amb un resum final.",
+      "ocr_note": "Supplementary statistical table from Tom XII (Apèndix), with letter-spaced typography ('A N D R A I X'). Cross-reference to the main ANDRAITX entry in Tom I p651. Numeric columns are partially garbled by OCR; figures should be re-verified against the original page image. The body is truncated after 'RESUMEN.' header.",
+      "stats": {
+        "year": 1883,
+        "source": "Aduana de Andraix - Movimiento de cabotaje",
+        "entrada": {
+          "articulos_extranjeros_y_coloniales": {
+            "items": [
+              "Bacalao",
+              "Drogas",
+              "Madera sin labrar"
+            ],
+            "procedente_mediterraneo_u_oceano_total": 522,
+            "subtotals_observed": [
+              25,
+              215,
+              282
+            ]
+          },
+          "articulos_nacionales": {
+            "items": [
+              "Aceite común",
+              "Drogas",
+              "Cebada",
+              "Trigo",
+              "Harina de trigo",
+              "Habas",
+              "Salvado",
+              "Otros varios extranjeros, coloniales y nacionales"
+            ],
+            "values_observed": [
+              676,
+              821,
+              327,
+              235,
+              1423,
+              195,
+              451,
+              1222,
+              5350,
+              2717,
+              3639,
+              5385,
+              11741,
+              67638,
+              8210,
+              5232,
+              5405,
+              61172,
+              5844,
+              6763,
+              17060
+            ],
+            "total_observed": 177324
+          },
+          "salida": {
+            "articulos_nacionales": [
+              "Aceite común",
+              "Carbón vegetal",
+              "Almendras",
+              "Avena",
+              "Leña",
+              "Algarrobas",
+              "Jabón",
+              "Palma obrada",
+              "Pipería",
+              "Otros varios extranjeros, coloniales y nacionales"
+            ],
+            "total": null
+          }
+        },
+        "notes": "Numeric values extracted from OCR are approximate; column alignment is degraded. Grand total on entrada side appears to be 177,324."
+      },
+      "cross_references": [
+        "Andraitx (Tom I)"
+      ],
+      "confidence": "medium"
     }
   ]
 }

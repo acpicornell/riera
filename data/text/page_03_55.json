@@ -33,24 +33,35 @@
     {
       "title": "CABO FORMENTOR óFORMENTON",
       "place_type": "cabo",
-      "island": null,
-      "municipality": null,
+      "island": "Mallorca",
+      "municipality": "Pollença",
       "org_judicial": null,
       "org_civil": null,
-      "org_militar": null,
+      "org_militar": "Corresponde al distrito marítimo de 2.a clase de Sóller, provincia marítima de Mallorca y departamento de Cartagena.",
       "org_economica": null,
       "org_eclesiastica": null,
       "servicio_publico": null,
-      "obras_publicas": null,
+      "obras_publicas": "Faro construido en 1863, situado a 60 m de la orilla del mar y a 180,5 m sobre el nivel del mar (21,5 m sobre el terreno), con aparato de 2.º orden y luz giratoria con eclipses de 30 en 30 segundos; el foco alcanza una distancia de 19 millas. La torre es de color parduzco, ligeramente cónica, y se eleva desde el centro de la habitación de los torreros.",
       "instruccion_publica": null,
       "poblacion": null,
       "industria": null,
-      "geografia": null,
-      "description": "el tér. jurisdiccional dela v. de Pollenza, sien- do la punta más avanzada por la parte NE. de la isla de Mallorca; corresponde al dist. marí- timo de 2.a clase de Soller, prov. de Mallorca y departamento de Cartagena. En este cabo, parte N. de la isla, á 60 m. de la orilla del mar y á los 39° 57' 45\" latitud N. y los 9o 27' 8\" longitud E. del meridiano de San Fernan- do, está situado un faro con aparato de los de 2.° órden, cuya luz es giratoria con eclipses de 30 en 30 segundos: el foco alcanzará á una distancia de 19 millas, hallándose á la altura de 180^5 m. sobre el nivel del mar y á la d",
-      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
-      "stats": null,
+      "geografia": "Situat dins el terme jurisdiccional de la vila de Pollença, és la punta més avançada per la part NE de l'illa de Mallorca. Coordenades: 39° 57' 45\" latitud N i 9° 27' 8\" longitud E del meridià de San Fernando.",
+      "description": "Cap situat al terme jurisdiccional de Pollença, punta més avançada del NE de Mallorca, on s'erigeix un far de 2n ordre construït el 1863 amb llum giratòria visible a 19 milles.",
+      "ocr_note": "OCR llegible; títol presenta variant 'óFORMENTON' (sense espai). Coordenades referides al meridià de San Fernando (Cadis), conforme a l'època.",
+      "stats": {
+        "latitud": "39° 57' 45\" N",
+        "longitud": "9° 27' 8\" E (meridiano de San Fernando)",
+        "altura_faro_sobre_mar_m": 180.5,
+        "altura_faro_sobre_terreno_m": 21.5,
+        "distancia_orilla_m": 60,
+        "alcance_luz_millas": 19,
+        "orden_faro": "2.º",
+        "año_servicio": 1863
+      },
       "cross_references": [],
-      "confidence": "low"
+      "confidence": "high",
+      "vol": "03",
+      "page": 55
     }
   ]
 }

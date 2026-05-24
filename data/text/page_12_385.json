@@ -5,47 +5,54 @@
   "entries": [
     {
       "title": "MALLOECA (Obispado de) — Una vez que",
-      "place_type": null,
+      "place_type": "obispado",
       "island": "Mallorca",
       "municipality": "Palma",
       "org_judicial": null,
-      "org_civil": null,
+      "org_civil": "En lo civil, corresponde todo á la prov. de las Baleares, su capital es la ciudad de Palma.",
       "org_militar": null,
       "org_economica": null,
-      "org_eclesiastica": null,
+      "org_eclesiastica": "Obispado sufragáneo del arzobispado de Valencia (confirmado en el último Concordato). Constituye toda la isla de Mallorca, sin pertenencia fuera de ella ni enclavado extraño dentro. Se encuentra distribuido en tres arciprestazgos: Inca, Manacor y Palma. Comprende las parroquias del arciprestazgo de Inca (Alaró - San Bartolomé, Alcudia - San Jaime, Benisalem - San Jaime, Campanet - San Miguel, Escorca - San Pedro, Inca - Santa María la Mayor, La Puebla - San Antonio, Muro - San Juan, Pollensa - Ntra. Sra. de los Angeles, Sancellas - San Pedro, Selva - San Lorenzo, Sineu - Ntra. Sra. de los Angeles); del arciprestazgo de Manacor (Artá - La Transfiguración, Campos - San Julián, Felanix - San Miguel, Manacor - La Virgen de los Dolores, Montuiri - San Bartolomé, Petra - San Pedro, Porreras - Ntra. Sra. de los Angeles, Santany - San Andrés, San Juan - San Juan); y del arciprestazgo de Palma (Algaida - San Pedro y San Pablo, Andraix - San Bartolomé, Buñola - San Mateo, Calviá - San Juan Bautista, Esporlas - San Pedro, Llummayor - San Miguel, Marraixí - San Marcial, Palma - Santa Eulalia, Almudaina, Santa Cruz, San Jaime, Puigpuñent - San Miguel, Santa María - Santa María, Sóller - San Bartolomé, Valldemosa - San Bartolomé). Hay en la diócesis Seminario Conciliar y diversas comunidades religiosas (Agustinas de Santa Magdalena, Concepcionistas, Carmelitas de Santa Teresa, Capuchinas, Jerónimas, Franciscas de Santa Clara, Dominicas de Santa Catalina de Sena, Clérigos de San Vicente de Paul en Palma; Jerónimas en Inca; Concepcionistas descalzas en Sineu), dedicadas a obras de beneficencia y enseñanza.",
       "servicio_publico": null,
       "obras_publicas": null,
       "instruccion_publica": null,
       "poblacion": null,
       "industria": null,
-      "geografia": null,
-      "description": "D. Jaime I de Aragón, hubo conquistado la Isla en el año 1229, trató de erigirla en Sede episcopal. Y efectivamente, no tardó en reali- zar su pensamiento, estableciendo la silla en la capital de la isla, merced á la correspon- diente Bula de autorización expedida por el Papa. Este obispado es sufragáneo del arz. de Valencia y queda lo mismo, según el últi- mo Concordato. La constituye toda la isla de su propio nombre, sin pertenencia fuera de ella, ni enclavado extraño, dentro.En lo civil, corresponde todo á la prov. de las Baleares, su capital es la ciudad de Palma. Se encuentra distribuido ",
-      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
+      "geografia": "D. Jaime I de Aragón, una vez que hubo conquistado la Isla en el año 1229, trató de erigirla en Sede episcopal. No tardó en realizar su pensamiento, estableciendo la silla en la capital de la isla, merced á la correspondiente Bula de autorización expedida por el Papa. La diócesis constituye toda la isla de Mallorca, sin pertenencias fuera de ella ni enclavado extraño dentro.",
+      "description": "Bisbat de Mallorca, erigit pel rei Jaume I d'Aragó després de la conquesta de l'illa el 1229, amb seu a la ciutat de Palma. Sufragani de l'arquebisbat de València, comprèn tota l'illa de Mallorca i es divideix en tres arxiprestats: Inca, Manacor i Palma.",
+      "ocr_note": "Title OCR'd as MALLOECA (E→R: should be MALLORCA). Tom XII supplement, historical narrative of the diocese.",
       "stats": null,
-      "cross_references": [],
-      "confidence": "low"
+      "cross_references": [
+        "Palma",
+        "Inca",
+        "Manacor",
+        "Valencia (archbishopric)"
+      ],
+      "confidence": "medium"
     },
     {
       "title": "MANACOR",
-      "place_type": null,
+      "place_type": "arciprestazgo",
       "island": "Mallorca",
       "municipality": "Manacor",
       "org_judicial": null,
       "org_civil": null,
       "org_militar": null,
       "org_economica": null,
-      "org_eclesiastica": null,
+      "org_eclesiastica": "Arciprestazgo de Manacor (dióc. de Mallorca). Parroquias y advocaciones: Artá — La Transfiguración; Campos — San Julián; Felanix — San Miguel; Manacor — La Virgen de los Dolores; Montuiri — San Bartolomé; Petra — San Pedro; Porreras — Ntra. Sra. de los Ángeles; Santany — San Andrés; San Juan — San Juan. Categorías de los curatos: Término, 2.° ascenso y Término entre las principales.",
       "servicio_publico": null,
       "obras_publicas": null,
       "instruccion_publica": null,
       "poblacion": null,
       "industria": null,
       "geografia": null,
-      "description": "Montuiri. Petra . Porreras Arciprestazgo de Manacor. La Transfiguración. San Julián San Miguel . . . . La Virgen de los Do- lores San Bartolomé. . • San Pedro. . . . . Ntra. Sra. de los An- Santany . San Juan. Término. 2.° ascenso. Término. San Andrés.. San Juan.. . 2.° ascenso, Término. 2.° ascenso. Arciprestazgo de Palma. Algaida. Andralx.. . Buñola, . . Calviá.. . . Esportas. . Llummayor. MarraLxl.. . San Pedro y San Pa- blo. . . . . . . San Bartolomé. . . San Mateo. . . . . San Juan Bautista. San Pedro San Miguel San Marcial. . . . Santa Eulalia.. . . Almudaina Pnimn ISanta Cruz. P£Uma isa",
-      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
+      "description": "Suplement del Tom XII: llista de parròquies de l'arxiprestat de Manacor (Mallorca), amb les advocacions i categories dels curats.",
+      "ocr_note": "Tom XII supplement: parish list of arciprestazgo de Manacor. Cross-references the main MANACOR entry in Tom VI p1062.",
       "stats": null,
-      "cross_references": [],
-      "confidence": "low"
+      "cross_references": [
+        "Manacor (Tom VI)"
+      ],
+      "confidence": "medium"
     }
   ]
 }

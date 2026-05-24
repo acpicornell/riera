@@ -5,7 +5,7 @@
   "entries": [
     {
       "title": "PORTOCOLOM",
-      "place_type": null,
+      "place_type": "puerto",
       "island": "Mallorca",
       "municipality": "Felanitx",
       "org_judicial": null,
@@ -19,11 +19,15 @@
       "poblacion": null,
       "industria": null,
       "geografia": null,
-      "description": "(Véase Felanitx).",
-      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
+      "description": "Entrada de remissió: Portocolom és el port de Felanitx (Mallorca).",
+      "ocr_note": "Cross-reference only ('Véase Felanitx'). Full content is at the Felanitx entry.",
       "stats": null,
-      "cross_references": [],
-      "confidence": "low"
+      "cross_references": [
+        "Felanitx"
+      ],
+      "confidence": "high",
+      "vol": "08",
+      "page": 332
     }
   ]
 }
