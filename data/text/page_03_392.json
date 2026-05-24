@@ -26,7 +26,9 @@
         "caserios_y_grupos": 110,
         "casas": 400
       },
-      "cross_references": ["Artá"],
+      "cross_references": [
+        "Artá"
+      ],
       "confidence": "high"
     }
   ]

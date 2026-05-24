@@ -27,7 +27,9 @@
         "casas": 581,
         "presupuesto_municipal": 18545.88
       },
-      "cross_references": ["Ullaró"],
+      "cross_references": [
+        "Ullaró"
+      ],
       "confidence": "high"
     }
   ]

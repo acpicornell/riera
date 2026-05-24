@@ -1,0 +1,39 @@
+{
+  "vol": "10",
+  "page": 47,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "SOLLER",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Sóller",
+      "org_civil": "Corresponde á la prov. de Baleares.",
+      "org_militar": "C. G. de las Islas Baleares y G. M. de Palma. Hay destacamento de carabineros del Reino, perteneciente á la Comandancia de su prov. En la parte marítima corresponde al departamento de Cartagena, prov. marítima de 1.ª clase de Mallorca y dist. de 2.ª de su mismo nombre (Soller).",
+      "org_eclesiastica": "Pertenece á la dióc. de Palma, es cabeza del arciprestazgo de su nombre, y además de un gran número de ermitas y capillas abiertas al culto, tiene una iglesia parroquial bajo la advocación de San Bartolomé, cuyo curato es de la categoría de término.",
+      "org_judicial": "Se halla adscrita al part. jud. y aud. de lo criminal y territ. de Palma, de cuyo punto dista 28 k.",
+      "org_economica": "Para el pago de sus impuestos depende de la Delegación de Hacienda de su prov. Hay aduana de 2.ª clase, cuyo movimiento se aprecia en los estados de cabotaje publicados á continuación.",
+      "servicio_publico": "Recibe y expide la corr. por en. marítima de Barcelona, Valencia y Alicante á Palma y car. de Sóller. Hay dos faros catadrióptricos: uno de 4.º órden y otro de 6.º. El primero, en la punta Grosa al O. de la entrada del puerto, luz fija de 15 millas de alcance, situado á 39° 48'5\" lat. N. y 8° 55'53\" long. E.; torre cilíndrica blanca con fajas y cornisas encarnadas, sobre edif. cuadrangular, 16 m. El segundo, en la Punta de la Cruz al E. de la entrada del puerto, luz fija de 9 millas; á 39° 48' lat. N. y 8° 56'20\" long. E. del meridiano de San Fernando, elevándose 23 m. sobre el mar y 12 sobre el terreno; torre cónica gris oscuro con linterna blanca, en el centro de la casa de los guardas. Ambos faros marcan la embocadura del puerto. Hay una sociedad benéfica para atender á los enfermos pobres, tanto de la pob. como transeúntes.",
+      "poblacion": "El núcleo principal lo forman las casas con sus correspondientes calles, contando además con la casa consistorial é iglesia parroquial.",
+      "description": "V. con ayunt. al que están agreg. el l. de Bencaraix y 355 cas. y grupos, edif., viv. y alb. ais. Cuenta con 7.915 hab. y 2.496 edif., de los que 69 están habitados temporalmente y 526 inhabitados. La página contiene un extenso cuadro estadístico titulado «MOVIMIENTO DE CABOTAJE POR LA ADUANA DE SOLLER, DURANTE EL AÑO DE 1883» con los siguientes resúmenes: ENTRADA total 6.535 unidades / 273.419 pts. (artículos extranjeros y coloniales 623 / 8.496; nacionales 4.222 / 242.811; otros varios 1.690 / 22.112); SALIDA total 2.447 / 22.752 pts. (carbón vegetal 710 / 7.100; algarrobas 835 / 8.350; habas 82 / 3.280; otros 820 / 4.022); resumen general entrada + salida 8.982 unidades / 296.171 pts. Entre los artículos de entrada nacionales figuran algodón hilado, higos, cebada, trigo, harina de trigo, habas y madera de pino sin labrar.",
+      "stats": {
+        "habitantes": 7915,
+        "edificios": 2496,
+        "habitados_temporalmente": 69,
+        "inhabitados": 526,
+        "caserios_y_grupos_agregados": 355,
+        "lugares_agregados": [
+          "Bencaraix"
+        ],
+        "cabotaje_1883_entrada_valor_pts": 273419,
+        "cabotaje_1883_salida_valor_pts": 22752,
+        "cabotaje_1883_total_valor_pts": 296171
+      },
+      "cross_references": [
+        "Bencaraix",
+        "Palma"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

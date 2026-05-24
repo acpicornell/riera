@@ -1,0 +1,38 @@
+{
+  "vol": "03",
+  "page": 1135,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "COSTITX",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Costitx",
+      "org_judicial": "Hállase adscrita al part. jud. de Inca y está con éste sometida á las aud. de lo criminal y territ. de Palma de Mallorca.",
+      "org_civil": "Corresponde á la prov. de las Baleares, al dist. de Inca para las elecciones de diputados provinciales y al de la cap. para las de Córtes.",
+      "org_militar": "C. G. de las Baleares y G. M. de Palma de Mallorca, departamento marítimo de Cartagena, prov. marítima de 1.a clase de Mallorca y dist. de la cap.",
+      "org_economica": "Para el pago de impuestos depende de la Delegación de Hacienda de la prov.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca y tiene una iglesia parroquial, convenientemente servida, bajo la advocación de Ntra. Sra.",
+      "servicio_publico": "Recibe y emite la corr. por en. m. de Valencia, Barcelona y Alicante á Palma, en. de Manacor.",
+      "obras_publicas": "Los caminos con que cuenta esta jurisdicción son vecinales y de herradura, hallándose en regular estado de conservación.",
+      "instruccion_publica": "De fondos municipales se costea una escuela para cada sexo, bastante concurridas de alumnos.",
+      "poblacion": "Cuenta el casco de ésta 320 edif., distribuidos en algunas calles y plazas de regular configuración y capacidad, siendo notable la limpieza que en ellas se advierte. La edificación en general no ofrece importancia, incluyendo en este número la casa consistorial y el templo citado anteriormente. Brotan en el tér. diversos manantiales de aguas puras y cristalinas de donde se surte el vecindario para todas las necesidades domésticas. Hallan agreg. las ald. de Jornets, Ruberts, y 111 cas. y grupos, edif., viv. y alb. ais. Cuenta con 1,316 hab. y 917 edif., de los que 24 están habitados temporalmente y 240 inhabitados.",
+      "industria": "La ind. dominante es la agrícola, habiendo algunos hab. que se dedican á la cría de ganado, elaboración de vinos y ejercen las profesiones y of. mecánicos más indispensables.",
+      "geografia": "Sobre una altura bien combatida de los vientos y disfrutando agradable y sano clima, hállase esta v. limitada por tér. de Sinen, Llubí, Inca, Benisalem y Alaró. Todo el terreno es de secano pero de mediana calidad, consistiendo la prod. en cereales, legumbres, almendras, higos y principalmente el viñedo, objeto de la elaboración de caldos, cuya exportación y la del ganado de cerda, constituye el principal ramo de su comercio. Además del de cerda se mantienen bastantes cabezas de las clases vacuna, mular y caballar.",
+      "description": null,
+      "stats": {
+        "habitantes": 1316,
+        "edificios": 917,
+        "edificios_habitados_temporalmente": 24,
+        "edificios_inhabitados": 240,
+        "edificios_casco": 320,
+        "caserios_agregados": 111
+      },
+      "cross_references": [
+        "Jornets",
+        "Ruberts"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

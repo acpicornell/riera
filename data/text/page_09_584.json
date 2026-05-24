@@ -1,0 +1,29 @@
+{
+  "vol": "09",
+  "page": 584,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "SANTA MARIA",
+      "place_type": null,
+      "island": "Menorca",
+      "municipality": "Ferreries",
+      "org_judicial": null,
+      "org_civil": "Corresponde á la prov. de Baleares,\ny al dist. de Palma para las elecciones de diputados provinciales y las de Cortes. Hay puesto de la Guardia civil perteneciente al 5.° Tercio y Comandancia de la prov. -",
+      "org_militar": null,
+      "org_economica": null,
+      "org_eclesiastica": null,
+      "servicio_publico": null,
+      "obras_publicas": null,
+      "instruccion_publica": null,
+      "poblacion": null,
+      "industria": null,
+      "geografia": null,
+      "description": "se hallan agreg. 98 cas. y grupos, edif., viv. y alb. ais. Cuenta con 2,676 hab. y 780 edif., de los que 37 están habitados temporalmente y 177 inhabitados; pero por los datos facilita- dos por el señor Secretario de este ayunt., re- firiéndose al padrón de 1885, tiene 2,700 hab. -Org. civ. Corresponde á la prov. de Baleares, y al dist. de Palma para las elecciones de di- putados provinciales y las de Cortes. Hay pues- to de la Guardia civil perteneciente al 5.° Ter- cio y Comandancia de la prov. - Org. mil. C. G. de Baleares y G. M.de Palma. Hay des- tacamento de Carabineros, compuesto de un ",
+      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
+      "stats": null,
+      "cross_references": [],
+      "confidence": "low"
+    }
+  ]
+}

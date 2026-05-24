@@ -20,8 +20,21 @@
       "industria": "La ind. que más domina es la agrícola, sin embargo de que por algunos de sus moradores se ejercen todas aquellas profesiones y of. mecánicos de mayor necesidad.",
       "geografia": "Al E. de la isla, en terreno llano y combatida por los vientos del O., clima templado y sano. Confina por los cuatro puntos cardinales con los de Llummayor, San Juan Bautista, Felanitx y Campos, comprendiendo varios montes, en regular estado de población. Terreno que participa de monte y llano, mediana calidad; corren algunos arroyos que prestan fertilidad é impulsan diversos artefactos. Prod.: cereales, legumbres, hortalizas, frutas y pastos; ganado lanar, vacuno, cabrío y de cerda; caza de pelo y pluma.",
       "description": null,
-      "stats": {"habitantes": 4934, "edificios": 1506, "habitados_temporalmente": 65, "inhabitados": 444, "casas_y_grupos": 450},
-      "cross_references": ["Llummayor", "San Juan Bautista", "Felanitx", "Campos", "Manacor", "Montuiri"],
+      "stats": {
+        "habitantes": 4934,
+        "edificios": 1506,
+        "habitados_temporalmente": 65,
+        "inhabitados": 444,
+        "casas_y_grupos": 450
+      },
+      "cross_references": [
+        "Llummayor",
+        "San Juan Bautista",
+        "Felanitx",
+        "Campos",
+        "Manacor",
+        "Montuiri"
+      ],
       "confidence": "high"
     }
   ]

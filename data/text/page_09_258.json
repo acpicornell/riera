@@ -25,7 +25,9 @@
         "edificios": 200,
         "distancia_km": 10.9
       },
-      "cross_references": ["Manacor"],
+      "cross_references": [
+        "Manacor"
+      ],
       "confidence": "high"
     }
   ]

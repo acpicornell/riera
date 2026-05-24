@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "SELVA Ó SEUVA",
+      "title": "SELVA ó SEUVA",
       "place_type": "villa",
       "island": "Mallorca",
       "municipality": "Selva",
@@ -29,7 +29,16 @@
         "presupuesto_municipal_pts": 27577,
         "monte_pinar_hectareas": 500
       },
-      "cross_references": ["Caimarí", "Mancor", "Biniamar", "Moscari", "Inca", "Escorca", "Campanet", "Lloseta"],
+      "cross_references": [
+        "Caimarí",
+        "Mancor",
+        "Biniamar",
+        "Moscari",
+        "Inca",
+        "Escorca",
+        "Campanet",
+        "Lloseta"
+      ],
       "confidence": "high"
     }
   ]

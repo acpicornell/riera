@@ -1,0 +1,37 @@
+{
+  "vol": "04",
+  "page": 107,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "DEYÁ",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Deià",
+      "org_civil": "Corresponde á la prov. de Baleares y al dist. de Palma para las elecciones de diputados provinciales y las de Córtes.",
+      "org_militar": "C. G. de las Baleares y G. M. de Palma de Mallorca. Departamento marítimo de Cartagena, prov. de 1.ª clase de Mallorca y dist. de 2.ª de Soller.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca y tiene una iglesia parroquial bajo la advocación de San Juan Bautista, la cual se halla convenientemente servida.",
+      "org_judicial": "Hállase adscrita al part. jud., aud. de lo criminal y territ. de Palma de Mallorca.",
+      "org_economica": "Para el pago de todos sus impuestos depende de la Delegación de Hacienda de la prov.",
+      "servicio_publico": "Recibe y emite la corr. por en. m. de Barcelona, Valencia y Alicante á Palma y en. y car. de Soller.",
+      "obras_publicas": "Para sus relaciones y transportes cuenta esta v. con la carretera que la pone en contacto con la cap. de la Isla y otros caminos, ya carreteros, ya de herradura, que la relacionan con la cabeza del part. y demás pob. limítrofes.",
+      "instruccion_publica": "De fondos municipales costéase una escuela para niños de ambos sexos, la cual se ve bastante concurrida.",
+      "industria": "La única ind. de esta localidad es la agrícola, dedicándose también algunos de sus vec. al ejercicio de las profesiones y of. mecánicos más indispensables. Regular elaboración de aceite. Críase ganado lanar, escasea la caza y no es muy abundante la pesca.",
+      "geografia": "A la parte NO. de la costa, al pié de elevadas montañas, y disfrutando de libre ventilación y clima sano, hállase situada esta v., cuyos límites son por el N. el Mediterráneo; Soller por el E.; Buñola y otros pueblos limítrofes en los demás puntos cardinales.",
+      "description": "V. con ayunt. al que están agreg. 49 cas. y grupos, edif., viv. y alb. ais. Cuenta con 893 hab. y 302 edif., de los cuales 29 están habitados temporalmente y 35 inhabitados.",
+      "stats": {
+        "habitantes": 893,
+        "edificios": 302,
+        "habitados_temporalmente": 29,
+        "inhabitados": 35,
+        "caserios_y_grupos_agregados": 49
+      },
+      "cross_references": [
+        "Soller",
+        "Buñola",
+        "Palma"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

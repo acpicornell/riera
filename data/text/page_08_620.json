@@ -20,8 +20,16 @@
       "industria": "La única ind. es la agrícola.",
       "geografia": "Véase el artículo referente á su ayunt. (Algaida). Dista 4 k. de la cabecera.",
       "description": null,
-      "stats": {"habitantes": 200, "edificios": 63, "habitados_temporalmente": 1, "inhabitados": 10, "distancia_ayuntamiento_km": 4},
-      "cross_references": ["Algaida"],
+      "stats": {
+        "habitantes": 200,
+        "edificios": 63,
+        "habitados_temporalmente": 1,
+        "inhabitados": 10,
+        "distancia_ayuntamiento_km": 4
+      },
+      "cross_references": [
+        "Algaida"
+      ],
       "confidence": "high"
     }
   ]

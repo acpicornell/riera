@@ -26,7 +26,10 @@
         "inhabitados": 16,
         "distancia_km": 7
       },
-      "cross_references": ["Mercadal", "Mahón"],
+      "cross_references": [
+        "Mercadal",
+        "Mahón"
+      ],
       "confidence": "high"
     }
   ]

@@ -20,8 +20,17 @@
       "industria": "Su ind. es la agrícola y las que con ella se relacionan, ejerciéndose sin embargo por algunos de sus moradores los of. mecánicos y profesiones de mayor utilidad.",
       "geografia": "(Véase el artículo referente á su ayunt.).",
       "description": "Agregado al ayunt. de Selva, del que dista 2'7 k. Cuenta sobre unos 250 hab. y 63 edif., de los que 1 está inhabitado.",
-      "stats": {"habitantes": 250, "edificios": 63, "inhabitados": 1, "distancia_ayunt_km": 2.7},
-      "cross_references": ["Selva", "Inca", "Manacor"],
+      "stats": {
+        "habitantes": 250,
+        "edificios": 63,
+        "inhabitados": 1,
+        "distancia_ayunt_km": 2.7
+      },
+      "cross_references": [
+        "Selva",
+        "Inca",
+        "Manacor"
+      ],
       "confidence": "high"
     }
   ]

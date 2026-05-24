@@ -1,0 +1,40 @@
+{
+  "vol": "06",
+  "page": 586,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "LLOSETA",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Lloseta",
+      "org_civil": "Corresponde á la prov. de Baleares y al dist. de Inca para las elecciones de diputados provinciales y las de Córtes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca, al arciprestazgo de Inca y tiene una iglesia aneja de la de Benisalem.",
+      "org_judicial": "Hállase adscrita al part. jud. de Inca y á la aud. de lo criminal y territ. de Palma.",
+      "org_economica": "Para el pago de sus impuestos depende de la Delegación de Hacienda de su prov.",
+      "servicio_publico": "Recibe y expide la corr. por en. m. de Barcelona, Valencia y Alicante á Palma; en. de Alcudia, esf. y pt. de Inca.",
+      "obras_publicas": "Para verificar sus transportes y relacionarse con las pob. limítrofes cuenta con diferentes caminos vecinales, regularmente conservados.",
+      "instruccion_publica": "Sostiénense por los fondos del municipio una escuela para niños y otra para niñas, á las que asiste un buen número de alumnos de ambos sexos.",
+      "industria": "La ind. dominante en esta localidad es la agrícola, ejerciéndose por algunos de sus moradores todas aquellas profesiones y of. mecánicos de mayor necesidad.",
+      "poblacion": "Ninguna importancia ofrecen las 362 casas que la forman, y aun cuando entre ellas se encuentran algunas de moderna construcción, ninguna reúne condiciones á propósito para una descripción detallada, encontrándose en el mismo caso la iglesia y casa consistorial. El vecindario está bien surtido de aguas para el consumo doméstico y celebra su principal festividad el día de su santo Patrono.",
+      "geografia": "En terreno montuoso, disfrutando de buena ventilación y clima saludable, encuéntrase situada esta v., cuyo tér. municipal confina por los cuatro puntos cardinales con los de Manacor y Benisalem. El terreno es de mediana calidad, consistiendo las prod. en granos, frutas, vino, legumbres y hortalizas; mantiénese algún ganado y hay caza de peletería y volatería.",
+      "description": "V. con ayunt. al que se hallan agreg. 45 cas. y grupos, edif., viv. y alb. ais. Cuenta con 1.666 hab. y 552 edif., de los que 11 están habitados temporalmente y 101 inhabitados.",
+      "stats": {
+        "habitantes": 1666,
+        "edificios": 552,
+        "habitados_temporalmente": 11,
+        "inhabitados": 101,
+        "caserios_y_grupos_agregados": 45,
+        "casas_nucleo": 362
+      },
+      "cross_references": [
+        "Inca",
+        "Benisalem",
+        "Palma",
+        "Manacor"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

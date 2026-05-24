@@ -20,8 +20,25 @@
       "industria": "La ind. que más domina es la agrícola, y por algunos de sus moradores se ejercen todas aquellas profesiones y of. mecánicos de mayor necesidad. Se celebran tres ferias anuales y un mercado todos los domingos, todos muy concurridos.",
       "geografia": "En el centro de la isla, en terreno llano, buena ventilación y clima sano. Confina por N. con Inca; por S. con San Juan; por E. con Petra y con Sansellas por el O.; varios montes en regular estado de población, unos del común de vec. y otros particulares. Terreno de mediana calidad; prod.: cereales, legumbres, hortalizas, frutas y pastos; ganado lanar, vacuno, cabrío, de cerda y el necesario para las faenas agrícolas; caza de pelo y pluma.",
       "description": null,
-      "stats": {"habitantes": 4881, "habitantes_padron_1885": 4804, "edificios": 1839, "habitados_temporalmente": 38, "inhabitados": 930, "casas_y_grupos": 929, "presupuesto_municipal_pts": 39156, "alumnos": 189},
-      "cross_references": ["Llorito", "Inca", "San Juan", "Petra", "Sansellas", "Manacor", "Campos"],
+      "stats": {
+        "habitantes": 4881,
+        "habitantes_padron_1885": 4804,
+        "edificios": 1839,
+        "habitados_temporalmente": 38,
+        "inhabitados": 930,
+        "casas_y_grupos": 929,
+        "presupuesto_municipal_pts": 39156,
+        "alumnos": 189
+      },
+      "cross_references": [
+        "Llorito",
+        "Inca",
+        "San Juan",
+        "Petra",
+        "Sansellas",
+        "Manacor",
+        "Campos"
+      ],
       "confidence": "high"
     }
   ]

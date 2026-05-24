@@ -181,6 +181,20 @@ def _unwrap_hyphens(text: str) -> str:
 _BALEARES_PREFIXES = ("balear", "bsleare", "balsare", "baleare", "baleat")
 
 
+# Tokens that are NEVER province names — captured when the regex hits
+# section-marker words instead of an actual province. 'civil' / 'jud'
+# / 'mil' come from 'Org. civ./jud./mil.' bleeding into a malformed
+# 'prov.' clause. Filipino islands ('masbate', 'cebú', 'luzon') get
+# captured in colonial entries whose lemma escaped the COLONIAL gate.
+_PROVINCE_BLACKLIST = {
+    "civil", "jud", "mil", "econ", "ecles", "judicial", "civ", "militar",
+    "economica", "eclesiastica", "publica", "publico", "social",
+    "masbate", "cebu", "luzon", "mindanao", "panay", "samar", "leyte",
+    "mindoro", "negros", "bohol", "marinduque", "palawan", "cavite",
+    "vecindario", "ayuntamiento", "estado",
+}
+
+
 def _clean_province(raw: str) -> str:
     """Normalise a captured province name to a canonical token.
 
@@ -203,6 +217,13 @@ def _clean_province(raw: str) -> str:
     norm = _strip_accents_lower(s)
     if any(norm.startswith(p) for p in _BALEARES_PREFIXES):
         return "baleares"
+    # Blacklist: when the regex anchors on the wrong token (Org. civ.
+    # bleeding into a malformed prov. clause, or Filipino islands
+    # captured by entries whose colonial-lemma marker was garbled by
+    # OCR), the captured 'province' is nonsense. Treat as no match.
+    first_word = norm.split(" ")[0] if norm else ""
+    if first_word in _PROVINCE_BLACKLIST or norm in _PROVINCE_BLACKLIST:
+        return ""
     return norm
 
 

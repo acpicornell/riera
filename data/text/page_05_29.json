@@ -20,8 +20,13 @@
       "industria": "La única ind. de este l. es la agrícola, ejerciéndose por algunos de sus moradores las profesiones y of. mecánicos más indispensables.",
       "geografia": "Agregado al ayunt. de Puigpunyent, del que dista 3'6 k. (Véase el artículo de su ayunt.).",
       "description": null,
-      "stats": {"habitantes": 500, "edificios": 138},
-      "cross_references": ["Puigpunyent"],
+      "stats": {
+        "habitantes": 500,
+        "edificios": 138
+      },
+      "cross_references": [
+        "Puigpunyent"
+      ],
       "confidence": "high"
     }
   ]

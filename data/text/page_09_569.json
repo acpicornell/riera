@@ -26,7 +26,11 @@
         "habitados_temporalmente": 1,
         "distancia_km": 11.2
       },
-      "cross_references": ["Santa Eulalia", "Ibiza", "San Juan Bautista"],
+      "cross_references": [
+        "Santa Eulalia",
+        "Ibiza",
+        "San Juan Bautista"
+      ],
       "confidence": "high"
     }
   ]

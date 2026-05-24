@@ -26,7 +26,13 @@
         "inhabitados": 516,
         "caserios_y_grupos_agregados": 518
       },
-      "cross_references": ["Biniali", "Inca", "Sinen", "Algaida", "Llubi"],
+      "cross_references": [
+        "Biniali",
+        "Inca",
+        "Sinen",
+        "Algaida",
+        "Llubi"
+      ],
       "confidence": "high"
     }
   ]

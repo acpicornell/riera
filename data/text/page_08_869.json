@@ -20,8 +20,17 @@
       "industria": "Su ind. es la agrícola y los of. que con ella se relacionan.",
       "geografia": "Véase el artículo referente á su ayunt. Dista 4'1 k. de la cabecera del ayunt.",
       "description": null,
-      "stats": {"habitantes": 90, "edificios": 24, "inhabitados": 1, "distancia_ayuntamiento_km": 4.1},
-      "cross_references": ["Sancellas", "Inca", "Alcudia"],
+      "stats": {
+        "habitantes": 90,
+        "edificios": 24,
+        "inhabitados": 1,
+        "distancia_ayuntamiento_km": 4.1
+      },
+      "cross_references": [
+        "Sancellas",
+        "Inca",
+        "Alcudia"
+      ],
       "confidence": "medium"
     }
   ]

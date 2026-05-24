@@ -20,8 +20,17 @@
       "industria": "Aun cuando la ind. dominante en esta v. es la agrícola, se ejercen por algunos de sus hab. todas cuantas profesiones y of. mecánicos son de mayor utilidad.",
       "geografia": "Al NE. de la cap., disfrutando de buena ventilación, su tér. municipal confina por los cuatro puntos cardinales con los de Buñola y Palma. El terreno es de mediana calidad, consistiendo las prod. en cereales, vino, trigo, frutas, aceite, algarrobas y pastos; mantiénese ganado lanar, vacuno, cabrío y caballar y hay caza de liebres, conejos y perdices.",
       "description": null,
-      "stats": {"habitantes": 3090, "edificios": 687, "habitados_temporalmente": 43, "inhabitados": 49, "casas_y_grupos": 31},
-      "cross_references": ["Buñola", "Palma"],
+      "stats": {
+        "habitantes": 3090,
+        "edificios": 687,
+        "habitados_temporalmente": 43,
+        "inhabitados": 49,
+        "casas_y_grupos": 31
+      },
+      "cross_references": [
+        "Buñola",
+        "Palma"
+      ],
       "confidence": "high"
     }
   ]

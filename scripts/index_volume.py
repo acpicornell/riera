@@ -123,7 +123,11 @@ BALEARIC_TOKENS = re.compile(
 # bleed (the next Balearic entry on the same page) can falsely match
 # Balearic tokens and smuggle the colonial article in.
 COLONIAL_LEMMA_RE = re.compile(
-    r"\((cuba|filipinas|puerto\s+rico|fernando\s+poo|santo\s+domingo)\)",
+    # 'Filipinas' tolerates the common OCR garble 'Filipúias' (ú/n
+    # confusion) and 'Filipinaa'. Same for 'Puerto Rico' that OCR
+    # occasionally renders 'Puerlo Rico'.
+    r"\((cuba|filip[uúi][ai]as|filipinas?|filipinaa|"
+    r"pue?r[tl]o\s+rico|fernando\s+poo|santo\s+domingo)\)",
     re.I,
 )
 

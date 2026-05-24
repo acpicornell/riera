@@ -1,0 +1,26 @@
+{
+  "vol": "07",
+  "page": 919,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "ORIENT",
+      "place_type": "lugar",
+      "island": "Mallorca",
+      "municipality": "Bunyola",
+      "org_civil": "Corresponde á la prov. de Baleares y contribuye, con su ayunt., para las elecciones de diputados provinciales y las de Córtes.",
+      "description": "Lugar agregado al ayunt. de Buñola, del que dista 11'1 k. Cuenta sobre unos 130 hab. y 39 edif., de los que 5 están habitados temporalmente y 1 inhabitado. El texto del artículo se interrumpe en esta página por la entrada ORIHUELA (cuadro de parroquias del obispado); las demás secciones administrativas remiten al artículo de Buñola.",
+      "stats": {
+        "habitantes": 130,
+        "edificios": 39,
+        "habitados_temporalmente": 5,
+        "inhabitados": 1,
+        "distancia_ayunt_km": 11.1
+      },
+      "cross_references": [
+        "Buñola"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

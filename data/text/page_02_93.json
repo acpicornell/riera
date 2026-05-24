@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "BALEARES",
+      "title": "BALEARES --Prov civ marítima y mil",
       "place_type": "provincia",
       "island": "Baleares",
       "municipality": null,
@@ -26,7 +26,13 @@
         "caserios_y_grupos": 1173,
         "ayuntamientos": 59
       },
-      "cross_references": ["Mallorca", "Menorca", "Ibiza", "Formentera", "Cabrera"],
+      "cross_references": [
+        "Mallorca",
+        "Menorca",
+        "Ibiza",
+        "Formentera",
+        "Cabrera"
+      ],
       "confidence": "high"
     }
   ]

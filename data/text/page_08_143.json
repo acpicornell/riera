@@ -29,7 +29,9 @@
         "distancia_manacor_km": 9,
         "distancia_palma_km": 83
       },
-      "cross_references": ["Ariañy"],
+      "cross_references": [
+        "Ariañy"
+      ],
       "confidence": "high"
     }
   ]

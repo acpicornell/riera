@@ -20,8 +20,19 @@
       "industria": "Dedícanse los hab. á los trabajos agrícolas.",
       "geografia": "Entre los más elevados montes de la isla, disfrutando clima fresco y saludable, hállase la jurisdicción que nos ocupa, limitada por los cuatro puntos cardinales con tér. de Pollensa, Selva y Sóller, distando por el N. el mar unos 16 k. Comprende el extenso radio de su tér. buenos plantíos de vid y olivo, así como buenos bosques de encina y roble aunque bastante destrozados por abusos en la corta. El terreno participa de bueno y estéril, bañado por algunos pequeños arroyos cuyo curso no es constante. Produce cereales, legumbres, frutas y hortalizas. Con la bellota se ceban numerosas cabezas de ganado de cerda que tanto abundan en la isla. De otras especies se mantiene el necesario á las labores agrícolas, no siendo escasa la caza menor.",
       "description": null,
-      "stats": {"habitantes": 245, "edificios": 78, "habitados_temporalmente": 12, "inhabitados": 13, "casas_y_grupos": 64},
-      "cross_references": ["Lluch", "Pollensa", "Selva", "Sóller"],
+      "stats": {
+        "habitantes": 245,
+        "edificios": 78,
+        "habitados_temporalmente": 12,
+        "inhabitados": 13,
+        "casas_y_grupos": 64
+      },
+      "cross_references": [
+        "Lluch",
+        "Pollensa",
+        "Selva",
+        "Sóller"
+      ],
       "confidence": "high"
     }
   ]

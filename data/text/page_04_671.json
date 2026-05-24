@@ -20,8 +20,20 @@
       "industria": "La agricultura es la principal ind. de esta pob. y ella entretiene la actividad de sus moradores, dedicándose algunos de ellos á los of. mecánicos y profesiones de más reconocida utilidad.",
       "geografia": "Al N. y á corta distancia de la cap., disfrutando de templado y saludable clima, hállase situada esta v. cuyos límites son: por S., E. y O. los de Palma y Puigpunyent y por N. el de Esporlas. El terreno que no pasa de ser de mediana calidad, participa de monte y llano, poblado el primero de encinas, pinos, olivos y mucha mata baja, consistiendo las cosechas del segundo en trigo, cebada, avena, almendras, legumbres y alguna hortaliza: Hay elaboración de aceite y se cría ganado lanar y caballar, no siendo difícil encontrar caza de conejos, liebres y perdices.",
       "description": null,
-      "stats": {"habitantes": 1466, "edificios": 471, "habitados_temporalmente": 3, "inhabitados": 74, "casas_y_grupos": 15, "presupuesto_municipal_pts": 6082.19, "edif_principales": 194},
-      "cross_references": ["Esporlas", "Puigpunyent", "Palma"],
+      "stats": {
+        "habitantes": 1466,
+        "edificios": 471,
+        "habitados_temporalmente": 3,
+        "inhabitados": 74,
+        "casas_y_grupos": 15,
+        "presupuesto_municipal_pts": 6082.19,
+        "edif_principales": 194
+      },
+      "cross_references": [
+        "Esporlas",
+        "Puigpunyent",
+        "Palma"
+      ],
       "confidence": "high"
     }
   ]

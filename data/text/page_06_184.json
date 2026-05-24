@@ -20,8 +20,16 @@
       "industria": "La ind. dominante en esta localidad es la agrícola; cuenta con las profesiones y of. mecánicos de más reconocida utilidad para el servicio del vecindario y con varios establecimientos de venta de diversos artículos.",
       "geografia": "Agregado al ayunt. de Palma, del que dista 5'5 k. Enclavado en el tér. de su ayunt., véanse sus límites y demás en el artículo de su referencia.",
       "description": null,
-      "stats": {"habitantes": 960, "edificios": 338, "habitados_temporalmente": 96, "inhabitados": 2},
-      "cross_references": ["Palma", "Santa Cruz"],
+      "stats": {
+        "habitantes": 960,
+        "edificios": 338,
+        "habitados_temporalmente": 96,
+        "inhabitados": 2
+      },
+      "cross_references": [
+        "Palma",
+        "Santa Cruz"
+      ],
       "confidence": "high"
     }
   ]

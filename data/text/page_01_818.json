@@ -24,7 +24,9 @@
         "habitantes": 320,
         "edificios": 137
       },
-      "cross_references": ["Petra"],
+      "cross_references": [
+        "Petra"
+      ],
       "confidence": "high"
     }
   ]

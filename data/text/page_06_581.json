@@ -20,8 +20,13 @@
       "industria": "Su ind. es la agrícola y of. inherentes á ella.",
       "geografia": "Agregado al ayunt. de Santany, del que dista 2 k. (Véase Santany).",
       "description": null,
-      "stats": {"habitantes": 300, "edificios": 75},
-      "cross_references": ["Santany"],
+      "stats": {
+        "habitantes": 300,
+        "edificios": 75
+      },
+      "cross_references": [
+        "Santany"
+      ],
       "confidence": "high"
     }
   ]

@@ -20,8 +20,15 @@
       "industria": "La ind. dominante en esta localidad es la agrícola.",
       "geografia": "Agregado al ayunt. de Costitx. (Véase el artículo referente á su ayunt.).",
       "description": null,
-      "stats": {"habitantes": 60, "edificios": 21, "habitados_temporalmente": 1, "inhabitados": 5},
-      "cross_references": ["Costitx"],
+      "stats": {
+        "habitantes": 60,
+        "edificios": 21,
+        "habitados_temporalmente": 1,
+        "inhabitados": 5
+      },
+      "cross_references": [
+        "Costitx"
+      ],
       "confidence": "high"
     }
   ]

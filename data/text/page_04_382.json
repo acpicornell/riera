@@ -24,7 +24,9 @@
         "edificios": 227,
         "edificios_inhabitados": 16
       },
-      "cross_references": ["Calviá"],
+      "cross_references": [
+        "Calviá"
+      ],
       "confidence": "high"
     }
   ]

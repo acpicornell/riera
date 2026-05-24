@@ -20,8 +20,25 @@
       "industria": "La ind. agrícola y todas las que con ella se relacionan, son las que entretienen la actividad de este vecindario, así como también las faenas marítimas y movimiento de su aduana ocupan algunos brazos. En esta pob. hay 5 fábricas de aguardientes, una de cal, otra de jabón, 5 molinos harineros, 4 tratantes en ganado, 5 cosecheros de vinos, 3 tratantes en granos, 5 fabricantes de jergas, caldereros, carpinteros, carreteros, toneleros, agencias de transportes y otros varios of. de reconocida utilidad. Hay también todas las profesiones más indispensables, como médicos, abogados, notarios, farmacéuticos, etc. Celébranse en esta v. fer. de las más importantes de la isla, en los días 28 de agosto, 20 de julio, y otras dos en mayo y en octubre, siendo la principal la primera. Mercados los domingos.",
       "geografia": "Entre montes poco elevados hállase situada esta v. disfrutando de un clima templado y saludable. Su tér. municipal confina por el N. con los de Manacor y Villafranca, por S. con el de Santany, por E. con el Mediterráneo, y por O. con el tér. de Campos. El tér. comprende una superficie de 17,000 hectáreas, de las cuales 4,000 son de grandes rendimientos en cereales, está bien poblado de viñedo, que es la principal riqueza de la localidad, habiendo también buena parte poblada de almendros, algarrobos é higueras. La citada parte de monte es de propiedad particular en su mayoría, siendo de propios únicamente uno, en cuya cúspide hay una iglesia donde se conserva una imágen muy venerada. Las prod. en general consisten en algunos cereales, legumbres y hortalizas, hay bastante elaboración de vino, críase bastante ganado de todas especies, y hay caza de pelo y pluma, así como exquisita pesca en el mar. La parte de costa que comprende esta jurisdicción cuenta con el puerto denominado Porto-Colom, y otro que es Puerto-Petra. La matrícula de buques de este puerto registra: un vapor de hélice, 4 goletas, 3 pailebots, 2 laúdes grandes y 8 pequeños de pesca.",
       "description": null,
-      "stats": {"habitantes": 11018, "edificios": 2705, "habitados_temporalmente": 76, "inhabitados": 319, "casas_y_grupos": 116, "presupuesto_municipal_pts": 64439, "casas": 1572, "superficie_hectareas": 17000},
-      "cross_references": ["Manacor", "Porto-Colom", "Puerto-Petra", "Santany", "Campos", "Villafranca", "Palma"],
+      "stats": {
+        "habitantes": 11018,
+        "edificios": 2705,
+        "habitados_temporalmente": 76,
+        "inhabitados": 319,
+        "casas_y_grupos": 116,
+        "presupuesto_municipal_pts": 64439,
+        "casas": 1572,
+        "superficie_hectareas": 17000
+      },
+      "cross_references": [
+        "Manacor",
+        "Porto-Colom",
+        "Puerto-Petra",
+        "Santany",
+        "Campos",
+        "Villafranca",
+        "Palma"
+      ],
       "confidence": "high"
     }
   ]

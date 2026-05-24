@@ -28,7 +28,12 @@
         "caserios_y_grupos_agregados": 39,
         "presupuesto_municipal_pts": 19000
       },
-      "cross_references": ["Santa Gertrudis", "Ibiza", "San Antonio Abad", "San Juan Bautista"],
+      "cross_references": [
+        "Santa Gertrudis",
+        "Ibiza",
+        "San Antonio Abad",
+        "San Juan Bautista"
+      ],
       "confidence": "high"
     }
   ]

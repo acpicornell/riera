@@ -20,8 +20,19 @@
       "industria": "Aunque la ind. dominante en esta localidad es la agrícola, también la manufacturera tiene su representación; así es que cuenta con fábricas de tejidos, de fósforos, de licores, alfarerías, establecimientos para la venta de artículos, tanto de lujo como de primera necesidad, y todas cuantas conocida utilidad. Del 29 de setiembre al 17 de octubre de cada año, tiene lugar una fer. en esta v., á la que afluye gran número de hab. de toda la prov., verificándose en ella transacciones de bastante importancia.",
       "geografia": "En un llano á la falda del monte denominado Ronda, disfrutando de buena ventilación y clima saludable, encuéntrase situada esta v., cuyo tér. municipal confina por los cuatro puntos cardinales con los de Porrera, Algaida y Palma. El terreno es de regular calidad, consistiendo las prod. en granos, frutas, legumbres, hortalizas y pastos; mantiénese ganado de todas especies y abunda la caza de pelo y pluma.",
       "description": null,
-      "stats": {"habitantes": 8858, "edificios": 3195, "habitados_temporalmente": 161, "inhabitados": 752, "casas_y_grupos": 967, "casas_centro": 256},
-      "cross_references": ["Porrera", "Algaida", "Palma"],
+      "stats": {
+        "habitantes": 8858,
+        "edificios": 3195,
+        "habitados_temporalmente": 161,
+        "inhabitados": 752,
+        "casas_y_grupos": 967,
+        "casas_centro": 256
+      },
+      "cross_references": [
+        "Porrera",
+        "Algaida",
+        "Palma"
+      ],
       "confidence": "high"
     }
   ]

@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "PALMA",
+      "title": "PALMA (Aud territ ) —Durante la exis",
       "place_type": "ciudad",
       "island": "Mallorca",
       "municipality": "Palma",
@@ -20,8 +20,43 @@
       "industria": null,
       "geografia": "Situación geográfica y topográfica del part. jud.: toda la parte O. de la prov., combatido especialmente por los vientos del N. y O., disfrutando de clima templado y sano, aun cuando algún tanto húmedo, encuéntrase situado el part. al cual sirven de límites por el N. el mar Mediterráneo y el tér. del part. jud. de Inca; por S. y O. el referido mar, y con el mismo y part. jud. de Manacor por el O., siendo difícil de apreciar con exactitud la extensión superficial que éste comprende, á consecuencia de las muchas inflexiones que forman los puertos y calas. Estado general de la Audiencia territorial de Palma: prov. de Baleares; partidos judiciales: Ibiza (4 ayunt., 103 caseríos), Inca (27, 328), Mahon (11, 103), Manacor (18, 299), Palma de la Catedral y de la Lonja (340, 80). Resumen: 59 ayuntamientos, 90 partidos, 1,173 caseríos.",
       "description": null,
-      "stats": {"habitantes": 58224, "edificios": 5522, "habitados_temporalmente": 652, "inhabitados": 314, "casas_y_grupos": 660, "edificios_dos_pisos": 10842, "edificios_tres_pisos": 3214, "edificios_mas_tres_pisos": 739, "albergues": 2376},
-      "cross_references": ["La Bonanova", "La Vileta", "Son Sardina", "Algaida", "Andraix", "Bañalbufar", "Buñola", "Calviá", "Deyá", "Esporlas", "Establiments", "Estellenchs", "Fornalutx", "Llummayor", "Marratxí", "Puigpunent", "Santa Eugenia", "Santa María", "Sóller", "Valldemosa", "Ibiza", "Inca", "Mahon", "Manacor"],
+      "stats": {
+        "habitantes": 58224,
+        "edificios": 5522,
+        "habitados_temporalmente": 652,
+        "inhabitados": 314,
+        "casas_y_grupos": 660,
+        "edificios_dos_pisos": 10842,
+        "edificios_tres_pisos": 3214,
+        "edificios_mas_tres_pisos": 739,
+        "albergues": 2376
+      },
+      "cross_references": [
+        "La Bonanova",
+        "La Vileta",
+        "Son Sardina",
+        "Algaida",
+        "Andraix",
+        "Bañalbufar",
+        "Buñola",
+        "Calviá",
+        "Deyá",
+        "Esporlas",
+        "Establiments",
+        "Estellenchs",
+        "Fornalutx",
+        "Llummayor",
+        "Marratxí",
+        "Puigpunent",
+        "Santa Eugenia",
+        "Santa María",
+        "Sóller",
+        "Valldemosa",
+        "Ibiza",
+        "Inca",
+        "Mahon",
+        "Manacor"
+      ],
       "confidence": "high"
     }
   ]

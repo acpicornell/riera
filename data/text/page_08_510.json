@@ -20,8 +20,20 @@
       "industria": "Su única ind. es la agrícola, dedicándose un corto número de hab. al ejercicio de las profesiones y of. mecánicos de mayor necesidad.",
       "geografia": "En terreno montuoso, buena ventilación y clima sumamente sano. Sirven de límites por los cuatro vientos los de Esporlas, Palma y Andraix, con varios montes regularmente poblados. El terreno se presta para viñedo y olivo; recolecciones abundantes de ambos caldos. También cereales, legumbres y hortalizas; ganado lanar y de cerda; abunda la caza menor. Agreg.: el l. de Galilea y 49 cas. y grupos.",
       "description": null,
-      "stats": {"habitantes": 1579, "edificios": 418, "habitados_temporalmente": 10, "inhabitados": 57, "casas_y_grupos": 49},
-      "cross_references": ["Galilea", "Esporlas", "Palma", "Andraix", "Valldemosa"],
+      "stats": {
+        "habitantes": 1579,
+        "edificios": 418,
+        "habitados_temporalmente": 10,
+        "inhabitados": 57,
+        "casas_y_grupos": 49
+      },
+      "cross_references": [
+        "Galilea",
+        "Esporlas",
+        "Palma",
+        "Andraix",
+        "Valldemosa"
+      ],
       "confidence": "high"
     }
   ]

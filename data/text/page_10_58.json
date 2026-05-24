@@ -26,7 +26,11 @@
         "inhabitados": 146,
         "caserios_y_grupos_agregados": 63
       },
-      "cross_references": ["Manacor", "Artá", "Capdepera"],
+      "cross_references": [
+        "Manacor",
+        "Artá",
+        "Capdepera"
+      ],
       "confidence": "high"
     }
   ]

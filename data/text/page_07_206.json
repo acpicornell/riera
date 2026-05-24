@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "MENORCA (Obispado de)",
+      "title": "MENORCA",
       "place_type": "obispado",
       "island": "Menorca",
       "municipality": null,
@@ -21,7 +21,18 @@
       "geografia": null,
       "description": "Este ob., que es sufragáneo del arz. de Valencia, comprende única y exclusivamente la isla de su nombre. En Ciudadela reside la silla episcopal y la catedral.",
       "stats": {},
-      "cross_references": ["Ciudadela", "Mahon", "Ferrería", "Fornells", "Mercadal", "San Luis", "San Cristóbal", "San Clemente", "Villacárlos", "Alayor"],
+      "cross_references": [
+        "Ciudadela",
+        "Mahon",
+        "Ferrería",
+        "Fornells",
+        "Mercadal",
+        "San Luis",
+        "San Cristóbal",
+        "San Clemente",
+        "Villacárlos",
+        "Alayor"
+      ],
       "confidence": "high"
     }
   ]

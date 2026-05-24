@@ -20,8 +20,13 @@
       "industria": "La única ind. de esta localidad es la agricultura.",
       "geografia": "(Véase el artículo referente á su ayunt.)",
       "description": "Agreg. al ayunt. de Esporlas, del que dista 3'5 k.",
-      "stats": {"habitantes": 90, "edificios": 24},
-      "cross_references": ["Esporlas"],
+      "stats": {
+        "habitantes": 90,
+        "edificios": 24
+      },
+      "cross_references": [
+        "Esporlas"
+      ],
       "confidence": "high"
     }
   ]

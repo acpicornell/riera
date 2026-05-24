@@ -20,8 +20,22 @@
       "industria": "Aun cuando la agrícola es la ind. principal de esta v. hay otras que también merecen mencionarse, como son: fábricas de cartón, de jabón, papel, de tejas y de yeso y molinos de cortezas y de harinas. Igualmente hay dos batanes, diez carpinteros, varios herreros y finalmente las profesiones y of. más necesarios.",
       "geografia": "En un valle y en medio de montañas de regular elevación, que no la privan, sin embargo, de bastante ventilación, hállase situada esta v. sirviéndole de límites por el N. los tér. municipales de Bañalbufar y Valldemosa, por S. el de Establiments; por E. los de Palma y Valldemosa, y por O. el de Puigpunyent, extendiéndose unos 4 k. de N. á S. y sobre 5 de E. á O. En este radio hállase la famosa gruta de Canet en la cual se encuentran todas las maravillas que ostenta la naturaleza en esos palacios subterráneos formados por las inmensas convulsiones que ha sufrido nuestro globo en sus tiempos primitivos. Varios montes poblados de encina, en la mayoría, y pertenecientes á particulares, forman parte de este tér. municipal cuyas prod. generales consisten en cereales, habas, legumbres, almendras, aceitunas y frutas de varias clases; críase ganado lanar y de cerda y hay caza de pelo y pluma.",
       "description": null,
-      "stats": {"habitantes": 2481, "edificios": 576, "habitados_temporalmente": 9, "inhabitados": 53, "presupuesto_municipal_pts": 13000},
-      "cross_references": ["Esglayeta", "Els Balladors", "Bañalbufar", "Valldemosa", "Establiments", "Puigpunyent", "Palma"],
+      "stats": {
+        "habitantes": 2481,
+        "edificios": 576,
+        "habitados_temporalmente": 9,
+        "inhabitados": 53,
+        "presupuesto_municipal_pts": 13000
+      },
+      "cross_references": [
+        "Esglayeta",
+        "Els Balladors",
+        "Bañalbufar",
+        "Valldemosa",
+        "Establiments",
+        "Puigpunyent",
+        "Palma"
+      ],
       "confidence": "high"
     }
   ]

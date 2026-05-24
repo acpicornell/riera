@@ -26,7 +26,10 @@
         "habitados_temporalmente": 3,
         "distancia_km": 6.9
       },
-      "cross_references": ["Palma", "San Jaime"],
+      "cross_references": [
+        "Palma",
+        "San Jaime"
+      ],
       "confidence": "high"
     }
   ]

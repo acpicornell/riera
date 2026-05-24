@@ -20,8 +20,18 @@
       "industria": "La agricultura es la principal ocupación de estos naturales, dedicándose varios de ellos á las profesiones y of. mecánicos más indispensables, y á la pesca.",
       "geografia": "En un valle formado por las estribaciones de varias montañas y al pié del monte denominado Puigmajor, disfrutando de clima templado y saludable, está situada la v. que recorremos, cuyos límites por los cuatro vientos son los de Sóller, Escorca y el mar. El terreno es arcilloso y más propio para arbolado que para plantíos, así es que sus prod. se reducen á algarrobas, naranjas, toda clase de frutas y algunas legumbres y hortalizas; elabórase gran cantidad de aceite y se mantiene ganado lanar.",
       "description": null,
-      "stats": {"habitantes": 1110, "edificios": 511, "habitados_temporalmente": 52, "inhabitados": 192, "casas_y_grupos": 187},
-      "cross_references": ["Sóller", "Escorca", "Puigmajor"],
+      "stats": {
+        "habitantes": 1110,
+        "edificios": 511,
+        "habitados_temporalmente": 52,
+        "inhabitados": 192,
+        "casas_y_grupos": 187
+      },
+      "cross_references": [
+        "Sóller",
+        "Escorca",
+        "Puigmajor"
+      ],
       "confidence": "high"
     }
   ]

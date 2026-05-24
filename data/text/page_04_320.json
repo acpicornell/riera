@@ -25,7 +25,9 @@
         "edificios": 64,
         "edificios_inhabitados": 9
       },
-      "cross_references": ["Esporlas"],
+      "cross_references": [
+        "Esporlas"
+      ],
       "confidence": "high"
     }
   ]

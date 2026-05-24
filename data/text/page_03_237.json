@@ -26,7 +26,9 @@
         "caserios_y_grupos": 132,
         "casas": 300
       },
-      "cross_references": ["Escapdellá"],
+      "cross_references": [
+        "Escapdellá"
+      ],
       "confidence": "high"
     }
   ]

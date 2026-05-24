@@ -28,7 +28,13 @@
         "caserios_y_grupos_agregados": 162,
         "presupuesto_municipal_pts": 10294.91
       },
-      "cross_references": ["Santa María del Camino", "Alaró", "Algaida", "Sansellas", "Palma de Mallorca"],
+      "cross_references": [
+        "Santa María del Camino",
+        "Alaró",
+        "Algaida",
+        "Sansellas",
+        "Palma de Mallorca"
+      ],
       "confidence": "high"
     }
   ]

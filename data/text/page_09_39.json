@@ -25,7 +25,14 @@
         "caserios_y_grupos_agregados": 42,
         "inhabitados": 22
       },
-      "cross_references": ["Santa Eulalia", "San José", "Puerto Magno", "Cabo Negrete", "Cabo Blanco", "Conejera Grande"],
+      "cross_references": [
+        "Santa Eulalia",
+        "San José",
+        "Puerto Magno",
+        "Cabo Negrete",
+        "Cabo Blanco",
+        "Conejera Grande"
+      ],
       "confidence": "high"
     }
   ]

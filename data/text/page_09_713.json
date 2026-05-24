@@ -1,0 +1,43 @@
+{
+  "vol": "09",
+  "page": 713,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "SANTANY",
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Santanyí",
+      "org_judicial": "Se halla adscrita al part. jud. de Manacor y á las aud. de lo criminal y territ. de Palma.",
+      "org_civil": "Corresponde á la prov. de Baleares, y al dist. de Manacor para las elecciones de diputados provinciales y las de Córtes. Hay puesto de la Guardia civil, perteneciente al 5.° Tercio y Comandancia de la prov.",
+      "org_militar": "C. G. de las islas Baleares y G. M. de Palma. Hay destacamento de Carabineros del Reino, perteneciente á la Comandancia de su prov., y en la parte marítima corresponde al departamento de Cartagena, prov. marítima de 1.a clase de Mallorca y dist. de 2.a de Felanitx.",
+      "org_economica": "Para el pago de sus impuestos depende de la Delegación de Hacienda de su prov. y su presupuesto municipal, en el ejercicio económico de 1885-86, ascendió á 35,000 pts., nivelados gastos é ingresos. Es puerto habilitado para ciertas operaciones de carga y descarga con intervención de la aduana más próxima.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca, al arciprestazgo de Manacor y tiene una iglesia parroquial, bajo la advocación de San Andrés, cuyo curato es de la categoría de término.",
+      "servicio_publico": "Recibe y expide la corr. por en. marítima de Barcelona, Valencia y Alicante á Palma de Mallorca. Hay un faro catadióptrico de 6.° órden en la punta de las Salinas, parte S. de la isla á 60 m. de la orilla del mar, de luz fija, cuyo alcance es de 10 millas. Está situado á los 39°16'30\" latitud N. y 9° 18' 10\" longitud E. del meridiano de San Fernando. Elévase sobre el nivel del mar 16'3 m. y sobre el terreno 10'2. La torre es ligeramente cónica, de color pardo claro, unida al frente de la habitación de los torreros, que mira al mar.",
+      "obras_publicas": "Cruzan por su tér. municipal las carreteras que dirigen á Palma y á Manacor; sobre la primera existe servicio diario de coche, verificando, tanto por medio de éstos como por diferentes caminos vecinales con que cuenta además, todos sus transportes y relaciones.",
+      "instruccion_publica": "Costeadas con fondos del municipio hay dos escuelas, una para cada sexo; ambas son elementales completas y á las que asisten unos 120 niños y 70 niñas.",
+      "poblacion": "Murada en otro tiempo la que nos ocupa, todavía se conservan algunos lienzos y torreones que la fortificaron en la antigüedad. Es notable el número de edif. que especialmente en estos últimos años se han construido, los que unidos á los ya existentes, están distribuidos en algunas calles y plazas, irregulares en su mayor parte, aun cuando bastante limpias. La edificación en general es buena, pero ningún edif. reúne circunstancias dignas de una mención especial, si bien responden perfectamente á las necesidades de sus destinos respectivos. La iglesia parroquial y casa en que el ayunt. celebra sus reuniones, son edif. á propósito para el objeto á que se hallan destinados. Hallan agreg. los l. de La Alquería Blanca, Las Salinas, las ald. de Calonge, Llombaris y 37 cas. y grupos, edif., viv. y alb. ais. Cuenta con 5,878 hab. y 1,326 edif., de los que 34 están habitados temporalmente y 126 inhabitados; pero por los datos facilitados por el señor Secretario de este ayunt., refiriéndose al padrón de 1885, tiene 6,000 hab.",
+      "industria": "Aun cuando la ind. que más domina en esta localidad es la agrícola, en la pesquera y salinera, se entretiene un buen número de brazos. Cuenta con algunos telares de lienzos ordinarios, fábricas de salazón, de aguardientes, de pastas para sopa, con un buen número de establecimientos para la venta de diferentes artículos, y se ejercen por algunos de sus moradores todas aquellas profesiones y of. mecánicos de mayor necesidad.",
+      "geografia": null,
+      "description": "Fragmento inicial de SANTANY (Santanyí, Mallorca); continúa en páginas siguientes.",
+      "stats": {
+        "habitantes": 5878,
+        "habitantes_padron_1885": 6000,
+        "edificios": 1326,
+        "edificios_habitados_temporalmente": 34,
+        "edificios_inhabitados": 126,
+        "caserios_agregados": 37,
+        "presupuesto_municipal_ptas": 35000,
+        "alumnos_ninos": 120,
+        "alumnos_ninas": 70
+      },
+      "cross_references": [
+        "La Alquería Blanca",
+        "Las Salinas",
+        "Calonge",
+        "Llombaris"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

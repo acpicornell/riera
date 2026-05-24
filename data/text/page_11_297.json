@@ -4,32 +4,26 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "VILLACARLOS",
-      "place_type": "villa",
+      "title": "VILLAOARLOS",
+      "place_type": null,
       "island": "Menorca",
-      "municipality": "Es Castell",
-      "org_judicial": "Hállase adscrita al part. jud. de Mahon y á las aud. de lo criminal y territ. de Palma.",
-      "org_civil": "Corresponde á la prov. de Baleares, y al dist. de Mahon para las elecciones de diputados provinciales y las de Córtes.",
-      "org_militar": "C. G. de las Islas Baleares y G. M. de Mallorca. Hay destacamento de Carabineros del Reino perteneciente á la Comandancia de su prov., y en la parte marítima corresponde al departamento de Cartagena, prov. marítima de 1.a clase de Mahon y dist. de su nombre.",
-      "org_economica": "Para el pago de contr. depende de la Delegación de Hacienda de la prov. y su presupuesto municipal en el ejercicio económico de 1886-87, ascendió, nivelados gastos é ingresos, á 16,426 pts.",
-      "org_eclesiastica": "Pertenece á la dióc. de Menorca y tiene una iglesia parroquial, bajo la advocación de San Juan, cuyo curato es de la categoría de rural de 1.a",
-      "servicio_publico": "Recibe y expide la corr. por en. marítima de Barcelona, Valencia y Alicante á Palma de Mallorca y Mahon.",
-      "obras_publicas": "Cuenta con la carretera que conduce á Mahon y diferentes caminos vecinales, en regular estado de conservación, por medio de todos los que verifica sus transportes y sostiene sus relaciones.",
-      "instruccion_publica": "Cuenta con seis escuelas para los dos sexos, de las que tres son costeadas por el municipio y las otras tres por particulares, todas perfectamente atendidas y á las que asisten unos 300 alumnos.",
-      "poblacion": "Los 630 edif. que la forman, distribuidos en diferentes calles y algunas plazas, irregulares y mal empedradas las primeras y poco capaces las últimas, no se recomiendan ni por sus bellezas artísticas ni por los recuerdos históricos que conservan; construcciones modestas, así los antiguos como los de época más reciente, responden mejor ó peor á las necesidades de sus moradores. La iglesia parroquial y casa en que el ayunt. celebra sus reuniones, no pasan de ser edif. á propósito para el objeto á que se hallan destinados. Cuenta con algunos establecimientos para la venta de aquellos artículos de mayor necesidad; hay dos casinos, está el vecindario perfectamente abastecido de aguas para todos los usos, merced á los manantiales que tanto dentro como fuera de la pob. brotan, y celebra la principal festividad el día del Patrono del pueblo.",
-      "industria": "La ind. que más domina en esta localidad es la agrícola, y por algunos de sus moradores se ejercen todas aquellas profesiones y of. mecánicos de mayor necesidad.",
-      "geografia": "En terreno desigual, próximo al mar Mediterráneo, disfrutando de buena ventilación y clima sano, encuéntrase situada esta v., cuyo tér. municipal confina por N. con el de Mahon; por S. y O. con el mismo, y con el mar Mediterráneo por el E. El terreno es de mediana calidad, y las prod. consisten en cereales, legumbres, frutas, hortalizas y pastos; se elabora algún vino y aceite; se mantiene ganado de varias clases, además del necesario para las faenas agrícolas; hay caza de pelo y pluma, y la pesca es tan exquisita como abundante y variada.",
-      "description": null,
-      "stats": {
-        "habitantes": 1746,
-        "habitantes_1885": 2400,
-        "edificios": 630,
-        "edificios_habitados_temporalmente": 44,
-        "edificios_inhabitados": 237,
-        "presupuesto_municipal_pts": 16426
-      },
+      "municipality": "es Castell",
+      "org_judicial": null,
+      "org_civil": "Corresponde á la prov. de Baleares, y al dist. de\nMahon para las elecciones de diputados provinciales y las de Córtes.-Ory. mil, y maritima. C. G. de las Islas Baleares y G. M. de\nMallorca. Hay destacamento de Carabineros\ndel Reino pertenec",
+      "org_militar": null,
+      "org_economica": null,
+      "org_eclesiastica": null,
+      "servicio_publico": null,
+      "obras_publicas": null,
+      "instruccion_publica": null,
+      "poblacion": null,
+      "industria": null,
+      "geografia": null,
+      "description": "con 1,746 hab. y 630 edif., de los que 44 es- tán habitados temporalmente y 237 inhabita- dos; pero por los datos facilitados por el señor Secretario de este ayunt., refiriéndose al pa- drón de 1885, tiene 2,400 hab.-Ory. civ. Co- rresponde á la prov. de Baleares, y al dist. de Mahon para las elecciones de diputados pro- vinciales y las de Córtes.-Ory. mil, y mariti- ma. C. G. de las Islas Baleares y G. M. de Mallorca. Hay destacamento de Carabineros del Reino perteneciente á la Comandancia de su prov., y en la parte marítima corresponde al departamento de Cartagena, prov. maríti- ma de 1.a cl",
+      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
+      "stats": null,
       "cross_references": [],
-      "confidence": "high"
+      "confidence": "low"
     }
   ]
 }

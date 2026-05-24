@@ -2,5 +2,28 @@
   "vol": "02",
   "page": 778,
   "model": "claude-max",
-  "entries": []
+  "entries": [
+    {
+      "title": "BINISALEM",
+      "place_type": null,
+      "island": "Mallorca",
+      "municipality": "Binissalem",
+      "org_judicial": null,
+      "org_civil": "Corresponde á la prov. de Baleares, al 2.° dist.\nde su part. jud. para las elecciones de diputados provinciales y al dist. de Inca para las\nde Cortes. Tiene puesto de Guardia civil con\n6 hombres almando de un sargento, pertenecientes al 5.°",
+      "org_militar": null,
+      "org_economica": null,
+      "org_eclesiastica": null,
+      "servicio_publico": null,
+      "obras_publicas": null,
+      "instruccion_publica": null,
+      "poblacion": null,
+      "industria": null,
+      "geografia": null,
+      "description": "hallan agreg. 211 cas. y grupos, edif., viv. y alb. ais. Cuenta con 3,617 hab. y 1,139 edif. entre habitados é inhabitados. - Org. civ. Co- rresponde á la prov. de Baleares, al 2.° dist. de su part. jud. para las elecciones de dipu- tados provinciales y al dist. de Inca para las de Cortes. Tiene puesto de Guardia civil con 6 hombres almando de un sargento, pertene- cientes al 5.° tercio y Comandancia de las Ba- leares. -Org. mil. y marítima. C. G. de Ba- leares y G. M. de Palma, prov. marítima de 1.a clase de Mallorca y dist. de 2.a de Alcudia. -Org. ecle. Pertenece á la dióc. de Mallorca, y b",
+      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
+      "stats": null,
+      "cross_references": [],
+      "confidence": "low"
+    }
+  ]
 }

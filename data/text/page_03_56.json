@@ -4,15 +4,6 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "CABO LA MOLA",
-      "place_type": "cabo",
-      "island": "Menorca",
-      "municipality": "Maó",
-      "description": "E. de la isla de Menorca y á poca distancia del puerto de Mahon. Forma una de las bocas de entrada de dicho puerto, siendo la otra el castillo de San Felipe. Corresponde al dist. y prov. marítima de Mahon y departamento de Cartagena.",
-      "cross_references": [],
-      "confidence": "high"
-    },
-    {
       "title": "CABO PINAR",
       "place_type": "cabo",
       "island": "Mallorca",

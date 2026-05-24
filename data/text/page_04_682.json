@@ -20,8 +20,21 @@
       "industria": "No existe otra ind. en esta localidad que la agrícola, la cual absorbe todos los esfuerzos de sus moradores, de los que algunos se dedican á la pesca y otros ejercen también las profesiones y of. mecánicos de más necesidad.",
       "geografia": "Al O. de la isla, próxima al mar, disfrutando de clima bastante sano, hállase situada esta v., la cual está limitada por N. y O. con el Mediterráneo y tér. municipal de Andraitx y por el E. y S. con los de Calviá y Puigpunyent, comprendiéndose en este tér. una pequeña parte de la costa donde se halla el puerto, que no es más que un caleton grande con un pedrusco en la boca. El terreno, aun cuando con alguna parte llana, es montuoso en su mayoría, produciendo la parte cultivada diferentes granos, algarroba, bellotas y aceite; críase ganado lanar y hay caza de conejos y perdices. En la cima de una gran sierra hay una fuente de propiedad particular, que tiene la particularidad de que el líquido que de ella brota, es muy parecido al agua destilada, siendo su temperatura excesivamente fría y reuniendo algunas propiedades medicinales.",
       "description": null,
-      "stats": {"habitantes": 684, "edificios": 263, "habitados_temporalmente": 83, "inhabitados": 51, "casas_y_grupos": 59, "presupuesto_ingresos_pts": 860.50, "presupuesto_gastos_pts": 1422.5},
-      "cross_references": ["Puigpunyent", "Andraitx", "Bañalbufar", "Calviá"],
+      "stats": {
+        "habitantes": 684,
+        "edificios": 263,
+        "habitados_temporalmente": 83,
+        "inhabitados": 51,
+        "casas_y_grupos": 59,
+        "presupuesto_ingresos_pts": 860.5,
+        "presupuesto_gastos_pts": 1422.5
+      },
+      "cross_references": [
+        "Puigpunyent",
+        "Andraitx",
+        "Bañalbufar",
+        "Calviá"
+      ],
       "confidence": "high"
     }
   ]

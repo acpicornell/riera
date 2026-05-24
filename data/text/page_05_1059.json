@@ -20,8 +20,14 @@
       "industria": "La agrícola es la ind. dominante en esta localidad, ejerciéndose por algunos de sus moradores los of. mecánicos de primera necesidad.",
       "geografia": "(Véase el artículo referente á su ayunt.)",
       "description": "Agreg. al ayunt. de Palma, del que dista 3'5 k.",
-      "stats": {"habitantes": 130, "edificios": 58, "habitados_temporalmente": 26},
-      "cross_references": ["Palma"],
+      "stats": {
+        "habitantes": 130,
+        "edificios": 58,
+        "habitados_temporalmente": 26
+      },
+      "cross_references": [
+        "Palma"
+      ],
       "confidence": "high"
     }
   ]

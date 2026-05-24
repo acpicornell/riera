@@ -20,8 +20,15 @@
       "industria": "La ind. dominante en esta localidad es la agrícola, ejerciéndose por algunos de sus hab. los of. mecánicos de primera necesidad.",
       "geografia": "(Véase el artículo referente á su ayunt.)",
       "description": "Agreg. al ayunt. de Santany, del que dista 5'5 k.",
-      "stats": {"habitantes": 430, "edificios": 129, "habitados_temporalmente": 2, "inhabitados": 20},
-      "cross_references": ["Santany"],
+      "stats": {
+        "habitantes": 430,
+        "edificios": 129,
+        "habitados_temporalmente": 2,
+        "inhabitados": 20
+      },
+      "cross_references": [
+        "Santany"
+      ],
       "confidence": "high"
     }
   ]

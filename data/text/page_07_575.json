@@ -20,8 +20,18 @@
       "industria": "Su principal ind. es la agrícola; hay médicos, notario, farmacéuticos y veterinarios, cosecheros de vinos, fábrica de aguardientes, alfarerías, molinos harineros, los of. mecánicos más indispensables para el servicio del vecindario y establecimientos de venta de diversos artículos; hay en el tér. varias canteras de piedra blanca que sirve para construcción y en su explotación se emplean algunos brazos.",
       "geografia": "En una extensa llanura con muy buena ventilación y disfrutando de un clima muy apacible y sano, está situada esta v., cuyo tér. municipal confina por los cuatro vientos con los de Inca, Selva y el Mediterráneo, comprendiendo dentro de su jurisdicción, algunos montes de pastos, y una buena cantera de mármol. El terreno es de excelente calidad, consistiendo las prod. en trigo de la mejor clase, cebada, legumbres, hortalizas y frutas. Elabórase vino, pues el terreno es muy á propósito para el viñedo y merced á los pastos de que dejamos hecho mérito en otro lugar, se mantiene ganado lanar, cabrío y vacuno. La caza de perdices, liebres y toda clase de volatería es muy abundante.",
       "description": null,
-      "stats": {"habitantes": 3919, "edificios": 1298, "habitados_temporalmente": 30, "inhabitados": 385, "casas_y_grupos": 300, "casas_centro": 890},
-      "cross_references": ["Inca", "Selva"],
+      "stats": {
+        "habitantes": 3919,
+        "edificios": 1298,
+        "habitados_temporalmente": 30,
+        "inhabitados": 385,
+        "casas_y_grupos": 300,
+        "casas_centro": 890
+      },
+      "cross_references": [
+        "Inca",
+        "Selva"
+      ],
       "confidence": "high"
     }
   ]

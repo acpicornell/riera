@@ -4,15 +4,6 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "CABO BLANCO",
-      "place_type": "cabo",
-      "island": "Ibiza",
-      "municipality": null,
-      "description": "nombre, por el color de la tierra que lo constituye, el cabo que se halla situado al SE. de la isla de Ibiza, tercio marítimo de Mallorca, prov. y dist. de Ibiza y departamento de Cartagena. Está á 1/8 de milla de otro pequeño cabo llamado Negrete, en el puerto Magno ó de San Antonio; es de mediana altura y entre los dos cabos se forma la cala llamada de Gracia, de buen fondeadero para verano.",
-      "cross_references": [],
-      "confidence": "high"
-    },
-    {
       "title": "CABO CABALLERÍA",
       "place_type": "cabo",
       "island": "Menorca",

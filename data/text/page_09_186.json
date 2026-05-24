@@ -1,0 +1,29 @@
+{
+  "vol": "09",
+  "page": 186,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "SAN JUAN",
+      "place_type": null,
+      "island": "Mallorca",
+      "municipality": "Sant Joan",
+      "org_judicial": null,
+      "org_civil": "Corresponde á la prov. de Baleares y al dist. de\nIbiza para las elecciones de diputados provinciales y las de Cortes.-",
+      "org_militar": null,
+      "org_economica": null,
+      "org_eclesiastica": null,
+      "servicio_publico": null,
+      "obras_publicas": null,
+      "instruccion_publica": null,
+      "poblacion": null,
+      "industria": null,
+      "geografia": null,
+      "description": "al que se hallan agreg. 39 cas. y grupos, edif., viv. y alb. ais. Cuenta con 4,238 hab. y 733 edif., de los que 8 están habitados tem- poralmente y 36 inhabitados. - Org. civ.Co- rresponde á la prov. de Baleares y al dist. de Ibiza para las elecciones de diputados provin- ciales y las de Cortes.-O^. mil. y marítima. C. G. délas Islas Baleares y G. M. de Mallor- ca. Hay destacamento de Carabineros del Rei- no, perteneciente á la Comandancia de su prov. y en la parte marítima corresponde al departamento de Cartagena, prov. y dist. ma- rítimo de 3.a de Ibiza.-Oy. ecle. Pertenece á la dióc. de Ibi",
+      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
+      "stats": null,
+      "cross_references": [],
+      "confidence": "low"
+    }
+  ]
+}

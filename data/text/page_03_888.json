@@ -27,7 +27,10 @@
         "caserios_y_grupos": 2495,
         "presupuesto_municipal": 67560
       },
-      "cross_references": ["Menorca", "Mahon"],
+      "cross_references": [
+        "Menorca",
+        "Mahon"
+      ],
       "confidence": "high"
     }
   ]

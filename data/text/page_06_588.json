@@ -20,8 +20,21 @@
       "industria": "Aun cuando la ind. dominante en esta localidad es la agrícola, hay fábricas de alcoholes, panaderos, establecimientos para la venta de géneros y comestibles y tratantes en alcaparras, ejerciéndose además por algunos de sus moradores todas cuantas profesiones y of. mecánicos son de mayor necesidad.",
       "geografia": "En la meseta de una pequeña montaña, disfrutando de libre ventilación y clima saludable, encuéntrase situada esta v. cuyo tér. municipal confina por N. con el de La Puebla; por S. con el de Sineu; por E. con el de Muro y con el de Inca por O. El terreno, que comprende una superficie de 342,880 áreas, es de secano y se cultiva trigo, cebada, avena, habas, abundando las almendras é este tér. gran recolección de alcaparras, único que se dedica á este cultivo y cási en su totalidad se exportan para el extranjero en barriles con vinagre, siendo muy grande su aceptación. Mantiénese algún ganado lanar, vacuno, cabrío y el necesario para las faenas agrícolas y hay caza de pelo y pluma.",
       "description": null,
-      "stats": {"habitantes": 2358, "edificios": 870, "habitados_temporalmente": 31, "inhabitados": 348, "casas_y_grupos": 384, "superficie_areas": 342880, "casas_centro": 453},
-      "cross_references": ["La Puebla", "Sineu", "Muro", "Inca"],
+      "stats": {
+        "habitantes": 2358,
+        "edificios": 870,
+        "habitados_temporalmente": 31,
+        "inhabitados": 348,
+        "casas_y_grupos": 384,
+        "superficie_areas": 342880,
+        "casas_centro": 453
+      },
+      "cross_references": [
+        "La Puebla",
+        "Sineu",
+        "Muro",
+        "Inca"
+      ],
       "confidence": "high"
     },
     {
@@ -41,8 +54,14 @@
       "industria": "La agricultura es la ind. dominante en esta localidad.",
       "geografia": "(Véase el artículo referente á su ayunt.).",
       "description": "Agregado al ayunt. de Escorca, cuya casa consistorial está en la localidad que describimos. Cuenta sobre unos 10 hab. y 2 edif.",
-      "stats": {"habitantes": 10, "edificios": 2},
-      "cross_references": ["Escorca", "Inca"],
+      "stats": {
+        "habitantes": 10,
+        "edificios": 2
+      },
+      "cross_references": [
+        "Escorca",
+        "Inca"
+      ],
       "confidence": "high"
     },
     {
@@ -63,7 +82,9 @@
       "industria": null,
       "geografia": null,
       "stats": {},
-      "cross_references": ["Llummayor"],
+      "cross_references": [
+        "Llummayor"
+      ],
       "confidence": "high"
     }
   ]

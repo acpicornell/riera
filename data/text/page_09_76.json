@@ -27,7 +27,9 @@
         "inhabitados": 2,
         "distancia_km": 5.7
       },
-      "cross_references": ["Mahón"],
+      "cross_references": [
+        "Mahón"
+      ],
       "confidence": "high"
     }
   ]

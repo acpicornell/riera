@@ -1,0 +1,36 @@
+{
+  "vol": "05",
+  "page": 1038,
+  "model": "claude-max",
+  "entries": [
+    {
+      "title": "LA ALQUERÍA",
+      "place_type": "lugar",
+      "island": "Mallorca",
+      "municipality": "Santanyí",
+      "org_judicial": "Se halla adscrito al part. jud. de Manacor y á las aud. de lo criminal y territ. de Palma.",
+      "org_civil": "Corresponde á la prov. de Baleares y contribuye con su ayunt. para las elecciones de diputados provinciales y las de Córtes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma de Mallorca.",
+      "org_economica": "Para el pago de sus impuestos depende de la Delegación de Hacienda de su prov.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca, y al arciprestazgo de Manacor.",
+      "servicio_publico": "Recibe y expide la corr. por la en. m. de Barcelona, Valencia, Alicante, á Palma de Mallorca, en. Palma á Santany.",
+      "obras_publicas": "Para verificar sus transportes y relacionarse con los pueblos limítrofes cuenta con diferentes caminos vecinales en regular estado de conservación.",
+      "instruccion_publica": "Tiene una escuela incompleta costeada por los fondos de la municipalidad concurrida por regular número de alumnos.",
+      "poblacion": "Ninguna importancia ofrecen los 129 edif. que la forman. Ayunt. de Santany, del que dista 5'5 k. Cuenta sobre unos 430 hab. y 129 edif., de los que 2 están habitados temporalmente y 20 inhabitados.",
+      "industria": "La ind. dominante en esta localidad es la agrícola, ejerciéndose por algunos de sus hab. los of. mecánicos de primera necesidad.",
+      "geografia": "(Véase el artículo referente á su ayunt.)",
+      "description": null,
+      "stats": {
+        "habitantes": 430,
+        "edificios": 129,
+        "edificios_habitados_temporalmente": 2,
+        "edificios_inhabitados": 20,
+        "distancia_santany_km": 5.5
+      },
+      "cross_references": [
+        "Santany"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

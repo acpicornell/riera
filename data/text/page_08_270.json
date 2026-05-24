@@ -20,8 +20,20 @@
       "industria": "Aun cuando la ind. que más domina es la agrícola, también la manufacturera está representada por un buen número de [telares/fábricas].",
       "geografia": null,
       "description": null,
-      "stats": {"habitantes": 8547, "habitantes_padron_1884": 9000, "edificios": 2416, "habitados_temporalmente": 131, "inhabitados": 422, "casas_y_grupos": 914, "presupuesto_municipal_pts": 52900},
-      "cross_references": ["Alcudia", "Petra", "Cabo de Formentor"],
+      "stats": {
+        "habitantes": 8547,
+        "habitantes_padron_1884": 9000,
+        "edificios": 2416,
+        "habitados_temporalmente": 131,
+        "inhabitados": 422,
+        "casas_y_grupos": 914,
+        "presupuesto_municipal_pts": 52900
+      },
+      "cross_references": [
+        "Alcudia",
+        "Petra",
+        "Cabo de Formentor"
+      ],
       "confidence": "high"
     }
   ]

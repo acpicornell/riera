@@ -20,8 +20,20 @@
       "industria": "La única ind. de esta localidad es la agrícola y las que con ella se relacionan, puesto que hay diversos molinos harineros, muchos cosecheros de vinos, porque la elaboración de este caldo es abundante, contando además con algunos telares de tejidos ordinarios y establecimientos para la venta de diferentes artículos. Hay médico, farmacéutico y veterinario y por varios de los vec. se ejercen los of. más indispensables.",
       "geografia": "En una colina rodeada de varios montes, disfrutando de buena ventilación y clima frío, aun cuando sano, encuéntrase situada esta v., á cuyo tér. municipal sirven de límites por los cuatro puntos cardinales los de Algaida, Sineu y San Juan; comprendiendo en el espacio que éstos abrazan alguna parte de monte en regular estado. El terreno es de mediana calidad y consisten las prod. en cereales, legumbres y pastos; mantiénese ganado de varias clases y hay caza de pelo y pluma.",
       "description": null,
-      "stats": {"habitantes": 2584, "edificios": 924, "habitados_temporalmente": 22, "inhabitados": 348, "casas_y_grupos": 382, "casas_centro": 503},
-      "cross_references": ["Algaida", "Sineu", "San Juan", "Manacor"],
+      "stats": {
+        "habitantes": 2584,
+        "edificios": 924,
+        "habitados_temporalmente": 22,
+        "inhabitados": 348,
+        "casas_y_grupos": 382,
+        "casas_centro": 503
+      },
+      "cross_references": [
+        "Algaida",
+        "Sineu",
+        "San Juan",
+        "Manacor"
+      ],
       "confidence": "high"
     }
   ]

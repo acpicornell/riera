@@ -31,13 +31,26 @@
       "confidence": "high"
     },
     {
-      "title": "CABO FORMENTOR Ó FORMENTON",
+      "title": "CABO FORMENTOR óFORMENTON",
       "place_type": "cabo",
-      "island": "Mallorca",
-      "municipality": "Pollença",
-      "description": "En el tér. jurisdiccional de la v. de Pollenza, siendo la punta más avanzada por la parte NE. de la isla de Mallorca; corresponde al dist. marítimo de 2.a clase de Soller, prov. de Mallorca y departamento de Cartagena. En este cabo, parte N. de la isla, á 60 m. de la orilla del mar y á los 39° 57' 45\" latitud N. y los 9° 27' 8\" longitud E. del meridiano de San Fernando, está situado un faro con aparato de los de 2.° órden, cuya luz es giratoria con eclipses de 30 en 30 segundos: el foco alcanzará á una distancia de 19 millas, hallándose á la altura de 180'5 m. sobre el nivel del mar y á la de 21'5 sobre el del terreno: el servicio empezó en 1863. La torre es de color parduzco, ligeramente cónica y se eleva desde el centro de la habitación de los torreros.",
+      "island": null,
+      "municipality": null,
+      "org_judicial": null,
+      "org_civil": null,
+      "org_militar": null,
+      "org_economica": null,
+      "org_eclesiastica": null,
+      "servicio_publico": null,
+      "obras_publicas": null,
+      "instruccion_publica": null,
+      "poblacion": null,
+      "industria": null,
+      "geografia": null,
+      "description": "el tér. jurisdiccional dela v. de Pollenza, sien- do la punta más avanzada por la parte NE. de la isla de Mallorca; corresponde al dist. marí- timo de 2.a clase de Soller, prov. de Mallorca y departamento de Cartagena. En este cabo, parte N. de la isla, á 60 m. de la orilla del mar y á los 39° 57' 45\" latitud N. y los 9o 27' 8\" longitud E. del meridiano de San Fernan- do, está situado un faro con aparato de los de 2.° órden, cuya luz es giratoria con eclipses de 30 en 30 segundos: el foco alcanzará á una distancia de 19 millas, hallándose á la altura de 180^5 m. sobre el nivel del mar y á la d",
+      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
+      "stats": null,
       "cross_references": [],
-      "confidence": "high"
+      "confidence": "low"
     }
   ]
 }
