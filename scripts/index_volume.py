@@ -615,22 +615,48 @@ def index_volume(vol: str) -> dict:
 # no API calls.
 # ---------------------------------------------------------------------------
 
-# Archetypal Balearic vs León (Cabrera Baja arciprestat) reference
-# descriptions — written in Riera's own administrative vocabulary so
-# they sit in the same neighbourhood of vector space as the corpus.
-_Q_BAL = (
-    "Villa con ayuntamiento en la provincia de las Baleares, "
-    "isla de Mallorca, diócesis de Palma. Audiencia territorial "
-    "de Mallorca. Capitanía general de las Baleares, gobierno "
-    "militar de Palma. Departamento marítimo de Cartagena, "
-    "provincia marítima de Mallorca."
-)
-_Q_LEON = (
-    "Lugar agregado al ayuntamiento en la provincia de León, "
-    "diócesis de Astorga, arciprestazgo de Cabrera Baja. "
-    "Audiencia territorial de Valladolid. Capitanía general de "
-    "Castilla la Vieja, gobierno militar de León."
-)
+# Archetypal Balearic and peninsular reference descriptions. Three
+# archetypes per side cover the structural variety of Riera's
+# entries: administrative villas, maritime capes, and island-level
+# supramunicipal articles. We take MAX similarity over each side and
+# the margin = max_BAL - max_PENINSULAR.
+_Q_BAL = [
+    # Administrative villa
+    ("villa_BAL",
+     "Villa con ayuntamiento en la provincia de las Baleares, isla de "
+     "Mallorca, diócesis de Palma. Audiencia territorial de Mallorca. "
+     "Capitanía general de las Baleares, gobierno militar de Palma. "
+     "Departamento marítimo de Cartagena, provincia marítima de Mallorca."),
+    # Maritime cape
+    ("cape_BAL",
+     "Cabo situado en la costa de la isla de Mallorca, provincia y "
+     "distrito marítimo de Mallorca, departamento de Cartagena. Al pie "
+     "se alza un faro. Cala de buen fondeadero."),
+    # Island-level supramunicipal
+    ("island_BAL",
+     "Isla del archipiélago de las Baleares en el Mediterráneo. Mayor "
+     "extensión por sus cabos y puntas. Bahías y calas, puerto y "
+     "fondeaderos. División administrativa: partidos judiciales, "
+     "ayuntamientos, diócesis y arciprestazgos."),
+]
+_Q_PENINSULAR = [
+    # León village (Cabrera Baja arciprestat)
+    ("villa_LEON",
+     "Lugar agregado al ayuntamiento en la provincia de León, diócesis "
+     "de Astorga, arciprestazgo de Cabrera Baja. Audiencia territorial "
+     "de Valladolid. Capitanía general de Castilla la Vieja, gobierno "
+     "militar de León."),
+    # Peninsular cape (Galicia / Cataluña / Cádiz)
+    ("cape_PENINSULAR",
+     "Cabo en la costa de la provincia de Coruña, dist. marítimo de "
+     "Corcubión, departamento del Ferrol. Punta saliente al mar "
+     "Cantábrico. Faro con luz giratoria."),
+    # Cuba / Filipinas colonial entry
+    ("colonial",
+     "Caserío agregado al ayuntamiento, en la provincia marítima de "
+     "Santiago de Cuba (ó en las islas Filipinas). Pueblo con gobernador "
+     "y casa parroquial bajo la advocación de su patrón."),
+]
 _AUDIT_MODEL = (
     "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
 )
@@ -652,8 +678,13 @@ def run_embeddings_audit(indexed_entries: list[dict]) -> None:
         model = SentenceTransformer(_AUDIT_MODEL, device="mps")
     except Exception:
         model = SentenceTransformer(_AUDIT_MODEL)
-    q_emb = model.encode([_Q_BAL, _Q_LEON], normalize_embeddings=True)
-    q_bal, q_leon = q_emb
+    bal_labels = [lbl for lbl, _ in _Q_BAL]
+    pen_labels = [lbl for lbl, _ in _Q_PENINSULAR]
+    bal_texts = [t for _, t in _Q_BAL]
+    pen_texts = [t for _, t in _Q_PENINSULAR]
+    q_emb = model.encode(bal_texts + pen_texts, normalize_embeddings=True)
+    q_bal_embs = q_emb[: len(bal_texts)]
+    q_pen_embs = q_emb[len(bal_texts):]
 
     # Gather indexed entries with their bodies.
     rows: list[dict] = []
@@ -679,22 +710,30 @@ def run_embeddings_audit(indexed_entries: list[dict]) -> None:
     bodies = [r["_body"] for r in rows]
     embs = model.encode(bodies, normalize_embeddings=True,
                         batch_size=32, show_progress_bar=False)
-    sim_bal = embs @ q_bal
-    sim_leon = embs @ q_leon
-    margin = sim_bal - sim_leon  # positive → Balearic, negative → León
+    # MAX over each side's archetypes — each entry's best Balearic
+    # template-match is compared against its best peninsular match.
+    sim_bal_each = embs @ q_bal_embs.T  # (N, |bal_q|)
+    sim_pen_each = embs @ q_pen_embs.T  # (N, |pen_q|)
+    sim_bal = sim_bal_each.max(axis=1)
+    sim_leon = sim_pen_each.max(axis=1)  # keep var name for back-compat
+    margin = sim_bal - sim_leon
+    # Per-entry best matching archetype, for diagnostic display
+    best_bal = sim_bal_each.argmax(axis=1)
+    best_pen = sim_pen_each.argmax(axis=1)
 
     ambig_indexed = []
     ambig_rejected = []
     n_indexed = n_rejected = 0
-    for row, m, sb, sl in zip(rows, margin, sim_bal, sim_leon):
+    for row, m, sb, sl, bb, bp in zip(rows, margin, sim_bal, sim_leon,
+                                       best_bal, best_pen):
+        row["_best_bal"] = bal_labels[bb]
+        row["_best_pen"] = pen_labels[bp]
         if row["_kind"] == "indexed":
             n_indexed += 1
-            # Worry: indexed but margin negative (looks peninsular)
             if m < _AUDIT_MARGIN:
                 ambig_indexed.append((row, sb, sl, m))
         else:
             n_rejected += 1
-            # Worry: rejected but margin positive (looks Balearic)
             if m > -_AUDIT_MARGIN:
                 ambig_rejected.append((row, sb, sl, m))
 
@@ -703,11 +742,12 @@ def run_embeddings_audit(indexed_entries: list[dict]) -> None:
 
     if ambig_indexed:
         print(f"\n[audit] {len(ambig_indexed)} INDEXED entries with "
-              f"low or negative Balearic margin (potential false positives):")
+              f"low or negative margin (potential false positives):")
         for row, sb, sl, m in sorted(ambig_indexed, key=lambda r: r[3]):
             print(f"  tom{row['vol']} p{row['page']:>4}  "
-                  f"{row['lemma'][:32]:<32}  "
-                  f"sim_BAL={sb:.3f} sim_LEON={sl:.3f}  Δ={m:+.3f}")
+                  f"{row['lemma'][:30]:<30}  "
+                  f"BAL/{row['_best_bal']:<10}={sb:.3f}  "
+                  f"PEN/{row['_best_pen']:<15}={sl:.3f}  Δ={m:+.3f}")
     else:
         print("[audit] All indexed entries have clear Balearic margin "
               "(≥ +0.02). No false positives suspected.")
@@ -717,8 +757,9 @@ def run_embeddings_audit(indexed_entries: list[dict]) -> None:
               f"high Balearic margin (potential false negatives):")
         for row, sb, sl, m in sorted(ambig_rejected, key=lambda r: -r[3]):
             print(f"  tom{row['vol']} p{row['page']:>4}  "
-                  f"{row['lemma'][:32]:<32}  "
-                  f"sim_BAL={sb:.3f} sim_LEON={sl:.3f}  Δ={m:+.3f}")
+                  f"{row['lemma'][:30]:<30}  "
+                  f"BAL/{row['_best_bal']:<10}={sb:.3f}  "
+                  f"PEN/{row['_best_pen']:<15}={sl:.3f}  Δ={m:+.3f}")
     else:
         print("[audit] All rejected candidates have clear peninsular "
               "margin (≤ -0.02). No false negatives suspected.")
