@@ -43,6 +43,8 @@ from typing import Optional
 
 import pymupdf
 
+import parse_sections
+
 PROJECT = Path(__file__).resolve().parent.parent
 DATA = PROJECT / "data"
 PDF_DIR = DATA / "pdf"
@@ -563,196 +565,35 @@ def extract_body(pdf_path: Path,
     return "\n".join(out)
 
 
-# Set of Spanish peninsular provinces for the admin-province check.
-# Compared in lowercased, accent-stripped form so OCR artefacts like
-# 'leon' (no accent) or 'lerida' still match.
-_PROV_NON_BAL_SET = {
-    "alava", "albacete", "alicante", "almeria", "asturias", "oviedo",
-    "avila", "badajoz", "barcelona", "burgos", "caceres", "cadiz",
-    "santander", "castellon", "ciudad real", "cordoba", "cuenca",
-    "gerona", "granada", "guadalajara", "guipuzcoa", "huelva", "huesca",
-    "jaen", "coruna", "leon", "lerida", "logrono", "lugo", "madrid",
-    "malaga", "murcia", "navarra", "orense", "palencia", "pontevedra",
-    "salamanca", "segovia", "sevilla", "soria", "tarragona", "teruel",
-    "toledo", "valencia", "valladolid", "vizcaya", "zamora", "zaragoza",
-    "canarias",
-}
-
-# Riera's canonical phrasing for the entry's own province assignment.
-# Used by the admin-province check to read the article's self-
-# identification and reject those that self-declare as non-Balearic.
-# The province name is a single word in all cases except 'Ciudad
-# Real' — handled by capturing the first word and, if it's 'ciudad',
-# extending to include the second one.
-_ADMIN_PROV_RE = re.compile(
-    r"corresponde\s+[áa]?\s+(?:la?\s+|al\s+)?prov\.?(?:incia)?\s*"
-    r"(?:\.?\s*\n?\s*de\s+)?([a-záéíóúñü]+)(?:\s+([a-záéíóúñü]+))?",
-    re.I,
-)
-# Fallback for entries that don't carry the canonical "Corresponde á
-# la prov." opener (typically diocese-level or geographic articles
-# where Riera uses different prose). We look anywhere in the first
-# 2000 chars of body for a 'prov. de X' mention, and if the very
-# first such X is non-Balearic, that's strong evidence the article is
-# peninsular. Less reliable than the admin opener — but used only
-# when admin_prov is None.
-_ANY_PROV_RE = re.compile(
-    r"\bprov\.?(?:incia)?\s+de\s+([a-záéíóúñü]+)(?:\s+([a-záéíóúñü]+))?",
-    re.I,
-)
-
-
-def _strip_accents_lower(s: str) -> str:
-    return "".join(c for c in unicodedata.normalize("NFD", s)
-                   if unicodedata.category(c) != "Mn").lower()
-
-
-_ARTICLE_TOKENS = {"la", "las", "el", "los"}
-
-
-def _resolve_province(first: str, second: Optional[str]) -> Optional[str]:
-    """Normalize a captured (first, second?) pair into a province name.
-
-    Handles three quirks:
-      • Article skip — 'prov. de las Baleares' captures 'las' as the
-        first token; advance to the second.
-      • Ciudad Real — the only two-word peninsular province.
-      • Connector noise — 'prov. de León y contribuye' captures 'leon
-        y'; the 'y' is dropped because we ignore the second token for
-        any first token other than 'ciudad'."""
-    if not first:
-        return None
-    if first in _ARTICLE_TOKENS:
-        if not second:
-            return None
-        return second
-    if first == "ciudad":
-        if second == "real":
-            return "ciudad real"
-        return None  # 'Ciudad' alone is not a province
-    return first
-
-
-def _admin_province(body: str) -> Optional[str]:
-    """Return the entry's self-declared province in lowercased,
-    accent-stripped form ('leon', 'baleares', 'lerida'), or None.
-
-    Reads Riera's canonical opener of the Org. civ. section:
-    ``Corresponde á la prov. de X``. This is by far the strongest
-    discriminator we have — far more reliable than counting
-    incidental token matches, because the phrase appears exactly
-    once per article and is the article's OWN province assignment."""
-    m = _ADMIN_PROV_RE.search(body[:2000])
-    if not m:
-        return None
-    first = _strip_accents_lower(m.group(1).strip())
-    second = _strip_accents_lower(m.group(2).strip()) if m.group(2) else None
-    return _resolve_province(first, second)
-
-
-def _first_prov_mention(body: str) -> Optional[str]:
-    """Return the first ``prov. de X`` mention in body, in lower-
-    cased accent-stripped form. Used only when admin_province returns
-    None — diocese-level articles and some geographic entries don't
-    follow the canonical 'Corresponde á la prov.' template."""
-    m = _ANY_PROV_RE.search(body[:2000])
-    if not m:
-        return None
-    first = _strip_accents_lower(m.group(1).strip())
-    second = _strip_accents_lower(m.group(2).strip()) if m.group(2) else None
-    return _resolve_province(first, second)
-
-
 def is_balearic(body: str, ngib_balearic: bool = False,
-                 lemma: str = "") -> tuple[bool, int, int]:
+                 lemma: str = "") -> tuple[bool, "parse_sections.ParsedEntry"]:
     """Decide if an article is Balearic.
 
-    Body-anchor signal: count unambiguous Balearic tokens in the first
-    40 lines of the body. Short entries need ≥1, long entries need ≥2
-    to filter out peninsular cities that mention Baleares once in an
-    audiencia-territorial roster.
+    Hard lemma-level gate first: '(Cuba)', '(Filipinas)', '(Puerto
+    Rico)' and '(Fernando Poo)' in the lemma identify colonial
+    articles unambiguously. These describe Cuban/Filipino geographic
+    accidents, NOT Balearic ones, and accepting them only happens
+    via body bleed from adjacent Balearic articles on the same page.
 
-    `ngib_balearic` is an OUT-OF-BAND signal: True when the entry's
-    title fuzzy-matches a Balearic NGIB toponym at ≥95. That match is
-    enough on its own to qualify the article as Balearic, irrespective
-    of body anchors. This rescues entries like SOLLER where the body
-    is interrupted by a statistical table that pushes most Balearic
-    tokens out of the head window."""
-    # Hard gate 1: explicit colonial markers in the lemma. Riera tags
-    # Cuba/Filipinas/Puerto Rico geographic accidents parenthetically
-    # in the lemma itself — these entries are NEVER Balearic, and
-    # accepting them only happens via body bleed into adjacent
-    # legitimately-Balearic articles. Reject before we even count
-    # anchors.
+    Otherwise delegates to the Riera-native section parser
+    (``scripts/parse_sections.py``). The parser dispatches between
+    administrative entries (9-section template, classification via
+    'Corresponde á la prov. de X' / 'dióc. de X') and geographic
+    entries (free prose, classification via Balearic-toponym density
+    in the body head).
+
+    `ngib_balearic` is forwarded to the parser as a tertiary signal —
+    used only when the parser found no province nor diocese (typical
+    of body-extraction failures where pdftotext can't match the
+    OCR-garbled lemma). NGIB's gazetteer answers 'is this lemma a
+    Balearic place' authoritatively, independent of body quality.
+
+    Returns (decision, parsed_entry) so the caller can persist the
+    parser's structured fields alongside the boolean decision."""
+    parsed = parse_sections.parse_entry(body, lemma=lemma)
     if lemma and COLONIAL_LEMMA_RE.search(lemma):
-        return False, 0, 0
-    # Hard gate 1b: diocese-level lemmas. Riera writes the title as
-    # 'X (Obispado de)' where X is the diocese name. Only Mallorca,
-    # Menorca and Ibiza are Balearic dioceses; everything else is
-    # peninsular regardless of how many Balearic tokens appear in
-    # the article (Riera lists Balears as a comparison or in admin
-    # rosters even in non-Balearic diocese articles).
-    if lemma and DIOCESE_LEMMA_RE.search(lemma):
-        if not BAL_DIOCESE_PREFIX_RE.match(lemma):
-            return False, 0, 0
-    # Hard gate 2: admin-province self-declaration. If the body says
-    # 'Corresponde á la prov. de León' (or any non-Balearic Spanish
-    # province) we reject regardless of incidental Balearic token
-    # mentions. This kills false positives whose body extraction
-    # returned a peninsular article's content. The check requires that
-    # the declared province be in our peninsular set — if Riera
-    # writes 'prov. de Baleares', or the regex matches nothing, or
-    # the captured token isn't a recognised province, we DO NOT
-    # reject on this basis (errs on the side of keeping toponyms).
-    admin_prov = _admin_province(body)
-    if admin_prov in _PROV_NON_BAL_SET:
-        return False, 0, 0
-    # Hard gate 3: when admin_province returns None (no canonical
-    # 'Corresponde á la prov.' opener — typical of diocese articles
-    # and geographic accidents) we fall back to the first 'prov. de X'
-    # mention anywhere in the body. Only reject if that mention is
-    # peninsular AND there are no Balearic anchors in the head — a
-    # conservative test that minimises false rejections of real
-    # Balearic entries that incidentally name peninsular provinces.
-    if admin_prov is None:
-        first_prov = _first_prov_mention(body)
-        if first_prov in _PROV_NON_BAL_SET:
-            head_bal_quick = len(BALEARIC_TOKENS.findall(
-                "\n".join(body.split("\n")[:40])
-            ))
-            if head_bal_quick == 0:
-                return False, 0, 0
-    head = "\n".join(body.split("\n")[:40])
-    total = len(BALEARIC_TOKENS.findall(body))
-    head_hits = len(BALEARIC_TOKENS.findall(head))
-    body_lines = body.count("\n") + 1
-    # SECOND fallback — the lemma itself names one of the four major
-    # islands or capital cities. 'ISLA DE MALLORCA' describes
-    # geography ('lies east of Ibiza, with capes Pinar and Formentor…')
-    # without repeating 'Mallorca' often, so the head-anchor count is
-    # low (often only 1). 'cabrera' is INTENTIONALLY excluded — too
-    # many peninsular entries (CASTRILLO DE CABRERA, Sierra de
-    # Cabrera in León) carry it in their lemma and would smuggle in.
-    LEMMA_TOKENS = re.compile(
-        r"\b(baleares|bale[aà]ric|bale[aà]riques"
-        r"|mallorca|menorca|ibiza|iviza|eivissa|formentera"
-        r"|mah[oó]n|cindadela|ciutadella|ciudadela)\b",
-        re.I,
-    )
-    lemma_has_token = bool(lemma and LEMMA_TOKENS.search(lemma))
-    if lemma_has_token and head_hits >= 1:
-        return True, total, head_hits
-    # NGIB-as-fallback: title fuzzy-matches a Balearic settlement at
-    # ≥95. This rescues entries with low body-anchor counts due to
-    # statistical-table interruption (SOLLER, MANACOR). But we must
-    # still require at least 1 HEAD anchor — without that guard, three
-    # peninsular SANTA EULALIA entries at tom IX p548 (Lleida, Huesca,
-    # Lugo) all match NGIB's "Santa Eulalia" and would smuggle in.
-    if ngib_balearic and head_hits >= 1:
-        return True, total, head_hits
-    if body_lines < 25:
-        return head_hits >= 1, total, head_hits
-    return head_hits >= 2, total, head_hits
+        return False, parsed
+    return parsed.is_balearic(ngib_balearic=ngib_balearic), parsed
 
 
 def load_gazetteer():
@@ -816,26 +657,28 @@ def index_volume(vol: str) -> dict:
                 "Altre nucli de població, llogaret",
             ):
                 ngib_settlement_match = True
-        ok, total, head = is_balearic(body,
-                                       ngib_balearic=ngib_settlement_match,
-                                       lemma=op["lemma"])
+        ok, parsed = is_balearic(body,
+                                  ngib_balearic=ngib_settlement_match,
+                                  lemma=op["lemma"])
         if not ok:
             continue
-        # Negative-evidence score: peninsular tokens in the head
-        # window (same 40-line window as balearic_hits). This is NOT
-        # used to reject the entry — it's surfaced so the post-index
-        # audit can flag suspicious ones for manual review.
-        head_text = "\n".join(body.split("\n")[:40])
-        pen_head = len(PENINSULAR_TOKENS.findall(head_text))
-        pen_total = len(PENINSULAR_TOKENS.findall(body))
+        # Persist the parser's structured findings. These replace the
+        # old token-count fields (anchors_total / anchors_head /
+        # peninsular_*) with the actual semantic facts Riera writes:
+        # the entry's kind, its self-declared province and diocese,
+        # the number of canonical sections the parser identified.
+        poblacion_fields = parsed.fields.get("poblacion") or {}
         balearic.append({
             "vol": vol, "page": op["page"], "lemma": op["lemma"],
             "raw": op["raw"][:80],
             "body_lines": body.count("\n") + 1,
-            "anchors_total": total, "anchors_head": head,
-            "peninsular_head": pen_head,
-            "peninsular_total": pen_total,
-            "score": head - pen_head,
+            "kind": parsed.kind,
+            "provincia": parsed.get_provincia(),
+            "diocesis": parsed.get_diocesis(),
+            "habitantes": poblacion_fields.get("habitantes"),
+            "edificios": poblacion_fields.get("edificios"),
+            "section_coverage": parsed.coverage,
+            "balearic_refs": parsed.body_balearic_refs,
             "ngib": ngib,
         })
     # Deduplicate. Two-stage:
@@ -855,7 +698,7 @@ def index_volume(vol: str) -> dict:
     seen: dict = {}
     for e in balearic:
         k = _key(e)
-        if k not in seen or e["anchors_head"] > seen[k]["anchors_head"]:
+        if k not in seen or e.get("balearic_refs", 0) > seen[k].get("balearic_refs", 0):
             seen[k] = e
     # Stage 2: dedup by (page, ngib_key) — pick the variant with the
     # most Balearic anchors. Entries without an NGIB match pass through
@@ -867,7 +710,7 @@ def index_volume(vol: str) -> dict:
         if ngib and ngib.get("score", 0) >= 95:
             nk = (e["page"], ngib["key"])
             prev = ngib_seen.get(nk)
-            if prev is None or e["anchors_head"] > prev["anchors_head"]:
+            if prev is None or e.get("balearic_refs", 0) > prev.get("balearic_refs", 0):
                 ngib_seen[nk] = e
         else:
             survivors.append(e)
@@ -1089,45 +932,42 @@ def _audit_pdftotext_candidates(indexed_entries: list[dict]) -> list[dict]:
 
 
 def run_peninsular_audit(indexed_entries: list[dict]) -> None:
-    """Print a per-entry negative-evidence audit.
-
-    For each indexed entry we already have:
-      anchors_head    — Balearic tokens in the body's first 40 lines
-      peninsular_head — peninsular-province / colonial tokens, same window
-
-    The score `anchors_head − peninsular_head` is a strong negative-
-    evidence signal:
-      score > 0   the body is dominated by Balearic markers (clean)
-      score = 0   the body has matching amounts of both (suspicious)
-      score < 0   the body mentions more peninsular markers than
-                   Balearic ones — almost certainly a false positive
-                   that the regex+NGIB pipeline mis-accepted
-
-    Unlike `is_balearic`, this pass does NOT auto-reject. It surfaces
-    a triage report so the human reviewer can decide entry-by-entry."""
-    suspects = []
+    """Print a triage report of indexed entries grouped by parser
+    findings. With the new section-based parser this audit is mostly
+    a sanity check — every indexed entry has already passed
+    parsed.is_balearic(), so the audit reports the population by
+    `kind` and surfaces entries whose `provincia` field is None
+    (typically body-extraction failures rescued by NGIB)."""
+    by_kind: dict[str, int] = {}
+    no_prov: list[dict] = []
+    with_dioc: dict[str, int] = {}
     for e in indexed_entries:
-        score = e.get("score",
-                       e.get("anchors_head", 0) - e.get("peninsular_head", 0))
-        if score <= 0:
-            suspects.append((score, e))
-    print(f"\n[peninsular-audit] {len(indexed_entries)} indexed entries; "
-          f"{len(suspects)} with score ≤ 0 (suspicious).\n")
-    if not suspects:
-        print("[peninsular-audit] No suspects — every entry has more "
-              "Balearic anchors than peninsular tokens. ")
-        return
-    print(f"  {'vol':<4} {'page':>4}  {'lemma':<40}  "
-          f"{'bal':>4} {'pen':>4} {'Δ':>4}  ngib")
-    print("  " + "-" * 86)
-    for score, e in sorted(suspects, key=lambda x: x[0]):
-        ngib_s = ""
-        if e.get("ngib"):
-            ngib_s = f"{e['ngib']['spelling']} ({e['ngib']['island']})"
-        print(f"  {e['vol']:<4} {e['page']:>4}  "
-              f"{e['lemma'][:40]:<40}  "
-              f"{e['anchors_head']:>4} {e['peninsular_head']:>4} "
-              f"{score:>+4}  {ngib_s[:40]}")
+        kind = e.get("kind", "?")
+        by_kind[kind] = by_kind.get(kind, 0) + 1
+        if not e.get("provincia"):
+            no_prov.append(e)
+        dioc = e.get("diocesis")
+        if dioc:
+            with_dioc[dioc] = with_dioc.get(dioc, 0) + 1
+    print(f"\n[parser-audit] {len(indexed_entries)} indexed entries.\n")
+    print("Distribution by parser-detected kind:")
+    for kind, n in sorted(by_kind.items(), key=lambda x: -x[1]):
+        print(f"  {kind:<16} {n:>4}")
+    print("\nDistribution by detected diocese:")
+    for dioc, n in sorted(with_dioc.items(), key=lambda x: -x[1]):
+        print(f"  {dioc:<16} {n:>4}")
+    if no_prov:
+        print(f"\n{len(no_prov)} entries without parsed `provincia` "
+              f"(rescued by NGIB or geographic body-refs):")
+        for e in no_prov[:40]:
+            ngib_s = ""
+            if e.get("ngib"):
+                ngib_s = f"NGIB:{e['ngib']['spelling']}"
+            print(f"  tom{e['vol']} p{e['page']:>4}  "
+                  f"[{e.get('kind', '?'):<14}] {e['lemma'][:32]:<32}  "
+                  f"refs={e.get('balearic_refs', 0):<3} {ngib_s}")
+        if len(no_prov) > 40:
+            print(f"  … and {len(no_prov) - 40} more")
 
 
 def main():
