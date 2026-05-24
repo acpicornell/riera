@@ -70,7 +70,26 @@ ENTRY_LEMMA_RE = re.compile(r"^[A-ZÁÉÍÓÚÑÜ]{2,}")
 # BARCELONA province articles) are indented and all-caps but never
 # carry this separator. This single filter removes ~95% of the false
 # positives (EUROPA, EXPORTACION, ENTRADA Y SALIDA DE BUQUES…).
-ENTRY_SEPARATOR_RE = re.compile(r"\.[\s'\"]*[—\-]|\s—\s")
+ENTRY_SEPARATOR_RE = re.compile(r"\.[\s'\"]*[—\-~]|\s—\s")
+
+# When the PDF typesetter uses letter-spacing for emphasised lemmas
+# (a 19th-century convention in dictionaries), PyMuPDF's text layer
+# encodes that as literal spaces between each glyph. pdftotext quietly
+# collapses these, PyMuPDF does not. The result on Riera is lines like
+# 'D E Y Á . ~ V . con ayunt.' that fail the lemma regex. This
+# normaliser detects ≥4 consecutive single-char+space tokens at the
+# start of a line and collapses them — stops as soon as the regular
+# narrative text begins (lowercase letter or multi-char token).
+_SPACED_LEMMA_RE = re.compile(
+    r"^((?:[A-ZÁÉÍÓÚÑÜ0-9\.\~\(\)']\s){3,}[A-ZÁÉÍÓÚÑÜ0-9\.\~\(\)'])(?=\s[a-z])"
+)
+
+
+def _collapse_spaced_lemma(text: str) -> str:
+    m = _SPACED_LEMMA_RE.match(text)
+    if not m:
+        return text
+    return m.group(1).replace(" ", "") + text[len(m.group(1)):]
 
 # Centred page-titles / running heads / volume markers — never an entry.
 NOISE_TITLES_RE = re.compile(
@@ -155,15 +174,18 @@ def clean_title(t: str) -> str:
 
 def _find_column_baselines(xs: list[float]) -> tuple[float, float]:
     """Two-column body-text baselines, recovered from the bimodal x0
-    distribution. The naive page-midpoint split fails on Riera because
-    the right column's left edge (x ≈ 267-270) often sits LEFT of the
-    page midpoint (x = 273), so right-column text contaminates the
-    left bucket and skews the mode.
+    distribution.
 
-    Algorithm: bin x0 by 1pt and take the two most populous bins that
-    are at least 80pt apart. Those are the two body baselines (left
-    and right column start). If there's only one cluster (single-col
-    intro or full-page table) return (mode, mode)."""
+    Step 1: bin x0 values by 1pt and find the two most-populous bins
+    that are ≥80pt apart. Those identify the two columns.
+
+    Step 2 (refinement): within each column, the baseline is the
+    SMALLEST x0 value with ≥3 occurrences — not the mode. The mode
+    is unreliable on pages where indented openers / section headers
+    outnumber the body lines (e.g. tom VI p586 where 14 indented
+    SANTA-X openers cluster at x=308 but the actual right-column
+    body baseline is at x=287, with only 10 lines). Indent magnitude
+    is then computed against this true left edge."""
     if not xs:
         return (0.0, 0.0)
     counter = Counter(round(x) for x in xs)
@@ -176,8 +198,16 @@ def _find_column_baselines(xs: list[float]) -> tuple[float, float]:
             break
     if secondary is None:
         return (float(primary), float(primary))
-    left, right = sorted((primary, secondary))
-    return (float(left), float(right))
+    left_anchor, right_anchor = sorted((primary, secondary))
+    # Refine each baseline: smallest x0 in that column with ≥3 hits
+    # and within 40pt of the anchor.
+    def refine(anchor: int) -> float:
+        candidates = sorted(
+            (v, c) for v, c in counter.items()
+            if c >= 3 and abs(v - anchor) <= 40
+        )
+        return float(candidates[0][0]) if candidates else float(anchor)
+    return refine(left_anchor), refine(right_anchor)
 
 
 def extract_indent_openers(pdf_path: Path) -> list[dict]:
@@ -202,6 +232,7 @@ def extract_indent_openers(pdf_path: Path) -> list[dict]:
                     continue
                 text = "".join(s["text"] for s in ln["spans"]).rstrip()
                 if text:
+                    text = _collapse_spaced_lemma(text)
                     lines.append((x0, y0, text))
         if not lines:
             continue
@@ -298,11 +329,26 @@ def extract_body(pdf_path: Path,
     return "\n".join(out)
 
 
-def is_balearic(body: str) -> tuple[bool, int, int]:
+def is_balearic(body: str, ngib_balearic: bool = False) -> tuple[bool, int, int]:
+    """Decide if an article is Balearic.
+
+    Body-anchor signal: count unambiguous Balearic tokens in the first
+    40 lines of the body. Short entries need ≥1, long entries need ≥2
+    to filter out peninsular cities that mention Baleares once in an
+    audiencia-territorial roster.
+
+    `ngib_balearic` is an OUT-OF-BAND signal: True when the entry's
+    title fuzzy-matches a Balearic NGIB toponym at ≥95. That match is
+    enough on its own to qualify the article as Balearic, irrespective
+    of body anchors. This rescues entries like SOLLER where the body
+    is interrupted by a statistical table that pushes most Balearic
+    tokens out of the head window."""
     head = "\n".join(body.split("\n")[:40])
     total = len(BALEARIC_TOKENS.findall(body))
     head_hits = len(BALEARIC_TOKENS.findall(head))
     body_lines = body.count("\n") + 1
+    if ngib_balearic and total >= 1:
+        return True, total, head_hits
     if body_lines < 25:
         return head_hits >= 1, total, head_hits
     return head_hits >= 2, total, head_hits
@@ -346,15 +392,28 @@ def index_volume(vol: str) -> dict:
     balearic = []
     for i, op in enumerate(openers):
         body = extract_body(pdf_path, i, openers)
-        ok, total, head = is_balearic(body)
-        if not ok:
-            continue
+        # NGIB title check runs FIRST so we can pass its result into
+        # is_balearic as an alternative signal.
         fm = fuzzy_match(op["lemma"], choices, norm_list)
         ngib = None
+        ngib_settlement_match = False
         if fm:
             sp, muni, island, ltype = choices[fm[0]][0]
             ngib = {"key": fm[0], "score": fm[1], "spelling": sp,
                     "municipality": muni, "island": island, "type": ltype}
+            # Strong match: ≥95 score against a settlement (Municipi,
+            # Capital de municipi, Vila, Variant històrica) — the kind
+            # of NGIB row Riera would unambiguously be referring to.
+            if fm[1] >= 95 and ltype in (
+                "Municipi", "Capital de municipi", "Capital de Municipi",
+                "Nucli de població capital de municipi", "Vila",
+                "Variant històrica", "Entitat de Població",
+                "Altre nucli de població, llogaret",
+            ):
+                ngib_settlement_match = True
+        ok, total, head = is_balearic(body, ngib_balearic=ngib_settlement_match)
+        if not ok:
+            continue
         balearic.append({
             "vol": vol, "page": op["page"], "lemma": op["lemma"],
             "raw": op["raw"][:80],

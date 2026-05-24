@@ -8,4 +8,5 @@
 {"vol": "07", "page": 717, "lemma": "NOCEDA", "raw": "NOCEDA. — L. agreg. al ayunt. de Cas-", "body_lines": 31, "anchors_total": 2, "anchors_head": 2, "ngib": null}
 {"vol": "07", "page": 722, "lemma": "NOGAR", "raw": "NOGAR.—L. agreg. al ayunt. de Castrillo", "body_lines": 24, "anchors_total": 2, "anchors_head": 2, "ngib": null}
 {"vol": "07", "page": 781, "lemma": "ODOLLO", "raw": "ODOLLO. — L. agreg. al ayunt. de Cas-", "body_lines": 28, "anchors_total": 2, "anchors_head": 2, "ngib": null}
+{"vol": "07", "page": 919, "lemma": "ORIENT", "raw": "ORIENT.—L. agreg. al ayunt. de Buñola,", "body_lines": 60, "anchors_total": 1, "anchors_head": 1, "ngib": {"key": "ORIENT", "score": 100, "spelling": "Orient", "municipality": "Bunyola", "island": "Mallorca", "type": "Altre nucli de població, llogaret"}}
 {"vol": "07", "page": 1090, "lemma": "PALMA", "raw": "PALMA. (Aud. territ.).—Durante la exis-", "body_lines": 60, "anchors_total": 5, "anchors_head": 4, "ngib": {"key": "PALMA", "score": 100, "spelling": "Palma", "municipality": "Palma", "island": "Mallorca", "type": "Municipi"}}

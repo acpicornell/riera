@@ -130,6 +130,7 @@ CAS_TO_CAT: dict[str, str] = {
     "CAPDEPERA": "Capdepera",
     "CONSELL": "Consell",
     "COST1TX": "Costitx", "COSTITX": "Costitx",
+    "DEYÁ": "Deià", "DEYA": "Deià",
     "ESCAPDELLÁ": "es Capdellà",
     "ESCORCA": "Escorca",
     "ESGLAYETA": "s'Esglaieta",
