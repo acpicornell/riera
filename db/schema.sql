@@ -47,6 +47,7 @@ CREATE TABLE IF NOT EXISTS text_entries (
     industria           TEXT,                    -- agricultura / molinos / talleres / oficios
     geografia           TEXT,                    -- situación / clima / orografía / hidrografía / límites
     description         TEXT,                    -- residual prose (Riera occasionally adds historical or anecdotal notes)
+    ocr_note            TEXT,                    -- editor's note about OCR/transcription issues for this entry, shown collapsed in the UI
     stats               JSON,                    -- {vecinos, habitantes, edificios, viviendas, albergues, …}
     cross_references    TEXT[],                  -- e.g. ["V. la descripción general de Mallorca"]
     confidence          TEXT,                    -- 'high' | 'medium' | 'low'

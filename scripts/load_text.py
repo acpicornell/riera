@@ -65,6 +65,7 @@ def main() -> None:
                 e.get("industria"),
                 e.get("geografia"),
                 e.get("description"),
+                e.get("ocr_note"),
                 json.dumps(stats, ensure_ascii=False) if stats else None,
                 xrefs,
                 e.get("confidence"),
@@ -84,9 +85,9 @@ def main() -> None:
             municipality, org_judicial, org_civil, org_militar,
             org_economica, org_eclesiastica, servicio_publico,
             obras_publicas, instruccion_publica, poblacion, industria,
-            geografia, description, stats, cross_references, confidence,
-            window_size, model, source_file)
-           VALUES (?,?,?,?, ?,?,?,?, ?,?,?,?, ?,?,?,?, ?,?,?,?, ?,?,?,?, ?)""",
+            geografia, description, ocr_note, stats, cross_references,
+            confidence, window_size, model, source_file)
+           VALUES (?,?,?,?, ?,?,?,?, ?,?,?,?, ?,?,?,?, ?,?,?,?, ?,?,?,?, ?,?)""",
         payload,
     )
     con.execute("COMMIT")

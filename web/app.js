@@ -188,6 +188,11 @@ function toggleExpand(tr) {
     crefsHtml = `<div class="entry-crefs"><strong>Referències creuades:</strong> ` +
       e.cross_references.map(c => `<code>${esc(c)}</code>`).join(", ") + `</div>`;
   }
+  let ocrNoteHtml = "";
+  if (e.ocr_note) {
+    ocrNoteHtml = `<details class="entry-ocr-note"><summary>Nota editorial / OCR</summary>` +
+      `<p>${esc(e.ocr_note)}</p></details>`;
+  }
   // Riera's nine-section template: render only the sections that
   // were populated by the LLM extraction.
   const SECTION_LABELS = [
@@ -218,6 +223,7 @@ function toggleExpand(tr) {
       ${sectionsHtml}
       ${statsHtml}
       ${crefsHtml}
+      ${ocrNoteHtml}
       <p class="minano-source">
         <span>Tom ${esc(e.vol)} · pàgina PDF ${esc(e.page)}</span>
         ${e.bdcyl_url ? `· <a href="${esc(e.bdcyl_url)}" target="_blank" rel="noopener">Veure volum a Biblioteca Digital de Castella i Lleó →</a>` : ""}

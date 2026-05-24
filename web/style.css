@@ -273,6 +273,34 @@ tbody tr.minano-expand td {
   font-family: Georgia, serif;
   background: transparent;
 }
+
+/* Editorial / OCR note rendered as a <details> block, collapsed by
+   default to keep the article body clean. Same visual weight as the
+   cross-references panel. */
+.entry-ocr-note {
+  margin: 0.8em 0 0;
+  font-size: 0.88em;
+  border: 1px dashed var(--border);
+  border-radius: 3px;
+  background: var(--num-bg);
+  padding: 0.4em 0.7em;
+}
+.entry-ocr-note summary {
+  cursor: pointer;
+  color: var(--text-muted);
+  font-style: italic;
+  font-weight: 600;
+  padding: 0.15em 0;
+  user-select: none;
+}
+.entry-ocr-note summary:hover { color: var(--accent-dark); }
+.entry-ocr-note[open] summary { color: var(--accent-dark); margin-bottom: 0.4em; }
+.entry-ocr-note p {
+  margin: 0;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.55;
+}
 .minano-source {
   margin: 1em 0 0;
   font-size: 0.85em;
