@@ -4,6 +4,7 @@
 {"vol": "05", "page": 678, "lemma": "INCA", "raw": "INCA. — V . con ayunt., á la que se hallan", "body_lines": 80, "anchors_total": 1, "anchors_head": 1, "ngib": {"key": "INCA", "score": 100, "spelling": "Inca", "municipality": "Inca", "island": "Mallorca", "type": "Municipi"}}
 {"vol": "05", "page": 727, "lemma": "ISLA", "raw": "ISLA. CUNILLERA (Baleares).—Pertenece", "body_lines": 2, "anchors_total": 1, "anchors_head": 1, "ngib": null}
 {"vol": "05", "page": 811, "lemma": "ISLA DE IBIZA", "raw": "ISLA DE IBIZA.—Esta isla tiene una lon-", "body_lines": 50, "anchors_total": 3, "anchors_head": 2, "ngib": null}
+{"vol": "05", "page": 812, "lemma": "ISLA DE MALLORCA", "raw": "ISLA DE MALLORCA.—Esta isla hállase al", "body_lines": 80, "anchors_total": 4, "anchors_head": 1, "ngib": {"key": "SOL DE MALLORCA", "score": 90, "spelling": "Sol de Mallorca", "municipality": "Calvià", "island": "Mallorca", "type": "Urbanització, barriada (aïllat)"}}
 {"vol": "05", "page": 813, "lemma": "ISLA DE MENORCA", "raw": "ISLA DE MENORCA.—Situada al E. de la", "body_lines": 46, "anchors_total": 5, "anchors_head": 5, "ngib": null}
 {"vol": "05", "page": 831, "lemma": "ISLA DRAGONERA", "raw": "ISLA DRAGONERA. —Próxima á la Isla", "body_lines": 5, "anchors_total": 2, "anchors_head": 2, "ngib": null}
 {"vol": "05", "page": 831, "lemma": "ISLA FORMENTERA (Baleares) — Véase", "raw": "ISLA FORMENTERA (Baleares). — Véase", "body_lines": 1, "anchors_total": 1, "anchors_head": 1, "ngib": null}

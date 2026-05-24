@@ -456,7 +456,8 @@ def extract_body(pdf_path: Path,
     return "\n".join(out)
 
 
-def is_balearic(body: str, ngib_balearic: bool = False) -> tuple[bool, int, int]:
+def is_balearic(body: str, ngib_balearic: bool = False,
+                 lemma: str = "") -> tuple[bool, int, int]:
     """Decide if an article is Balearic.
 
     Body-anchor signal: count unambiguous Balearic tokens in the first
@@ -474,6 +475,22 @@ def is_balearic(body: str, ngib_balearic: bool = False) -> tuple[bool, int, int]
     total = len(BALEARIC_TOKENS.findall(body))
     head_hits = len(BALEARIC_TOKENS.findall(head))
     body_lines = body.count("\n") + 1
+    # SECOND fallback — the lemma itself names one of the four major
+    # islands or capital cities. 'ISLA DE MALLORCA' describes
+    # geography ('lies east of Ibiza, with capes Pinar and Formentor…')
+    # without repeating 'Mallorca' often, so the head-anchor count is
+    # low (often only 1). 'cabrera' is INTENTIONALLY excluded — too
+    # many peninsular entries (CASTRILLO DE CABRERA, Sierra de
+    # Cabrera in León) carry it in their lemma and would smuggle in.
+    LEMMA_TOKENS = re.compile(
+        r"\b(baleares|bale[aà]ric|bale[aà]riques"
+        r"|mallorca|menorca|ibiza|iviza|eivissa|formentera"
+        r"|mah[oó]n|cindadela|ciutadella|ciudadela)\b",
+        re.I,
+    )
+    lemma_has_token = bool(lemma and LEMMA_TOKENS.search(lemma))
+    if lemma_has_token and head_hits >= 1:
+        return True, total, head_hits
     # NGIB-as-fallback: title fuzzy-matches a Balearic settlement at
     # ≥95. This rescues entries with low body-anchor counts due to
     # statistical-table interruption (SOLLER, MANACOR). But we must
@@ -548,7 +565,9 @@ def index_volume(vol: str) -> dict:
                 "Altre nucli de població, llogaret",
             ):
                 ngib_settlement_match = True
-        ok, total, head = is_balearic(body, ngib_balearic=ngib_settlement_match)
+        ok, total, head = is_balearic(body,
+                                       ngib_balearic=ngib_settlement_match,
+                                       lemma=op["lemma"])
         if not ok:
             continue
         balearic.append({
