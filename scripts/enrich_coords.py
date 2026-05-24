@@ -236,9 +236,14 @@ def strip_accents(s: str) -> str:
 
 
 def normalize_lookup(s: str) -> str:
-    """Drop accents, uppercase, collapse spaces — used for NGIB matching."""
+    """Drop accents, uppercase, collapse spaces, drop the supplement
+    marker — used for NGIB matching."""
     s = strip_accents(s).upper()
     s = s.replace("-", " ").replace("—", " ")
+    # Strip the '(addicional)' / '(adición)' suffix that marks Tom XII
+    # supplement entries — they should resolve to the same coordinates
+    # as their canonical counterpart in earlier toms.
+    s = re.sub(r"\s*\((ADDICIONAL|ADICIONAL|ADICI[OÓ]N|ADIC\.)\)\s*$", "", s, flags=re.I)
     s = re.sub(r"\s+", " ", s).strip()
     return s
 
