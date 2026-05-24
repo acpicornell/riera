@@ -262,22 +262,55 @@ def strip_accents(s: str) -> str:
 
 
 def normalize_title(s: str) -> str:
+    """Canonicalise a lemma for NGIB fuzzy matching.
+
+    Strips accents, uppercases, normalises punctuation, then drops:
+      • disjunctive alternative spellings: 'BUÑOLA Ó BUNYOLA' → 'BUÑOLA'
+      • parenthetical qualifiers: 'PALMA (Aud. territ.)' → 'PALMA',
+        'ISLA CUNILLERA (Baleares)' → 'ISLA CUNILLERA'
+
+    The qualifier stripping is essential for NGIB rescue — NGIB stores
+    toponyms in their pure form ('Palma', not 'Palma (Aud. territ.)'),
+    so without this step compound lemmas would never match."""
     s = strip_accents(s).upper().replace("-", " ").replace("—", " ")
     s = re.sub(r"\s+", " ", s).strip()
     s = re.sub(r"\s+O\s+.*$", "", s)
+    s = re.sub(r"\s*\([^)]*\).*$", "", s).strip()
     return s
 
 
 def clean_title(t: str) -> str:
-    """Strip junk, fix 1/l→I inside caps run, collapse spaces."""
-    # The lemma is the leading caps run, stop at the first '.' or '—'
-    m = re.match(r"^([A-ZÁÉÍÓÚÑÜ0-9'óòo \-,\(\)]{2,40})[\.\—]", t)
+    """Strip junk, fix 1/l→I inside caps run, collapse spaces.
+
+    Lemma capture stops at the em-dash separator (—/-/~), not at the
+    first period. Riera's OCR occasionally introduces stray periods
+    INSIDE the lemma ('ISLA. CUNILLERA' for 'ISLA CUNILLERA') and
+    Riera himself uses periods inside compound lemmas ('ALCUDIA (de
+    Mallorca)' is rendered with periods after abbreviations). Stopping
+    on the first period truncated all such lemmas to their first
+    word. The em-dash (or hyphen/tilde) is the canonical separator
+    between lemma and body and never appears INSIDE a lemma."""
+    m = re.match(r"^([A-ZÁÉÍÓÚÑÜ0-9'óòo \.\-,\(\)]{2,80}?)\s*[—~]\s*", t)
+    if not m:
+        # Some entries use a plain hyphen instead of em-dash. Allow
+        # only when followed by a known place-type abbreviation to
+        # avoid false matches on intra-word hyphens (Lluch-Mayor).
+        m = re.match(
+            r"^([A-ZÁÉÍÓÚÑÜ0-9'óòo \.\,\(\)]{2,80}?)\s*-\s*"
+            r"(?:V|L|C|B|Ald|Aid|Cas|Cot|Cor|Felig|Desp|Ayunt|Villa|"
+            r"Ciudad|Granja|Aldea|Lugar|Coto)\b",
+            t,
+        )
     if m:
         t = m.group(1)
     t = t.strip(" '\"’.,;:•·-")
     t = re.sub(r"(?<=[A-ZÁÉÍÓÚÑÜ])[1l](?=[A-ZÁÉÍÓÚÑÜ]|$|\b)", "I", t)
-    t = re.sub(r"\.+", "", t)
-    return re.sub(r"\s+", " ", t).strip()
+    # Trailing periods (post-stripping) are removed; internal periods
+    # in compound lemmas like 'ISLA. CUNILLERA' are collapsed to a
+    # space so the final lemma reads cleanly.
+    t = re.sub(r"\.\s*", " ", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    return t.strip(" .")
 
 
 def _find_column_baselines(xs: list[float]) -> tuple[float, float]:
@@ -427,12 +460,15 @@ def extract_body_pdftotext(opener: dict, vol: str, max_lines: int = 80) -> str:
         s = "".join(c for c in _ud.normalize("NFD", s)
                     if _ud.category(c) != "Mn").upper()
         s = re.sub(r"[1l](?=[A-Z])", "I", s)
-        # Strip em-dashes / hyphens / tildes / periods — these vary
-        # between PyMuPDF's captured lemma and pdftotext's rendering
-        # of the same line ('CABRERA (Cuba)—Punta…' vs the index's
-        # raw lemma 'CABRERA (Cuba)' truncated by the indexer's TITLE
-        # regex). Removing them makes the prefix match robust.
-        s = re.sub(r"[\.\-\—\~]+", "", s)
+        # Replace em-dashes / hyphens / tildes / periods with a
+        # SPACE — these vary between PyMuPDF's captured lemma and
+        # pdftotext's rendering of the same line. We replace (rather
+        # than delete) so that the resulting string preserves
+        # word-boundary information: 'DEYA.~V. CON' becomes
+        # 'DEYA V CON' so the prefix-match's next-char check sees
+        # whitespace, not an alnum that would falsely reject a true
+        # match.
+        s = re.sub(r"[\.\-\—\~]+", " ", s)
         s = re.sub(r"\s+", " ", s).strip()
         return s
     lemma_n = _norm(opener["lemma"])
@@ -489,8 +525,19 @@ def extract_body_pdftotext(opener: dict, vol: str, max_lines: int = 80) -> str:
     # content). Then return the body with the most BALEARIC_TOKENS.
     candidates: list[tuple[int, str]] = []
     for i, line in enumerate(lines):
-        if _norm(line)[: len(lemma_n)] != lemma_n:
+        norm_line = _norm(line)
+        if norm_line[: len(lemma_n)] != lemma_n:
             continue
+        # Word-boundary guard: 'FORN' must not match a line starting
+        # with 'FORNA' or 'FORNALUTX'. The lemma is a complete word in
+        # Riera's opener, not a prefix of a longer word. Without this
+        # the multi-candidate selector would pick a Balearic-rich body
+        # belonging to a longer-lemma neighbour and falsely assign it
+        # to our shorter lemma.
+        if len(norm_line) > len(lemma_n):
+            next_char = norm_line[len(lemma_n)]
+            if next_char.isalnum():
+                continue
         body_lines = []
         for j in range(i + 1, min(i + 1 + max_lines, len(lines))):
             l_stripped = lines[j].lstrip()
@@ -636,8 +683,29 @@ def index_volume(vol: str) -> dict:
         # Prefer pdftotext body (linear reading order, no column-bleed).
         body = extract_body_pdftotext(op, vol)
         if not body:
-            # Fallback to PyMuPDF column-aware extraction.
-            body = extract_body(pdf_path, i, openers)
+            # Fallback to PyMuPDF column-aware extraction — but only
+            # trust it if the lemma actually appears in the returned
+            # body. PyMuPDF's reading-order pass through the page
+            # often returns the WRONG article's body for compound
+            # lemmas (e.g. 'CALONGE ó CALONGE DE CALAF' yields
+            # 'TOMO XII (SUPLEMENTO). CAM 250 …' — the body of CAM
+            # 250 which has nothing to do with Calonge). Discarding
+            # such fallback bodies lets NGIB lemma rescue handle the
+            # entry on the basis of an empty body (its safest case).
+            fallback = extract_body(pdf_path, i, openers)
+            if fallback:
+                import unicodedata as _ud
+                def _norm_for_lemma(s: str) -> str:
+                    s = "".join(c for c in _ud.normalize("NFD", s)
+                                if _ud.category(c) != "Mn").lower()
+                    return re.sub(r"\s+", "", s)
+                lemma_main = re.split(r"\s*\(", op["lemma"], maxsplit=1)[0]
+                lemma_main = re.split(r"\s+ó\s+", lemma_main,
+                                       maxsplit=1, flags=re.I)[0]
+                if (len(lemma_main) >= 3
+                        and _norm_for_lemma(lemma_main)
+                        in _norm_for_lemma(fallback)):
+                    body = fallback
         # NGIB title check runs FIRST so we can pass its result into
         # is_balearic as an alternative signal.
         fm = fuzzy_match(op["lemma"], choices, norm_list)
@@ -716,6 +784,74 @@ def index_volume(vol: str) -> dict:
             survivors.append(e)
     survivors.extend(ngib_seen.values())
     balearic = survivors
+    # Stage 3: cross-page dedup — collapse entries whose lemmas are
+    # prefixes of each other on adjacent pages (±1). OCR sometimes
+    # captures the article opener on one page (truncated lemma like
+    # 'BUÑOL', 'SIN') and the full lemma + body on the next page
+    # ('BUÑOLA', 'SINEU'). PyMuPDF treats them as separate openers;
+    # they are in fact the same article. Same applies to entries that
+    # NGIB resolves to the same toponym across adjacent pages.
+    def _lemma_key(s: str) -> str:
+        import unicodedata as _ud
+        s = "".join(c for c in _ud.normalize("NFD", s)
+                    if _ud.category(c) != "Mn").upper()
+        return re.sub(r"\s+", " ", s).strip()
+
+    balearic.sort(key=lambda e: (e["page"], -(e.get("body_lines") or 0)))
+    keep: list = []
+    for e in balearic:
+        merged = False
+        for i, k in enumerate(keep):
+            if k["vol"] != e["vol"]:
+                continue
+            page_diff = abs(int(k["page"]) - int(e["page"]))
+            if page_diff == 0 or page_diff > 1:
+                # SAME page → different articles by construction (the
+                # opener detector already deduped intra-page exact-
+                # lemma matches). Avoid collapsing LLUBÍ + LLUCH or
+                # SAN ANTONIO + SAN ANTONIO ABAD which happen to share
+                # a prefix but are distinct toponyms.
+                #
+                # >1 PAGE → too far apart to be the same article. Each
+                # entry stands on its own.
+                continue
+            # page_diff == 1: typical when OCR splits the lemma across
+            # a page break (BUÑOL p948 / BUÑOLA p949) or repeats the
+            # opener at the top of the continuation page (MARÍA p29 +
+            # p30).
+            lk = _lemma_key(k["lemma"])
+            le = _lemma_key(e["lemma"])
+            # Prefix relationship — one lemma is a TRUNCATED version
+            # of the other across pages. We collapse only WITHIN-word
+            # truncations (BUÑOL → BUÑOLA, SIN → SINEU, ARIA → ARIANI)
+            # — i.e. when the longer lemma extends the shorter with up
+            # to 3 additional letters that are NOT preceded by a word
+            # boundary. Multi-word extensions like 'SAN ANTONIO' →
+            # 'SAN ANTONIO ABAD' or 'LA ALQUERÍA' → 'LA ALQUERÍA
+            # BLANCA' are DIFFERENT places sharing a prefix and must
+            # NOT be collapsed.
+            short, longer = sorted((lk, le), key=len)
+            extension = longer[len(short):] if longer.startswith(short) else ""
+            if (len(short) >= 5
+                    and longer.startswith(short)
+                    and 0 < len(extension) <= 3
+                    and not extension.startswith(" ")):
+                if len(le) > len(lk):
+                    keep[i] = e
+                merged = True
+                break
+            # Same lemma + same NGIB key on adjacent pages: same
+            # article repeated. Keep the longer body.
+            ng_k = (k.get("ngib") or {}).get("key")
+            ng_e = (e.get("ngib") or {}).get("key")
+            if lk == le or (ng_k and ng_k == ng_e):
+                if (e.get("body_lines") or 0) > (k.get("body_lines") or 0):
+                    keep[i] = e
+                merged = True
+                break
+        if not merged:
+            keep.append(e)
+    balearic = keep
     balearic.sort(key=lambda e: (e["page"], e["lemma"]))
     doc = pymupdf.open(str(pdf_path))
     body_start = openers[0]["page"] if openers else 1

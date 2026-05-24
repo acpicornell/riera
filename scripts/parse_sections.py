@@ -228,6 +228,14 @@ _DIOC_RE = re.compile(
     r"di[óo]c\.?(?:esis)?\s+(?:de\s+)?([A-Za-záéíóúñÑÁÉÍÓÚüÜ]{2,30})",
     re.I,
 )
+# Spanish stopwords that the diocese regex occasionally captures when
+# the article doesn't begin its 'dióc.' clause with the diocese name
+# (e.g. 'dióc. que se halla en el archipiélago…').
+_DIOCESE_STOPWORDS = {
+    "que", "la", "las", "el", "los", "en", "de", "del", "y", "o", "a",
+    "se", "ese", "esta", "estos", "una", "lo", "su", "sus", "los",
+    "men", "pe",
+}
 _ARCIPR_RE = re.compile(
     r"arciprestazgo\s+(?:de\s+)?([A-Za-záéíóúñÑÁÉÍÓÚüÜ\s]{2,40}?)"
     r"(?:[,\.\-—]|\s+y\b)",
@@ -354,6 +362,7 @@ class ParsedEntry:
     coverage: int = 0                # 9-section coverage (admin only)
     body_balearic_refs: int = 0      # geographic discriminator
     body_excerpt: str = ""           # for debug / display
+    lemma_in_body: bool = False      # NGIB-rescue guard signal
 
     def get_provincia(self) -> Optional[str]:
         """Return the province from whichever source has it. Field-level
@@ -403,7 +412,29 @@ class ParsedEntry:
             if self.body_balearic_refs >= 1:
                 return True
         if ngib_balearic:
-            return True
+            # NGIB lemma rescue — accept when one of the following:
+            #   (a) body extraction returned nothing (extraction
+            #       failure → trust NGIB).
+            #   (b) body is a cross-reference ('Véase X').
+            #   (c) body has Riera structural signal (kind != unknown:
+            #       admin sections or geographic-type opener).
+            #   (d) the lemma reappears inside the body — proof that
+            #       the article text is ABOUT the place the lemma
+            #       names. Statistical tables like 'ANDRAIX, EN 1883'
+            #       qualify; Cuban body bleed about Guanajal / hatos
+            #       de Camarai does not (lemma never reappears).
+            # Reject otherwise: kind=unknown + non-trivial body + no
+            # lemma reappearance is almost always body bleed.
+            body = (self.head or "").strip()
+            if len(body) < 50:
+                return True
+            if "véase" in body.lower()[:80] or "veasee" in body.lower()[:80]:
+                return True
+            if self.kind != "unknown":
+                return True
+            if self.lemma_in_body:
+                return True
+            return False
         return False
 
     def diagnosis(self) -> str:
@@ -494,6 +525,33 @@ def parse_entry(body: str, lemma: str = "") -> ParsedEntry:
     entry.kind = _classify_kind(lemma, body)
     entry.body_excerpt = body[:120].replace("\n", " ")
     entry.head = body
+    # Does the lemma appear in the body text? Used by NGIB rescue to
+    # discriminate genuine extraction (where the article text repeats
+    # the lemma, e.g. in statistical-table headings 'PORLA ADUANA DE
+    # ANDRAIX, EN 1883') from body-bleed (Cuban entry whose body
+    # never mentions the would-be Balearic lemma at all).
+    if lemma:
+        lk = _strip_accents_lower(re.sub(r"\s+", " ", lemma)).strip()
+        # Strip noise: the parenthetical territory marker '(Baleares)'
+        # and the prefix ALL-CAPS word that's the same as the
+        # opener — what we want is the SECOND occurrence of the
+        # lemma's stem in body prose.
+        lk_main = re.split(r"\s*\(", lk, maxsplit=1)[0].strip()
+        if lk_main and len(lk_main) >= 3:
+            body_norm = _strip_accents_lower(body)
+            # The opener line is excluded from `body` by the extractor
+            # (lines start at i+1), so any occurrence here is the
+            # article's prose actually mentioning its own toponym —
+            # the discriminating signal vs body bleed from an unrelated
+            # article that doesn't repeat the lemma. We also check a
+            # no-whitespace variant so Riera's spaced-glyph emphasis
+            # ('A N D R A I X' in a stat-table heading) still counts.
+            body_no_ws = re.sub(r"\s+", "", body_norm)
+            lemma_no_ws = re.sub(r"\s+", "", lk_main)
+            if (body_norm.count(lk_main) >= 1
+                    or (len(lemma_no_ws) >= 5
+                        and body_no_ws.count(lemma_no_ws) >= 1)):
+                entry.lemma_in_body = True
 
     # Body-wide field extraction — works for any entry shape.
     pm = _PROV_RE.search(body)
@@ -501,9 +559,12 @@ def parse_entry(body: str, lemma: str = "") -> ParsedEntry:
         entry.fields["provincia"] = _clean_province(pm.group(1))
     dm = _DIOC_RE.search(body)
     if dm:
-        entry.fields["diocesis"] = _strip_accents_lower(
-            dm.group(1).strip(" .,;:")
-        )
+        dioc_raw = _strip_accents_lower(dm.group(1).strip(" .,;:"))
+        # Reject common Spanish stopwords captured as diocese
+        # ('dióc. que se halla situado…' → 'que'; 'dióc. de la pro-
+        # vincia' → 'la'). Only proper-name captures are kept.
+        if dioc_raw not in _DIOCESE_STOPWORDS and len(dioc_raw) >= 3:
+            entry.fields["diocesis"] = dioc_raw
     # Balearic-toponym density — relevant for geographic / unknown
     # entries that lack any explicit province assignment.
     entry.body_balearic_refs = len(BALEARIC_GEO_RE.findall(body[:1500]))
