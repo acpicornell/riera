@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "TJLLARO",
+      "title": "ULLARÓ",
       "place_type": "lugar",
       "island": "Mallorca",
       "municipality": "Campanet",
@@ -30,7 +30,8 @@
       "cross_references": [
         "Campanet"
       ],
-      "confidence": "medium"
+      "confidence": "medium",
+      "title_original": "TJLLARO"
     }
   ]
 }

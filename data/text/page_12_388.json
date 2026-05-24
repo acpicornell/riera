@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "MENORCA (Obispado de) — Algunos años",
+      "title": "MENORCA (Obispado de)",
       "place_type": "obispado",
       "island": "Menorca",
       "municipality": null,
@@ -33,7 +33,8 @@
         "San Luis",
         "Villacarlos"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "title_original": "MENORCA (Obispado de) — Algunos años"
     }
   ]
 }

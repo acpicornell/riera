@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "PALMA (Aud territ ) —Durante la exis",
+      "title": "PALMA (Audiencia Territorial)",
       "place_type": "ciudad",
       "island": "Mallorca",
       "municipality": "Palma",
@@ -57,7 +57,8 @@
         "Mahon",
         "Manacor"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "title_original": "PALMA (Aud territ ) —Durante la exis"
     }
   ]
 }

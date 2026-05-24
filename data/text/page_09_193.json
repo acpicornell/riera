@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "SAN JUAN DE OARBONELL",
+      "title": "SAN JUAN DE CARBONELL",
       "place_type": "lugar",
       "island": "Menorca",
       "municipality": "Es Mercadal",
@@ -33,7 +33,8 @@
       "confidence": "high",
       "vol": "09",
       "page": 193,
-      "page_file": "data/text/page_09_193.json"
+      "page_file": "data/text/page_09_193.json",
+      "title_original": "SAN JUAN DE OARBONELL"
     }
   ]
 }

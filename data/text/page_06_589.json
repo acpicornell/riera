@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "LLUMMAYOR ó LLUCH-MAYOR",
+      "title": "LLUCH-MAYOR",
       "place_type": "villa",
       "island": "Mallorca",
       "municipality": "Llucmajor",
@@ -33,7 +33,8 @@
         "Algaida",
         "Palma"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "title_original": "LLUMMAYOR ó LLUCH-MAYOR"
     }
   ]
 }

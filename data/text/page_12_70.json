@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "ALAYOR ó ALAÓ",
+      "title": "ALAYOR",
       "place_type": "villa",
       "island": "Menorca",
       "municipality": "Alaior",
@@ -27,7 +27,8 @@
         "edificios_inhabitados": 1278
       },
       "cross_references": [],
-      "confidence": "high"
+      "confidence": "high",
+      "title_original": "ALAYOR ó ALAÓ"
     }
   ]
 }

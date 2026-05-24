@@ -27,7 +27,7 @@
       "confidence": "high"
     },
     {
-      "title": "ISLETA DEL AIRE ( Baleares ) — (Véase",
+      "title": "ISLETA DEL AIRE",
       "place_type": "isleta",
       "island": "Menorca",
       "municipality": null,
@@ -47,10 +47,11 @@
       "cross_references": [
         "Isla de Menorca"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "title_original": "ISLETA DEL AIRE ( Baleares ) — (Véase"
     },
     {
-      "title": "ISLETA DEN COLOM (Baleares) —(Véase",
+      "title": "ISLETA DEN COLOM",
       "place_type": "isleta",
       "island": "Menorca",
       "municipality": null,
@@ -70,7 +71,8 @@
       "cross_references": [
         "Isla de Menorca"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "title_original": "ISLETA DEN COLOM (Baleares) —(Véase"
     }
   ]
 }

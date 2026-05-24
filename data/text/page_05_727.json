@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "ISLA CUNILLERA (Baleares) —Pertenece",
+      "title": "ISLA CUNILLERA",
       "place_type": "isla",
       "island": "Ibiza",
       "municipality": "Sant Antoni de Portmany",
@@ -25,7 +25,8 @@
       "cross_references": [
         "Cunillera ó Conejera"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "title_original": "ISLA CUNILLERA (Baleares) —Pertenece"
     }
   ]
 }

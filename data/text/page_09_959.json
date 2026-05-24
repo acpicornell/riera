@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "SELVA ó SEUVA",
+      "title": "SELVA",
       "place_type": "villa",
       "island": "Mallorca",
       "municipality": "Selva",
@@ -39,7 +39,8 @@
         "Campanet",
         "Lloseta"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "title_original": "SELVA ó SEUVA"
     }
   ]
 }

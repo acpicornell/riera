@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "CAIMARL",
+      "title": "CAIMARI",
       "place_type": "lugar",
       "island": "Mallorca",
       "municipality": "Selva",
@@ -32,7 +32,8 @@
       ],
       "confidence": "high",
       "vol": "03",
-      "page": 184
+      "page": 184,
+      "title_original": "CAIMARL"
     }
   ]
 }

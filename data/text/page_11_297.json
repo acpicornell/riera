@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "VILLAOARLOS",
+      "title": "VILLACARLOS",
       "place_type": "villa",
       "island": "Menorca",
       "municipality": "Villacarlos / Es Castell",
@@ -30,7 +30,8 @@
       "cross_references": [
         "Mahón"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "title_original": "VILLAOARLOS"
     }
   ]
 }

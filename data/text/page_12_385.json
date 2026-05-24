@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "MALLOECA (Obispado de) — Una vez que",
+      "title": "MALLORCA (Obispado de)",
       "place_type": "obispado",
       "island": "Mallorca",
       "municipality": "Palma",
@@ -28,7 +28,8 @@
         "Manacor",
         "Valencia (archbishopric)"
       ],
-      "confidence": "medium"
+      "confidence": "medium",
+      "title_original": "MALLOECA (Obispado de) — Una vez que"
     },
     {
       "title": "MANACOR",

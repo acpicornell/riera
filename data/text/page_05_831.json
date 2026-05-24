@@ -29,7 +29,7 @@
       "confidence": "high"
     },
     {
-      "title": "ISLA FORMENTERA (Baleares) — Véase",
+      "title": "ISLA FORMENTERA",
       "place_type": "isla",
       "island": "Formentera",
       "municipality": null,
@@ -49,7 +49,8 @@
       "cross_references": [
         "Formentera"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "title_original": "ISLA FORMENTERA (Baleares) — Véase"
     }
   ]
 }

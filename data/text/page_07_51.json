@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "MARRATXÍ ó MARRACHÍ",
+      "title": "MARRATXÍ",
       "place_type": "villa",
       "island": "Mallorca",
       "municipality": "Marratxí",
@@ -31,7 +31,8 @@
         "Buñola",
         "Palma"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "title_original": "MARRATXÍ ó MARRACHÍ"
     }
   ]
 }

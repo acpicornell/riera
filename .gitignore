@@ -1,54 +1,5 @@
-# Source PDFs from JCyL — large, re-downloadable via fetch_volume.py
-data/pdf/
-
-# Per-volume plain text extracted from the PDFs via pdftotext — regenerable
+node_modules/
+package*.json
 data/txt/
-
-# Per-page text staging (optional, used by index_volume.py) — regenerable
-data/txt_pages/
-
-# NGIB toponyms — re-downloadable from the IDEIB API
-data/ngib/
-
-# Gazetteer (re-buildable from NGIB via build_gazetteer.py)
-data/gazetteer.parquet
-
-# Coordinate enrichment (regenerable via enrich_coords.py from the
-# gazetteer). Already injected into web/data.json — no need to track.
-data/coords.json
-
-# Audit outputs (regenerable)
-data/fuzzy_candidates.tsv
-data/gazetteer_candidates.tsv
-data/leaves_to_extract.txt
-data/reports/
-
-# DuckDB binary — rebuildable from the per-leaf JSON cache via load_text.py.
-# The JSON under data/text/ is versioned so the DB never needs to hit the
-# network to be reconstructed.
-db/*.duckdb
-db/*.duckdb.wal
-
-# Secrets — never commit. Keep .env.example as the public template.
-.env
-.env.*
-!.env.example
-
-# Python
-__pycache__/
-*.pyc
-.venv/
-.pytest_cache/
-
-# Editor / OS
-.vscode/
-.idea/
 .DS_Store
 
-# Local Claude permissions (not portable across machines)
-.claude/settings.local.json
-
-# Cloudflare wrangler artifacts
-.wrangler
-.dev.vars*
-!.dev.vars.example

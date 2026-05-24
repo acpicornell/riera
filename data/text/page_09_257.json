@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "SAN LTJIS",
+      "title": "SAN LUIS",
       "place_type": "villa",
       "island": "Menorca",
       "municipality": "Sant Lluís / San Luis",
@@ -30,7 +30,8 @@
       "cross_references": [
         "Véase el artículo referente á su ayunt."
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "title_original": "SAN LTJIS"
     }
   ]
 }
