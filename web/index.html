@@ -418,6 +418,30 @@
 
   <div class="demo-charts">
     <div class="demo-card">
+      <h3>Demografia balear el 1877: habitants i edificis per illa</h3>
+      <p class="demo-caption">Suma del cens de 1877 per illa segons les entrades del corpus. La barra esquerra mostra els habitants (escala blava); la dreta, els edificis (escala taronja). Permet veure la proporció hab/edif per illa d'un cop d'ull: Mallorca concentra la població absoluta, però illes amb molts predis i poblament dispers (com l'Eivissa rural) tenen ràtios diferents.</p>
+      <div id="stats-chart-pyramid" class="demo-chart"><p class="empty">Carregant…</p></div>
+    </div>
+
+    <div class="demo-card">
+      <h3>Núvol de dispersió: edificis vs. habitants</h3>
+      <p class="demo-caption">Cada punt és una entrada del Diccionari. L'eix horitzontal és el nombre d'edificis (escala logarítmica) i el vertical el d'habitants. Els punts es coloren segons l'illa. La línia diagonal marca la ràtio mitjana de 4 hab./edif. Llocs molt per sobre indiquen densitat urbana (Palma, Maó); llocs per sota són típics d'agregats rurals amb moltes cases temporals o inhabitades.</p>
+      <div id="stats-chart-scatter" class="demo-chart"><p class="empty">Carregant…</p></div>
+    </div>
+
+    <div class="demo-card">
+      <h3>Sunburst administratiu: illa → partit judicial → municipi</h3>
+      <p class="demo-caption">Tres anells concèntrics. L'anell intern és l'illa, el mitjà el partit judicial (extret de la secció <em>Org. judicial</em> de cada article), i l'extern el municipi. Permet veure quin partit judicial concentra més activitat (Palma a Mallorca, Maó a Menorca) i quins municipis hi pertanyen segons la divisió administrativa de 1877.</p>
+      <div id="stats-chart-admin-sunburst" class="demo-chart"><p class="empty">Carregant…</p></div>
+    </div>
+
+    <div class="demo-card">
+      <h3>Diòcesi × Partit judicial: superposició eclesiàstica/civil</h3>
+      <p class="demo-caption">Matriu de calor que creua diòcesi (eix vertical) amb partit judicial (eix horitzontal). La intensitat del color indica el nombre d'entrades en cada cel·la. Les xarxes civil i eclesiàstica no coincideixen del tot: la diòcesi de Mallorca cobreix els tres partits judicials de l'illa (Palma, Inca, Manacor); la de Menorca, els dos (Maó, Ciutadella). Les cel·les buides revelen on no hi ha solapament.</p>
+      <div id="stats-chart-heatmap" class="demo-chart"><p class="empty">Carregant…</p></div>
+    </div>
+
+    <div class="demo-card">
       <h3>Diagrama sunburst: illa → tipologia de lloc</h3>
       <div class="demo-caption">
         <p>

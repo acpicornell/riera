@@ -757,6 +757,29 @@ tbody tr.minano-expand td {
 .sunburst-legend strong { color: var(--text); }
 .demo-card-wide { grid-column: 1 / -1; }
 .demo-chart { overflow-x: auto; }
+/* === New stats charts (pyramid, scatter, admin sunburst, heatmap) === */
+.pyramid-svg { width: 100%; height: auto; display: block; font-family: inherit; }
+.pyramid-svg .pyramid-island { font-size: 12px; font-weight: 700; fill: var(--text); }
+.pyramid-svg .pyramid-subnum { font-size: 9px; fill: var(--text-muted); text-transform: uppercase; }
+.pyramid-svg .bar-value { font-size: 11px; fill: var(--text); font-variant-numeric: tabular-nums; font-weight: 600; }
+.pyramid-svg .bar-axis  { font-size: 10px; fill: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.pyramid-svg rect { transition: opacity 0.15s; }
+.pyramid-svg rect:hover { opacity: 0.7; }
+
+.scatter-svg { width: 100%; height: auto; display: block; font-family: inherit; }
+.scatter-svg .scatter-tick { font-size: 10px; fill: var(--text-muted); font-variant-numeric: tabular-nums; }
+.scatter-svg .scatter-axis-label { font-size: 11px; fill: var(--text); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.scatter-svg .scatter-legend { font-size: 11px; fill: var(--text); }
+.scatter-svg circle { cursor: default; transition: r 0.12s; }
+.scatter-svg circle:hover { r: 7; opacity: 1 !important; }
+
+.heatmap-svg { width: 100%; height: auto; display: block; font-family: inherit; }
+.heatmap-svg .heatmap-col-label { font-size: 11px; fill: var(--text); font-weight: 500; }
+.heatmap-svg .heatmap-row-label { font-size: 12px; fill: var(--text); font-weight: 600; }
+.heatmap-svg .heatmap-val { font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.heatmap-svg rect { cursor: default; transition: opacity 0.12s; }
+.heatmap-svg rect:hover { opacity: 0.7; }
+
 .bars-svg { width: 100%; height: auto; display: block; font-family: inherit; }
 .bars-svg .bar-label  { font-size: 11px; fill: var(--text); font-variant-numeric: tabular-nums; }
 .bars-svg .bar-value  { font-size: 11px; fill: var(--text); font-variant-numeric: tabular-nums; font-weight: 600; }
