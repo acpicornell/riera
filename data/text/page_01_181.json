@@ -4,7 +4,7 @@
   "model": "claude-opus-4-7",
   "entries": [
     {
-      "title": "ALAYOR Ó ALAÓ",
+      "title": "ALAYOR",
       "island": "Menorca",
       "municipality": "Alaior",
       "place_type": "villa",
@@ -27,7 +27,8 @@
       "geografia": "Está situada á la derecha del camino que conduce desde la capital del partido á Ciudadela; disfruta de buena ventilación, cielo alegre y clima saludable, no padeciéndose enfermedad alguna endémica, y tan dulce y agradable que los franceses le daban el nombre de Montpeller durante el tiempo de su dominación. Casi todos los vecinos tienen cisternas ó aljibes en sus casas donde recogen las aguas llovedizas, que reposadas son las más frescas por la calidad del terreno; sírvense también de algunos pozos inmediatos á la población hacia la parte de Levante, cuyas aguas son cristalinas y sanas; hay multitud de huertos con naranjos, limoneros, granados y otra porción de árboles frutales. Las peñas de Alayor es el nombre que se da á un pedazo de costa alta, tajada al mar, de color rojo con una torre de atalaya encima, y no lejos de ésta hay las calas de Lucarí-Nou y de Torre de Val hacia el O.; al S. las de Portes y Cobas, así nombradas por la infinidad de cuevas que allí se ven, y algunas ruinas, hace todo sospechar que hubo allí alguna población. Hay otras varias calas que únicamente son buenas para barcos de pescar. El terreno es llano por todos lados, excepto al N. por donde corre una cordillera de montañas. La parte de riego se hace con norias, y en el terreno secano ó sea montuoso, hay bosques de encinas y pinos, útiles para construcción y carboneo. Produce trigo, cebada, avena, maíz, garbanzos, judías, habas, hortalizas, frutas, vino, ganado lanar y de otras clases.",
       "description": "Incluye además sección de Organización marítima: Corresponde al departamento de Cartagena y comandancia marítima de las Islas Baleares.",
       "cross_references": [],
-      "confidence": "high"
+      "confidence": "high",
+      "title_original": "ALAYOR Ó ALAÓ"
     }
   ]
 }
