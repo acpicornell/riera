@@ -600,13 +600,194 @@ def index_volume(vol: str) -> dict:
             "articles": len(openers), "balearic": balearic}
 
 
+# ---------------------------------------------------------------------------
+# Optional second-pass audit using local sentence embeddings.
+#
+# After the regex+fuzzy+NGIB pipeline builds the index, this pass embeds
+# each entry's body + each pdftotext-only rejected candidate's body
+# against two archetypal reference queries (Balearic vs León). Entries
+# whose Léon-similarity exceeds Balearic-similarity by ≥ 0.02 are
+# confirmed peninsular; entries with the opposite margin are confirmed
+# Balearic; entries inside the ±0.02 band are flagged for human review.
+#
+# It only runs when --audit-with-embeddings is passed. Requires
+# sentence-transformers (~1 GB model download on first use). All-local,
+# no API calls.
+# ---------------------------------------------------------------------------
+
+# Archetypal Balearic vs León (Cabrera Baja arciprestat) reference
+# descriptions — written in Riera's own administrative vocabulary so
+# they sit in the same neighbourhood of vector space as the corpus.
+_Q_BAL = (
+    "Villa con ayuntamiento en la provincia de las Baleares, "
+    "isla de Mallorca, diócesis de Palma. Audiencia territorial "
+    "de Mallorca. Capitanía general de las Baleares, gobierno "
+    "militar de Palma. Departamento marítimo de Cartagena, "
+    "provincia marítima de Mallorca."
+)
+_Q_LEON = (
+    "Lugar agregado al ayuntamiento en la provincia de León, "
+    "diócesis de Astorga, arciprestazgo de Cabrera Baja. "
+    "Audiencia territorial de Valladolid. Capitanía general de "
+    "Castilla la Vieja, gobierno militar de León."
+)
+_AUDIT_MODEL = (
+    "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
+)
+_AUDIT_MARGIN = 0.02
+
+
+def run_embeddings_audit(indexed_entries: list[dict]) -> None:
+    """Print a per-entry semantic-similarity audit of the index plus the
+    pdftotext-only rejected candidates."""
+    try:
+        from sentence_transformers import SentenceTransformer
+    except ImportError:
+        print("\n[audit] sentence-transformers not installed. "
+              "Run `pip install sentence-transformers` first.")
+        return
+    import numpy as np
+    print(f"\n[audit] Loading {_AUDIT_MODEL} (first run downloads ~1 GB)…")
+    try:
+        model = SentenceTransformer(_AUDIT_MODEL, device="mps")
+    except Exception:
+        model = SentenceTransformer(_AUDIT_MODEL)
+    q_emb = model.encode([_Q_BAL, _Q_LEON], normalize_embeddings=True)
+    q_bal, q_leon = q_emb
+
+    # Gather indexed entries with their bodies.
+    rows: list[dict] = []
+    for e in indexed_entries:
+        body = extract_body_pdftotext(
+            {"page": int(e["page"]), "lemma": e["lemma"]},
+            e["vol"],
+            max_lines=30,
+        )
+        rows.append({**e, "_body": body, "_kind": "indexed"})
+
+    # Also gather pdftotext-only rejected openers (the same candidates
+    # the audit_pdftotext.py script reports) — to look for false
+    # negatives.
+    rejected = _audit_pdftotext_candidates(indexed_entries)
+    for r in rejected:
+        rows.append({**r, "_kind": "rejected"})
+
+    if not rows:
+        print("[audit] no candidates to evaluate.")
+        return
+
+    bodies = [r["_body"] for r in rows]
+    embs = model.encode(bodies, normalize_embeddings=True,
+                        batch_size=32, show_progress_bar=False)
+    sim_bal = embs @ q_bal
+    sim_leon = embs @ q_leon
+    margin = sim_bal - sim_leon  # positive → Balearic, negative → León
+
+    ambig_indexed = []
+    ambig_rejected = []
+    n_indexed = n_rejected = 0
+    for row, m, sb, sl in zip(rows, margin, sim_bal, sim_leon):
+        if row["_kind"] == "indexed":
+            n_indexed += 1
+            # Worry: indexed but margin negative (looks peninsular)
+            if m < _AUDIT_MARGIN:
+                ambig_indexed.append((row, sb, sl, m))
+        else:
+            n_rejected += 1
+            # Worry: rejected but margin positive (looks Balearic)
+            if m > -_AUDIT_MARGIN:
+                ambig_rejected.append((row, sb, sl, m))
+
+    print(f"\n[audit] Embeddings audit over {n_indexed} indexed "
+          f"+ {n_rejected} rejected candidates.")
+
+    if ambig_indexed:
+        print(f"\n[audit] {len(ambig_indexed)} INDEXED entries with "
+              f"low or negative Balearic margin (potential false positives):")
+        for row, sb, sl, m in sorted(ambig_indexed, key=lambda r: r[3]):
+            print(f"  tom{row['vol']} p{row['page']:>4}  "
+                  f"{row['lemma'][:32]:<32}  "
+                  f"sim_BAL={sb:.3f} sim_LEON={sl:.3f}  Δ={m:+.3f}")
+    else:
+        print("[audit] All indexed entries have clear Balearic margin "
+              "(≥ +0.02). No false positives suspected.")
+
+    if ambig_rejected:
+        print(f"\n[audit] {len(ambig_rejected)} REJECTED candidates with "
+              f"high Balearic margin (potential false negatives):")
+        for row, sb, sl, m in sorted(ambig_rejected, key=lambda r: -r[3]):
+            print(f"  tom{row['vol']} p{row['page']:>4}  "
+                  f"{row['lemma'][:32]:<32}  "
+                  f"sim_BAL={sb:.3f} sim_LEON={sl:.3f}  Δ={m:+.3f}")
+    else:
+        print("[audit] All rejected candidates have clear peninsular "
+              "margin (≤ -0.02). No false negatives suspected.")
+
+
+def _audit_pdftotext_candidates(indexed_entries: list[dict]) -> list[dict]:
+    """Scan pdftotext output of every tom for openers that the regex+
+    NGIB pipeline rejected (or never noticed). Returns candidates with
+    their body context, for the embeddings audit to evaluate."""
+    indexed_keys = {(e["vol"], int(e["page"])) for e in indexed_entries}
+    OPENER_RE = re.compile(
+        r"^([A-ZÁÉÍÓÚÑÜ][A-ZÁÉÍÓÚÑÜ0-9'óòo\.\(\) \-]{2,40})"
+        r"\.\s*[—\-~]+\s*"
+        r"(V\.|L\.|C\.|B\.|Ald\.|Aid\.|Cas\.|Cot\.|Felig\.|Desp\.|"
+        r"Cabo|Cala|Isla|Islote|Punta|Sierra|Monte|Puerto|Castillo|"
+        r"Ayunt|Villa|Ciudad|Granja|Aldea|Lugar|Coto)"
+    )
+    rejected: list[dict] = []
+    txt_dir = PROJECT / "data" / "txt"
+    for tf in sorted(txt_dir.glob("tomo*.txt")):
+        vol = tf.stem.replace("tomo", "")
+        txt = tf.read_text()
+        lines = txt.split("\n")
+        page = 1
+        for i, line in enumerate(lines):
+            if "\f" in line:
+                # form-feed at end of line — page increments AFTER recording
+                page += line.count("\f")
+                continue
+            m = OPENER_RE.match(line.lstrip())
+            if not m:
+                continue
+            # Body for anchor check: next 25 lines
+            body = "\n".join(lines[i + 1 : i + 26])
+            if not BALEARIC_TOKENS.search(body[:1500]):
+                continue
+            # Only flag if not already indexed (allow ±1 page tolerance)
+            if any((vol, page + d) in indexed_keys for d in (-1, 0, 1)):
+                continue
+            rejected.append({
+                "vol": vol, "page": page, "lemma": m.group(1).strip(),
+                "_body": body,
+            })
+    return rejected
+
+
 def main():
-    if len(sys.argv) < 2:
-        sys.exit("Usage: python scripts/index_volume.py <vol|--all>")
-    arg = sys.argv[1]
-    vols = [f"{n:02d}" for n in range(1, 13)] if arg == "--all" else [arg.zfill(2)]
+    import argparse
+    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    ap.add_argument("vol", nargs="?",
+                    help="single volume number (e.g. 01). Omit when "
+                         "passing --all.")
+    ap.add_argument("--all", action="store_true",
+                    help="process every available volume (01-12).")
+    ap.add_argument("--audit-with-embeddings", action="store_true",
+                    help="Run a sentence-embedding sanity check over the "
+                         "index after building it. Confirms each entry's "
+                         "Balearic margin vs an archetypal peninsular "
+                         "reference, and flags rejected candidates that "
+                         "look semantically Balearic. Requires "
+                         "sentence-transformers (~1 GB model on first use).")
+    args = ap.parse_args()
+
+    if not args.all and not args.vol:
+        ap.error("either VOL or --all is required")
+    vols = [f"{n:02d}" for n in range(1, 13)] if args.all else [args.vol.zfill(2)]
     INDEX_DIR.mkdir(parents=True, exist_ok=True)
     grand_t = grand_b = 0
+    all_indexed: list[dict] = []
     for vol in vols:
         try:
             r = index_volume(vol)
@@ -617,6 +798,7 @@ def main():
         with out.open("w") as fh:
             for art in r["balearic"]:
                 fh.write(json.dumps(art, ensure_ascii=False) + "\n")
+        all_indexed.extend(r["balearic"])
         grand_t += r["articles"]
         grand_b += len(r["balearic"])
         print(f"  tomo {vol}: pages={r['pdf_pages']:>4}  "
@@ -626,6 +808,9 @@ def main():
     if len(vols) > 1:
         print(f"\nTotal across {len(vols)} volumes: "
               f"articles={grand_t}, balearic={grand_b}")
+
+    if args.audit_with_embeddings:
+        run_embeddings_audit(all_indexed)
 
 
 if __name__ == "__main__":
