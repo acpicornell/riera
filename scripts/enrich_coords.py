@@ -62,7 +62,10 @@ CAPES_AND_ACCIDENTS: dict[tuple[str, str], tuple[float, float, str]] = {
     ("Mallorca", "ISLA DRAGONERA"):     (2.3242, 39.5828, "sa Dragonera (Andratx)"),
     # === Ibiza capes ===
     ("Ibiza",   "CABO BLANCO"):         (1.4350, 38.8800, "Cap Blanc (Ibiza, costa SE)"),
-    ("Ibiza",   "ISLA"):                (1.5300, 39.0700, "illot petit (Ibiza, descripció genèrica)"),
+    # Riera prints "ISLA. CUNILLERA" with a stray dot after ISLA;
+    # the indexer truncated the title at that dot. Real lemma is the
+    # illa de sa Conillera off Sant Antoni de Portmany.
+    ("Ibiza",   "ISLA CUNILLERA"):      (1.2167, 38.9961, "sa Conillera (Sant Antoni de Portmany)"),
     # === Menorca capes ===
     ("Menorca", "CABO CABALLERÍA"):     (4.0892, 40.0772, "Cap de Cavalleria (es Mercadal)"),
     ("Menorca", "CABO DARTUTX"):        (3.7700, 39.9300, "Cap d'Artrutx (Ciutadella)"),

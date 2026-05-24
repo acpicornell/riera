@@ -4,10 +4,10 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "ISLA",
+      "title": "ISLA CUNILLERA",
       "place_type": "isla",
       "island": "Ibiza",
-      "municipality": null,
+      "municipality": "Sant Antoni de Portmany",
       "org_judicial": null,
       "org_civil": null,
       "org_militar": null,
@@ -19,10 +19,10 @@
       "poblacion": null,
       "industria": null,
       "geografia": null,
-      "description": "Pertenece al part. jud. de Ibiza y se halla situada al N. del cabo Pelat. Es de escasa importancia.",
+      "description": "Pertenece al part. jud. de Ibiza y se halla situada al N. del cabo Pelat. Es de escasa importancia. (NOTA: el títol al PDF surt 'ISLA. CUNILLERA (Baleares)' amb un punt espuri després d'ISLA que va causar que l'indexador tallés el lemma; correspon a l'illa de sa Conillera, OFF Sant Antoni de Portmany.)",
       "stats": {},
-      "cross_references": [],
-      "confidence": "low"
+      "cross_references": ["Cunillera ó Conejera"],
+      "confidence": "high"
     }
   ]
 }
