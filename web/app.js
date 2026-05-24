@@ -220,7 +220,7 @@ function toggleExpand(tr) {
       ${crefsHtml}
       <p class="minano-source">
         <span>Tom ${esc(e.vol)} · pàgina PDF ${esc(e.page)}</span>
-        ${e.bdcyl_url ? `· <a href="${esc(e.bdcyl_url)}" target="_blank" rel="noopener">Veure volum a Biblioteca Digital de Castilla i Lleó →</a>` : ""}
+        ${e.bdcyl_url ? `· <a href="${esc(e.bdcyl_url)}" target="_blank" rel="noopener">Veure volum a Biblioteca Digital de Castella i Lleó →</a>` : ""}
       </p>
     </div>
   </td>`;
@@ -252,7 +252,7 @@ function bindFilters() {
     t = setTimeout(() => { state.search = e.target.value.trim(); update(); }, 180);
   });
   const sel = (id, key) => $(id).addEventListener("change", e => { state[key] = e.target.value; update(); });
-  sel("f-island", "island"); sel("f-regime", "regime"); sel("f-mayor", "mayor");
+  sel("f-island", "island");
   sel("f-municipality", "municipality"); sel("f-type", "type");
   sel("f-vol", "vol"); sel("f-conf", "conf");
   $("f-clear").addEventListener("click", () => {
