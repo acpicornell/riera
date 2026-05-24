@@ -112,8 +112,19 @@ BALEARIC_TOKENS = re.compile(
     re.I,
 )
 
-INDENT_MIN = 5      # points — observed delta is ~10-12pt
-Y_MIN, Y_MAX = 60, 780  # crop running headers + page footers
+INDENT_MIN = 0      # observed delta is usually 10-12pt; but some
+                    # openers are typeset with no indent at all (e.g.
+                    # the Mallorcan ALCUDIA at tom I p353 x=283.9 vs
+                    # right baseline ~284). Setting the threshold to 0
+                    # lets those through; the lemma + separator regex
+                    # and NOISE/SECTION filters carry the load.
+# Page Y crop: 60pt was too aggressive — SANTANY (Mallorca) at
+# tom IX p713 sits at y=59.3, just under the cutoff. The 60pt floor
+# was rejecting legitimate openers near the top of a column. Lowered
+# to 30; the running-headers (DICCIONARIO / GEOGRÁFICO-ESTADÍSTICO /
+# page numbers) are caught instead by the NOISE_TITLES_RE filter, so
+# they don't reach the opener list anyway.
+Y_MIN, Y_MAX = 30, 800
 
 # Place-type abbreviations that confirm an opener is a real dictionary
 # entry (vs. a centred TitleCase header that survived the noise filter).
@@ -276,16 +287,132 @@ def extract_indent_openers(pdf_path: Path) -> list[dict]:
     return [op for op in out if first_page <= op["page"] <= last_page]
 
 
+def extract_body_pdftotext(opener: dict, vol: str, max_lines: int = 80) -> str:
+    """Body extraction using pdftotext output instead of PyMuPDF.
+
+    PyMuPDF's column-aware text reading (left col top-to-bottom, then
+    right col top-to-bottom) silently gives WRONG content when an
+    article's body straddles both columns interrupted by a statistical
+    table (SOLLER, MANACOR, SAN JUAN BAUTISTA at tom IX p187 etc.).
+    pdftotext -raw — already saved to data/txt/tomoNN.txt — handles
+    this correctly: text flows in natural reading order across the
+    columns. We just locate the opener line and take the next
+    max_lines.
+
+    Locating the opener is done by exact lemma + page-range proximity:
+    we know from PyMuPDF which PDF page the opener is on; we scan the
+    matching pdftotext form-feed segment for a line starting with the
+    lemma. This is robust to OCR variations because we match on the
+    lemma's NORMALISED prefix (1/I, l/I collapsed, spaces tolerated).
+    """
+    txt_path = PROJECT / "data" / "txt" / f"tomo{vol}.txt"
+    if not txt_path.exists():
+        return ""
+    txt = txt_path.read_text()
+    pages = txt.split("\f")
+    target_page = opener["page"]
+    if target_page > len(pages):
+        return ""
+    page_text = pages[target_page - 1]
+    # Some openers fall in the last few lines of one page and continue
+    # on the next; include the following page as fallback context.
+    if target_page < len(pages):
+        page_text += "\n" + pages[target_page]
+    lines = page_text.split("\n")
+    # Normalise lemma for matching: strip accents, OCR-confusion fix,
+    # collapse multi-space to single space. We KEEP single spaces so that
+    # 'CASA DE LA VILA' (Sant Josep, Eivissa) and 'CASA DE LA VILLA'
+    # (Arrés, Lleida) are not conflated — the previous "drop all spaces"
+    # rule turned both into the same 10-char prefix and caused
+    # cross-article body bleed.
+    import unicodedata as _ud
+    def _norm(s: str) -> str:
+        s = "".join(c for c in _ud.normalize("NFD", s)
+                    if _ud.category(c) != "Mn").upper()
+        s = re.sub(r"[1l](?=[A-Z])", "I", s)
+        # Strip em-dashes / hyphens / tildes / periods — these vary
+        # between PyMuPDF's captured lemma and pdftotext's rendering
+        # of the same line ('CABRERA (Cuba)—Punta…' vs the index's
+        # raw lemma 'CABRERA (Cuba)' truncated by the indexer's TITLE
+        # regex). Removing them makes the prefix match robust.
+        s = re.sub(r"[\.\-\—\~]+", "", s)
+        s = re.sub(r"\s+", " ", s).strip()
+        return s
+    lemma_n = _norm(opener["lemma"])
+    # Recognises *another* opener in pdftotext. Three patterns:
+    #   (a) administrative entries with the canonical separator —
+    #       LEMMA.—V./L./C./… (place-type abbr) — most common form
+    #   (b) administrative entries WITHOUT the period before the
+    #       em-dash — OCR sometimes drops it (CAIMARL —L. agreg.)
+    #   (c) geographic entries — CABO X / CALA X / ISLA X / PUERTO X / …
+    #       (the lemma already names the type, body starts with prose)
+    next_opener_re = re.compile(
+        r"^(?:"
+        r"[A-ZÁÉÍÓÚÑÜ]{2,}[A-ZÁÉÍÓÚÑÜ0-9'\.\(\) \-]{0,50}"
+        r"[\.\,]?\s*[—\-~]+\s*"
+        r"(?:V\.|L\.|C\.|B\.|Ald\.|Aid\.|Cas\.|Cot\.|Cor\.|Felig\.|Desp\.|"
+        r"Ayunt|Villa|Ciudad|Granja|Aldea|Lugar|Coto)"
+        r"|"
+        r"(?:CABO|CALA|ISLA|ISLAS|ISLOTE|ISLOTES|ISLETA|ISLETAS|"
+        r"PUNTA|PUERTO|SIERRA|MONTE|CASTILLO|BAHÍA|BAHIA|CORDILLERA|"
+        r"R[ÍI]O|VALLE|LAGUNA|FUENTE|PROMONTORIO|PEÑ[ÓO]N)\s+[A-ZÁÉÍÓÚÑÜ]"
+        r")"
+    )
+    # pdftotext sometimes wraps an opener across two lines:
+    #   line N:   'CABRERA ó SAN FELITJ DE CABRERA.'
+    #   line N+1: '—L. con ayunt., al que se hallan…'
+    # The orphan continuation '—L. con ayunt.' on its own line signals
+    # the wrapped opener — stop the body extraction BEFORE the
+    # previous line, which holds the lemma.
+    wrapped_cont_re = re.compile(
+        r"^[—\-~]+\s*(V\.|L\.|C\.|B\.|Ald\.|Aid\.|Cas\.|Cot\.|Cor\.|"
+        r"Felig\.|Desp\.|Castillo|Cabo|Cala|Isla|Punta|"
+        r"Villa|Ciudad|Lugar|Aldea|Coto)"
+    )
+    # A line that is just an ALL CAPS phrase ending in '.' may be a
+    # wrapped lemma. We accept it as opener-start if the NEXT line is
+    # the continuation pattern above.
+    bare_lemma_re = re.compile(r"^[A-ZÁÉÍÓÚÑÜ]{2,}[A-ZÁÉÍÓÚÑÜ0-9'óòo\.\(\) \-]{0,50}\.\s*$")
+
+    # Collect ALL candidate body extracts for the lemma — a page can
+    # legitimately host several homonyms (ALCUDIA appears 3× on tom I
+    # p353: Alicante, Almería, Mallorca — only the third has Balearic
+    # content). Then return the body with the most BALEARIC_TOKENS.
+    candidates: list[tuple[int, str]] = []
+    for i, line in enumerate(lines):
+        if _norm(line)[: len(lemma_n)] != lemma_n:
+            continue
+        body_lines = []
+        for j in range(i + 1, min(i + 1 + max_lines, len(lines))):
+            l_stripped = lines[j].lstrip()
+            if next_opener_re.match(l_stripped):
+                break
+            if wrapped_cont_re.match(l_stripped) and body_lines \
+                    and bare_lemma_re.match(body_lines[-1].lstrip()):
+                body_lines.pop()
+                break
+            body_lines.append(lines[j])
+        body = "\n".join(body_lines)
+        candidates.append((len(BALEARIC_TOKENS.findall(body)), body))
+    if not candidates:
+        return ""
+    # Return the body with the highest Balearic-anchor count. If none
+    # has any anchors, return the first candidate (preserves backward
+    # behaviour for entries with no Balearic context at all).
+    candidates.sort(key=lambda c: -c[0])
+    return candidates[0][1]
+
+
 def extract_body(pdf_path: Path,
                  opener_idx: int,
                  openers: list[dict],
                  max_lines: int = 60) -> str:
-    """Pull text lines from the page(s) starting RIGHT AFTER opener i,
-    up to the next opener or `max_lines`, whichever comes first. The
-    opener line itself is excluded — otherwise a peninsular entry
-    whose lemma contains a Balearic toponym (CASTRILLO DE CABRERA,
-    PUEBLA DE MENORCA) would trigger the Balearic body filter on its
-    own title."""
+    """PyMuPDF column-aware body extraction (legacy fallback).
+
+    Used only if pdftotext extraction returns an empty body. Originally
+    the primary body extractor but suffered column-bleed on articles
+    that span both columns interrupted by tables — see
+    extract_body_pdftotext for the replacement."""
     doc = pymupdf.open(str(pdf_path))
     cur = openers[opener_idx]
     nxt = openers[opener_idx + 1] if opener_idx + 1 < len(openers) else None
@@ -347,7 +474,13 @@ def is_balearic(body: str, ngib_balearic: bool = False) -> tuple[bool, int, int]
     total = len(BALEARIC_TOKENS.findall(body))
     head_hits = len(BALEARIC_TOKENS.findall(head))
     body_lines = body.count("\n") + 1
-    if ngib_balearic and total >= 1:
+    # NGIB-as-fallback: title fuzzy-matches a Balearic settlement at
+    # ≥95. This rescues entries with low body-anchor counts due to
+    # statistical-table interruption (SOLLER, MANACOR). But we must
+    # still require at least 1 HEAD anchor — without that guard, three
+    # peninsular SANTA EULALIA entries at tom IX p548 (Lleida, Huesca,
+    # Lugo) all match NGIB's "Santa Eulalia" and would smuggle in.
+    if ngib_balearic and head_hits >= 1:
         return True, total, head_hits
     if body_lines < 25:
         return head_hits >= 1, total, head_hits
@@ -391,7 +524,11 @@ def index_volume(vol: str) -> dict:
     norm_list = list(choices.keys())
     balearic = []
     for i, op in enumerate(openers):
-        body = extract_body(pdf_path, i, openers)
+        # Prefer pdftotext body (linear reading order, no column-bleed).
+        body = extract_body_pdftotext(op, vol)
+        if not body:
+            # Fallback to PyMuPDF column-aware extraction.
+            body = extract_body(pdf_path, i, openers)
         # NGIB title check runs FIRST so we can pass its result into
         # is_balearic as an alternative signal.
         fm = fuzzy_match(op["lemma"], choices, norm_list)
@@ -421,6 +558,21 @@ def index_volume(vol: str) -> dict:
             "anchors_total": total, "anchors_head": head,
             "ngib": ngib,
         })
+    # Deduplicate by (page, normalised lemma) — keep the entry with
+    # the highest anchors_head (most Balearic context).
+    import unicodedata as _ud
+    def _key(e):
+        s = "".join(c for c in _ud.normalize("NFD", e["lemma"])
+                    if _ud.category(c) != "Mn").upper()
+        s = re.sub(r"\s+", " ", s).strip()
+        return (e["page"], s)
+    seen: dict = {}
+    for e in balearic:
+        k = _key(e)
+        if k not in seen or e["anchors_head"] > seen[k]["anchors_head"]:
+            seen[k] = e
+    balearic = list(seen.values())
+    balearic.sort(key=lambda e: (e["page"], e["lemma"]))
     doc = pymupdf.open(str(pdf_path))
     body_start = openers[0]["page"] if openers else 1
     body_end = openers[-1]["page"] if openers else doc.page_count
