@@ -1,0 +1,29 @@
+{
+  "vol": "03",
+  "page": 493,
+  "model": "section-parser+claude-max",
+  "entries": [
+    {
+      "title": "CARTAGENA",
+      "place_type": null,
+      "island": null,
+      "municipality": null,
+      "org_judicial": null,
+      "org_civil": null,
+      "org_militar": null,
+      "org_economica": null,
+      "org_eclesiastica": null,
+      "servicio_publico": null,
+      "obras_publicas": null,
+      "instruccion_publica": null,
+      "poblacion": null,
+      "industria": null,
+      "geografia": null,
+      "description": "Como quiera que la jurisdicción marítima de este departamento, uno de los tres en que se encuentra subdividido nuestro litoral, y que es el que lleva el nombre de la c. que nos ocupa, clamos comienzo á nuestro artículo referente á Cartagena, por el departamento de su nom- bre. Desde el Cabo de Gata al de Creus, com- prendiendo en esta demarcación las prov. ci- viles de Almería, Murcia, Alicante,Valencia, Castellón de la Plana, Tarragona, Barcelona y Gerona, ademas de las Islas Baleares, es el primer departamento en extensión, ejerciendo el mando en él un Capitán General de Ma- rina jefe de esc",
+      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
+      "stats": null,
+      "cross_references": [],
+      "confidence": "low"
+    }
+  ]
+}

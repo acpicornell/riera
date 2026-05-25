@@ -172,13 +172,35 @@ def _unwrap_hyphens(text: str) -> str:
                   r"([A-Za-záéíóúñÑÁÉÍÓÚüÜ])", r"\1\2", text)
 
 
-# Recognise the captured 'province' token, allowing the common OCR
-# corruptions Riera shows for 'Baleares' (Balsares, Bsleares, etc.).
-# Any captured token whose accent-stripped lowercase form starts with
-# one of these prefixes is treated as Baleares. Other captured tokens
-# are returned verbatim — the caller decides whether they're peninsular
-# from set membership.
+# Recognise the captured 'province' token. We accept it as 'Baleares'
+# when either:
+#   • the accent-stripped lowercased prefix matches one of the common
+#     OCR variants below — fast path, no library call.
+#   • a fuzzy-match against the literal 'baleares' returns ≥85
+#     similarity (rapidfuzz fuzz.ratio) — catches arbitrary OCR
+#     garbles like 'Bnleares', 'Háleares', 'B aleares', 'Balares',
+#     'Baleare' (truncation).
 _BALEARES_PREFIXES = ("balear", "bsleare", "balsare", "baleare", "baleat")
+_BALEARES_FUZZY_THRESHOLD = 82
+
+
+def _is_baleares_token(token: str) -> bool:
+    """True if `token` (already lowercased + accent-stripped) refers to
+    Baleares despite OCR corruption."""
+    if not token:
+        return False
+    if any(token.startswith(p) for p in _BALEARES_PREFIXES):
+        return True
+    # Fuzzy fallback for one-off OCR garbles. Skip very short captures
+    # — a 3-char token has too few characters for fuzz.ratio to be
+    # informative and risks false positives.
+    if len(token) < 5:
+        return False
+    try:
+        from rapidfuzz import fuzz
+    except ImportError:
+        return False
+    return fuzz.ratio(token, "baleares") >= _BALEARES_FUZZY_THRESHOLD
 
 
 # Tokens that are NEVER province names — captured when the regex hits
@@ -215,7 +237,7 @@ def _clean_province(raw: str) -> str:
     s = re.sub(r"^(?:la\s+|las\s+|el\s+|los\s+)", "", s, flags=re.I)
     s = re.sub(r"\s+", " ", s).strip(" .,")
     norm = _strip_accents_lower(s)
-    if any(norm.startswith(p) for p in _BALEARES_PREFIXES):
+    if _is_baleares_token(norm):
         return "baleares"
     # Blacklist: when the regex anchors on the wrong token (Org. civ.
     # bleeding into a malformed prov. clause, or Filipino islands
@@ -227,8 +249,31 @@ def _clean_province(raw: str) -> str:
     return norm
 
 
+# Two-stage province detection.
+#
+# PRIMARY: anchored on Riera's canonical 'Corresponde á la prov. de X'
+# — this is the article's OWN admin self-declaration in the Org. civ.
+# section. Settlements always carry it; supramunicipal / maritime
+# department articles (like CARTAGENA) don't — so the regex
+# correctly returns no match for them, even though their bodies may
+# mention 'prov. de Mallorca' as part of describing what's under
+# their jurisdiction.
 _PROV_RE = re.compile(
-    r"prov\.?(?:incia)?\s+(?:de\s+)?([A-Za-záéíóúñÑÁÉÍÓÚüÜ\s]{2,40})",
+    r"corresponde\s+[áa]?\s+(?:la\s+|al\s+)?"
+    r"prov\.?(?:incia)?\s*\.?\s*\n?\s*"
+    r"de\s+(?:la\s+|las\s+)?"
+    r"([A-Za-záéíóúñÑÁÉÍÓÚüÜ\s]{2,40})",
+    re.I,
+)
+# FALLBACK: bare 'prov. de X' anywhere in the body. Used only when
+# the primary anchor finds nothing — typical of agregats whose body
+# skips the canonical 'Corresponde á' opener, or geographic entries
+# that name a province in passing. Less reliable: catches whatever
+# province appears first in the body.
+_PROV_FALLBACK_RE = re.compile(
+    r"\bprov\.?(?:incia)?\s*\.?\s*\n?\s*"
+    r"de\s+(?:la\s+|las\s+)?"
+    r"([A-Za-záéíóúñÑÁÉÍÓÚüÜ\s]{2,40})",
     re.I,
 )
 
@@ -246,7 +291,12 @@ def parse_org_civ(text: str) -> dict:
 
 
 _DIOC_RE = re.compile(
-    r"di[óo]c\.?(?:esis)?\s+(?:de\s+)?([A-Za-záéíóúñÑÁÉÍÓÚüÜ]{2,30})",
+    r"di[óo]c\.?(?:esis)?\s+(?:de\s+)?"
+    # Capture up to two words so 'Ciudad Real' is kept as one token,
+    # not truncated to 'Ciudad' (which would fuzzy-match 'Ciudadela').
+    # Second word must be ≥3 chars to skip 1-char connectors ('y',
+    # 'á') that follow a 1-word province name.
+    r"([A-Za-záéíóúñÑÁÉÍÓÚüÜ]+(?:\s+[A-Za-záéíóúñÑÁÉÍÓÚüÜ]{3,})?)",
     re.I,
 )
 # Spanish stopwords that the diocese regex occasionally captures when
@@ -351,6 +401,114 @@ ADMIN_PLACE_TYPE_RE = re.compile(
     re.I,
 )
 
+# Canonical Balearic toponyms / institutional locations. Each
+# C-phrase below names one of these after its institution-anchor;
+# fuzzy match against this set tolerates OCR corruption (Mallorea
+# for Mallorca, Háleares for Baleares, Mahón → Mahon → Maion, etc.).
+_BAL_LOCATIONS = (
+    "baleares", "mallorca", "menorca", "ibiza", "iviza", "eivissa",
+    "formentera", "cabrera", "palma", "mahon", "ciudadela",
+    "ciutadella", "cindadela",
+)
+_BAL_FUZZY_THRESHOLD = 80
+
+
+# Common OCR mangles of Balearic toponyms — explicit map so we don't
+# rely on fuzzy match for known variants (and don't accidentally
+# accept their peninsular near-twins like 'Ciudad Real' or 'Las
+# Palmas' through over-generous fuzzy thresholds).
+_BAL_OCR_VARIANTS = {
+    "baleare", "balear", "baleat", "balsare", "bsleare",
+    "mallorea", "malloeca", "mailorca",
+    "menorea", "mahún", "mahán",
+    "iviza",  # already in main set but kept for clarity
+}
+
+
+def _is_bal_location(token: str) -> bool:
+    """True if `token` refers to a Balearic place despite OCR
+    corruption.
+
+    Three acceptance paths, in increasing permissiveness:
+      1. Exact match against the canonical _BAL_LOCATIONS set.
+      2. Exact match against a known OCR variant
+         (_BAL_OCR_VARIANTS).
+      3. Fuzzy match (rapidfuzz fuzz.ratio ≥ 85) — but ONLY for
+         tokens ≥ 7 chars, to keep peninsular near-twins out:
+         'ciudad' (6) vs 'ciudadela' (9) → 80, would be a false
+         positive at the previous threshold of 80. Same for
+         'palmas' (6) vs 'palma' (5). Forcing length ≥7 + threshold
+         85 ensures the captured token is long enough that a true
+         OCR variant of a Balearic toponym (length ≥7) clears it
+         while peninsular shorter-name dioceses ('Ciudad', 'Palmas',
+         'Pamplona', 'Vitoria') don't."""
+    if not token:
+        return False
+    norm = _strip_accents_lower(token).strip()
+    # Strip a leading Spanish article ('la', 'las', 'el', 'los') so
+    # 'Dióc. de las Baleares' captured as 'las baleares' still matches.
+    norm = re.sub(r"^(?:la|las|el|los)\s+", "", norm).strip()
+    if not norm or len(norm) < 4:
+        return False
+    if norm in _BAL_LOCATIONS:
+        return True
+    if norm in _BAL_OCR_VARIANTS:
+        return True
+    if len(norm) < 7:
+        return False
+    try:
+        from rapidfuzz import process, fuzz
+    except ImportError:
+        return False
+    r = process.extractOne(norm, list(_BAL_LOCATIONS), scorer=fuzz.ratio)
+    return bool(r and r[1] >= 85)
+
+
+# C-phrases: each is a (label, regex) where the regex captures the
+# LOCATION token immediately after the institution-anchor. The
+# location is then fuzzy-matched against _BAL_LOCATIONS, so OCR
+# garbles of either the location ('Mallorea', 'Pnlma', 'Haleares')
+# or partial captures still register.
+#
+# The anchor itself is hard-regex because the institution name
+# (capitanía general, audiencia, gobierno militar, etc.) is rarely
+# OCR-corrupted — it's a frequent multi-word string with high
+# redundancy. The fragile part is the toponym after it, which is
+# where fuzzy match earns its keep.
+_C_PHRASES = [
+    ("C3a_C.G.",
+     re.compile(r"\bC\.\s*G\.\s+de\s+(?:las\s+)?"
+                r"([A-Za-záéíóúñÑÁÉÍÓÚüÜ]{4,20})", re.I)),
+    ("C3b_capitania_general",
+     re.compile(r"\bcapitan[ií]a\s+general\s+de\s+(?:las\s+)?"
+                r"([A-Za-záéíóúñÑÁÉÍÓÚüÜ]{4,20})", re.I)),
+    ("C4_audiencia",
+     re.compile(r"\baudiencia\s+(?:territorial\s+)?de\s+"
+                r"([A-Za-záéíóúñÑÁÉÍÓÚüÜ]{4,20})", re.I)),
+    ("C5a_G.M.",
+     re.compile(r"\bG\.\s*M\.\s+de\s+"
+                r"([A-Za-záéíóúñÑÁÉÍÓÚüÜ]{4,20})", re.I)),
+    ("C5b_gobierno_militar",
+     re.compile(r"\bgobierno\s+militar\s+de\s+"
+                r"([A-Za-záéíóúñÑÁÉÍÓÚüÜ]{4,20})", re.I)),
+    ("C6_circunscripcion",
+     re.compile(r"\bcircunscripci[óo]n\s+de\s+"
+                r"([A-Za-záéíóúñÑÁÉÍÓÚüÜ]{4,20})", re.I)),
+    ("C7_prov_maritima",
+     re.compile(r"\bprov(?:incia)?\.?\s+mar(?:[ií]tima|\.)?\s+de\s+"
+                r"([A-Za-záéíóúñÑÁÉÍÓÚüÜ]{4,20})", re.I)),
+]
+
+
+def _match_c_phrase(body: str) -> Optional[str]:
+    """Scan body for any canonical Balearic admin-section phrase
+    (C3-C7) and return the matching phrase's label, or None."""
+    for label, pat in _C_PHRASES:
+        for m in pat.finditer(body):
+            if _is_bal_location(m.group(1)):
+                return label
+    return None
+
 # Balearic toponym references — used by the geographic and unknown
 # branches. The narrower contextual patterns in the previous draft
 # missed too many real entries (e.g. 'costa SO. de la prov. de
@@ -401,61 +559,46 @@ class ParsedEntry:
         )
 
     def is_balearic(self, ngib_balearic: bool = False) -> bool:
-        """Determined by Riera's own self-declaration in the body.
+        """Decide if the article is Balearic.
 
-        Signal priority (highest first):
-          1. provincia == 'baleares'           → accept
-          2. provincia ∈ peninsular set        → reject
-          3. diocesis  ∈ Balearic set          → accept
-          4. diocesis  ∈ peninsular set        → reject
-          5. geographic / unknown + ≥1 Balearic toponym in head → accept
-          6. ngib_balearic flag                → accept (lemma rescue)
-          7. otherwise                         → reject
+        Single rule: ONE of the canonical Balearic admin-section
+        phrases must appear in the body. No negative-evidence filters,
+        no lemma-based gates, no body-bleed rescues. The C-group
+        signals are by construction unambiguous — every Balearic
+        settlement article carries at least one, no peninsular
+        article carries any.
 
-        Steps 2 and 4 are the negative-evidence guards that prevent
-        body-extraction failures from smuggling peninsular content
-        in via the lemma-level NGIB rescue."""
+        Canonical phrases (any one suffices):
+          1. 'Corresponde á la prov. de Baleares' (OCR-tolerant)
+          2. 'Corresponde á la dióc. de [Mallorca|Menorca|Ibiza|
+             Palma|Ciudadela]' (or OCR variants thereof)
+          3. 'C. G. de [las] Baleares' / 'Capitanía General de
+             [las] Baleares'
+          4. 'Audiencia [territorial] de [Palma|Mallorca|Baleares]'
+          5. 'G. M. de [Palma|Mahón|Ciudadela]' / 'Gobierno militar
+             de [...]'
+          6. 'circunscripción de Palma' (Cortes electoral district)
+          7. 'prov. mar. de [Mallorca|Menorca|Ibiza|...]' (maritime
+             province)
+
+        `ngib_balearic` is accepted as a parameter but does NOT
+        participate in the decision — it's consumed downstream as
+        a confirmation audit alongside the boolean result."""
+        # C1: prov. de Baleares (already fuzzy via _is_baleares_token
+        # inside _clean_province → 'baleares' canonical)
         prov = self.get_provincia()
         if prov == "baleares":
             return True
-        if prov and prov in _PROV_NON_BAL_SET:
-            return False
+        # C2: dióc. de [Balearic diocese / seat] — fuzzy match the
+        # captured diocese name against _BAL_LOCATIONS.
         dioc = self.get_diocesis()
-        if dioc and any(
-            dioc.startswith(d)
-            for d in ("mallorca", "menorca", "ibiza", "iviza",
-                      "malloeca", "menorea")
-        ):
+        if dioc and _is_bal_location(dioc):
             return True
-        if dioc and dioc in _PEN_DIOCESE_SET:
-            return False
-        if self.kind in ("geographic", "unknown"):
-            if self.body_balearic_refs >= 1:
-                return True
-        if ngib_balearic:
-            # NGIB lemma rescue — accept when one of the following:
-            #   (a) body extraction returned nothing (extraction
-            #       failure → trust NGIB).
-            #   (b) body is a cross-reference ('Véase X').
-            #   (c) body has Riera structural signal (kind != unknown:
-            #       admin sections or geographic-type opener).
-            #   (d) the lemma reappears inside the body — proof that
-            #       the article text is ABOUT the place the lemma
-            #       names. Statistical tables like 'ANDRAIX, EN 1883'
-            #       qualify; Cuban body bleed about Guanajal / hatos
-            #       de Camarai does not (lemma never reappears).
-            # Reject otherwise: kind=unknown + non-trivial body + no
-            # lemma reappearance is almost always body bleed.
-            body = (self.head or "").strip()
-            if len(body) < 50:
-                return True
-            if "véase" in body.lower()[:80] or "veasee" in body.lower()[:80]:
-                return True
-            if self.kind != "unknown":
-                return True
-            if self.lemma_in_body:
-                return True
-            return False
+        # C3-C7: any of the parallel admin-section phrases. The
+        # _match_c_phrase scan runs each anchor regex + fuzzy location
+        # check; first hit wins.
+        if _match_c_phrase(self.head or ""):
+            return True
         return False
 
     def diagnosis(self) -> str:

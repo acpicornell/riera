@@ -421,7 +421,7 @@ def extract_indent_openers(pdf_path: Path) -> list[dict]:
     return [op for op in out if first_page <= op["page"] <= last_page]
 
 
-def extract_body_pdftotext(opener: dict, vol: str, max_lines: int = 80) -> str:
+def extract_body_pdftotext(opener: dict, vol: str, max_lines: int = 200) -> str:
     """Body extraction using pdftotext output instead of PyMuPDF.
 
     PyMuPDF's column-aware text reading (left col top-to-bottom, then
@@ -566,7 +566,7 @@ def extract_body_pdftotext(opener: dict, vol: str, max_lines: int = 80) -> str:
 def extract_body(pdf_path: Path,
                  opener_idx: int,
                  openers: list[dict],
-                 max_lines: int = 60) -> str:
+                 max_lines: int = 200) -> str:
     """PyMuPDF column-aware body extraction (legacy fallback).
 
     Used only if pdftotext extraction returns an empty body. Originally
@@ -620,30 +620,16 @@ def is_balearic(body: str, ngib_balearic: bool = False,
                  lemma: str = "") -> tuple[bool, "parse_sections.ParsedEntry"]:
     """Decide if an article is Balearic.
 
-    Hard lemma-level gate first: '(Cuba)', '(Filipinas)', '(Puerto
-    Rico)' and '(Fernando Poo)' in the lemma identify colonial
-    articles unambiguously. These describe Cuban/Filipino geographic
-    accidents, NOT Balearic ones, and accepting them only happens
-    via body bleed from adjacent Balearic articles on the same page.
+    Single rule: the parser detects one of the canonical Balearic
+    admin-section phrases in the body (see ParsedEntry.is_balearic
+    for the exact list). No lemma-based gates, no negative-evidence
+    cascades — only the structural signals Riera himself writes.
 
-    Otherwise delegates to the Riera-native section parser
-    (``scripts/parse_sections.py``). The parser dispatches between
-    administrative entries (9-section template, classification via
-    'Corresponde á la prov. de X' / 'dióc. de X') and geographic
-    entries (free prose, classification via Balearic-toponym density
-    in the body head).
+    `ngib_balearic` is propagated for downstream confirmation auditing
+    but does not affect the decision.
 
-    `ngib_balearic` is forwarded to the parser as a tertiary signal —
-    used only when the parser found no province nor diocese (typical
-    of body-extraction failures where pdftotext can't match the
-    OCR-garbled lemma). NGIB's gazetteer answers 'is this lemma a
-    Balearic place' authoritatively, independent of body quality.
-
-    Returns (decision, parsed_entry) so the caller can persist the
-    parser's structured fields alongside the boolean decision."""
+    Returns (decision, parsed_entry)."""
     parsed = parse_sections.parse_entry(body, lemma=lemma)
-    if lemma and COLONIAL_LEMMA_RE.search(lemma):
-        return False, parsed
     return parsed.is_balearic(ngib_balearic=ngib_balearic), parsed
 
 
@@ -683,32 +669,51 @@ def index_volume(vol: str) -> dict:
     choices = load_gazetteer()
     norm_list = list(choices.keys())
     balearic = []
+    # Marker recognising a body that LOOKS like a Riera administrative
+    # article (any of the canonical 9-section openers, OCR-tolerant).
+    # If the PyMuPDF fallback body contains one, it's a real article
+    # body — regardless of whether the lemma itself reappears inside.
+    riera_section_re = re.compile(
+        r"\b(?:[OoQ][a-z\.\^]{0,3}[\.\^,]?\s+"
+        r"(?:judicial|civ(?:il)?|mil(?:itar)?|econ(?:[óo]mica)?|"
+        r"ecles(?:i[áa]stica)?)\b"
+        r"|Servicio\s+p[uú]bl|Obras\s+p[uú]blicas|"
+        r"Instrucci[óo]n\s+p[uú]bl|Poblaci[óo]n\b)",
+        re.I,
+    )
+    import unicodedata as _ud
+    def _norm_for_lemma(s: str) -> str:
+        s = "".join(c for c in _ud.normalize("NFD", s)
+                    if _ud.category(c) != "Mn").lower()
+        return re.sub(r"\s+", "", s)
     for i, op in enumerate(openers):
         # Prefer pdftotext body (linear reading order, no column-bleed).
         body = extract_body_pdftotext(op, vol)
         if not body:
-            # Fallback to PyMuPDF column-aware extraction — but only
-            # trust it if the lemma actually appears in the returned
-            # body. PyMuPDF's reading-order pass through the page
-            # often returns the WRONG article's body for compound
-            # lemmas (e.g. 'CALONGE ó CALONGE DE CALAF' yields
-            # 'TOMO XII (SUPLEMENTO). CAM 250 …' — the body of CAM
-            # 250 which has nothing to do with Calonge). Discarding
-            # such fallback bodies lets NGIB lemma rescue handle the
-            # entry on the basis of an empty body (its safest case).
+            # Fallback to PyMuPDF column-aware extraction. Two
+            # acceptance signals (either suffices):
+            #   (a) the lemma's main token appears inside the body —
+            #       confirms we're reading the right article.
+            #   (b) the body contains a Riera section marker (Org.
+            #       judicial / civ. / Población …) — confirms it's
+            #       a real admin article, even if Riera doesn't
+            #       repeat the lemma inside (which is typical: many
+            #       agregats don't restate their own name).
+            # This rescues AL ARÓ (Alaró) whose body never mentions
+            # 'ALARÓ' but is otherwise a clean Riera article, while
+            # still rejecting cases like CALONGE Tom XII where
+            # PyMuPDF returned a stat-table heading of a different
+            # article with no section markers.
             fallback = extract_body(pdf_path, i, openers)
             if fallback:
-                import unicodedata as _ud
-                def _norm_for_lemma(s: str) -> str:
-                    s = "".join(c for c in _ud.normalize("NFD", s)
-                                if _ud.category(c) != "Mn").lower()
-                    return re.sub(r"\s+", "", s)
                 lemma_main = re.split(r"\s*\(", op["lemma"], maxsplit=1)[0]
                 lemma_main = re.split(r"\s+ó\s+", lemma_main,
                                        maxsplit=1, flags=re.I)[0]
-                if (len(lemma_main) >= 3
-                        and _norm_for_lemma(lemma_main)
-                        in _norm_for_lemma(fallback)):
+                lemma_in_body = (len(lemma_main) >= 3
+                                  and _norm_for_lemma(lemma_main)
+                                  in _norm_for_lemma(fallback))
+                has_section_marker = bool(riera_section_re.search(fallback))
+                if lemma_in_body or has_section_marker:
                     body = fallback
         # NGIB title check runs FIRST so we can pass its result into
         # is_balearic as an alternative signal.

@@ -1,0 +1,1348 @@
+[
+  {
+    "vol": "01",
+    "page": 156,
+    "title": "ALARÓ",
+    "island": "Mallorca",
+    "lon": 2.7892013022307123,
+    "lat": 39.70582430158033,
+    "matched": "Alaró",
+    "source": "translated"
+  },
+  {
+    "vol": "01",
+    "page": 181,
+    "title": "ALAYOR",
+    "island": "Menorca",
+    "lon": 4.0962,
+    "lat": 39.9684,
+    "fallback": "island-centroid:Menorca",
+    "source": "centroid",
+    "note": "no NGIB match for 'ALAYOR'"
+  },
+  {
+    "vol": "01",
+    "page": 353,
+    "title": "ALCUDIA",
+    "island": "Mallorca",
+    "lon": 3.1211344432816155,
+    "lat": 39.85297576775748,
+    "matched": "Alcúdia",
+    "source": "translated"
+  },
+  {
+    "vol": "01",
+    "page": 433,
+    "title": "ALGÁIDA",
+    "island": "Mallorca",
+    "lon": 2.894721883926311,
+    "lat": 39.55939925295742,
+    "matched": "Algaida",
+    "source": "translated"
+  },
+  {
+    "vol": "01",
+    "page": 651,
+    "title": "ANDRÁITX",
+    "island": "Mallorca",
+    "lon": 2.424502748942921,
+    "lat": 39.576244608314894,
+    "matched": "Andratx",
+    "source": "translated"
+  },
+  {
+    "vol": "01",
+    "page": 818,
+    "title": "ARIANI",
+    "island": "Mallorca",
+    "lon": 3.110383895437685,
+    "lat": 39.6488846911178,
+    "matched": "Ariany",
+    "source": "translated"
+  },
+  {
+    "vol": "01",
+    "page": 882,
+    "title": "ARTÁ",
+    "island": "Mallorca",
+    "lon": 3.351221493954465,
+    "lat": 39.69514558861906,
+    "matched": "Artà",
+    "source": "translated"
+  },
+  {
+    "vol": "02",
+    "page": 131,
+    "title": "BANALBUFAR",
+    "island": "Mallorca",
+    "lon": 2.5136917979686726,
+    "lat": 39.68695133511082,
+    "matched": "Banyalbufar",
+    "source": "translated"
+  },
+  {
+    "vol": "02",
+    "page": 180,
+    "title": "BARCELONA",
+    "island": "Mallorca",
+    "lon": 2.9489,
+    "lat": 39.6953,
+    "fallback": "island-centroid:Mallorca",
+    "source": "centroid"
+  },
+  {
+    "vol": "02",
+    "page": 777,
+    "title": "BINIAMAR",
+    "island": "Mallorca",
+    "lon": 2.871481200912302,
+    "lat": 39.73079727399674,
+    "matched": "Biniamar",
+    "source": "translated"
+  },
+  {
+    "vol": "02",
+    "page": 777,
+    "title": "BINIARÁIX",
+    "island": "Mallorca",
+    "lon": 2.7348175208992966,
+    "lat": 39.77099747393656,
+    "matched": "Biniaraix",
+    "source": "translated"
+  },
+  {
+    "vol": "02",
+    "page": 777,
+    "title": "BINIÁLI",
+    "island": "Mallorca",
+    "lon": 2.8590579887706395,
+    "lat": 39.641286469369085,
+    "matched": "Biniali",
+    "source": "translated"
+  },
+  {
+    "vol": "02",
+    "page": 778,
+    "title": "BINISALEM",
+    "island": "Mallorca",
+    "lon": 2.8431843179997305,
+    "lat": 39.688412031805896,
+    "matched": "Binissalem",
+    "source": "translated"
+  },
+  {
+    "vol": "02",
+    "page": 927,
+    "title": "BÚGER",
+    "island": "Mallorca",
+    "lon": 2.983288603379287,
+    "lat": 39.75837082737537,
+    "matched": "Búger",
+    "source": "translated"
+  },
+  {
+    "vol": "02",
+    "page": 93,
+    "title": "BALEARES --Prov civ marítima y mil",
+    "island": "Baleares",
+    "lon": 2.9489,
+    "lat": 39.6953,
+    "fallback": "island-centroid:Baleares",
+    "source": "centroid",
+    "note": "no NGIB match for 'BALEARES PROV CIV MARITIMA Y MIL'"
+  },
+  {
+    "vol": "02",
+    "page": 949,
+    "title": "BUÑOLA",
+    "island": "Mallorca",
+    "lon": 2.6990862624832093,
+    "lat": 39.696395599892874,
+    "matched": "Bunyola",
+    "source": "translated"
+  },
+  {
+    "vol": "03",
+    "page": 1135,
+    "title": "COSTITX",
+    "island": "Mallorca",
+    "lon": 2.949992525490944,
+    "lat": 39.65776112459428,
+    "matched": "Costitx",
+    "source": "translated"
+  },
+  {
+    "vol": "03",
+    "page": 184,
+    "title": "CAIMARI",
+    "island": "Mallorca",
+    "lon": 2.9024836488456303,
+    "lat": 39.771054387867,
+    "matched": "Caimari",
+    "source": "translated"
+  },
+  {
+    "vol": "03",
+    "page": 232,
+    "title": "CALONGE",
+    "island": "Mallorca",
+    "lon": 3.2046095695544916,
+    "lat": 39.400273257355984,
+    "matched": "Calonge",
+    "source": "translated"
+  },
+  {
+    "vol": "03",
+    "page": 237,
+    "title": "CALVIÁ",
+    "island": "Mallorca",
+    "lon": 2.505143070138867,
+    "lat": 39.56355673242892,
+    "matched": "Calvià",
+    "source": "translated"
+  },
+  {
+    "vol": "03",
+    "page": 274,
+    "title": "CAMPANET",
+    "island": "Mallorca",
+    "lon": 2.9653265639342568,
+    "lat": 39.775079403310315,
+    "matched": "Campanet",
+    "source": "translated"
+  },
+  {
+    "vol": "03",
+    "page": 302,
+    "title": "CAMPOS",
+    "island": "Mallorca",
+    "lon": 3.0196793548407403,
+    "lat": 39.43088805325876,
+    "matched": "Campos",
+    "source": "translated"
+  },
+  {
+    "vol": "03",
+    "page": 392,
+    "title": "CAPDEPERA",
+    "island": "Mallorca",
+    "lon": 3.431661252426936,
+    "lat": 39.70206096392829,
+    "matched": "Capdepera",
+    "source": "translated"
+  },
+  {
+    "vol": "03",
+    "page": 48,
+    "title": "CABO",
+    "island": "Menorca",
+    "lon": 4.0962,
+    "lat": 39.9684,
+    "fallback": "island-centroid:Menorca",
+    "source": "centroid",
+    "note": "no NGIB match for 'CABO'"
+  },
+  {
+    "vol": "03",
+    "page": 49,
+    "title": "CABO BAJOLÍ",
+    "island": "Menorca",
+    "lon": 3.79,
+    "lat": 40.005,
+    "matched": "Cap des Banys / Bajolí (Ciutadella)",
+    "source": "manual"
+  },
+  {
+    "vol": "03",
+    "page": 49,
+    "title": "CABO BLANCO",
+    "island": "Mallorca",
+    "lon": 2.79,
+    "lat": 39.3593,
+    "matched": "Cap Blanc (Llucmajor)",
+    "source": "manual"
+  },
+  {
+    "vol": "03",
+    "page": 50,
+    "title": "CABO CABALLERÍA",
+    "island": "Menorca",
+    "lon": 4.0892,
+    "lat": 40.0772,
+    "matched": "Cap de Cavalleria (es Mercadal)",
+    "source": "manual"
+  },
+  {
+    "vol": "03",
+    "page": 50,
+    "title": "CABO CALAT FIGUERA",
+    "island": "Mallorca",
+    "lon": 2.5283,
+    "lat": 39.4583,
+    "matched": "Cap de Cala Figuera (Calvià)",
+    "source": "manual"
+  },
+  {
+    "vol": "03",
+    "page": 50,
+    "title": "CABO CAMPANICH",
+    "island": "Ibiza",
+    "lon": 1.6217,
+    "lat": 39.0078,
+    "matched": "Punta de Campanitx (Santa Eulària)",
+    "source": "manual"
+  },
+  {
+    "vol": "03",
+    "page": 50,
+    "title": "CABO DARTUTX",
+    "island": "Menorca",
+    "lon": 3.77,
+    "lat": 39.93,
+    "matched": "Cap d'Artrutx (Ciutadella)",
+    "source": "manual"
+  },
+  {
+    "vol": "03",
+    "page": 52,
+    "title": "CABO DE PERA",
+    "island": "Mallorca",
+    "lon": 3.475,
+    "lat": 39.71,
+    "matched": "Cap de Pera (Capdepera)",
+    "source": "manual"
+  },
+  {
+    "vol": "03",
+    "page": 55,
+    "title": "CABO FABARITX",
+    "island": "Menorca",
+    "lon": 4.27,
+    "lat": 40.003,
+    "matched": "Cap de Favàritx (Maó)",
+    "source": "manual"
+  },
+  {
+    "vol": "03",
+    "page": 55,
+    "title": "CABO FALCON",
+    "island": "Cabrera",
+    "lon": 2.9456,
+    "lat": 39.1278,
+    "matched": "Cap Falcó (Cabrera)",
+    "source": "manual"
+  },
+  {
+    "vol": "03",
+    "page": 55,
+    "title": "CABO FERRUTX",
+    "island": "Mallorca",
+    "lon": 3.4283,
+    "lat": 39.795,
+    "matched": "Cap Ferrutx (Artà)",
+    "source": "manual"
+  },
+  {
+    "vol": "03",
+    "page": 55,
+    "title": "CABO FORMENTOR óFORMENTON",
+    "island": "Mallorca",
+    "lon": 2.9489,
+    "lat": 39.6953,
+    "fallback": "island-centroid:Mallorca",
+    "source": "centroid",
+    "note": "no NGIB match for 'CABO FORMENTOR OFORMENTON'"
+  },
+  {
+    "vol": "03",
+    "page": 56,
+    "title": "CABO PINAR",
+    "island": "Mallorca",
+    "lon": 3.183,
+    "lat": 39.91,
+    "matched": "Cap des Pinar (Alcúdia)",
+    "source": "manual"
+  },
+  {
+    "vol": "03",
+    "page": 56,
+    "title": "CABO PONTINAT",
+    "island": "Menorca",
+    "lon": 3.8,
+    "lat": 39.99,
+    "matched": "Punta des Bancalets / Pontinas (Ciutadella)",
+    "source": "manual"
+  },
+  {
+    "vol": "03",
+    "page": 58,
+    "title": "CABO SALINAS",
+    "island": "Mallorca",
+    "lon": 3.0532,
+    "lat": 39.2664,
+    "matched": "Cap de ses Salines (Santanyí)",
+    "source": "manual"
+  },
+  {
+    "vol": "03",
+    "page": 888,
+    "title": "CIUDADELA",
+    "island": "Menorca",
+    "lon": 3.8354639061292954,
+    "lat": 40.00083606410781,
+    "matched": "Ciutadella de Menorca",
+    "source": "translated"
+  },
+  {
+    "vol": "03",
+    "page": 998,
+    "title": "CONSELL",
+    "island": "Mallorca",
+    "lon": 2.81323016903314,
+    "lat": 39.66853635694365,
+    "matched": "Consell",
+    "source": "translated"
+  },
+  {
+    "vol": "04",
+    "page": 107,
+    "title": "DEYÁ",
+    "island": "Mallorca",
+    "lon": 2.648300594035485,
+    "lat": 39.74856704119535,
+    "matched": "Deià",
+    "source": "translated"
+  },
+  {
+    "vol": "04",
+    "page": 320,
+    "title": "ELS BALLADORS",
+    "island": "Mallorca",
+    "lon": 2.5878,
+    "lat": 39.6772,
+    "matched": "es Balladors (Esporles)",
+    "source": "manual"
+  },
+  {
+    "vol": "04",
+    "page": 382,
+    "title": "ESCAPDELLÁ",
+    "island": "Mallorca",
+    "lon": 2.4697204781159385,
+    "lat": 39.5799605584493,
+    "matched": "es Capdellà",
+    "source": "translated"
+  },
+  {
+    "vol": "04",
+    "page": 391,
+    "title": "ESCORCA",
+    "island": "Mallorca",
+    "lon": 2.8841381920136406,
+    "lat": 39.821736001473134,
+    "matched": "Escorca",
+    "source": "translated"
+  },
+  {
+    "vol": "04",
+    "page": 402,
+    "title": "ESGLAYETA",
+    "island": "Mallorca",
+    "lon": 2.5933,
+    "lat": 39.67,
+    "matched": "s'Esglaieta (Esporles)",
+    "source": "manual"
+  },
+  {
+    "vol": "04",
+    "page": 665,
+    "title": "ESPORLAS",
+    "island": "Mallorca",
+    "lon": 2.5776165210456154,
+    "lat": 39.66883599637154,
+    "matched": "Esporles",
+    "source": "translated"
+  },
+  {
+    "vol": "04",
+    "page": 671,
+    "title": "ESTABLIMENTS",
+    "island": "Mallorca",
+    "lon": 2.6212672839414366,
+    "lat": 39.62693253477487,
+    "matched": "Establiments",
+    "source": "translated"
+  },
+  {
+    "vol": "04",
+    "page": 682,
+    "title": "ESTELLENCHS",
+    "island": "Mallorca",
+    "lon": 2.4817847997132048,
+    "lat": 39.65326745716203,
+    "matched": "Estellencs",
+    "source": "translated"
+  },
+  {
+    "vol": "04",
+    "page": 726,
+    "title": "FELANITX",
+    "island": "Mallorca",
+    "lon": 3.14849974990289,
+    "lat": 39.469326789344684,
+    "matched": "Felanitx",
+    "source": "translated"
+  },
+  {
+    "vol": "04",
+    "page": 740,
+    "title": "FERRERIAS",
+    "island": "Menorca",
+    "lon": 4.009341160913626,
+    "lat": 39.98283658130082,
+    "matched": "Ferreries",
+    "source": "translated"
+  },
+  {
+    "vol": "04",
+    "page": 795,
+    "title": "FORMENTERA",
+    "island": "Formentera",
+    "lon": 1.4287473842207838,
+    "lat": 38.70535873420256,
+    "matched": "Formentera",
+    "source": "translated"
+  },
+  {
+    "vol": "04",
+    "page": 797,
+    "title": "FORNALUTX",
+    "island": "Mallorca",
+    "lon": 2.7417599246158986,
+    "lat": 39.782519213513154,
+    "matched": "Fornalutx",
+    "source": "translated"
+  },
+  {
+    "vol": "04",
+    "page": 798,
+    "title": "FORNELLS",
+    "island": "Menorca",
+    "lon": 4.129253456385074,
+    "lat": 40.054608507115645,
+    "matched": "Fornells",
+    "source": "translated"
+  },
+  {
+    "vol": "05",
+    "page": 1038,
+    "title": "LA ALQUERÍA",
+    "island": "Mallorca",
+    "lon": 2.9489,
+    "lat": 39.6953,
+    "fallback": "island-centroid:Mallorca",
+    "source": "centroid",
+    "note": "no NGIB match for 'LA ALQUERIA'"
+  },
+  {
+    "vol": "05",
+    "page": 1039,
+    "title": "LA ALQUERÍA BLANCA",
+    "island": "Mallorca",
+    "lon": 3.165729566438262,
+    "lat": 39.3873742961473,
+    "matched": "s'Alqueria Blanca",
+    "source": "translated"
+  },
+  {
+    "vol": "05",
+    "page": 1059,
+    "title": "LA BONANOVA",
+    "island": "Mallorca",
+    "lon": 3.004656079765281,
+    "lat": 39.64153306680964,
+    "matched": "la Bonanova",
+    "source": "translated"
+  },
+  {
+    "vol": "05",
+    "page": 29,
+    "title": "GALILEA",
+    "island": "Mallorca",
+    "lon": 2.5058411191773104,
+    "lat": 39.61145999955232,
+    "matched": "Galilea",
+    "source": "translated"
+  },
+  {
+    "vol": "05",
+    "page": 678,
+    "title": "INCA",
+    "island": "Mallorca",
+    "lon": 2.910102717622634,
+    "lat": 39.72129381871081,
+    "matched": "Inca",
+    "source": "translated"
+  },
+  {
+    "vol": "05",
+    "page": 727,
+    "title": "ISLA CUNILLERA",
+    "island": "Ibiza",
+    "lon": 1.2167,
+    "lat": 38.9961,
+    "matched": "sa Conillera (Sant Antoni de Portmany)",
+    "source": "manual"
+  },
+  {
+    "vol": "05",
+    "page": 811,
+    "title": "ISLA DE IBIZA",
+    "island": "Ibiza",
+    "lon": 1.4326,
+    "lat": 38.9758,
+    "fallback": "island-centroid:Ibiza",
+    "source": "centroid"
+  },
+  {
+    "vol": "05",
+    "page": 812,
+    "title": "ISLA DE MALLORCA",
+    "island": "Mallorca",
+    "lon": 2.9489,
+    "lat": 39.6953,
+    "fallback": "island-centroid:Mallorca",
+    "source": "centroid"
+  },
+  {
+    "vol": "05",
+    "page": 813,
+    "title": "ISLA DE MENORCA",
+    "island": "Menorca",
+    "lon": 4.0962,
+    "lat": 39.9684,
+    "fallback": "island-centroid:Menorca",
+    "source": "centroid"
+  },
+  {
+    "vol": "05",
+    "page": 831,
+    "title": "ISLA DRAGONERA",
+    "island": "Mallorca",
+    "lon": 2.3242,
+    "lat": 39.5828,
+    "matched": "sa Dragonera (Andratx)",
+    "source": "manual"
+  },
+  {
+    "vol": "05",
+    "page": 831,
+    "title": "ISLA FORMENTERA",
+    "island": "Formentera",
+    "lon": 1.4368,
+    "lat": 38.71,
+    "fallback": "island-centroid:Formentera",
+    "source": "centroid",
+    "note": "no NGIB match for 'ISLA FORMENTERA'"
+  },
+  {
+    "vol": "05",
+    "page": 879,
+    "title": "ISLETA DE TAGOMAGO (Baleares )",
+    "island": "Ibiza",
+    "lon": 1.4326,
+    "lat": 38.9758,
+    "fallback": "island-centroid:Ibiza",
+    "source": "centroid",
+    "note": "no NGIB match for 'ISLETA DE TAGOMAGO (BALEARES )'"
+  },
+  {
+    "vol": "05",
+    "page": 879,
+    "title": "ISLETA DEL AIRE",
+    "island": "Menorca",
+    "lon": 4.2867,
+    "lat": 39.8083,
+    "matched": "illa de l'Aire (Sant Lluís)",
+    "source": "manual"
+  },
+  {
+    "vol": "05",
+    "page": 879,
+    "title": "ISLETA DEN COLOM",
+    "island": "Menorca",
+    "lon": 4.2942,
+    "lat": 39.9614,
+    "matched": "illa d'en Colom (Maó)",
+    "source": "manual"
+  },
+  {
+    "vol": "05",
+    "page": 880,
+    "title": "ISLOTES BLEDAS",
+    "island": "Ibiza",
+    "lon": 1.1683,
+    "lat": 38.9786,
+    "matched": "ses Bledes (Sant Antoni de Portmany)",
+    "source": "manual"
+  },
+  {
+    "vol": "05",
+    "page": 998,
+    "title": "JORNETS",
+    "island": "Mallorca",
+    "lon": 2.936374973340472,
+    "lat": 39.67763990432646,
+    "matched": "Jornets",
+    "source": "translated"
+  },
+  {
+    "vol": "06",
+    "page": 1062,
+    "title": "MANACOR",
+    "island": "Mallorca",
+    "lon": 3.2077458420218385,
+    "lat": 39.56913499279137,
+    "matched": "Manacor",
+    "source": "translated"
+  },
+  {
+    "vol": "06",
+    "page": 1067,
+    "title": "MANCOR",
+    "island": "Mallorca",
+    "lon": 2.87093924031292,
+    "lat": 39.75047955097281,
+    "matched": "Mancor de la Vall",
+    "source": "translated"
+  },
+  {
+    "vol": "06",
+    "page": 184,
+    "title": "LA VILETA",
+    "island": "Mallorca",
+    "lon": 2.6428,
+    "lat": 39.5667,
+    "matched": "sa Vileta (Palma)",
+    "source": "manual"
+  },
+  {
+    "vol": "06",
+    "page": 581,
+    "title": "LLOMBARTS",
+    "island": "Mallorca",
+    "lon": 3.095754694146645,
+    "lat": 39.341666073115505,
+    "matched": "es Llombards",
+    "source": "translated"
+  },
+  {
+    "vol": "06",
+    "page": 585,
+    "title": "LLORITO",
+    "island": "Mallorca",
+    "lon": 2.9754291960827053,
+    "lat": 39.61800647635449,
+    "matched": "Lloret de Vistalegre",
+    "source": "translated"
+  },
+  {
+    "vol": "06",
+    "page": 586,
+    "title": "LLOSETA",
+    "island": "Mallorca",
+    "lon": 2.8641512404515472,
+    "lat": 39.71733281017152,
+    "matched": "Lloseta",
+    "source": "translated"
+  },
+  {
+    "vol": "06",
+    "page": 588,
+    "title": "LLUBÍ",
+    "island": "Mallorca",
+    "lon": 3.0036371305130394,
+    "lat": 39.70038745693447,
+    "matched": "Llubí",
+    "source": "translated"
+  },
+  {
+    "vol": "06",
+    "page": 588,
+    "title": "LLUCH",
+    "island": "Mallorca",
+    "lon": 2.8867,
+    "lat": 39.8217,
+    "matched": "santuari de Lluc (Escorca)",
+    "source": "manual"
+  },
+  {
+    "vol": "06",
+    "page": 588,
+    "title": "LLUCH-MAYOR",
+    "island": "Mallorca",
+    "lon": 2.8908,
+    "lat": 39.49,
+    "matched": "Llucmajor",
+    "source": "manual"
+  },
+  {
+    "vol": "06",
+    "page": 589,
+    "title": "LLUCH-MAYOR",
+    "island": "Mallorca",
+    "lon": 2.8908,
+    "lat": 39.49,
+    "matched": "Llucmajor",
+    "source": "manual"
+  },
+  {
+    "vol": "06",
+    "page": 64,
+    "title": "LA PUEBLA",
+    "island": "Mallorca",
+    "lon": 3.0247816277952824,
+    "lat": 39.769784378857224,
+    "matched": "sa Pobla",
+    "source": "translated"
+  },
+  {
+    "vol": "06",
+    "page": 985,
+    "title": "MAHON",
+    "island": "Menorca",
+    "lon": 4.264428939070812,
+    "lat": 39.889722491854904,
+    "matched": "Maó",
+    "source": "translated"
+  },
+  {
+    "vol": "07",
+    "page": 1090,
+    "title": "PALMA (Audiencia Territorial)",
+    "island": "Mallorca",
+    "lon": 2.9489,
+    "lat": 39.6953,
+    "fallback": "island-centroid:Mallorca",
+    "source": "centroid",
+    "note": "no NGIB match for 'PALMA (AUDIENCIA TERRITORIAL)'"
+  },
+  {
+    "vol": "07",
+    "page": 206,
+    "title": "MENORCA",
+    "island": "Menorca",
+    "lon": 4.264428939070812,
+    "lat": 39.889722491854904,
+    "matched": "Menorca",
+    "source": "translated"
+  },
+  {
+    "vol": "07",
+    "page": 210,
+    "title": "MERCAD AL",
+    "island": "Menorca",
+    "lon": 4.092076203166926,
+    "lat": 39.98844697943833,
+    "matched": "es Mercadal",
+    "source": "translated"
+  },
+  {
+    "vol": "07",
+    "page": 29,
+    "title": "MARÍA",
+    "island": "Mallorca",
+    "lon": 3.0754928621348148,
+    "lat": 39.66597623646204,
+    "matched": "Maria de la Salut",
+    "source": "translated"
+  },
+  {
+    "vol": "07",
+    "page": 434,
+    "title": "MONTUIRI",
+    "island": "Mallorca",
+    "lon": 2.982237075817586,
+    "lat": 39.567289860215055,
+    "matched": "Montuïri",
+    "source": "translated"
+  },
+  {
+    "vol": "07",
+    "page": 489,
+    "title": "MOSCARÍ",
+    "island": "Mallorca",
+    "lon": 2.9343370830789692,
+    "lat": 39.76535236183277,
+    "matched": "Moscari",
+    "source": "translated"
+  },
+  {
+    "vol": "07",
+    "page": 51,
+    "title": "MARRATXÍ",
+    "island": "Mallorca",
+    "lon": 2.750187107974696,
+    "lat": 39.621831660958584,
+    "matched": "Marratxí",
+    "source": "translated"
+  },
+  {
+    "vol": "07",
+    "page": 575,
+    "title": "MURO",
+    "island": "Mallorca",
+    "lon": 3.057673731633073,
+    "lat": 39.736697741879475,
+    "matched": "Muro",
+    "source": "translated"
+  },
+  {
+    "vol": "07",
+    "page": 919,
+    "title": "ORIENT",
+    "island": "Mallorca",
+    "lon": 2.760365263628087,
+    "lat": 39.734567245486666,
+    "matched": "Orient",
+    "source": "translated"
+  },
+  {
+    "vol": "08",
+    "page": 143,
+    "title": "PETRA",
+    "island": "Mallorca",
+    "lon": 3.1131626599046567,
+    "lat": 39.616662212259094,
+    "matched": "Petra",
+    "source": "translated"
+  },
+  {
+    "vol": "08",
+    "page": 170,
+    "title": "PINA",
+    "island": "Mallorca",
+    "lon": 2.9238977034638616,
+    "lat": 39.59955757385538,
+    "matched": "Pina",
+    "source": "translated"
+  },
+  {
+    "vol": "08",
+    "page": 270,
+    "title": "POLLENSA",
+    "island": "Mallorca",
+    "lon": 3.014638862235439,
+    "lat": 39.878376270875606,
+    "matched": "Pollença",
+    "source": "translated"
+  },
+  {
+    "vol": "08",
+    "page": 309,
+    "title": "PORRERAS",
+    "island": "Mallorca",
+    "lon": 3.0223736959042946,
+    "lat": 39.516880681933735,
+    "matched": "Porreres",
+    "source": "translated"
+  },
+  {
+    "vol": "08",
+    "page": 332,
+    "title": "PORTOCOLOM",
+    "island": "Mallorca",
+    "lon": 3.255847614092307,
+    "lat": 39.416413655388254,
+    "matched": "Portocolom",
+    "source": "translated"
+  },
+  {
+    "vol": "08",
+    "page": 510,
+    "title": "PUIGPUNENT",
+    "island": "Mallorca",
+    "lon": 2.5271814846644083,
+    "lat": 39.623511178882126,
+    "matched": "Puigpunyent",
+    "source": "translated"
+  },
+  {
+    "vol": "08",
+    "page": 620,
+    "title": "RANDA",
+    "island": "Mallorca",
+    "lon": 2.915658989857371,
+    "lat": 39.526546838010034,
+    "matched": "Randa",
+    "source": "translated"
+  },
+  {
+    "vol": "08",
+    "page": 869,
+    "title": "RUBERTS",
+    "island": "Mallorca",
+    "lon": 2.9371588516582716,
+    "lat": 39.62279946011435,
+    "matched": "Ruberts",
+    "source": "translated"
+  },
+  {
+    "vol": "09",
+    "page": 1178,
+    "title": "SINEU",
+    "island": "Mallorca",
+    "lon": 3.010510715650817,
+    "lat": 39.64410100641971,
+    "matched": "Sineu",
+    "source": "translated"
+  },
+  {
+    "vol": "09",
+    "page": 178,
+    "title": "SAN JOSE",
+    "island": "Ibiza",
+    "lon": 1.2943965115201321,
+    "lat": 38.92130404276594,
+    "matched": "Sant Josep de sa Talaia",
+    "source": "translated"
+  },
+  {
+    "vol": "09",
+    "page": 184,
+    "title": "SAN JUAN",
+    "island": "Mallorca",
+    "lon": 3.0391767686510844,
+    "lat": 39.59628650189264,
+    "matched": "Sant Joan",
+    "source": "translated"
+  },
+  {
+    "vol": "09",
+    "page": 186,
+    "title": "SAN JUAN",
+    "island": "Eivissa",
+    "lon": 1.4326,
+    "lat": 38.9758,
+    "fallback": "island-centroid:Eivissa",
+    "source": "centroid",
+    "note": "no NGIB match for 'Sant Joan'"
+  },
+  {
+    "vol": "09",
+    "page": 187,
+    "title": "SAN JUAN BAUTISTA",
+    "island": "Ibiza",
+    "lon": 1.5135038277503596,
+    "lat": 39.07750074996047,
+    "matched": "Sant Joan de Labritja",
+    "source": "translated"
+  },
+  {
+    "vol": "09",
+    "page": 193,
+    "title": "SAN JUAN DE CARBONELL",
+    "island": "Menorca",
+    "lon": 4.0789,
+    "lat": 39.9869,
+    "matched": "Carbonell (es Mercadal)",
+    "source": "manual"
+  },
+  {
+    "vol": "09",
+    "page": 241,
+    "title": "SAN LORENZO",
+    "island": "Eivissa",
+    "lon": 1.4326,
+    "lat": 38.9758,
+    "fallback": "island-centroid:Eivissa",
+    "source": "centroid",
+    "note": "no NGIB match for 'SAN LORENZO'"
+  },
+  {
+    "vol": "09",
+    "page": 257,
+    "title": "SAN LUIS",
+    "island": "Menorca",
+    "lon": 4.257554113122967,
+    "lat": 39.8490496453283,
+    "matched": "Sant Lluís",
+    "source": "translated"
+  },
+  {
+    "vol": "09",
+    "page": 258,
+    "title": "SAN LLORENS D' EL CORDASAR",
+    "island": "Mallorca",
+    "lon": 3.283883760578678,
+    "lat": 39.61000966902561,
+    "matched": "Sant Llorenç des Cardassar",
+    "source": "translated"
+  },
+  {
+    "vol": "09",
+    "page": 38,
+    "title": "SAN ANTONIO",
+    "island": "Eivissa",
+    "lon": 1.3003953171960487,
+    "lat": 38.97888855487595,
+    "matched": "Sant Antoni de Portmany",
+    "source": "translated"
+  },
+  {
+    "vol": "09",
+    "page": 39,
+    "title": "SAN ANTONIO ABAD",
+    "island": "Ibiza",
+    "lon": 1.3003953171960487,
+    "lat": 38.97888855487595,
+    "matched": "Sant Antoni de Portmany",
+    "source": "translated"
+  },
+  {
+    "vol": "09",
+    "page": 477,
+    "title": "SANSELLAS",
+    "island": "Mallorca",
+    "lon": 2.8981468193057487,
+    "lat": 39.64770626333425,
+    "matched": "Sencelles",
+    "source": "translated"
+  },
+  {
+    "vol": "09",
+    "page": 545,
+    "title": "SANTA EUGENIA",
+    "island": "Mallorca",
+    "lon": 2.8367138822710136,
+    "lat": 39.62253078771978,
+    "matched": "Santa Eugènia",
+    "source": "translated"
+  },
+  {
+    "vol": "09",
+    "page": 549,
+    "title": "SANTA EULALIA",
+    "island": "Ibiza",
+    "lon": 1.5333169997945606,
+    "lat": 38.98513546154964,
+    "matched": "Santa Eulària des Riu",
+    "source": "translated"
+  },
+  {
+    "vol": "09",
+    "page": 569,
+    "title": "SANTA GERTRUDIS",
+    "island": "Ibiza",
+    "lon": 1.4284939126171647,
+    "lat": 38.998225015919225,
+    "matched": "Santa Gertrudis de Fruitera",
+    "source": "translated"
+  },
+  {
+    "vol": "09",
+    "page": 584,
+    "title": "SANTA MARIA",
+    "island": "Mallorca",
+    "lon": 2.7788294998373724,
+    "lat": 39.64723564494599,
+    "matched": "Santa Maria del Camí",
+    "source": "translated"
+  },
+  {
+    "vol": "09",
+    "page": 585,
+    "title": "SANTA M A R I A",
+    "island": "Mallorca",
+    "lon": 2.9489,
+    "lat": 39.6953,
+    "fallback": "island-centroid:Mallorca",
+    "source": "centroid",
+    "note": "no NGIB match for 'SANTA M A R I A'"
+  },
+  {
+    "vol": "09",
+    "page": 713,
+    "title": "SANTANY",
+    "island": "Mallorca",
+    "lon": 2.9489,
+    "lat": 39.6953,
+    "fallback": "island-centroid:Mallorca",
+    "source": "centroid",
+    "note": "no NGIB match for 'SANTANY'"
+  },
+  {
+    "vol": "09",
+    "page": 76,
+    "title": "SAN CLEMENTE",
+    "island": "Menorca",
+    "lon": 4.206447320368827,
+    "lat": 39.87088347887697,
+    "matched": "Sant Climent",
+    "source": "translated"
+  },
+  {
+    "vol": "09",
+    "page": 81,
+    "title": "SAN CRISTÓBAL",
+    "island": "Menorca",
+    "lon": 4.049736690917435,
+    "lat": 39.94649315612718,
+    "matched": "es Migjorn Gran",
+    "source": "translated"
+  },
+  {
+    "vol": "09",
+    "page": 959,
+    "title": "SELVA",
+    "island": "Mallorca",
+    "lon": 2.901055891230827,
+    "lat": 39.75456866790347,
+    "matched": "Selva",
+    "source": "translated"
+  },
+  {
+    "vol": "10",
+    "page": 47,
+    "title": "SOLLER",
+    "island": "Mallorca",
+    "lon": 2.7150156491566095,
+    "lat": 39.76608232523169,
+    "matched": "Sóller",
+    "source": "translated"
+  },
+  {
+    "vol": "10",
+    "page": 57,
+    "title": "SON SARDINA",
+    "island": "Mallorca",
+    "lon": 2.6543923242481595,
+    "lat": 39.62071720063487,
+    "matched": "Son Sardina",
+    "source": "translated"
+  },
+  {
+    "vol": "10",
+    "page": 58,
+    "title": "SON SERVERA",
+    "island": "Mallorca",
+    "lon": 3.3603216579881785,
+    "lat": 39.62103388420662,
+    "matched": "Son Servera",
+    "source": "translated"
+  },
+  {
+    "vol": "10",
+    "page": 740,
+    "title": "ULLARÓ",
+    "island": "Mallorca",
+    "lon": 2.98595350340233,
+    "lat": 39.776651832492895,
+    "matched": "Ullaró",
+    "source": "translated"
+  },
+  {
+    "vol": "11",
+    "page": 297,
+    "title": "VILLACARLOS",
+    "island": "Menorca",
+    "lon": 4.290841078586407,
+    "lat": 39.88024332167996,
+    "matched": "es Castell",
+    "source": "translated"
+  },
+  {
+    "vol": "11",
+    "page": 337,
+    "title": "VILLAFRANCA",
+    "island": "Mallorca",
+    "lon": 3.0888906833289007,
+    "lat": 39.568569259815014,
+    "matched": "Vilafranca de Bonany",
+    "source": "translated"
+  },
+  {
+    "vol": "11",
+    "page": 51,
+    "title": "VALLDEMOSA",
+    "island": "Mallorca",
+    "lon": 2.621804006357744,
+    "lat": 39.70908949697669,
+    "matched": "Valldemossa",
+    "source": "translated"
+  },
+  {
+    "vol": "12",
+    "page": 149,
+    "title": "ALGAIDA",
+    "island": "Mallorca",
+    "lon": 2.894721883926311,
+    "lat": 39.55939925295742,
+    "matched": "Algaida",
+    "source": "translated"
+  },
+  {
+    "vol": "12",
+    "page": 179,
+    "title": "ANDRAIX",
+    "island": "Mallorca",
+    "lon": 2.9489,
+    "lat": 39.6953,
+    "fallback": "island-centroid:Mallorca",
+    "source": "centroid",
+    "note": "no NGIB match for 'ANDRAIX'"
+  },
+  {
+    "vol": "12",
+    "page": 255,
+    "title": "CALONGE ó CALONGE DE CALAF",
+    "island": "Mallorca",
+    "lon": 2.9489,
+    "lat": 39.6953,
+    "fallback": "island-centroid:Mallorca",
+    "source": "centroid",
+    "note": "no NGIB match for 'CALONGE O CALONGE DE CALAF'"
+  },
+  {
+    "vol": "12",
+    "page": 385,
+    "title": "MALLORCA (Obispado de)",
+    "island": "Mallorca",
+    "lon": 2.9489,
+    "lat": 39.6953,
+    "fallback": "island-centroid:Mallorca",
+    "source": "centroid",
+    "note": "no NGIB match for 'MALLORCA (OBISPADO DE)'"
+  },
+  {
+    "vol": "12",
+    "page": 385,
+    "title": "MANACOR",
+    "island": "Mallorca",
+    "lon": 3.2077458420218385,
+    "lat": 39.56913499279137,
+    "matched": "Manacor",
+    "source": "translated"
+  },
+  {
+    "vol": "12",
+    "page": 388,
+    "title": "MENORCA (Obispado de)",
+    "island": "Menorca",
+    "lon": 3.8355,
+    "lat": 40.0008,
+    "matched": "Catedral de Menorca, Ciutadella",
+    "source": "manual"
+  },
+  {
+    "vol": "12",
+    "page": 70,
+    "title": "ALAYOR",
+    "island": "Menorca",
+    "lon": 4.0962,
+    "lat": 39.9684,
+    "fallback": "island-centroid:Menorca",
+    "source": "centroid",
+    "note": "no NGIB match for 'ALAYOR'"
+  }
+]
