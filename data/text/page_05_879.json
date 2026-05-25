@@ -19,13 +19,14 @@
       "poblacion": null,
       "industria": null,
       "geografia": null,
-      "description": "(Véase Isla de Ibiza). ISLETA DE TARIFA ó DE LAS PALOMAS (Véase Tarifa)",
+      "description": "(Véase Isla de Ibiza).",
       "stats": {},
       "cross_references": [
         "Isla de Ibiza"
       ],
       "confidence": "high",
-      "title_original": "ISLETA DE TAGOMAGO (Baleares )"
+      "title_original": "ISLETA DE TAGOMAGO (Baleares )",
+      "ocr_note": "Body-bleed eliminat: el text inclou la entrada peninsular següent al diccionari (ISLETA DE TARIFA / ISLOTES DE ANAGA / ISLALLANA, totes no-balears). L'article original de Riera és només una cross-reference a l'article general d'Eivissa."
     },
     {
       "title": "ISLETA DEL AIRE",
