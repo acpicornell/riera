@@ -8,8 +8,8 @@
       "place_type": "lugar",
       "island": "Mallorca",
       "municipality": "Bunyola",
-      "org_civil": "Corresponde á la prov. de Baleares y contribuye, con su ayunt., para las elecciones de diputados provinciales y las de Córtes.",
-      "description": "Lugar agregado al ayunt. de Buñola, del que dista 11'1 k. Cuenta sobre unos 130 hab. y 39 edif., de los que 5 están habitados temporalmente y 1 inhabitado. El texto del artículo se interrumpe en esta página por la entrada ORIHUELA (cuadro de parroquias del obispado); las demás secciones administrativas remiten al artículo de Buñola.",
+      "org_civil": "Corresponde á la prov. de Baleares y contribuye, con su ayunt., para las elecciones de diputados provinciales y las de Córtes",
+      "description": "ORIENT.—L. agreg. al ayunt. de Buñola, del que dista 11'1 k. Cuenta sobre unos 130 hab. y 39 edif., de los que 5 están habitados temporalmente y 1 inhabitado",
       "stats": {
         "habitantes": 130,
         "edificios": 39,
@@ -20,7 +20,19 @@
       "cross_references": [
         "Buñola"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "org_militar": "C. G. de Baleares y G. M. de Palma",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca, al arciprestazgo de Palma, y para sus atenciones religiosas se sirve de la iglesia parroquial de su ayunt",
+      "org_judicial": "Se halla adscrito al part. jud. y aud. de lo criminal y territ. de Palma",
+      "org_economica": "Para el pago de sus impuestos depende de la Delegación de Hacienda de su prov",
+      "servicio_publico": "Recibe y emite la corr. por en. m. de Barcelona, Valencia y Alicante á Palma, en. de Sóller",
+      "obras_publicas": "Utiliza los caminos que cruzan su tér. para verificar sus transportes",
+      "instruccion_publica": "Costeada con fondos municipales tiene una escuela incompleta para ambos sexos",
+      "industria": "La ind. es generalmente la agricultura y las que con ella se relacionan",
+      "poblacion": "No tienen nada de notable los edif. que la componen",
+      "geografia": "(Véase el artículo de su ayunt.)",
+      "historia": null,
+      "ocr_note": "Re-extret del PDF tom07 p919 despres de detectar hallucinació LLM al camp description que mencionava 'el texto se interrumpe por la entrada ORIHUELA' — fabricacio pura, Riera no fa meta-comentaris. L'article real es complet al PDF (1189 chars), amb tots els 12 sections de la fitxa templade."
     }
   ]
 }
