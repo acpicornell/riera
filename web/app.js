@@ -131,7 +131,7 @@ function sortFiltered() {
 // === TABLE ===
 function renderTable() {
   applyFilters();
-  const tbody = $("tbody-minano");
+  const tbody = $("tbody-riera");
   const total = state.filtered.length;
   $("count").textContent = `${fmt(total)} entrades`;
   if (!total) {
@@ -144,7 +144,7 @@ function renderTable() {
     const volPage = e.bdcyl_url
       ? `<a href="${esc(e.bdcyl_url)}" target="_blank" rel="noopener" class="bdcyl-link" title="Obre el volum sencer a BDCyL">${esc(e.vol)}/${esc(e.page)} ↗</a>`
       : `${esc(e.vol)}/${esc(e.page)}`;
-    return `<tr data-id="${e.id}" class="minano-row">
+    return `<tr data-id="${e.id}" class="riera-row">
       <td><strong>${esc(e.title)}</strong></td>
       <td>${esc(e.place_type || "—")}</td>
       <td>${esc(e.island || "—")}</td>
@@ -155,7 +155,7 @@ function renderTable() {
   }).join("") + (total > 500
     ? `<tr><td colspan="6" class="empty">Es visualitzen 500 de ${fmt(total)} entrades. Refineu els filtres per restringir el resultat.</td></tr>`
     : "");
-  tbody.querySelectorAll("tr.minano-row").forEach(tr =>
+  tbody.querySelectorAll("tr.riera-row").forEach(tr =>
     tr.addEventListener("click", ev => {
       if (ev.target.closest("a")) return;
       toggleExpand(tr);
@@ -164,11 +164,11 @@ function renderTable() {
 
 function toggleExpand(tr) {
   const next = tr.nextElementSibling;
-  if (next && next.classList.contains("minano-expand")) {
+  if (next && next.classList.contains("riera-expand")) {
     next.remove(); tr.classList.remove("expanded"); return;
   }
-  document.querySelectorAll(".minano-expand").forEach(el => el.remove());
-  document.querySelectorAll(".minano-row.expanded").forEach(el => el.classList.remove("expanded"));
+  document.querySelectorAll(".riera-expand").forEach(el => el.remove());
+  document.querySelectorAll(".riera-row.expanded").forEach(el => el.classList.remove("expanded"));
   const id = Number(tr.dataset.id);
   const e = state.entries.find(x => x.id === id);
   if (!e) return;
@@ -218,15 +218,15 @@ function toggleExpand(tr) {
     ? `<div class="riera-section riera-desc">${toParas(e.description)}</div>` : "";
 
   const exp = document.createElement("tr");
-  exp.className = "minano-expand";
+  exp.className = "riera-expand";
   exp.innerHTML = `<td colspan="6">
-    <div class="minano-article">
+    <div class="riera-article">
       ${descHtml}
       ${sectionsHtml}
       ${statsHtml}
       ${crefsHtml}
       ${ocrNoteHtml}
-      <p class="minano-source">
+      <p class="riera-source">
         <span>Tom ${esc(e.vol)} · pàgina PDF ${esc(e.page)}</span>
         ${e.bdcyl_url ? `· <a href="${esc(e.bdcyl_url)}" target="_blank" rel="noopener">Veure volum a Biblioteca Digital de Castella i Lleó →</a>` : ""}
       </p>
@@ -237,14 +237,14 @@ function toggleExpand(tr) {
 }
 
 function initSort() {
-  document.querySelectorAll("#table-minano th").forEach((th, i) => {
+  document.querySelectorAll("#table-riera th").forEach((th, i) => {
     const col = COLS[i];
     if (!col) return;
     th.classList.add("sortable");
     th.addEventListener("click", () => {
       if (state.sort_col === col) state.sort_dir = state.sort_dir === "asc" ? "desc" : "asc";
       else { state.sort_col = col; state.sort_dir = "asc"; }
-      document.querySelectorAll("#table-minano th").forEach(x => x.classList.remove("sort-asc", "sort-desc"));
+      document.querySelectorAll("#table-riera th").forEach(x => x.classList.remove("sort-asc", "sort-desc"));
       th.classList.add(`sort-${state.sort_dir}`);
       renderTable();
     });
@@ -379,11 +379,11 @@ async function boot() {
   bindFilters();
   let payload;
   try {
-    const r = await fetch("data.json?v=20");
+    const r = await fetch("data.json?v=21");
     payload = await r.json();
   } catch (e) {
     console.error(e);
-    $("tbody-minano").innerHTML =
+    $("tbody-riera").innerHTML =
       `<tr><td colspan="9" class="empty">Error en la càrrega de data.json.</td></tr>`;
     return;
   }
@@ -1161,7 +1161,7 @@ async function renderMap() {
         fillColor: colour,
         fillOpacity: e.coord_fallback ? 0.35 : 0.78,
       });
-      m._minano_entry = e;
+      m._riera_entry = e;
       m.bindPopup(() => buildPopupHTML(e), { maxWidth: 360, minWidth: 280 });
       mapMarkersAll.push(m);
     }
@@ -1174,7 +1174,7 @@ async function renderMap() {
     syncMapMarkers(toggle ? toggle.checked : true);
 
     // Fit bounds to all visible (non-fallback) markers
-    const real = mapMarkersAll.filter(m => !m._minano_entry.coord_fallback);
+    const real = mapMarkersAll.filter(m => !m._riera_entry.coord_fallback);
     if (real.length) {
       const group = L.featureGroup(real);
       mapInstance.fitBounds(group.getBounds().pad(0.08));
@@ -1188,7 +1188,7 @@ async function renderMap() {
 function syncMapMarkers(showFallback) {
   if (!mapInstance) return;
   for (const m of mapMarkersAll) {
-    const fb = m._minano_entry.coord_fallback;
+    const fb = m._riera_entry.coord_fallback;
     if (fb && !showFallback) {
       if (mapInstance.hasLayer(m)) mapInstance.removeLayer(m);
     } else {

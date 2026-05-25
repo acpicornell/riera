@@ -1,4 +1,4 @@
-/* 1860 Nomenclator — clear academic palette. Slim version for minano
+/* 1860 Nomenclator — clear academic palette. Slim version for riera
    (no map / no demografia / no statistics tab; the corpus is smaller). */
 :root {
   --bg: #fdfaf3;
@@ -225,18 +225,18 @@ tbody td {
   border-bottom: 1px solid #f0eadb;
   font-family: Georgia, serif;
 }
-tbody tr.minano-row { cursor: pointer; }
-tbody tr.minano-row:hover { background: var(--accent-light); }
-tbody tr.minano-row.expanded {
+tbody tr.riera-row { cursor: pointer; }
+tbody tr.riera-row:hover { background: var(--accent-light); }
+tbody tr.riera-row.expanded {
   background: var(--accent-light);
   font-weight: 600;
 }
-tbody tr.minano-expand td {
+tbody tr.riera-expand td {
   background: var(--surface);
   border-top: none;
   padding: 0;
 }
-.minano-article {
+.riera-article {
   padding: 1em 1.4em 1.2em;
   border-left: 3px solid var(--accent);
 }
@@ -246,7 +246,7 @@ tbody tr.minano-expand td {
   margin-bottom: 0.7em;
 }
 .entry-admin strong { color: var(--text); font-weight: 600; }
-.minano-body {
+.riera-body {
   font-size: 0.95em;
   line-height: 1.65;
   text-align: justify;
@@ -301,7 +301,7 @@ tbody tr.minano-expand td {
   color: var(--text);
   line-height: 1.55;
 }
-.minano-source {
+.riera-source {
   margin: 1em 0 0;
   font-size: 0.85em;
   color: var(--text-muted);
