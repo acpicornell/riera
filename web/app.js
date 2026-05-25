@@ -377,7 +377,7 @@ async function boot() {
   bindFilters();
   let payload;
   try {
-    const r = await fetch("data.json?v=6");
+    const r = await fetch("data.json?v=7");
     payload = await r.json();
   } catch (e) {
     console.error(e);
@@ -462,167 +462,129 @@ function renderStats() {
   };
   const withHab = state.entries.filter(e => isPlaceEntry(e) && numOf(e, "habitantes") != null);
   const withEdif = state.entries.filter(e => isPlaceEntry(e) && numOf(e, "edificios") != null);
-  $("stats-coverage").innerHTML =
-    `<strong>Cobertura de dades:</strong> de ${total} entrades balears, ` +
-    `${withHab.length} tenen <em>habitantes</em> i ${withEdif.length} <em>edificios</em> (totes les xifres provenen del cens del 1877, en què Riera basa explícitament la seva obra). ` +
-    `Els accidents geogràfics (capes, illots, illes) i les entrades supramunicipals (l'article general de Baleares, els obispats) no tenen demografia pròpia i queden fora dels gràfics quantitatius.`;
 
-  // === Top 20 by habitants ===
-  const byHab = withHab
+  $("stats-coverage").innerHTML =
+    `<strong>Cobertura demogràfica:</strong> de ${total} entrades balears del corpus, ` +
+    `${withHab.length} reporten habitants i ${withEdif.length} reporten edificis (xifres del cens del 1877). ` +
+    `Els accidents geogràfics (cabos, illes, illots) i les entrades supramunicipals (Baleares, obispats) ` +
+    `no tenen demografia pròpia i queden fora dels gràfics quantitatius.`;
+
+  // === Chart 1: Top 25 by habitants ===
+  const topPop = withHab
     .map(e => [
       e.title,
       statsOf(e).habitantes,
       statsOf(e).edificios ? `${fmt(statsOf(e).edificios)} edif.` : null,
     ])
     .sort((a, b) => b[1] - a[1])
-    .slice(0, 20);
-  $("stats-chart-hab").innerHTML = svgBars(byHab, { labelW: 200 });
+    .slice(0, 25);
+  $("stats-chart-top-pop").innerHTML = svgBars(topPop, { labelW: 220 });
 
-  // === Top 20 by edificios ===
-  const byEdif = withEdif
-    .map(e => [e.title, statsOf(e).edificios, statsOf(e).habitantes ? `${fmt(statsOf(e).habitantes)} hab.` : null])
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 20);
-  $("stats-chart-vec").innerHTML = svgBars(byEdif, { labelW: 200, colour: "#0f766e" });
-
-  // === Habitants per island (sum of entries on each island) ===
-  const islandTotals = new Map();
+  // === Chart 2: Habitants + Edificis per illa (suma) ===
+  const islandHab = new Map();
+  const islandEdif = new Map();
   for (const e of state.entries) {
     if (isIslandAggregate(e)) continue;
     const s = statsOf(e);
-    if (!s || s.habitantes == null) continue;
+    if (!s) continue;
     const key = e.island || "(altres)";
-    islandTotals.set(key, (islandTotals.get(key) || 0) + s.habitantes);
+    if (s.habitantes != null) islandHab.set(key, (islandHab.get(key) || 0) + s.habitantes);
+    if (s.edificios != null) islandEdif.set(key, (islandEdif.get(key) || 0) + s.edificios);
   }
-  const byIsla = [...islandTotals.entries()]
-    .map(([k, v]) => [k, v, "hab. (suma)"])
+  const islandKeys = [...new Set([...islandHab.keys(), ...islandEdif.keys()])];
+  const islandRows = islandKeys
+    .map(k => [k, islandHab.get(k) || 0, islandEdif.get(k) || 0])
     .sort((a, b) => b[1] - a[1]);
-  $("stats-chart-riq").innerHTML = svgBars(byIsla, {
-    labelW: 140,
-    colour: "#c2410c",
-  });
+  $("stats-chart-by-island").innerHTML = renderIslandTwinBars(islandRows);
 
-  // === Entries per island ===
-  const islandEntries = new Map();
+  // === Chart 3: Composition of edificis (habitats/temporals/inhabitats) ===
+  // Use 'habitados_temporalmente' and 'inhabitados' / 'edificios_inhabitados'
+  // fields when present. 'habitados estables' = edificios - temporals - inhabitats.
+  const compRows = [];
   for (const e of state.entries) {
-    if (!e.island) continue;
-    islandEntries.set(e.island, (islandEntries.get(e.island) || 0) + 1);
+    const s = statsOf(e);
+    if (!s || !s.edificios) continue;
+    const temp = s.habitados_temporalmente ?? s.edificios_habitados_temporalmente;
+    const inhab = s.inhabitados ?? s.edificios_inhabitados;
+    if (temp == null || inhab == null) continue;
+    const total = s.edificios;
+    const estable = Math.max(0, total - temp - inhab);
+    compRows.push({ title: e.title, total, estable, temp, inhab });
   }
-  const byIslaEntries = [...islandEntries.entries()]
-    .map(([k, v]) => [k, v, "entrades"])
-    .sort((a, b) => b[1] - a[1]);
-  $("stats-chart-illa").innerHTML = svgBars(byIslaEntries, {
-    labelW: 140,
-    colour: "#0f766e",
-  });
+  compRows.sort((a, b) => b.total - a.total);
+  $("stats-chart-buildings").innerHTML = renderBuildingsStacked(compRows.slice(0, 20));
+}
 
-  // === Average building size (habitants / edificios) ===
-  const ratioRows = state.entries
-    .filter(e => isPlaceEntry(e) && statsOf(e)?.habitantes && statsOf(e)?.edificios && statsOf(e).edificios > 0)
-    .map(e => {
-      const s = statsOf(e);
-      return [e.title, +(s.habitantes / s.edificios).toFixed(2), `${fmt(s.edificios)} edif. → ${fmt(s.habitantes)} hab.`];
-    })
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 20);
-  $("stats-chart-reg").innerHTML = svgBars(ratioRows, {
-    labelW: 200,
-    colour: "#7c3aed",
-    fmt: v => v.toFixed(2),
-  });
 
-  // === Confidence distribution ===
-  const confCounts = new Map();
-  for (const e of state.entries) {
-    if (!e.confidence) continue;
-    confCounts.set(e.confidence, (confCounts.get(e.confidence) || 0) + 1);
-  }
-  const CONF_LABEL = { high: "Alta", medium: "Mitjana", low: "Baixa" };
-  const byConf = [...confCounts.entries()]
-    .map(([k, v]) => [CONF_LABEL[k] || k, v, "entr."])
-    .sort((a, b) => b[1] - a[1]);
-  $("stats-chart-ratio").innerHTML = svgBars(byConf, {
-    labelW: 160,
-    colour: "#0891b2",
-  });
+// === Demographic chart renderers ===========================================
 
-  // === Place type distribution ===
-  const typeCounts = new Map();
-  for (const e of state.entries) {
-    if (!e.place_type) continue;
-    typeCounts.set(e.place_type, (typeCounts.get(e.place_type) || 0) + 1);
-  }
-  const byType = [...typeCounts.entries()]
-    .map(([k, v]) => [k, v, "entr."])
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 12);
-  $("stats-chart-types").innerHTML = svgBars(byType, {
-    labelW: 130,
-    colour: "#65a30d",
+// Twin-bar per island: left = habitants (blau), right = edificis (taronja)
+function renderIslandTwinBars(rows) {
+  if (!rows.length) return '<p class="empty">Sense dades.</p>';
+  const W = 720, H = 30 + rows.length * 60;
+  const labelW = 120, mid = 14;
+  const sideW = (W - labelW - mid - 140) / 2;
+  const maxHab = Math.max(1, ...rows.map(r => r[1]));
+  const maxEdif = Math.max(1, ...rows.map(r => r[2]));
+  let svg = `<svg viewBox="0 0 ${W} ${H}" class="bars-svg" preserveAspectRatio="xMinYMin meet" role="img">`;
+  svg += `<text x="${labelW + sideW - 4}" y="14" text-anchor="end" class="bar-sub">habitants →</text>`;
+  svg += `<text x="${labelW + sideW + mid + 4}" y="14" text-anchor="start" class="bar-sub">← edificis</text>`;
+  rows.forEach(([isl, hab, edif], i) => {
+    const y = 28 + i * 60;
+    const wHab = (hab / maxHab) * sideW;
+    const wEdif = (edif / maxEdif) * sideW;
+    const hue = ISLAND_HUE[isl] || "#475569";
+    svg += `<text x="${labelW + sideW + mid / 2}" y="${y + 18}" text-anchor="middle" class="pyramid-island" style="font-size:13px">${esc(isl)}</text>`;
+    svg += `<rect x="${labelW + sideW - wHab}" y="${y}" width="${wHab}" height="28" rx="3" fill="${hue}" opacity="0.95"/>`;
+    svg += `<text x="${labelW + sideW - wHab - 6}" y="${y + 19}" text-anchor="end" class="bar-value">${fmt(hab)}</text>`;
+    svg += `<rect x="${labelW + sideW + mid}" y="${y}" width="${wEdif}" height="28" rx="3" fill="${lighten(hue, 0.35)}" opacity="0.95"/>`;
+    svg += `<text x="${labelW + sideW + mid + wEdif + 6}" y="${y + 19}" text-anchor="start" class="bar-value">${fmt(edif)}</text>`;
   });
+  svg += `</svg>`;
+  return svg;
+}
 
-  // === Coverage per tomo ===
-  const volCounts = new Map();
-  for (const e of state.entries) {
-    if (!e.vol) continue;
-    volCounts.set(e.vol, (volCounts.get(e.vol) || 0) + 1);
-  }
-  const VOL_ROMAN = {
-    "01": "I", "02": "II", "03": "III", "04": "IV", "05": "V", "06": "VI",
-    "07": "VII", "08": "VIII", "09": "IX", "10": "X", "11": "XI", "12": "XII",
+// Stacked horizontal bar per entry: habitats stables / temporals / inhabitats
+function renderBuildingsStacked(rows) {
+  if (!rows.length) return '<p class="empty">Sense dades.</p>';
+  const W = 720, labelW = 200, valueW = 110;
+  const innerW = W - labelW - valueW - 20;
+  const barH = 22, gap = 8;
+  const max = Math.max(...rows.map(r => r.total));
+  const H = rows.length * (barH + gap) + 30;
+  const COLORS = {
+    estable: "#0e7490",   // azul — habitats establement
+    temp:    "#f59e0b",   // taronja — habitats temporalment
+    inhab:   "#9ca3af",   // gris — inhabitats
   };
-  const VOL_RANGE = {
-    "01": "A — AZ",
-    "02": "B — BU",
-    "03": "C — CUZ",
-    "04": "D — F",
-    "05": "G — J",
-    "06": "L — LL",
-    "07": "M — O",
-    "08": "P",
-    "09": "S (sants)",
-    "10": "S — T",
-    "11": "V — Z",
-    "12": "Suplement",
-  };
-  const byVol = [...volCounts.entries()]
-    .map(([k, v]) => [`Tom ${VOL_ROMAN[k] || k}`, v, VOL_RANGE[k] || ""])
-    .sort((a, b) => {
-      const ai = Object.values(VOL_ROMAN).indexOf(a[0].replace("Tom ", ""));
-      const bi = Object.values(VOL_ROMAN).indexOf(b[0].replace("Tom ", ""));
-      return ai - bi;
-    });
-  $("stats-chart-vol").innerHTML = svgBars(byVol, {
-    labelW: 110,
-    colour: "#0891b2",
-  });
-
-  // === Place type distribution (top 12 most common) ===
-  const typeCounts2 = new Map();
-  for (const e of state.entries) {
-    if (!e.place_type) continue;
-    typeCounts2.set(e.place_type, (typeCounts2.get(e.place_type) || 0) + 1);
+  let svg = `<svg viewBox="0 0 ${W} ${H}" class="bars-svg" preserveAspectRatio="xMinYMin meet" role="img">`;
+  // Legend
+  const lx = labelW, ly = 6;
+  let lx0 = lx;
+  for (const [k, label, col] of [
+    ["estable", "habitats", COLORS.estable],
+    ["temp", "temporals", COLORS.temp],
+    ["inhab", "inhabitats", COLORS.inhab],
+  ]) {
+    svg += `<rect x="${lx0}" y="${ly}" width="10" height="10" fill="${col}"/>`;
+    svg += `<text x="${lx0 + 14}" y="${ly + 9}" class="bar-sub">${label}</text>`;
+    lx0 += 92;
   }
-  const byType2 = [...typeCounts2.entries()]
-    .map(([k, v]) => [k, v, "entr."])
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 12);
-  $("stats-chart-eccl").innerHTML = svgBars(byType2, {
-    labelW: 160,
-    colour: "#92400e",
+  rows.forEach((r, i) => {
+    const y = 22 + i * (barH + gap);
+    const w = (r.total / max) * innerW;
+    const we = (r.estable / r.total) * w;
+    const wt = (r.temp / r.total) * w;
+    const wi = (r.inhab / r.total) * w;
+    svg += `<text x="${labelW - 6}" y="${y + barH * 0.72}" text-anchor="end" class="bar-label">${esc(r.title)}</text>`;
+    let x = labelW;
+    svg += `<rect x="${x}" y="${y}" width="${we}" height="${barH}" fill="${COLORS.estable}"/>`; x += we;
+    svg += `<rect x="${x}" y="${y}" width="${wt}" height="${barH}" fill="${COLORS.temp}"/>`; x += wt;
+    svg += `<rect x="${x}" y="${y}" width="${wi}" height="${barH}" fill="${COLORS.inhab}"/>`;
+    svg += `<text x="${labelW + w + 6}" y="${y + barH * 0.72}" class="bar-value">${fmt(r.total)} edif.</text>`;
   });
-
-  // === Sunburst (island → place_type) ============================
-  $("stats-chart-sunburst").innerHTML = renderSunburst(state.entries);
-  wireSunburstHover();
-
-  // === New charts (4): pop+edif pyramid, scatter, admin sunburst,
-  // diocese × partit-judicial heatmap. All leverage the structured
-  // fields landed by the section-parser refactor.
-  $("stats-chart-pyramid").innerHTML = renderPopEdifPyramid(state.entries);
-  $("stats-chart-scatter").innerHTML = renderDensityScatter(state.entries);
-  $("stats-chart-admin-sunburst").innerHTML = renderAdminSunburst(state.entries);
-  $("stats-chart-heatmap").innerHTML = renderDioceseVsPJ(state.entries);
+  svg += `</svg>`;
+  return svg;
 }
 
 

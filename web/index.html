@@ -417,107 +417,23 @@
   </div>
 
   <div class="demo-charts">
+
     <div class="demo-card">
-      <h3>Demografia balear el 1877: habitants i edificis per illa</h3>
-      <p class="demo-caption">Suma del cens de 1877 per illa segons les entrades del corpus. La barra esquerra mostra els habitants (escala blava); la dreta, els edificis (escala taronja). Permet veure la proporció hab/edif per illa d'un cop d'ull: Mallorca concentra la població absoluta, però illes amb molts predis i poblament dispers (com l'Eivissa rural) tenen ràtios diferents.</p>
-      <div id="stats-chart-pyramid" class="demo-chart"><p class="empty">Carregant…</p></div>
+      <h3>Top 25 nuclis per nombre d'habitants</h3>
+      <p class="demo-caption">Rànquing de les viles, llogarets i agregats balears segons els habitants declarats per Riera (cens de 1877). Permet veure el contrast entre els grans centres administratius (Palma, Maó, Manacor, Felanitx) i els nuclis rurals menors.</p>
+      <div id="stats-chart-top-pop" class="demo-chart"><p class="empty">Carregant…</p></div>
     </div>
 
     <div class="demo-card">
-      <h3>Núvol de dispersió: edificis vs. habitants</h3>
-      <p class="demo-caption">Cada punt és una entrada del Diccionari. L'eix horitzontal és el nombre d'edificis (escala logarítmica) i el vertical el d'habitants. Els punts es coloren segons l'illa. La línia diagonal marca la ràtio mitjana de 4 hab./edif. Llocs molt per sobre indiquen densitat urbana (Palma, Maó); llocs per sota són típics d'agregats rurals amb moltes cases temporals o inhabitades.</p>
-      <div id="stats-chart-scatter" class="demo-chart"><p class="empty">Carregant…</p></div>
+      <h3>Demografia per illa (cens de 1877)</h3>
+      <p class="demo-caption">Suma del nombre d'habitants i d'edificis declarats per les entrades del corpus, per illa. Mallorca concentra la població absoluta; les illes menors mostren una proporció hab/edif diferent que reflecteix el seu poblament rural dispers.</p>
+      <div id="stats-chart-by-island" class="demo-chart"><p class="empty">Carregant…</p></div>
     </div>
 
     <div class="demo-card">
-      <h3>Sunburst administratiu: illa → partit judicial → municipi</h3>
-      <p class="demo-caption">Tres anells concèntrics. L'anell intern és l'illa, el mitjà el partit judicial (extret de la secció <em>Org. judicial</em> de cada article), i l'extern el municipi. Permet veure quin partit judicial concentra més activitat (Palma a Mallorca, Maó a Menorca) i quins municipis hi pertanyen segons la divisió administrativa de 1877.</p>
-      <div id="stats-chart-admin-sunburst" class="demo-chart"><p class="empty">Carregant…</p></div>
-    </div>
-
-    <div class="demo-card">
-      <h3>Diòcesi × Partit judicial: superposició eclesiàstica/civil</h3>
-      <p class="demo-caption">Matriu de calor que creua diòcesi (eix vertical) amb partit judicial (eix horitzontal). La intensitat del color indica el nombre d'entrades en cada cel·la. Les xarxes civil i eclesiàstica no coincideixen del tot: la diòcesi de Mallorca cobreix els tres partits judicials de l'illa (Palma, Inca, Manacor); la de Menorca, els dos (Maó, Ciutadella). Les cel·les buides revelen on no hi ha solapament.</p>
-      <div id="stats-chart-heatmap" class="demo-chart"><p class="empty">Carregant…</p></div>
-    </div>
-
-    <div class="demo-card">
-      <h3>Diagrama sunburst: illa → tipologia de lloc</h3>
-      <div class="demo-caption">
-        <p>
-          El diagrama es llegeix de dins cap a fora en dos anells concèntrics:
-        </p>
-        <ul class="sunburst-legend">
-          <li><strong>Anell intern</strong> — illa.</li>
-          <li><strong>Anell extern</strong> — tipologia del lloc (villa, lugar, ciutat, barrio, aldea, cabo, isla, etc.).</li>
-        </ul>
-        <p>
-          L'amplada de cada arc és proporcional al nombre d'entrades que hi corresponen.
-          En situar el cursor sobre un segment —o en seleccionar-lo— es mostren la ruta
-          jeràrquica completa i el comptatge associat. La presència significativa de
-          <em>cabo</em> i <em>isla/islote</em> reflecteix que Riera, contràriament a
-          la primera lectura del seu pròleg, sí inclou accidents geogràfics costaners
-          de relleu (capes amb far, illes amb població o castell).
-        </p>
-      </div>
-      <div id="stats-chart-sunburst" class="demo-chart"><p class="empty">Carregant…</p></div>
-      <div id="stats-sunburst-info" class="sunburst-info">
-        <span class="sunb-info-prompt">Situï el cursor sobre un segment per consultar-ne el detall ↑</span>
-      </div>
-    </div>
-
-    <div class="demo-card">
-      <h3>Entrades amb major nombre d'habitants (20 primeres)</h3>
-      <p class="demo-caption">Xifres absolutes d'habitants declarades pel Diccionari cap a 1881. Comprèn la totalitat d'entrades que aporten dada d'habitants: viles, lugares i agregats insulars.</p>
-      <div id="stats-chart-hab" class="demo-chart"><p class="empty">Carregant…</p></div>
-    </div>
-
-    <div class="demo-card">
-      <h3>Entrades amb major nombre d'edificis (20 primeres)</h3>
-      <p class="demo-caption">Riera reporta el nombre total d'edificis del nucli (habitats, temporals i inhabitats). Els centres més grans —Palma, Maó, Manacor— es destaquen amb diferència respecte de les villes mitjanes i els lugars agregats.</p>
-      <div id="stats-chart-vec" class="demo-chart"><p class="empty">Carregant…</p></div>
-    </div>
-
-    <div class="demo-card">
-      <h3>Habitants per illa (suma del corpus)</h3>
-      <p class="demo-caption">Suma dels habitants declarats a les entrades insulars. Mallorca concentra gairebé tres quartes parts del corpus. L'article general de l'illa al Tom V de Riera dona ~ 245.000 habitants per a Mallorca el 1877; el corpus balear suma valors per a les viles i lugars principalment.</p>
-      <div id="stats-chart-riq" class="demo-chart"><p class="empty">Carregant…</p></div>
-    </div>
-
-    <div class="demo-card">
-      <h3>Entrades per illa</h3>
-      <p class="demo-caption">Distribució numèrica del corpus: Mallorca 75, Menorca 23, Ibiza 11, Formentera 2, Cabrera 1 i 2 entrades generals de Baleares. La densitat menorquina és proporcionalment alta perquè inclou les vuit "villes" del partit (Maó, Ciutadella, Alaior, Mercadal, Ferreries, Sant Lluís, Es Castell, Sant Cristòfol) i el conjunt de capes amb far.</p>
-      <div id="stats-chart-illa" class="demo-chart"><p class="empty">Carregant…</p></div>
-    </div>
-
-    <div class="demo-card">
-      <h3>Habitants per edifici (top 20)</h3>
-      <p class="demo-caption">Ràtio mitjana d'ocupació (habitants / edifici). Els valors típics balears se situen entre 3 i 5 persones per edifici. Els valors extrems solen indicar OCR imprecís o entrades amb una elevada proporció d'edificis temporals/inhabitats.</p>
-      <div id="stats-chart-ratio" class="demo-chart"><p class="empty">Carregant…</p></div>
-    </div>
-
-    <div class="demo-card">
-      <h3>Distribució de confiança de l'extracció</h3>
-      <p class="demo-caption">Cada entrada té un nivell de confiança assignat per l'extractor: <strong>alta</strong> quan l'OCR era net i totes les seccions s'han pogut completar; <strong>mitjana</strong> quan hi ha hagut alguna ambigüitat numèrica; <strong>baixa</strong> quan camps clau s'han hagut d'inferir per context.</p>
-      <div id="stats-chart-reg" class="demo-chart"><p class="empty">Carregant…</p></div>
-    </div>
-
-    <div class="demo-card">
-      <h3>Tipologies de lloc més freqüents</h3>
-      <p class="demo-caption">Tipologia assignada per Riera. <em>Villa</em>: nucli amb ajuntament propi; <em>lugar</em>: nucli dependent d'un ajuntament matriu; <em>caserío</em>: població menor agregada. La presència significativa de <em>cabo</em> (~ 13 entrades) reflecteix la inclusió a Riera dels accidents costaners principals com a entrades autònomes.</p>
-      <div id="stats-chart-types" class="demo-chart"><p class="empty">Carregant…</p></div>
-    </div>
-
-    <div class="demo-card">
-      <h3>Distribució per volum</h3>
-      <p class="demo-caption">Nombre d'entrades balears en cadascun dels dotze volums. El <strong>Tom III</strong> (lletra C) és el més abundant: hi conviuen totes les villes mallorquines amb inicial C (Calvià, Campanet, Campos, Capdepera, Consell, Costitx) i les tretze capes balears que Riera cataloga com a entrades autònomes.</p>
-      <div id="stats-chart-vol" class="demo-chart"><p class="empty">Carregant…</p></div>
-    </div>
-
-    <div class="demo-card">
-      <h3>Tipologia: top 12</h3>
-      <p class="demo-caption">Detall dels tipus de lloc més freqüents al corpus. Els accidents geogràfics no inhabitats (cabos, illots, illes) entren clarament dins l'abast editorial de Riera, contràriament al que el seu pròleg podria fer pensar.</p>
-      <div id="stats-chart-eccl" class="demo-chart"><p class="empty">Carregant…</p></div>
+      <h3>Composició dels edificis: habitats / temporals / inhabitats (top 20)</h3>
+      <p class="demo-caption">Riera reporta per cada nucli la fracció d'edificis habitats de manera estable, ocupats només temporalment (segones residències, alqueries d'estiu), i inhabitats. Pels nuclis on aquesta triada es coneix: barra apilada amb les tres fraccions.</p>
+      <div id="stats-chart-buildings" class="demo-chart"><p class="empty">Carregant…</p></div>
     </div>
 
   </div>
@@ -765,6 +681,6 @@
   </p>
 </footer>
 
-<script src="app.js?v=6"></script>
+<script src="app.js?v=7"></script>
 </body>
 </html>
