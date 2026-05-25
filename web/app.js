@@ -208,12 +208,13 @@ function toggleExpand(tr) {
     ["industria",          "Indústria"],
     ["geografia",          "Situació geogràfica i topogràfica"],
   ];
+  const toParas = (s) => esc(s).split(/\n{2,}/).map(p => `<p>${p.replace(/\n/g, " ")}</p>`).join("");
   const sectionsHtml = SECTION_LABELS
     .filter(([k, _]) => e[k])
-    .map(([k, lbl]) => `<div class="riera-section"><h4>${lbl}</h4><p>${esc(e[k])}</p></div>`)
+    .map(([k, lbl]) => `<div class="riera-section"><h4>${lbl}</h4>${toParas(e[k])}</div>`)
     .join("");
   const descHtml = e.description
-    ? `<div class="riera-section riera-desc"><p>${esc(e.description)}</p></div>` : "";
+    ? `<div class="riera-section riera-desc">${toParas(e.description)}</div>` : "";
 
   const exp = document.createElement("tr");
   exp.className = "minano-expand";
