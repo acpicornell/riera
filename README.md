@@ -6,13 +6,15 @@ postal, municipal, marítimo y eclesiástico de España y sus posesiones
 de ultramar* (Barcelona, Imprenta y librería religiosa y científica
 del heredero de Pablo Riera, 1881–1887, 12 vols.).
 
-Riera records the country at the height of the Restoration:
-post-1857 disentailment, after the 1873–1874 First Republic, with
-the railway network largely completed, civil registry in place, and
-the modern municipal map essentially settled. For the Balearic
-Islands the dictionary captures the demographic state of the islands
-shortly before the *filoxera* (1891) and the first wave of textile
-and tourist transformations.
+Riera was published during the early decades of the Bourbon
+Restoration (1874–1931) and is organised around the **1877 national
+census** (the first complete census produced by the
+Instituto Geográfico-Estadístico under Carlos Ibáñez de Ibero) and
+the post-1845 liberal administrative map: partido judicial,
+audiencia territorial, gobierno civil, gobierno militar, diócesis.
+For the Balearic Islands the dictionary captures the demographic
+state of the archipelago shortly before the *filoxera* outbreak
+of 1891.
 
 This repository extracts every article relating to Mallorca, Menorca,
 Eivissa, Formentera and Cabrera, structures the data into a relational
@@ -43,8 +45,8 @@ schema, and publishes a static website for consultation.
 | VI   | 1884 | 1 141 | 11 | L — LL |
 | VII  | 1885 | 1 199 | 9  | M — O |
 | VIII | 1885 | 1 047 | 7  | P |
-| IX   | 1886 | 1 197 | 19 | S (saint-prefixed) |
-| X    | 1886 | 1 069 | 4  | S — T |
+| IX   | 1886 | 1 197 | 19 | S (SA — SL) |
+| X    | 1886 | 1 069 | 4  | S (SO) — T |
 | XI   | 1887 | 997   | 3  | V — Z |
 | XII  | 1887 | 509   | 3  | Supplement |
 
@@ -55,9 +57,11 @@ FIGUERA, CABO CAMPANICH, CABO DARTUTX, CABO DE PERA, CABO FABARITX,
 CABO FALCON, CABO FERRUTX, CABO FORMENTOR, CABO PINAR, CABO PONTINAT,
 CABO SALINAS), plus the inhabited municipalities CALONGE, CALVIÁ,
 CAMPANET, CAMPOS, CAPDEPERA, CIUDADELA, CONSELL, COSTITX. Tom IX
-contains all the *San* / *Santa* / *Santo* parishes of Spain,
+covers all S-prefixed lemmas through SL (SANABASTRE → SILL…),
 including the Eivissan parish villages (SAN ANTONIO ABAD, SAN JOSE,
-SAN JUAN BAUTISTA, SANTA EULALIA…) and Menorcan SAN CRISTÓBAL.
+SAN JUAN BAUTISTA, SANTA EULALIA, SANTA GERTRUDIS) and Menorcan
+SAN CRISTÓBAL; SO- entries like SOLLER, SON SARDINA and SON SERVERA
+fall in Tom X.
 
 ### Distribution by island and place type
 
@@ -84,9 +88,10 @@ All 123 entries carry coordinates resolved in three categories:
   articles (BALEARES, ISLA DE MALLORCA / MENORCA / IBIZA, the two
   diocesan articles in tom XII).
 
-By place type: 55 villas, 25 lugares, 14 cabos, 7 islas, 5 agregados,
-4 ciudades, 3 isletas, 2 ayuntamientos, 1 aldea, 1 archipiélago,
-1 islotes, 1 santuario, 1 obispado.
+By place type: 53 villas, 24 lugares, 14 cabos, 8 islas, 5 ciudades,
+5 agregados, 3 isletas, 2 aldeas, 2 ayuntamientos, 2 caseríos,
+2 obispados, 1 archipiélago, 1 islotes, 1 cross-reference (MENORCA →
+ISLA DE MENORCA).
 
 ## Source
 
@@ -151,16 +156,16 @@ lives at S (not V):
 
 For the Balearic Islands, two consequences:
 
-- *La Pobla*, *La Vileta*, *La Bonanova*, *La Alquería Blanca* live
-  at L, not P, A or B. *San Antonio Abad*, *San Joan Bautista*,
+- *La Puebla*, *La Vileta*, *La Bonanova*, *La Alquería Blanca* live
+  at L, not P, A or B. *San Antonio Abad*, *San Juan Bautista*,
   *Santa Eulalia*, *Santa María* live at S, not A, J, E or M. The
   corpus is scattered across all twelve volumes, never concentrated
   in any single one.
 - The hundreds of Mallorcan *Son X* possessions that earlier
   dictionaries catalogued exhaustively are absent: the only `SON X`
-  entries in the entire dictionary are **SON SARDINA** (agregado al
-  ayunt. de Palma) and **SON SERVERA** (independent municipality),
-  both correctly detected by the indexer.
+  entries our indexer found in the Balearic corpus are
+  **SON SARDINA** (agregado al ayunt. de Palma) and **SON SERVERA**
+  (independent municipality).
 
 ## Pipeline
 
@@ -290,12 +295,14 @@ Cleanup runs in two successive passes:
    paraphrase. If the word is not recoverable from the PDF, it is
    preserved as-is.
 
-The PALMA article (the largest in the corpus — ~40 KB spanning
+The PALMA article (the largest in the corpus — ~42 KB spanning
 pp. 1091–1108 of tom VII, with ten intermediate pages of
 illegible statistical tables) required 77 semantic corrections by
 the subagent on top of 60+ mechanical corrections. The remaining
-76 Balearic articles were already clean enough from Stage 4 and
-contributed roughly fifty additional fixes between them.
+122 Balearic articles went through a corpus-wide anti-hallucination
+audit by six parallel Claude Max subagents that produced roughly a
+hundred additional corrections, each verified one-by-one against
+the facsimile.
 
 ## Website
 
