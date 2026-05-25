@@ -44,13 +44,14 @@
       "poblacion": null,
       "industria": null,
       "geografia": null,
-      "description": "Véase Formentera. ISLA GROSSA. A unas 6 millas de la torre de Palos en la prov. de Murcia, hálla situada esta isla, cuya figura es parecida á f de un triángulo. a",
+      "description": "Véase Formentera.",
       "stats": {},
       "cross_references": [
         "Formentera"
       ],
       "confidence": "high",
-      "title_original": "ISLA FORMENTERA (Baleares)"
+      "title_original": "ISLA FORMENTERA (Baleares)",
+      "ocr_note": "Body-bleed eliminat: la entrada peninsular següent al diccionari (ISLA GROSSA, davant la torre de Palos a Múrcia) s'havia enganxat al cos. L'article és només una cross-reference a FORMENTERA al Tom IV."
     },
     {
       "title": "ISLAS BALEARES",

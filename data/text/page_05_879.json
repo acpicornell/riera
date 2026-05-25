@@ -44,13 +44,14 @@
       "poblacion": null,
       "industria": null,
       "geografia": null,
-      "description": "(Véase Isla de Menorca). ISLETA DEL RÍO (Canarias).—(VéaseIsla de Lanzarote)",
+      "description": "(Véase Isla de Menorca).",
       "stats": {},
       "cross_references": [
         "Isla de Menorca"
       ],
       "confidence": "high",
-      "title_original": "ISLETA DEL AIRE ( Baleares )"
+      "title_original": "ISLETA DEL AIRE ( Baleares )",
+      "ocr_note": "Body-bleed eliminat: la entrada canària següent al diccionari (ISLETA DEL RÍO, davant Lanzarote) s'havia enganxat al cos. L'article és només una cross-reference a ISLA DE MENORCA."
     },
     {
       "title": "ISLETA D'EN COLOM",
