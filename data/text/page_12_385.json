@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "MALLOECA (Obispado de)",
+      "title": "MALLORCA (Obispado de) (addicional)",
       "place_type": null,
       "island": "Mallorca",
       "municipality": "Palma",
@@ -18,12 +18,13 @@
       "instruccion_publica": null,
       "poblacion": null,
       "industria": null,
-      "geografia": null,
-      "description": "Una vez que D. Jaime I de Aragón, hubo conquistado la Isla en el año 1229, trató de erigirla en Sede episcopal. Y efectivamente, no tardó en reali- zar su pensamiento, estableciendo la silla en la capital de la isla, merced á la correspon- diente Bula de autorización expedida por el Papa. Este obispado es sufragáneo del arz. de Valencia y queda lo mismo, según el últi- mo Concordato. La constituye toda la isla de su propio nombre, sin pertenencia fuera de ella, ni enclavado extraño, dentro.En lo civil, corresponde todo á la prov. de las Baleares, su capital es la ciudad de Palma. Se encuentra ",
+      "geografia": "Una vez que D. Jaime I de Aragón, hubo conquistado la Isla en el año 1229, trató de erigirla en Sede episcopal. Y efectivamente, no tardó en realizar su pensamiento, estableciendo la silla en la capital de la isla, merced á la correspondiente Bula de autorización expedida por el Papa. Este obispado es sufragáneo del arz. de Valencia y queda lo mismo, según el último Concordato. La constituye toda la isla de su propio nombre, sin pertenencia fuera de ella, ni enclavado extraño, dentro.En lo civil, corresponde todo á la prov. de las Baleares, su capital es la ciudad de Palma. Se encuentra distribuido en tres arciprestazgos que son: Inca, Manacor y Palma, entre todos los cuales comprende el número de parroquias que se expresan á continuación, así como igualmente las advocaciones y categorías de los curatos. DIÓC. DE MALLORCA, CON LAS PARROQUIAS Q U E COMPRENDE, ADVOCACION Y CATEGORIA. P A R R O Q U I A S . A D V O C A C I O N E S . C A T E G O R I A . Arciprestazgo de Inca. Alaró. . . Alcudia- . Benisalem. Campanet. Escorca. Inca. . . La Puebla Muro. . . Pollensa.. Sancellas. Selva. . . Sineu.. . San Bartolomé. . . . San Jaime San Jaime. San Miguel San Pedro. Santa Maria la Mayor San Antonio . . . . San Juan Ntra. Sra. de los Angeles San Pedro . . . . . . San Lorenzo Ntra Sra. de los A n - geles Término. 2.° ascenso. Término2 ° ascenso. Entrada. Término. 2.° ascenso. » Artá. . Campos Felanix Manacor. Montuiri. Petra . Porreras Arciprestazgo de Manacor. La Transfiguración. San Julián San Miguel . . . . La Virgen de los Dolores San Bartolomé. . • San Pedro. . . . . Ntra. Sra. de los AnSantany . San Juan. Término. 2.° ascenso. Término. San Andrés.. San Juan.. . 2.° ascenso, Término. 2.° ascenso. Arciprestazgo de Palma. Algaida. Andralx.. . Buñola, . . Calviá.. . . Esportas. . Llummayor. MarraLxl.. . San Pedro y San Pablo. . . . . . . San Bartolomé. . . San Mateo. . . . . San Juan Bautista. San Pedro San Miguel San Marcial. . . . Santa Eulalia.. . . Almudaina Pnimn ISanta Cruz. P£Uma isan Jaime. Pulgpuflent. Santa María. Sóller.. . . Valldemosa. San Miguel. . San Nicolás . La Asunción. . Santa María . San Bartolomé. San Bartolomé. Término. 2 ° ascenso. Términol.er ascenso. Término, 2.° ascenso. Término. 2.° ascenso. COMUNIDADES RELIGIOSAS. Hay en la dlóc de Mallorca: Seminario Conciliar, y las comunidades religiosas de Agustinas de Santa Magdalena, Concepcionlstas, Carmelitas de Santa Teresa, Capuchinas, Jerónimas, Franciscas de Santa Clara y Dominicas de Santa Catalina de Sena y una casa de Clérigos de San Vicente de Paul, en Palma; Jerónimas, en Inca, y concepcionistas descalzas, en Sineu. Todas las anteriores comunidades se ocupan en obras de beneficencia y enseñanza.",
+      "description": "Una vez que D. Jaime I de Aragón, hubo conquistado la Isla en el año 1229, trató de erigirla en Sede episcopal. Y efectivamente, no tardó en realizar su pensamiento, estableciendo la silla en la capital de la isla, merced á la correspondiente Bula de autorización expedida por el Papa. Este obispado es sufragáneo del arz. de Valencia y queda lo mismo, según el último Concordato. La constituye toda ",
       "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
       "stats": null,
       "cross_references": [],
-      "confidence": "low"
+      "confidence": "low",
+      "title_original": "MALLOECA (Obispado de)"
     }
   ]
 }

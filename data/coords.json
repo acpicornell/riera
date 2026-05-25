@@ -786,12 +786,12 @@
   {
     "vol": "07",
     "page": 206,
-    "title": "MENORCA (Obispado de)",
+    "title": "MENORCA",
     "island": "Menorca",
-    "lon": 3.8355,
-    "lat": 40.0008,
-    "matched": "Catedral de Menorca, Ciutadella",
-    "source": "manual"
+    "lon": 4.264428939070812,
+    "lat": 39.889722491854904,
+    "matched": "Menorca",
+    "source": "translated"
   },
   {
     "vol": "07",
@@ -1199,7 +1199,7 @@
   {
     "vol": "12",
     "page": 149,
-    "title": "ALGAIDA",
+    "title": "ALGAIDA (addicional)",
     "island": "Mallorca",
     "lon": 2.894721883926311,
     "lat": 39.55939925295742,
@@ -1209,18 +1209,18 @@
   {
     "vol": "12",
     "page": 385,
-    "title": "MALLOECA (Obispado de)",
+    "title": "MALLORCA (Obispado de) (addicional)",
     "island": "Mallorca",
     "lon": 2.9489,
     "lat": 39.6953,
     "fallback": "island-centroid:Mallorca",
     "source": "centroid",
-    "note": "no NGIB match for 'MALLOECA (OBISPADO DE)'"
+    "note": "no NGIB match for 'MALLORCA (OBISPADO DE)'"
   },
   {
     "vol": "12",
     "page": 70,
-    "title": "ALAYOR",
+    "title": "ALAYOR (addicional)",
     "island": "Menorca",
     "lon": 4.0962,
     "lat": 39.9684,

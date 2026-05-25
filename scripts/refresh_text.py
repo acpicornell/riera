@@ -165,25 +165,38 @@ def main() -> None:
         for ee in existing_entries:
             existing_by_norm[_norm(ee.get("title") or "")] = ee
         new_entries = []
+        used_ids: set[int] = set()
         for ix_e in ix_entries:
             norm_lemma = _norm(ix_e["lemma"])
             matched = None
             # Try exact normalised match
-            if norm_lemma in existing_by_norm:
+            if (norm_lemma in existing_by_norm
+                    and id(existing_by_norm[norm_lemma]) not in used_ids):
                 matched = existing_by_norm[norm_lemma]
             else:
-                # Try prefix match (lemma truncated by OCR)
+                # Try prefix match (lemma truncated by OCR). Skip
+                # candidates that were already assigned to a previous
+                # ix_entry on this page — otherwise two index entries
+                # like 'MENORCA' and 'MENORCA (Obispado de)' would
+                # both grab the same existing page entry and the page
+                # file ends up with two copies of the same content.
                 for ek, ev in existing_by_norm.items():
+                    if id(ev) in used_ids:
+                        continue
                     if (norm_lemma and ek
                             and (norm_lemma.startswith(ek)
                                  or ek.startswith(norm_lemma))):
                         matched = ev
                         break
             if matched:
-                # Keep existing rich extraction; just refresh title to
-                # the current index lemma (which may be cleaner).
-                matched["title"] = ix_e["lemma"]
-                new_entries.append(matched)
+                used_ids.add(id(matched))
+                # Deep-copy so that subsequent in-place edits to the
+                # entry don't leak into other references (no shared
+                # mutable state between different page-file slots).
+                import copy
+                matched_copy = copy.deepcopy(matched)
+                matched_copy["title"] = ix_e["lemma"]
+                new_entries.append(matched_copy)
             else:
                 body = extract_body_pdftotext(
                     {"page": int(ix_e["page"]), "lemma": ix_e["lemma"]},
