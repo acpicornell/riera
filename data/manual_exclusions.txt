@@ -2,18 +2,28 @@
 # pipeline accepts but human review flags as non-Balearic.
 #
 # Format: vol page lemma   (whitespace-separated; lemma may contain spaces
-# and parentheses)
-# Lines starting with '#' are comments. Order doesn't matter.
+# and parentheses; everything after the second whitespace gap is the lemma)
+# Lines starting with '#' are comments. NO inline comments — put justifications
+# above each entry as a comment line.
 #
 # Audit policy: each entry below MUST have a brief justification.
 # If you can't justify why a body-level Balearic signal must be
 # overridden, fix the body extractor instead.
 
-# === Cuban entries whose body bleeds Balearic content from neighbours ===
-# (Riera's parenthetical (Cuba)/(Filipinas) lemma marker is the
-# authoritative signal that the article describes a colonial place,
-# regardless of what neighbour content the body extractor pulled in.)
+# === Cuban / Filipino entries: body bleeds Balearic content from
+#     neighbours on the same page. The parenthetical (Cuba)/(Filipinas)
+#     lemma marker is authoritative — they describe colonial places,
+#     not Balearic ones.
 06 1062 MAMPOSTEN (Cuba)
 06 1062 MANACAL (Cuba)
 06 1062 MANACAS (Cuba)
+06 1062 MAMPIN (Filipinas] — Isla adscrita á la
 09 39   SAN ANTONIO (Cuba)
+
+# === Peninsular homonym with body bleed:
+# MERCAD AL tom07 p210 — body describes Mercadal de Cantabria
+# (prov. de Santander), not Menorca's Es Mercadal. Repeated runs of
+# body extraction return the Cantabrian content. The Menorca Es
+# Mercadal is covered separately under MERCADAL entries that have
+# a stable Balearic body.
+07 210  MERCAD AL

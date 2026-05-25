@@ -533,6 +533,16 @@
   },
   {
     "vol": "05",
+    "page": 724,
+    "title": "ISLA CABRERA",
+    "island": "Cabrera",
+    "lon": 2.9628,
+    "lat": 39.1455,
+    "matched": "illa de Cabrera",
+    "source": "manual"
+  },
+  {
+    "vol": "05",
     "page": 727,
     "title": "ISLA CUNILLERA",
     "island": "Ibiza",
@@ -591,6 +601,16 @@
     "fallback": "island-centroid:Formentera",
     "source": "centroid",
     "note": "no NGIB match for 'ISLA FORMENTERA'"
+  },
+  {
+    "vol": "05",
+    "page": 831,
+    "title": "ISLAS BALEARES",
+    "island": "Baleares",
+    "lon": 2.9489,
+    "lat": 39.6953,
+    "fallback": "island-centroid:Baleares",
+    "source": "centroid"
   },
   {
     "vol": "05",
@@ -751,16 +771,6 @@
     "lon": 4.264428939070812,
     "lat": 39.889722491854904,
     "matched": "Maó",
-    "source": "translated"
-  },
-  {
-    "vol": "07",
-    "page": 210,
-    "title": "MERCAD AL",
-    "island": "Menorca",
-    "lon": 4.092076203166926,
-    "lat": 39.98844697943833,
-    "matched": "es Mercadal",
     "source": "translated"
   },
   {
@@ -946,6 +956,26 @@
   },
   {
     "vol": "09",
+    "page": 193,
+    "title": "SAN JUAN DE CARBONELL",
+    "island": "Menorca",
+    "lon": 4.0789,
+    "lat": 39.9869,
+    "matched": "Carbonell (es Mercadal)",
+    "source": "manual"
+  },
+  {
+    "vol": "09",
+    "page": 257,
+    "title": "SAN LUIS",
+    "island": "Menorca",
+    "lon": 4.257554113122967,
+    "lat": 39.8490496453283,
+    "matched": "Sant Lluís",
+    "source": "translated"
+  },
+  {
+    "vol": "09",
     "page": 258,
     "title": "SAN LLORENS D' EL CORDASAR",
     "island": "Mallorca",
@@ -1008,11 +1038,12 @@
     "vol": "09",
     "page": 580,
     "title": "SANTA MARGARITA",
-    "island": "Menorca",
-    "lon": 4.2385510494078895,
-    "lat": 39.873962916888,
-    "matched": "Santa Margarita",
-    "source": "translated"
+    "island": "Mallorca",
+    "lon": 2.9489,
+    "lat": 39.6953,
+    "fallback": "island-centroid:Mallorca",
+    "source": "centroid",
+    "note": "no NGIB match for 'SANTA MARGARITA'"
   },
   {
     "vol": "09",
@@ -1104,6 +1135,16 @@
     "lon": 3.3603216579881785,
     "lat": 39.62103388420662,
     "matched": "Son Servera",
+    "source": "translated"
+  },
+  {
+    "vol": "10",
+    "page": 740,
+    "title": "ULLARÓ",
+    "island": "Mallorca",
+    "lon": 2.98595350340233,
+    "lat": 39.776651832492895,
+    "matched": "Ullaró",
     "source": "translated"
   },
   {

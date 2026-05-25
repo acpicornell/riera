@@ -5,25 +5,32 @@
   "entries": [
     {
       "title": "ALARÓ",
-      "place_type": null,
+      "place_type": "villa",
       "island": "Mallorca",
       "municipality": "Alaró",
-      "org_judicial": null,
-      "org_civil": null,
-      "org_militar": null,
-      "org_economica": null,
-      "org_eclesiastica": null,
-      "servicio_publico": null,
-      "obras_publicas": null,
-      "instruccion_publica": null,
-      "poblacion": null,
-      "industria": null,
-      "geografia": null,
-      "description": null,
-      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
-      "stats": null,
-      "cross_references": [],
-      "confidence": "low",
+      "org_judicial": "Pertenece al part. jud. de Inca, distante 11 kilómetros, y aud. territorial de las Baleares, de donde dista 17 km.",
+      "org_civil": "Sujeto al gobierno civil de las Baleares, cuya capital es Palma.",
+      "org_militar": "Depende de la C. G. de las Baleares y gobierno militar de Mallorca.",
+      "org_economica": "Se halla sujeta á la admon. económica de su provincia.",
+      "org_eclesiastica": "Corresponde á la dióc. de Palma. Tiene una iglesia parroquial bajo la advocación de San Bartolomé, servida por un cura con el nombre de rector y varios tenientes; tres oratorios, uno en la cima del cerro que ocupa la población, y otras 13 capillas en igual número de predios de los que abraza el término.",
+      "servicio_publico": "Recibe la correspondencia por las estaciones de Barcelona y Valencia, conducción de Palma á Alcudia y cartería de Sta. María.",
+      "obras_publicas": "Los caminos son vecinales y se encuentran regularmente conservados.",
+      "instruccion_publica": "Hay escuelas á las que asiste un considerable número de niños de ambos sexos.",
+      "poblacion": "Se hallan agreg. el lugar de Consell, 12 caseríos y 350 viviendas aisladas. Cuenta 4,879 hab. y 1,557 edif. Está formada de casas de uno á tres pisos.",
+      "industria": "La industria es la agricultura, pero se encuentran molinos de aceite, fabricación de aguardiente, de fideos, jabón, tejares y telares de lienzo ordinario.",
+      "geografia": "Situada en la falda de un cerro, rodeada de montañas de gran altura; clima muy sano, sin embargo de que en la clase jornalera se desarrollan con facilidad las fiebres intermitentes.",
+      "description": "Vila amb ajuntament de Mallorca al peu de la Serra de Tramuntana, partit judicial d'Inca i diòcesi de Palma. Té el llogaret de Consell agregat i suma 4.879 habitants i 1.557 edificis.",
+      "ocr_note": "PyMuPDF captured the lemma as 'AL ARÓ' (space inside the toponym). Cleaned to 'ALARÓ'. Body section 'Situación geográfica' is partly contaminated by bleed from a subsequent (peninsular) article — the geografia field carries only the clean Mallorca paragraph.",
+      "stats": {
+        "habitantes": 4879,
+        "edificios": 1557,
+        "caserios_y_grupos": 12,
+        "viviendas_aisladas": 350
+      },
+      "cross_references": [
+        "Consell"
+      ],
+      "confidence": "high",
       "title_original": "AL ARÓ"
     }
   ]

@@ -6,7 +6,7 @@
     {
       "title": "ISLA CABRERA",
       "place_type": "isla",
-      "island": null,
+      "island": "Cabrera",
       "municipality": null,
       "org_judicial": null,
       "org_civil": null,
@@ -18,12 +18,12 @@
       "instruccion_publica": null,
       "poblacion": null,
       "industria": null,
-      "geografia": null,
-      "description": "1SL GEOGRÁFICO-ESTADÍSTICO ISL 695 lia al SO. del cabo de Salinas, distante sólo 14 k de él, y ocupada una parte de este es- ció que forma un canal de poco fondo, por P jglita Conejera y otros islotes que marcan orfpctamente el enlace de entrambas. Su Wyor longitud de NE. á SO. es de 7 k., y superficie, comprendiendo las citadas isli- tas de 20 k. cuadrados. Nada notable hay en ella á no ser el puerto que lleva su mismo nombre bastante abrigado y de buen fondo; en el resto de su perímetro sólo hay calas in- significantes.",
-      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
+      "geografia": "Se halla al SO. del cabo de Salinas, distante sólo 14 km. de él, y ocupada una parte de este espacio que forma un canal de poco fondo, por la islita Conejera y otros islotes que marcan perfectamente el enlace de entrambas. Su mayor longitud de NE. á SO. es de 7 km., y su superficie, comprendiendo las citadas islitas, de 20 km. cuadrados. Nada notable hay en ella á no ser el puerto que lleva su mismo nombre, bastante abrigado y de buen fondo; en el resto de su perímetro sólo hay calas insignificantes.",
+      "description": "Illa al sud de Mallorca, a 14 km del cap de ses Salines, separada per un canal poc fondo amb illots intermedis (la Conejera). Té 7 km de llargada i unes 20 km² de superfície, amb un port abrigat del mateix nom.",
+      "ocr_note": "Geographic-only article; no admin sections (Org. civ., Org. mil., etc.) because Riera treats Cabrera as a natural feature rather than a settlement.",
       "stats": null,
       "cross_references": [],
-      "confidence": "low",
+      "confidence": "medium",
       "title_original": "ISLA CABRERA (Baleares)"
     }
   ]

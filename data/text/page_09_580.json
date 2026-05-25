@@ -5,25 +5,30 @@
   "entries": [
     {
       "title": "SANTA MARGARITA",
-      "place_type": null,
-      "island": "Menorca",
-      "municipality": "Maó",
-      "org_judicial": null,
-      "org_civil": "Corresponde á l a prov. de\nBarcelona, al dist. de Igualada para las elecciones de diputados provinciales y al de Villanueva y Geltrú para las de Córtes.-",
-      "org_militar": null,
-      "org_economica": null,
-      "org_eclesiastica": null,
-      "servicio_publico": null,
-      "obras_publicas": null,
-      "instruccion_publica": null,
-      "poblacion": null,
-      "industria": null,
-      "geografia": null,
-      "description": "por los 1. de Els Monjes, La Rápita y 58 cas. y grupos, edif., viv. y alb. ais. La casa con- sistorial está en el referido 1. de Els Monjos. Cuenta con 1,114 hab. y 194edif., délos que 2 están habitados temporalmente y 20 inha- bitados.- Org. civ. Corresponde á l a prov. de Barcelona, al dist. de Igualada para las elec- ciones de diputados provinciales y al de Villa- nueva y Geltrú para las de Córtes.-Oy. mil. C. G. de Cataluña y G. M. de Barcelona.-Or^. ecle. Pertenece á la dióc. de Barcelona, al ar- ciprestazgo de Villafranca del Panadés. Como quiera que este ayunt. le componen diversas enti",
-      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
-      "stats": null,
+      "place_type": "villa",
+      "island": "Mallorca",
+      "municipality": "Santa Margalida",
+      "org_judicial": "Hállase adscrita al part. jud. de Inca y á las aud. de lo criminal y territ. de Palma, distando del primer punto 19 km y 40 del último.",
+      "org_civil": "Corresponde á la prov. de Baleares y al dist. de Inca para las elecciones de diputados provinciales y las de Cortes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma. En la parte marítima corresponde al Departamento de Cartagena y prov. de 1.ª clase de Mallorca. Hay destacamento de Carabineros del Reino, perteneciente á la Comandancia de su provincia.",
+      "org_economica": "Para el pago de contribuciones depende de la Delegación de Hacienda de su provincia.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca, al arciprestazgo de Inca y tiene iglesia parroquial, bajo la advocación de Santa Catalina, servida convenientemente.",
+      "servicio_publico": "Recibe y expide la correspondencia por en. marítima de Barcelona, Valencia y Alicante á Palma y en. de Alcudia.",
+      "obras_publicas": "Para verificar sus transportes y relacionarse con los pueblos limítrofes, cuenta con varios caminos vecinales, carreteros y de herradura, en regular estado de conservación.",
+      "instruccion_publica": "De fondos municipales se costean dos escuelas completas, una para niños y para niñas otra, á las que asiste un buen número de alumnos.",
+      "poblacion": "Los 566 edif. que la forman, distribuidos en varias calles y plazas, no se recomiendan ni por sus bellezas arquitectónicas ni por los recuerdos históricos. De construcción sencilla. La iglesia parroquial y casa del ayunt. son los mejores. Calles estrechas, plazas regulares, bien empedradas. Fuentes públicas para los usos domésticos.",
+      "industria": "La industria más importante es la agrícola y las que con ella se relacionan; hay tratantes en granos y ganados, varias tiendas para la venta de diferentes artículos y las profesiones y oficios mecánicos de más reconocida utilidad.",
+      "geografia": "En una extensa llanura, disfrutando de libre ventilación y clima templado, aunque suelen ser intensos los fríos algunos años, y regularmente saludable. Limita con los términos de Muro, Artá, Petra, Llubí y el mar. Magníficos prados naturales, abundantes en pastos. Terreno llano y muy feraz, fertilizado por arroyos. Produce trigo candeal, cebada, avena, higos, vino, legumbres, hortalizas, frutas y pastos; ganado caballar, lanar, vacuno, cabrío y de cerda. Abundante caza de liebres, conejos, perdices, codornices y tordos, y abundante pesca en el mar.",
+      "description": "Vila amb ajuntament al N de Mallorca (3.381 hab., 812 edif.), partit judicial d'Inca, diòcesi de Mallorca, arxiprestat d'Inca. Església parroquial dedicada a Santa Catalina. Limita amb Muro, Artà, Petra, Llubí i el mar.",
+      "ocr_note": "Body extraction bled together TWO Santa Margarita articles: the peninsular Santa Margarita (Catalonia, prov. de Barcelona, arciprestazgo de Villafranca del Panadés) and the Mallorcan Santa Margalida. Only the Mallorcan section was used for this record; the peninsular content was discarded.",
+      "stats": {
+        "habitantes": 3381,
+        "edificios": 812,
+        "caserios_y_grupos": 141,
+        "casas": 566
+      },
       "cross_references": [],
-      "confidence": "low"
+      "confidence": "high"
     }
   ]
 }

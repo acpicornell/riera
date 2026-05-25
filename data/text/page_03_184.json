@@ -5,25 +5,30 @@
   "entries": [
     {
       "title": "CAIMARI",
-      "place_type": null,
+      "place_type": "lugar",
       "island": "Mallorca",
       "municipality": "Selva",
-      "org_judicial": null,
-      "org_civil": "Corresponde á la prov. de Baleares, al 3.er dist.\nde su part. jud. para las elecciones de diputados provinciales y á la circunscripción de Palma paralas de Cortes. -",
-      "org_militar": null,
-      "org_economica": null,
-      "org_eclesiastica": null,
-      "servicio_publico": null,
-      "obras_publicas": null,
+      "org_judicial": "Corresponde al part. jud. de Inca, aud. territ. de Palma.",
+      "org_civil": "Corresponde á la prov. de Baleares, al 3.er dist. de su part. jud. para las elecciones de diputados provinciales y á la circunscripción de Palma para las de Cortes.",
+      "org_militar": "C. G. de las Baleares y G. M. de Palma.",
+      "org_economica": "Para el pago de contribuciones se halla sujeta á la admon. econ. de la provincia.",
+      "org_eclesiastica": "Pertenece á la misma diócesis que su ayuntamiento. Tiene una iglesia parroquial bajo la advocación de la Purísima Concepción, que es aneja de la de Selva.",
+      "servicio_publico": "Recibe y expide la correspondencia por en. m. de Barcelona, Valencia y Alicante á Palma, en. de Alcudia, esf. de Inca, pt. de Escorca.",
+      "obras_publicas": "Para sus transportes y com. utiliza los caminos que cruzan el tér. de su ayunt.",
       "instruccion_publica": null,
-      "poblacion": null,
-      "industria": null,
-      "geografia": null,
-      "description": "cuya casa consistorial está enlav. de Selva ó Séuva y de la que dista la pob. que describi- mos TS k. Cuenta sobre unos 852 hab. y 232 edif. entre habitados é inhabitados.- Org. civ. Corresponde á la prov. de Baleares, al 3.er dist. de su part. jud. para las elecciones de diputa- dos provinciales y á la circunscripción de Pal- ma paralas de Cortes. - Org. mil. C. G. de las Baleares y G. M. de Palma. - Org. ecle. Pertenece á la misma dióc. que su ayunt. Tiene una iglesia parroquial bajo la advoca- ción de la Purísima Concepción, que es aneja de la de Selva. - Org. jud. Corresponde al part. jud.",
-      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
-      "stats": null,
-      "cross_references": [],
-      "confidence": "low",
+      "poblacion": "Cuya casa consistorial está en la villa de Selva ó Séuva, de la que dista 7,5 km. Cuenta sobre unos 852 hab. y 232 edif. entre habitados é inhabitados. Compuesta del número de edif. en otro lugar citados, ninguno de ellos se recomienda por especialidad alguna que llame nuestra atención.",
+      "industria": "La única industria de este agregat es la agrícola.",
+      "geografia": "Véase Selva (situació geogràfica i topogràfica).",
+      "description": "Llogaret agregat al municipi de Selva (Mallorca), 7,5 km del nucli. 852 habitants i 232 edificis. Església aneja sota l'advocació de la Puríssima Concepció.",
+      "ocr_note": "Indexer captured the lemma as 'CAIMARL' (final L→I OCR error). Cleaned to 'CAIMARI'.",
+      "stats": {
+        "habitantes": 852,
+        "edificios": 232
+      },
+      "cross_references": [
+        "Selva"
+      ],
+      "confidence": "high",
       "title_original": "CAIMARL"
     }
   ]
