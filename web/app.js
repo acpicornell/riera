@@ -379,7 +379,7 @@ async function boot() {
   bindFilters();
   let payload;
   try {
-    const r = await fetch("data.json?v=18");
+    const r = await fetch("data.json?v=19");
     payload = await r.json();
   } catch (e) {
     console.error(e);
@@ -541,26 +541,26 @@ function renderStats() {
   );
 
   // === Chart 6: municipality pyramid (entries per municipality) ===
-  const muniCount = new Map();
+  const muniMap = new Map();
   for (const e of state.entries) {
     const m = e.municipality;
     if (!m) continue;
-    if (!muniCount.has(m)) muniCount.set(m, []);
-    muniCount.get(m).push(e.title);
+    if (!muniMap.has(m)) muniMap.set(m, { titles: [], island: e.island });
+    muniMap.get(m).titles.push(e.title);
   }
-  const muniRows = [...muniCount.entries()]
-    .map(([m, titles]) => [m, titles.length, titles.length > 1 ? titles.join(", ") : null])
-    .filter(r => r[1] >= 2)
-    .sort((a, b) => b[1] - a[1]);
-  $("stats-chart-municipality-pyramid").innerHTML = svgBars(muniRows, { labelW: 180, valueSuffix: " entrades" });
+  const muniGroups = [...muniMap.entries()]
+    .filter(([_, g]) => g.titles.length >= 2)
+    .sort((a, b) => b[1].titles.length - a[1].titles.length);
+  $("stats-chart-municipality-pyramid").innerHTML = renderMunicipalityTags(muniGroups);
 }
 
 
 // === Demographic chart renderers ===========================================
 
-// Twin-donut per illa: hab.left / edif.right. Donuts mostren les
-// proporcions; el desequilibri Mallorca-vs-resta queda visible sense
-// que les barres petites desapareguin.
+// Twin-donut per illa. Mostren les proporcions; el desequilibri
+// Mallorca-vs-resta queda visible sense que les illes petites
+// desapareguin. Cada porció pintada amb ISLAND_HUE (el mateix
+// color que el mapa, sunburst i pyramid de la resta de l'app).
 function renderIslandTwinBars(rows) {
   if (!rows.length) return '<p class="empty">Sense dades.</p>';
   const totalHab = rows.reduce((s, r) => s + r[1], 0);
@@ -584,12 +584,11 @@ function renderIslandTwinBars(rows) {
       const v = valueFn(hab, edif);
       if (!v) continue;
       const sweep = (v / total) * Math.PI * 2;
-      const hue = (typeof ISLAND_HUE !== "undefined" && ISLAND_HUE[isl]) || "#475569";
+      const hue = ISLAND_HUE[isl] || "#475569";
       const a1 = a + sweep;
       const mid = (a + a1) / 2;
       const pct = (v / total) * 100;
-      svg += `<path d="${arcPath(cx, cy, R, r, a, a1)}" fill="${hue}" opacity="0.9" stroke="#fff" stroke-width="2"><title>${esc(isl)}: ${fmt(v)} (${pct.toFixed(1)}%)</title></path>`;
-      // label outside if slice > 4%
+      svg += `<path d="${arcPath(cx, cy, R, r, a, a1)}" fill="${hue}" stroke="#fff" stroke-width="2"><title>${esc(isl)}: ${fmt(v)} (${pct.toFixed(1)}%)</title></path>`;
       if (pct >= 4) {
         const lx = cx + (R + 18) * Math.cos(mid);
         const ly = cy + (R + 18) * Math.sin(mid) + 4;
@@ -598,7 +597,6 @@ function renderIslandTwinBars(rows) {
       }
       a = a1;
     }
-    // Center text: total
     svg += `<text x="${cx}" y="${cy - 4}" text-anchor="middle" style="font-size:22px;font-weight:700;fill:#1f2937">${fmt(total)}</text>`;
     svg += `<text x="${cx}" y="${cy + 16}" text-anchor="middle" style="font-size:11px;fill:#6b7280;letter-spacing:0.5px;text-transform:uppercase">${label}</text>`;
     svg += `<text x="${cx}" y="${H - 16}" text-anchor="middle" style="font-size:13px;font-weight:600;fill:#374151">${label === "habitants" ? "Habitants totals" : "Edificis totals"}</text>`;
@@ -610,6 +608,27 @@ function renderIslandTwinBars(rows) {
   svg += drawDonut(cx2, totalEdif, (_, e) => e, "edificis");
   svg += `</svg>`;
   return svg;
+}
+
+// Layout HTML de municipi → llistat de nuclis (en lloc d'una barra
+// que truncaria els noms). Cada bloc mostra el municipi, comptatge i
+// la llista completa de nuclis Riera. Color de fons segons l'illa.
+function renderMunicipalityTags(groups) {
+  if (!groups.length) return '<p class="empty">Sense dades.</p>';
+  const items = groups.map(([m, g]) => {
+    const hue = ISLAND_HUE[g.island] || "#475569";
+    const tags = g.titles
+      .sort((a, b) => a.localeCompare(b))
+      .map(t => `<span class="muni-tag">${esc(t)}</span>`).join("");
+    return `<div class="muni-group">
+      <div class="muni-head">
+        <span class="muni-name" style="border-left:4px solid ${hue}">${esc(m)}</span>
+        <span class="muni-count">${g.titles.length}</span>
+      </div>
+      <div class="muni-tags">${tags}</div>
+    </div>`;
+  }).join("");
+  return `<div class="muni-grid">${items}</div>`;
 }
 
 // Stacked horizontal bar per entry: habitats stables / temporals / inhabitats

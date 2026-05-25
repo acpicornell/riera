@@ -757,6 +757,14 @@ tbody tr.minano-expand td {
 .sunburst-legend strong { color: var(--text); }
 .demo-card-wide { grid-column: 1 / -1; }
 .demo-chart { overflow-x: auto; }
+/* Municipality tag-list (replaces svgBars when text lists are too long) */
+.muni-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.9rem; padding-top: 0.4rem; }
+.muni-group { background: var(--card, #fff); border: 1px solid #e5e7eb; border-radius: 8px; padding: 0.7rem 0.85rem; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+.muni-head { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+.muni-name { font-weight: 700; font-size: 0.95rem; padding-left: 0.55rem; color: var(--text, #1f2937); }
+.muni-count { margin-left: auto; background: #f3f4f6; color: #374151; font-size: 0.78rem; font-weight: 600; padding: 0.1rem 0.5rem; border-radius: 999px; font-variant-numeric: tabular-nums; }
+.muni-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.muni-tag { display: inline-block; font-size: 0.74rem; padding: 0.15rem 0.5rem; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 4px; color: #4b5563; letter-spacing: 0.01em; }
 /* === New stats charts (pyramid, scatter, admin sunburst, heatmap) === */
 .pyramid-svg { width: 100%; height: auto; display: block; font-family: inherit; }
 .pyramid-svg .pyramid-island { font-size: 12px; font-weight: 700; fill: var(--text); }
