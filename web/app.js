@@ -379,7 +379,7 @@ async function boot() {
   bindFilters();
   let payload;
   try {
-    const r = await fetch("data.json?v=25");
+    const r = await fetch("data.json?v=26");
     payload = await r.json();
   } catch (e) {
     console.error(e);
