@@ -5,7 +5,7 @@
   "entries": [
     {
       "title": "MALLORCA (Obispado de)",
-      "place_type": null,
+      "place_type": "obispado",
       "island": "Mallorca",
       "municipality": "Palma",
       "org_judicial": null,
