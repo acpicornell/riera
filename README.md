@@ -49,10 +49,10 @@ schema, and publishes a static website for consultation.
 | XII  | 1887 | 509   | 3  | Supplement |
 
 Tom III is the densest Balearic volume — it absorbs every entry whose
-lemma begins with C, including the 13 capes recorded as autonomous
-entries (CABO BAJOLÍ, CABO BLANCO of Mallorca, CABO BLANCO of Ibiza,
-CABO CABALLERÍA, CABO CALAT FIGUERA, CABO CAMPANICH, CABO DARTUTX,
-CABO DE PERA, CABO FORMENTOR, CABO LAMOLA, CABO PINAR, CABO PONTINAT,
+lemma begins with C, including the 14 capes recorded as autonomous
+entries (CABO BAJOLÍ, CABO BLANCO, CABO CABALLERÍA, CABO CALAT
+FIGUERA, CABO CAMPANICH, CABO DARTUTX, CABO DE PERA, CABO FABARITX,
+CABO FALCON, CABO FERRUTX, CABO FORMENTOR, CABO PINAR, CABO PONTINAT,
 CABO SALINAS), plus the inhabited municipalities CALONGE, CALVIÁ,
 CAMPANET, CAMPOS, CAPDEPERA, CIUDADELA, CONSELL, COSTITX. Tom IX
 contains all the *San* / *Santa* / *Santo* parishes of Spain,
@@ -73,14 +73,14 @@ SAN JUAN BAUTISTA, SANTA EULALIA…) and Menorcan SAN CRISTÓBAL.
 
 All 123 entries carry coordinates resolved in three categories:
 
-- **NGIB translation table** (~83 entries) — Castilian-to-Catalan
+- **NGIB translation table** (84 entries) — Castilian-to-Catalan
   mapping against the *Nomenclàtor Geogràfic de les Illes Balears*
   (Govern de les Illes Balears).
-- **Manual cape table** (~27 entries) — hand-curated lat/lon for
-  the 13 mallorcan + 7 menorcan + 7 ibizan capes whose NGIB form
+- **Manual cape table** (27 entries) — hand-curated lat/lon for the
+  Mallorcan + Menorcan + Eivissan + Cabrera capes whose NGIB form
   (*Cap de Pinar*, *Cap de Formentor*…) diverges structurally from
   Riera's Castilian (*Cabo Pinar*, *Cabo Formentor*).
-- **Island centroids** (~13 entries) — the genuinely-supramunicipal
+- **Island centroids** (12 entries) — the genuinely-supramunicipal
   articles (BALEARES, ISLA DE MALLORCA / MENORCA / IBIZA, the two
   diocesan articles in tom XII).
 
@@ -254,7 +254,7 @@ fuzzy NGIB match. From there:
   translation table + manual cape coordinates + island centroids
   → `data/coords.json`.
 - **`scripts/export_web_data.py`** joins everything and produces
-  `web/data.json` (~338 KB, 123 entries), the only artefact the
+  `web/data.json` (~394 KB, 123 entries), the only artefact the
   static site consumes.
 
 ### Stage 5 — OCR cleanup pipeline
