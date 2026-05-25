@@ -786,12 +786,12 @@
   {
     "vol": "07",
     "page": 206,
-    "title": "MENORCA",
+    "title": "MENORCA (Obispado de)",
     "island": "Menorca",
-    "lon": 4.264428939070812,
-    "lat": 39.889722491854904,
-    "matched": "Menorca",
-    "source": "translated"
+    "lon": 3.8355,
+    "lat": 40.0008,
+    "matched": "Catedral de Menorca, Ciutadella",
+    "source": "manual"
   },
   {
     "vol": "07",
