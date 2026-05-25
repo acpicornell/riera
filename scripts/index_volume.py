@@ -294,13 +294,19 @@ def clean_title(t: str) -> str:
     on the first period truncated all such lemmas to their first
     word. The em-dash (or hyphen/tilde) is the canonical separator
     between lemma and body and never appears INSIDE a lemma."""
-    m = re.match(r"^([A-ZÁÉÍÓÚÑÜ0-9'óòo \.\-,\(\)]{2,80}?)\s*[—~]\s*", t)
+    # Charset includes lowercase letters so 'ISLA CABRERA (Baleares)'
+    # and 'PALMA (Obispado de)' capture cleanly — without this the
+    # regex would stop at the first lowercase inside the parenthe-
+    # tical qualifier and the lemma would gobble body text.
+    m = re.match(
+        r"^([A-Za-záéíóúñÑÁÉÍÓÚÜü0-9' \.\-,\(\)]{2,80}?)\s*[—~]\s*", t
+    )
     if not m:
         # Some entries use a plain hyphen instead of em-dash. Allow
         # only when followed by a known place-type abbreviation to
         # avoid false matches on intra-word hyphens (Lluch-Mayor).
         m = re.match(
-            r"^([A-ZÁÉÍÓÚÑÜ0-9'óòo \.\,\(\)]{2,80}?)\s*-\s*"
+            r"^([A-Za-záéíóúñÑÁÉÍÓÚÜü0-9' \.\,\(\)]{2,80}?)\s*-\s*"
             r"(?:V|L|C|B|Ald|Aid|Cas|Cot|Cor|Felig|Desp|Ayunt|Villa|"
             r"Ciudad|Granja|Aldea|Lugar|Coto)\b",
             t,

@@ -509,6 +509,58 @@ def _match_c_phrase(body: str) -> Optional[str]:
                 return label
     return None
 
+
+# Geographic-type prefix in the lemma. Restricted to the types that
+# the exhaustive corpus scan confirmed do carry Balearic entries:
+# CABO (16/54 balear), ISLA (6/32), ISLETA (3/5), ISLOTES (1/2). The
+# other geographic types we considered (VALLE, FUENTE, ARROYO, PUERTO,
+# MONTE, SIERRA, BAHÍA, CALA, PUNTA …) returned ZERO Balearic hits
+# across all 12 tomes — so we don't include them, to avoid the risk
+# of false positives from peninsular bodies that incidentally mention
+# a Balearic toponym.
+GEO_LEMMA_PREFIX_RE = re.compile(
+    r"^\s*(CABO|CALA|ISLA|ISLAS|ISLOTE|ISLOTES|ISLETA|ISLETAS|"
+    r"PUNTA|BAH[ÍI]A|PROMONTORIO)\b",
+    re.I,
+)
+
+# Tokens that signal a Balearic toponym mention in the lemma or body
+# of a geographic-accident article. Used by the geographic rule (G).
+#
+# RESTRICTIVE whitelist: only the seven Balearic identifiers that
+# have NO peninsular or Canarian homonyms. Specifically EXCLUDED:
+#
+#   • 'Palma'      — Palma del Río (Córdoba), Palma de Gandía
+#                    (Valencia), La Palma (Canàries) all share the
+#                    name. ISLA DE PALMA (Canàries) would be a
+#                    false positive.
+#   • 'Cabrera'    — Sierra de Cabrera (León / Almería).
+#   • 'Mahón'      — bare form is rare outside Balears but the
+#                    anchor 'isla de Mahón' would be needed for
+#                    safety; not worth the complexity for ~0 entries.
+#   • 'Ciudadela'  — Cuban Ciudadela (Pinar del Río) exists.
+#
+# The seats Palma/Mahón/Ciudadela are still recognised inside the
+# C-group anchors (Audiencia territorial de Palma, G. M. de Mahón,
+# etc.) where the institution name carries the disambiguating
+# context. For free-prose geographic bodies that lack such an
+# anchor we need the unambiguous island names.
+_BAL_BODY_REF_RE = re.compile(
+    r"\b(mallorca|menorca|ibiza|iviza|eivissa|formentera|"
+    r"bale[aà]res?|bale[aà]ric|bale[aà]riques|"
+    r"malloeca|menorea|mailorca)\b",
+    re.I,
+)
+
+
+def _has_geo_balearic_signal(lemma: str, body: str) -> bool:
+    """Geographic entry (CABO, ISLA, ISLETA, …) — accepts when an
+    unambiguous Balearic toponym appears in lemma or body[:600]."""
+    if not GEO_LEMMA_PREFIX_RE.match(lemma or ""):
+        return False
+    haystack = (lemma or "") + " " + (body or "")[:600]
+    return bool(_BAL_BODY_REF_RE.search(haystack))
+
 # Balearic toponym references — used by the geographic and unknown
 # branches. The narrower contextual patterns in the previous draft
 # missed too many real entries (e.g. 'costa SO. de la prov. de
@@ -542,6 +594,7 @@ class ParsedEntry:
     body_balearic_refs: int = 0      # geographic discriminator
     body_excerpt: str = ""           # for debug / display
     lemma_in_body: bool = False      # NGIB-rescue guard signal
+    lemma: str = ""                  # original lemma — used by rule G
 
     def get_provincia(self) -> Optional[str]:
         """Return the province from whichever source has it. Field-level
@@ -598,6 +651,14 @@ class ParsedEntry:
         # _match_c_phrase scan runs each anchor regex + fuzzy location
         # check; first hit wins.
         if _match_c_phrase(self.head or ""):
+            return True
+        # G: geographic accident (CABO, CALA, ISLA, ISLOTE, ISLETA,
+        # PUNTA, BAHÍA, PROMONTORIO) — lemma prefix anchors the type,
+        # and an unambiguous Balearic island name must appear in
+        # lemma or body[:600]. Restrictive whitelist (no Palma /
+        # Cabrera / Mahón / Ciudadela) to avoid Canarian / peninsular
+        # homonyms.
+        if _has_geo_balearic_signal(self.lemma, self.head or ""):
             return True
         return False
 
@@ -686,6 +747,7 @@ def parse_entry(body: str, lemma: str = "") -> ParsedEntry:
     'kind' values don't lose information."""
     body = _unwrap_hyphens(body)
     entry = ParsedEntry()
+    entry.lemma = lemma
     entry.kind = _classify_kind(lemma, body)
     entry.body_excerpt = body[:120].replace("\n", " ")
     entry.head = body
