@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "ALGAIDA",
+      "title": "ALGAIDA (addicional)",
       "place_type": "villa",
       "island": "Mallorca",
       "municipality": "Algaida",
@@ -32,7 +32,8 @@
         "Montuiri",
         "ALGAIDA (vol. anterior)"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "title_original": "ALGAIDA"
     }
   ]
 }
