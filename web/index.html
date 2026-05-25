@@ -580,6 +580,43 @@
       verificar la grafia i resoldre la geolocalització.
     </p>
 
+    <h2>Pipeline de neteja ortotipogràfica</h2>
+    <p>
+      El text que retorna PyMuPDF conserva fidelment l'OCR però arrossega artefactes
+      sistemàtics de la composició del Diccionari: <strong>guions de salt de línia</strong>
+      sense cosir (<code>resi-\ndencia</code>), <strong>cursiva descomprimida amb
+      espais entre lletres</strong> (<code>T a r r a g o n a</code>, <code>A r a g ó n</code>),
+      <strong>marcadors de secció destrossats</strong> (<code>vS^. geog</code>,
+      <code>Or^. júd</code>, <code>Eist. y Biog</code>), <strong>connectores arcaiques
+      fusionades</strong> amb la paraula veïna (<code>flotaá conquistar</code>,
+      <code>mallorquinesyá los reyes</code>) i números romans dispersos
+      (<code>V I I</code>, <code>Cárlos II I</code>).
+    </p>
+    <p>
+      Aquests artefactes es netegen en dues fases successives:
+    </p>
+    <ol class="riera-template">
+      <li><strong>Passada mecànica</strong> (regex deterministes): cosit de guions
+        tous a final de línia, col·lapse de runs de 3+ singletons separats per espai
+        (per a cursiva descomprimida), normalització dels marcadors de secció
+        coneguts, i un diccionari curat d'errades concretes verificades
+        (<code>huques</code>→<code>buques</code>, <code>iuz</code>→<code>luz</code>,
+        <code>Almudaína</code>→<code>Almudaina</code>).</li>
+      <li><strong>Passada semàntica</strong> (subagents Claude Max amb verificació
+        contra el PDF): per a cada paraula sospitosa, el subagent obre la pàgina
+        original amb PyMuPDF, verifica què va escriure Riera, i només corregeix si la
+        forma neta és inequívocament present al facsímil. Regla absoluta: <em>cap
+        invenció, cap traducció, cap paràfrasi</em>. Si la paraula no és recuperable
+        del PDF, es preserva tal com està.</li>
+    </ol>
+    <p>
+      L'article de Palma, el més complex del corpus (~40 KB repartits entre p1091 i
+      p1108 amb 10 pàgines intermèdies de quadres estadístics il·legibles), va requerir
+      77 correccions semàntiques per part del subagent més 60+ correccions mecàniques.
+      La resta dels 76 articles balears ja eren prou nets de la primera extracció i
+      sumen una cinquantena llarga de correccions addicionals.
+    </p>
+
     <h2>Abreviatures emprades a l'obra</h2>
     <p>
       El Diccionari adopta un sistema d'abreviatures regular, més extens que el de Madoz
@@ -684,9 +721,10 @@
 
 <footer>
   <p>
-    Edició digital dels articles balears del <em>Diccionario geográfico-estadístico de España
-    y Portugal</em> de Sebastián de Riera y Sans (Madrid, 1881–1887), elaborada a partir
-    dels facsímils dipositats a Biblioteca Digital de Castella i Lleó.
+    Edició digital dels articles balears del <em>Diccionario geográfico, estadístico,
+    histórico, biográfico, postal, municipal, marítimo y eclesiástico de España y sus
+    posesiones de ultramar</em> de Pablo Riera y Sans (Barcelona, 1881–1887), elaborada
+    a partir dels facsímils dipositats a Biblioteca Digital de Castella i Lleó.
   </p>
   <p>Llicència del codi: AGPL-3.0. Text original (1881–1887): domini públic.</p>
   <p class="footer-repo">
