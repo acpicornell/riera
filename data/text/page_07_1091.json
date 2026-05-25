@@ -1,0 +1,34 @@
+{
+  "vol": "07",
+  "page": 1091,
+  "model": "manual-recovery",
+  "entries": [
+    {
+      "title": "PALMA",
+      "place_type": "ciudad",
+      "island": "Mallorca",
+      "municipality": "Palma",
+      "org_judicial": null,
+      "org_civil": null,
+      "org_militar": "Org. mil, y maritima* Corresponde á\nla C. G. de Baleares y G. M.de Palma, sien-\ndo esta c. la residencia del Capitán general\ny Gobernador militar, con sus respectivas de-\npendencias. Igualmente es residencia delCo-\nmandante general Sub-inspector de Ingenie-\nros, el Comandante general de artillería, del\nIntendente militar y de la Auditoría del dist.,\ncon todas las oficinas correspondientes á los\ndistintos servicios que cada uno está llamado\ná desempeñar. Como plaza fuerte, cada uno\nde los dos castillos de Bellver y de San Cár-\nlos, tienen sus respectivos comandantes con\nla dotación subalterna de oficiales y soldados\npara el mejor servicio de ambas fortalezas.\nIgualmente hay la guarnición necesaria, com-\npuesta de las tres armas; hay Comandancia\nde Carabineros del Reino, siendo residencia\ntambién de las planas mayores de losbatallo-\nnes de reserva y de depósito, número 139.\nEn la parte marítima pertenece al departa-\nmento de Cartagena, á la prov. marítima de\n1.a clase de Mallorca, siendo residencia tam-\nbién del Comandante y de las oficinasconsi-\nguientes á este cargo. - Org. ecle. Pertenece\ná la dióc. de Mallorca, residiendo en esta c.\nel prelado y como es consiguiente todas las\noficinas eclesiásticas. Hay una iglesia cate-\ndral; es cabeza del arciprestazgo de su nom-\nbre y tiene 6 iglesias parroquiales, bajo las\nadvocaciones de Santa Eulalia, Almudaina,\nSanta Cruz, San Jaime, San Miguel y San\nNicolás, cuyos curatos todos son de la cate-\ngoría de término. Conventos de religiosas en\nclausura hay: de Agustinas, de Concepcio-\nnistas, Carmelitas, Capuchinas, Jerónimas,\nFranciscas y Dominicasy una casa de cléri-\ngos de San Vicente de Paul, dedicándose to-\ndas las comunidades ántes mencionadas, así\ná la beneficencia como á la enseñanza. Tam-\nbién hay un Seminario Conciliar con una bue-\nna biblioteca, cuyo personal docente es tan\nnumeroso como ilustrado.-Or^. júd. En esta\nc. reside la aud. territ. de que dejamos hecho\nmérito en otro lugar, igualmente que la de\nlo criminal, y como cabeza del part. jud. de\nsu nombre están sujetos á su jurisdicción la\nc, v., 1., etc., mencionados ya, dependiendo\ncon todos ellos de las citadas aud. Hay Re-\ngistro de la Propiedad de 1.a clase y estable-\ncimiento penal, que según el estado publica-\ndo por la Gaceta correspondiente al mes de\nabril de 1885, contaba en aquella fecha con\n236 penados, de los cuales, 139 varones y 4\nhembras, eran hijos de la citada prov. - Org-\necon. Para el pago de sus impuestos depende\nde la Admon. de Hacienda de su prov.^cu-\nyas oficinas centrales existen en esta c, sien-\ndo por lo tanto, residencia de^Administrador,\nContador, Tesorero, etc., con sus respectivas\ndependencias. Hay igualmente admon. de\nAduanas, siendo ésta de 1.a clase pudiéndose\njuzgar su movimiento y los ingresos que pro-\nduce, por los estados que damos á continua-\nción.",
+      "org_economica": null,
+      "org_eclesiastica": null,
+      "servicio_publico": null,
+      "obras_publicas": null,
+      "instruccion_publica": null,
+      "poblacion": null,
+      "industria": null,
+      "geografia": null,
+      "description": "PALMA.—O. con ayunt., á la que se hallan agreg. los 1. de La Bonanova, La Vileta, Son Sardina y 660 cas. y grupos, edif.,viv. yalb. ais. Cuenta con 58,224 hab. y 5,522 edif., de los que 652 están habitados temporalmente y 314 inhabitados, y es aud. de lo criminal y territ. de su nombre. Como Palma no lleva el de su prov., ya dijimos en el artículo refe- rente á ésta, cuanto á la misma corresponde, pasando á ocuparnos de la c. en su calidad de cabeza de part. jud. de término, que para la mejor admon. de justicia está dividida en dos dist., denominados de la Catedral y de la Lon- ja. Como átal están sujetos á su jurisdicción 1 c, 17 v., 11 L, 1 ald., 340 cas. y grupos y 3,612 edif., viv. y alb. ais. Consta todo el part. de 107,520 hab., de los cuales 50,901son varones y 56,619 hembras; 59,280 son solte- ros, 40,535 casados y 7,705 viudos; de este total, 2,398 saben leer, 23,916 leer y escribir y 81,206 lo ignoran todo. Este número de hab. se alberga en 21,014 edif., de los que 16,224 se encuentran constantemente habi- tados, 1,391 lo están temporalmente y 3,399 inhabitados; de ellos, 3,843 son de un piso, 134 10,842 de dos, 3,214 de tres, 739 de más de tres y 2,376 alb., ó sean barra",
+      "ocr_note": "Manually recovered: PyMuPDF missed the second opener on tom07 p1091 (PALMA Aud. territ. shares the previous page).",
+      "stats": {
+        "habitantes": 58224,
+        "edificios": 5522,
+        "habitados_temporalmente": 652,
+        "inhabitados": 314
+      },
+      "cross_references": [],
+      "confidence": "high"
+    }
+  ]
+}
