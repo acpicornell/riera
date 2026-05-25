@@ -18,8 +18,9 @@
       "instruccion_publica": "De fondos municipales se costea una escuela para ambos sexos.",
       "poblacion": "Su caserío es de construcción sencilla, sin otras comodidades interiores que las puramente indispensables al género de vida de sus moradores.",
       "industria": "Su ind. es la agrícola y of. que con ella se relacionan.",
-      "geografia": "Agregado al ayunt. de Selva, del que dista 7'7 k. (Véase el artículo referente á su ayunt.).",
-      "description": null,
+      "geografia": "(Véase el artículo referente á su ayunt.).",
+      "description": "L. agreg. al ayunt. de la Selva, del que dista 7'7 k. Cuenta sobre unos 500 hab. y 254 edif., de los que 18 están inhabitados.",
+      "ocr_note": "Audited 2026-05-25: removed opener bleed from geografia (moved 'agreg./distance/stats' into description, which is the natural PDF opener).",
       "stats": {
         "habitantes": 500,
         "edificios": 254,

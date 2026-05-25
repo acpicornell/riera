@@ -18,14 +18,18 @@
       "instruccion_publica": "De fondos municipales se costean tres escuelas para niños y niñas, á las que asiste un buen número de alumnos, contando además con un colegio de 1.a y 2.a enseñanza agreg. al Instituto Balear.",
       "poblacion": "Constitúyenla 396 edif. distribuidos en diferentes calles y plazas, irregulares las primeras y poco capaces las últimas. La construcción de aquéllos en general es sencilla, aunque bastante sólida, y si bien sus interiores no reúnen todas aquellas comodidades que fueran de desear, la generalidad responden, mejor ó peor, á las necesidades de sus moradores. La iglesia parroquial y casa en que el ayunt. celebra sus reuniones, no pasan de ser edif. á propósito para el objeto á que se hallan destinados. Cuenta con varios establecimientos para la venta de diferentes artículos, con un buen casino, y dos sociedades de socorros mutuos. Está el vecindario perfectamente abastecido de aguas para todos los usos, y celebra su principal festividad el día del Patrono de la v.",
       "industria": "La ind. más importante es la agrícola y las que con ella se relacionan; hay fábricas de tejas, yeso, aguardiente y licores, cosecheros de vinos, molinos de harina y prensas de aceite, tiendas para la venta de tejidos, quincalla, comestibles y otros géneros y las profesiones y of. mecánicos de más reconocida utilidad, á que algunos de sus moradores se dedican. Anualmente celebra fer. el último domingo de abril, bastante importante por las transacciones que en ella se verifican y por la afluencia de mercaderes que concurren.",
-      "geografia": "En una extensa llanura al N. de la capital, combatida por todos los vientos y disfrutando de clima templado y sano, encuéntrase situada la v. Se hallan agreg. 98 cas. y grupos, edif., viv. y alb. ais.",
+      "geografia": "En una extensa llanura al N. de la capital, combatida por todos los vientos y disfrutando de clima templado y sano, encuéntrase situada esta v., cuyo tér. municipal confina por N. y E. con el de Alaró; por S. con los de Palma y Santa Eugenia y con los de Marratxi y Buñola por el O. Dentro del espacio que éstos abrazan, se encuentran varios montes poblados de pinos. En las faldas de uno de dichos montes se abren dos bocas que dan paso á otras tantas cuevas dignas de ser visitadas por las formas caprichosas que adoptan en sus colocaciones las estalactitas y estalagmitas de que sus interiores se ven cuajadas. El terreno es de mediana calidad y las prod. consisten en cereales, legumbres, vino, aceite, frutas y pastos; se mantiene ganado lanar, vacuno, cabrio y el necesario para las faenas agrícolas, y hay caza de pelo y pluma.",
       "description": null,
-      "ocr_note": "OCR generally legible; section markers garbled (e.g. 'Or^.', 'O&.', 'iSit.'). Budget figure '15,79r52' read as 15,791'52 pts. Padrón de 1885 cites alternative figure of 2,700 hab.",
+      "ocr_note": "OCR generally legible; section markers garbled (e.g. 'Or^.', 'O&.', 'iSit.'). Budget figure '15,79r52' read as 15,791'52 pts. Padrón de 1885 cites alternative figure of 2,700 hab. | Audit batch 4: SANTA MARIA — geografia completada amb el text de p586 (límits municipals, coves, prod.); stats ampliades amb presupuesto i recompte detallat d'edif.",
       "stats": {
         "habitantes": 2676,
+        "habitantes_padron_1885": 2700,
         "edificios": 780,
+        "habitados_temporalmente": 37,
+        "inhabitados": 177,
         "casas": 396,
-        "caserios_y_grupos": 98
+        "caserios_y_grupos": 98,
+        "presupuesto_municipal_pts": 15791.52
       },
       "cross_references": [],
       "confidence": "high"

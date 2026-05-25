@@ -11,7 +11,7 @@
       "org_judicial": "Comprendido en el part. jud. de Inca, corresponde con él á la aud. territ. de Palma de Mallorca.",
       "org_civil": "Corresponde á la prov. de Baleares, al 3.er dist. de su part. jud. para las elecciones de diputados provinciales y al dist. de Inca para las de Cortes.",
       "org_militar": "C. G. de Baleares y G. M. de Palma.",
-      "org_economica": "Depende para el pago de contr. de la admon. econ. de la prov.",
+      "org_economica": "Depende para el pago de contr. de la admon. econ. de Palma.",
       "org_eclesiastica": "Pertenece á la dióc. de Mallorca y tiene bajo la advocación de San Pedro una iglesia parroquial servida convenientemente.",
       "servicio_publico": "Recibe la corr. por en. m. de Barcelona, Valencia y Alicante á Palma, en. Alcudia, Inca y Santa Margarita.",
       "obras_publicas": "Para su com. con las pob. limítrofes, solo tiene caminos locales en mediano estado, siendo el mejor conservado el que conduce á Inca, cabeza del part., distante 5 k.",
@@ -27,7 +27,8 @@
         "casas": 321
       },
       "cross_references": [],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 6: org_economica 'Valma' restaurat a 'Palma' (OCR garble)."
     }
   ]
 }

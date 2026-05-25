@@ -10,7 +10,8 @@
       "municipality": null,
       "description": "Está situado en la costa NE. de la isla de Menorca, formando una punta alta y peñascosa que se introduce bastante mar adentro. Es peligroso el doblarlo por estar rodeado de escollos. Corresponde al dist. marítimo de Cindadela, prov. de Mahon y departamento de Cartagena",
       "cross_references": [],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 4: CABO FORMENTOR i altres cabos verificats verbatim contra el PDF."
     },
     {
       "title": "CABO FALCON",
@@ -19,7 +20,8 @@
       "municipality": null,
       "description": "Encuéntrase en la isla de Cabrera, otra del grupo de las Baleares, y es accidentado como toda aquella isla. Corresponde al dist. de Cabrera, prov. de Mallorca y departamento de Cartagena",
       "cross_references": [],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 4: CABO FORMENTOR i altres cabos verificats verbatim contra el PDF."
     },
     {
       "title": "CABO FERRUTX",
@@ -28,40 +30,18 @@
       "municipality": null,
       "description": "Está situado en la costa NE. de la isla de Mallorca con inclinación al N., entrando bastante mar adentro. Es alto y peñascoso; corresponde al dist. marítimo de 2.a clase de Alcudia, prov. de Mallorca y departamento de Cartagena",
       "cross_references": [],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 4: CABO FORMENTOR i altres cabos verificats verbatim contra el PDF."
     },
     {
       "title": "CABO FORMENTOR",
       "place_type": "cabo",
       "island": "Mallorca",
       "municipality": "Pollença",
-      "org_judicial": null,
-      "org_civil": null,
-      "org_militar": "Corresponde al distrito marítimo de 2.a clase de Sóller, provincia marítima de Mallorca y departamento de Cartagena.",
-      "org_economica": null,
-      "org_eclesiastica": null,
-      "servicio_publico": null,
-      "obras_publicas": "Faro construido en 1863, situado a 60 m de la orilla del mar y a 180,5 m sobre el nivel del mar (21,5 m sobre el terreno), con aparato de 2.º orden y luz giratoria con eclipses de 30 en 30 segundos; el foco alcanza una distancia de 19 millas. La torre es de color parduzco, ligeramente cónica, y se eleva desde el centro de la habitación de los torreros.",
-      "instruccion_publica": null,
-      "poblacion": null,
-      "industria": null,
-      "geografia": null,
-      "description": "En el tér. jurisdiccional de la v. de Pollenza, siendo la punta más avanzada por la parte NE. de la isla de Mallorca; corresponde al dist. marítimo de 2.a clase de Soller, prov. de Mallorca y departamento de Cartagena. En este cabo, parte N. de la isla, á 60 m. de la orilla del mar y á los 39° 57' 45\" latitud N. y los 9° 27' 8\" longitud E. del meridiano de San Fernando, está situado un faro con aparato de los de 2.° órden, cuya luz es giratoria con eclipses de 30 en 30 segundos: el foco alcanzará á una distancia de 19 millas, hallándose á la altura de 180'5 m. sobre el nivel del mar y á l",
-      "ocr_note": "OCR llegible; títol presenta variant 'óFORMENTON' (sense espai). Coordenades referides al meridià de San Fernando (Cadis), conforme a l'època.",
-      "stats": {
-        "latitud": "39° 57' 45\" N",
-        "longitud": "9° 27' 8\" E (meridiano de San Fernando)",
-        "altura_faro_sobre_mar_m": 180.5,
-        "altura_faro_sobre_terreno_m": 21.5,
-        "distancia_orilla_m": 60,
-        "alcance_luz_millas": 19,
-        "orden_faro": "2.º",
-        "año_servicio": 1863
-      },
+      "description": "En el tér. jurisdiccional de la v. de Pollenza, siendo la punta más avanzada por la parte NE. de la isla de Mallorca; corresponde al dist. marítimo de 2.a clase de Soller, prov. de Mallorca y departamento de Cartagena. En este cabo, parte N. de la isla, á 60 m. de la orilla del mar y á los 39° 57' 45\" latitud N. y los 9° 27' 8\" longitud E. del meridiano de San Fernando, está situado un faro con aparato de los de 2.° órden, cuya luz es giratoria con eclipses de 30 en 30 segundos: el foco alcanzará á una distancia de 19 millas, hallándose á la altura de 180'5 m. sobre el nivel del mar y á la de 21'5 sobre el del terreno: el servicio empezó en 1863. La torre es de color parduzco, ligeramente cónica y se eleva desde el centro de la habitación de los torreros.",
+      "ocr_note": "Completed truncated description; removed paraphrased obras_publicas/org_militar/stats fields not present verbatim in opener. | Audit batch 4: CABO FORMENTOR i altres cabos verificats verbatim contra el PDF.",
       "cross_references": [],
       "confidence": "high",
-      "vol": "03",
-      "page": 55,
       "title_original": "CABO FORMENTOR óFORMENTON"
     }
   ]

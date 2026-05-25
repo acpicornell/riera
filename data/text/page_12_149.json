@@ -16,8 +16,9 @@
       "instruccion_publica": "De fondos municipales se costean seis escuelas para niños de ambos sexos y por particulares una para niñas, asistiendo á todas ellas por término medio 150 alumnos.",
       "poblacion": "La pob. no ofrece nada de particular, y celebra las festividades de San Honorato y de San Jaime.",
       "geografia": "El tér. confina al N. con el de Santa Eugenia; al S. con el de Llummayor; al E. con los de Sineu y Montuiri, y al O. con el de Palma, comprendiendo en el espacio que éstos abrazan algunos montes, en regular estado de población, pertenecientes á particulares.",
-      "description": "Entrada del Tomo XII (Suplemento adicional) que actualiza datos del artículo ALGAIDA. De los edificios computados, 30 están habitados temporalmente y 415 inhabitados (en un fragmento del texto figura también la cifra de 3 habitados temporalmente y 110 inhabitados, probablemente correspondiente al núcleo principal frente al término municipal). El presupuesto municipal del ejercicio 1887-88 fue de 30,672'29 pts., nivelado.",
+      "description": "Cuenta con 1,293 edif., de los que 30 están habitados temporalmente y 415 inhabitados.",
       "stats": {
+        "edificios": 1293,
         "habitados_temporalmente": 30,
         "inhabitados": 415,
         "presupuesto_municipal_pts": 30672.29
@@ -33,7 +34,8 @@
         "ALGAIDA (vol. anterior)"
       ],
       "confidence": "high",
-      "title_original": "ALGAIDA"
+      "title_original": "ALGAIDA",
+      "ocr_note": "Audit batch 4: ALGAIDA (adicional) — description eliminada (contenia comentari LLM inventat barrejant dades d'ALGAR amb les d'ALGAIDA); stats actualitzades amb edificios 1,293."
     }
   ]
 }

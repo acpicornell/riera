@@ -12,7 +12,7 @@
       "org_civil": "Corresponde á la prov. de Baleares, al dist. de Manacor para las elecciones de diputados provinciales y al de la cap. para las de Cortes.",
       "org_militar": "C. G. de Baleares y G. M. de Palma.",
       "org_economica": "Para el pago de contr. depende de la Delegación de Hacienda de la prov.",
-      "org_eclesiastica": "Pertenece á la dióc. de Mallorca, al arciprestazgo de Manacor y tiene una iglesia parroquial.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca, al arciprestazgo de Manacor y tiene una iglesia parroquial, bajo la advocación de San Bartolomé, cuyo curato es de 2.° ascenso.",
       "servicio_publico": "Recibe y emite la corr. por en. m. de Barcelona, Valencia y Alicante á Palma de Mallorca y en. de Manacor.",
       "obras_publicas": "Para verificar sus transportes y sostener sus relaciones cuenta con diversos caminos que conducen á la cabeza del part. y pob. limítrofes.",
       "instruccion_publica": "De fondos municipales se costean dos escuelas para niños de ambos sexos, á las que asiste un buen número de alumnos.",
@@ -34,7 +34,8 @@
         "San Juan",
         "Manacor"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 4: MONTUIRI — org_eclesiastica completada amb \"bajo la advocación de San Bartolomé, cuyo curato es de 2.° ascenso\"."
     }
   ]
 }

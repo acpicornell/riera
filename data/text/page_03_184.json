@@ -16,11 +16,11 @@
       "servicio_publico": "Recibe y expide la correspondencia por en. m. de Barcelona, Valencia y Alicante á Palma, en. de Alcudia, esf. de Inca, pt. de Escorca.",
       "obras_publicas": "Para sus transportes y com. utiliza los caminos que cruzan el tér. de su ayunt.",
       "instruccion_publica": null,
-      "poblacion": "Cuya casa consistorial está en la villa de Selva ó Séuva, de la que dista 7,5 km. Cuenta sobre unos 852 hab. y 232 edif. entre habitados é inhabitados. Compuesta del número de edif. en otro lugar citados, ninguno de ellos se recomienda por especialidad alguna que llame nuestra atención.",
-      "industria": "La única industria de este agregat es la agrícola.",
-      "geografia": "Véase Selva (situació geogràfica i topogràfica).",
+      "poblacion": "Compuesta del número de edif. en otro lugar citados, ninguno de ellos se recomienda por especialidad alguna que llame nuestra atención.",
+      "industria": "La única ind. de este agreg., es la agrícola.",
+      "geografia": "(Véase de Selva).",
       "description": null,
-      "ocr_note": "Indexer captured the lemma as 'CAIMARL' (final L→I OCR error). Cleaned to 'CAIMARI'.",
+      "ocr_note": "Audited 2026-05-25: removed opener-bleed (agreg./stats) from poblacion; replaced fabricated Catalan 'agregat'/'situació geogràfica i topogràfica' with PDF Spanish wording; cleaned 'CAIMARL'→'CAIMARI'.",
       "stats": {
         "habitantes": 852,
         "edificios": 232

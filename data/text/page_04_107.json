@@ -14,10 +14,11 @@
       "org_judicial": "Hállase adscrita al part. jud., aud. de lo criminal y territ. de Palma de Mallorca.",
       "org_economica": "Para el pago de todos sus impuestos depende de la Delegación de Hacienda de la prov.",
       "servicio_publico": "Recibe y emite la corr. por en. m. de Barcelona, Valencia y Alicante á Palma y en. y car. de Soller.",
-      "obras_publicas": "Para sus relaciones y transportes cuenta esta v. con la carretera que la pone en contacto con la cap. de la Isla y otros caminos, ya carreteros, ya de herradura, que la relacionan con la cabeza del part. y demás pob. limítrofes.",
+      "obras_publicas": "Para sus relaciones y transportes cuenta esta v. con la carretera que la pone en contacto con la cap. de la Isla y otros caminos, ya carreteros, ya de herradura que la relacionan con la cabeza del part. y demás pob. limítrofes.",
       "instruccion_publica": "De fondos municipales costéase una escuela para niños de ambos sexos, la cual se ve bastante concurrida.",
-      "industria": "La única ind. de esta localidad es la agrícola, dedicándose también algunos de sus vec. al ejercicio de las profesiones y of. mecánicos más indispensables. Regular elaboración de aceite. Críase ganado lanar, escasea la caza y no es muy abundante la pesca.",
-      "geografia": "A la parte NO. de la costa, al pié de elevadas montañas, y disfrutando de libre ventilación y clima sano, hállase situada esta v., cuyos límites son por el N. el Mediterráneo; Soller por el E.; Buñola y otros pueblos limítrofes en los demás puntos cardinales.",
+      "poblacion": "Ninguna importancia ofrecen los 75 edif. que forman el núcleo principal, incluyendo en este número la casa consistorial é iglesia, respondiendo unos y otros más ó ménos cumplidamente al objeto de su destino.",
+      "industria": "La única ind. de esta localidad es la agrícola, dedicándose también algunos de sus vec. al ejercicio de las profesiones y of. mecánicos más indispensables.",
+      "geografia": "A la parte NO. de la costa, al pié de elevadas montañas, y disfrutando de libre ventilación y clima sano, hállase situada esta v., cuyos límites son por el N. el Mediterráneo; Soller por el E.; Buñola por el S. y Valdemosa por el O. El terreno es de inferior calidad y bastante pendiente, pero sin embargo produce granos, legumbres, hortalizas, algarrobas y variedad de frutas. El plantío de olivos da lugar á una regular elaboración de aceite. Críase ganado lanar, escasea la caza y no es muy abundante la pesca.",
       "description": "V. con ayunt. al que están agreg. 49 cas. y grupos, edif., viv. y alb. ais. Cuenta con 893 hab. y 302 edif., de los cuales 29 están habitados temporalmente y 35 inhabitados.",
       "stats": {
         "habitantes": 893,
@@ -29,9 +30,11 @@
       "cross_references": [
         "Soller",
         "Buñola",
+        "Valdemosa",
         "Palma"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 3: geografia restituïda al text complet del PDF (incloïa Valdemosa al O., terreno i productes); industria depurada eliminant frases que pertanyien a geografia; afegida poblacion del nucli (75 edif.)."
     }
   ]
 }

@@ -18,7 +18,7 @@
       "instruccion_publica": "Sostenidas por los fondos del municipio hay dos escuelas, una para cada sexo y otra de párvulos, particular, todas las cuales reúnen regular concurrencia.",
       "poblacion": "Ninguna importancia ofrece el caserío que la constituye, pues si bien hay algunas casas que son de más reciente construcción que otras, no hacen más que responder á las necesidades de sus moradores, así como á las de la pob. en general responden la casa consistorial é iglesia, que tampoco ofrecen nada de particular. Súrtese el vecindario para los usos domésticos, de las aguas que brotan distintas fuentes que hay en el tér. La festividad que conmemora esta v. es la de la Degollación de San Juan Bautista el día 29 de agosto.",
       "industria": "No existe otra ind. en esta localidad que la agrícola, la cual absorbe todos los esfuerzos de sus moradores, de los que algunos se dedican á la pesca y otros ejercen también las profesiones y of. mecánicos de más necesidad.",
-      "geografia": "Al O. de la isla, próxima al mar, disfrutando de clima bastante sano, hállase situada esta v., la cual está limitada por N. y O. con el Mediterráneo y tér. municipal de Andraitx y por el E. y S. con los de Calviá y Puigpunyent, comprendiéndose en este tér. una pequeña parte de la costa donde se halla el puerto, que no es más que un caleton grande con un pedrusco en la boca. El terreno, aun cuando con alguna parte llana, es montuoso en su mayoría, produciendo la parte cultivada diferentes granos, algarroba, bellotas y aceite; críase ganado lanar y hay caza de conejos y perdices. En la cima de una gran sierra hay una fuente de propiedad particular, que tiene la particularidad de que el líquido que de ella brota, es muy parecido al agua destilada, siendo su temperatura excesivamente fría y reuniendo algunas propiedades medicinales.",
+      "geografia": "Al O. de la isla, próxima al mar, disfrutando de clima bastante sano, hállase situada esta v., la cual está limitada por N. y O. con el Mediterráneo y tér. municipal de Andraitx y por el E. y S. con los de Calviá y Puigpunyent, comprendiéndose en este tér. una pequeña parte de la costa donde se halla el puerto, que no es más que un caleton grande con un pedrusco en la boca. El terreno, aun cuando con alguna parte llana, es montuoso en su mayoría, produciendo la parte cultivada diferentes granos, algarroba, bellotas y aceite; críase ganado lanar y hay caza de conejos y perdices. En la cima de una gran sierra hay una fuente de propiedad particular, que según nos manifiesta el digno secretario de aquel ayunt. á quién debemos los datos de este artículo, tiene la particularidad de que el líquido que de ella brota, es muy parecido al agua destilada, siendo su temperatura excesivamente fría y reuniendo algunas propiedades medicinales.",
       "description": null,
       "stats": {
         "habitantes": 684,
@@ -35,7 +35,8 @@
         "Bañalbufar",
         "Calviá"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 4: ESTELLENCHS — geografia completada amb la clàusula \"según nos manifiesta el digno secretario de aquel ayunt. á quién debemos los datos de este artículo\" que estava omesa."
     }
   ]
 }

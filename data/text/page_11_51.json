@@ -18,7 +18,7 @@
       "instruccion_publica": "De fondos municipales se costean dos escuelas, una para cada sexo.",
       "poblacion": "Los 343 edif. que la forman, distribuidos en diferentes calles y algunas plazas, irregulares, sucias y mal empedradas las primeras y poco capaces las últimas, no se recomiendan, ni por sus bellezas artísticas, ni por los recuerdos históricos que conservan; construcciones modestas, así los antiguos como los de época más reciente, responden, mejor ó peor, á las necesidades de sus moradores. La iglesia parroquial y casa en que el ayunt. celebra sus reuniones, no pasan de ser edif. á propósito para el objeto á que se hallan destinados. Cuenta con algunos establecimientos para la venta de aquellos artículos de más imprescindible necesidad; está el vecindario perfectamente abastecido de aguas para todos los usos, merced á los manantiales que tanto dentro como fuera de la pob. brotan, y celebra la principal festividad el día del Patrono de la v.",
       "industria": "Su ind. es la agrícola; cuenta con las profesiones y of. mecánicos más indispensables para el servicio del vecindario y con varios establecimientos para la venta de diversos artículos.",
-      "geografia": "Entre elevados montes, en terreno desigual, disfrutando de buena ventilación y clima sano, encuéntrase situada esta v., cuyo tér. municipal confina por los cuatro puntos cardinales, con los de Soller, Bañalbufar, Buñola y Esporlas; comprendiendo en el espacio que estos abrazan varios montes, en regular estado de población. El terreno es de mediana calidad, y las prod. consisten en cereales, legumbres, frutas, hortalizas y pastos; se mantiene ganado de varias clases, además del necesario para las faenas agrícolas, y hay caza de pelo y pluma.",
+      "geografia": "Entre elevados montes, en terreno desigual, disfrutando de buena ventilación y clima sano, encuéntrase situada esta v., cuyo tér. municipal confina por los cuatro puntos cardinales, con los de Soller, Bañalbufar, Buñola y Esporlas; comprendiendo en el espacio que estos abrazan varios montes, en regular estado de población, de los que unos pertenecen al común de vec. y á propiedad particular otros. El terreno es de mediana calidad, y las prod. consisten en cereales, legumbres, frutas, hortalizas y pastos; se mantiene ganado de varias clases, además del necesario para las faenas agrícolas, y hay caza de pelo y pluma.",
       "description": null,
       "stats": {
         "habitantes": 1606,
@@ -28,7 +28,8 @@
         "caserios_y_grupos": 78
       },
       "cross_references": [],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 6: geografia completada amb ', de los que unos pertenecen al común de vec. y á propiedad particular otros.' (fragment omès); 'pt. de Esporian' del PDF mantingut com 'Esporlas' (correcció OCR coherent)."
     }
   ]
 }

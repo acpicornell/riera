@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "LA ALQUERÍA",
+      "title": "LA ALQUERÍA BLANCA",
       "place_type": "lugar",
       "island": "Mallorca",
       "municipality": "Santanyí",
@@ -16,7 +16,7 @@
       "servicio_publico": "Recibe y expide la corr. por la en. m. de Barcelona, Valencia, Alicante, á Palma de Mallorca, en. Palma á Santany.",
       "obras_publicas": "Para verificar sus transportes y relacionarse con los pueblos limítrofes cuenta con diferentes caminos vecinales en regular estado de conservación.",
       "instruccion_publica": "Tiene una escuela incompleta costeada por los fondos de la municipalidad concurrida por regular número de alumnos.",
-      "poblacion": "Ninguna importancia ofrecen los 129 edif. que la forman. Ayunt. de Santany, del que dista 5'5 k. Cuenta sobre unos 430 hab. y 129 edif., de los que 2 están habitados temporalmente y 20 inhabitados.",
+      "poblacion": "Ninguna importancia ofrecen los 129 edif. que la forman.",
       "industria": "La ind. dominante en esta localidad es la agrícola, ejerciéndose por algunos de sus hab. los of. mecánicos de primera necesidad.",
       "geografia": "(Véase el artículo referente á su ayunt.)",
       "description": null,
@@ -30,7 +30,8 @@
       "cross_references": [
         "Santany"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 6: títol corregit a 'LA ALQUERÍA BLANCA' (no 'LA ALQUERÍA'); poblacion simplificada al text PDF eliminant paràfrasi del sumari ('Ayunt. de Santany, del que dista 5'5 k.')."
     }
   ]
 }

@@ -12,7 +12,7 @@
       "org_civil": "Prov. de Baleares; dist. de Palma para las elecciones de diputados provinciales y las de Córtes.",
       "org_militar": "C. G. de Baleares y G. M. de Palma.",
       "org_economica": "Para el pago de contr. depende de la Delegación de Hacienda de la prov. Su presupuesto municipal, en el ejercicio de 1882-83, nivelado, ascendió á la suma de 6,082'19 pts.",
-      "org_eclesiastica": "Dióc. de Mallorca; iglesia parroquial dedicada á San Jaime y Santa Ana, convenientemente servida.",
+      "org_eclesiastica": "Pertenece á la dióc. de Mallorca y tiene una iglesia parroquial dedicada á San Jaime y Santa Ana, la cual se halla convenientemente servida.",
       "servicio_publico": "Recibe y emite la corr. por en. m. de Barcelona, Valencia y Alicante á Palma y pt. de Esporlas.",
       "obras_publicas": "Hay un camino vecinal que conduce á Esporlas y otro que dirige á Puigpunyent por medio de los cuales se pone en contacto con pob. de mayor importancia al objeto de verificar sus arrastres.",
       "instruccion_publica": "Dos escuelas, una de niños y otra de niñas, cuenta esta localidad, las cuales se ven asistidas por un número de alumnos en relación con el vecindario.",
@@ -34,7 +34,8 @@
         "Puigpunyent",
         "Palma"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 3: restituïda la frase completa de org_eclesiastica segons PDF."
     }
   ]
 }

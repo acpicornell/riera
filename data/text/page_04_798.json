@@ -23,8 +23,10 @@
       "stats": {
         "habitantes": 270,
         "edificios": 88,
-        "habitados_temporalmente": 6
+        "habitados_temporalmente": 6,
+        "inhabitados": 16
       },
+      "ocr_note": "Audit batch 3: afegit 'inhabitados: 16' a stats; PDF diu 'de los que 6 están habitados temporalmente y 16 inhabitados'.",
       "cross_references": [
         "Mercadal",
         "Mahon"

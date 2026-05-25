@@ -7,7 +7,7 @@
       "title": "RUBERTS",
       "place_type": "lugar",
       "island": "Mallorca",
-      "municipality": "Sencelles",
+      "municipality": "Costitx",
       "org_judicial": "Part. jud. de Inca; aud. de lo criminal y territ. de Palma.",
       "org_civil": "Prov. de Baleares; contribuye, con su ayunt., para las elecciones de diputados provinciales y las de Córtes.",
       "org_militar": "C. G. de Baleares y G. M. de Palma.",
@@ -18,8 +18,9 @@
       "instruccion_publica": "La escuela se halla en la cabecera de su ayunt.",
       "poblacion": "La constituye el número de casas que queda manifestado, siendo en su mayor parte de inferior construcción.",
       "industria": "Su ind. es la agrícola y los of. que con ella se relacionan.",
-      "geografia": "Véase el artículo referente á su ayunt. Dista 4'1 k. de la cabecera del ayunt.",
-      "description": null,
+      "geografia": "(Véase el artículo referente á su ayunt.).",
+      "description": "Ald. agreg. al ayunt. de Costitx, del que dista 4'1 k. Cuenta sobre unos 90 hab. y 24 edif., de los que 1 está inhabitado.",
+      "ocr_note": "Audited 2026-05-25: corrected municipality from 'Sencelles' to 'Costitx' (PDF: 'agreg. al ayunt. de Costitx'); removed fabricated 'Dista 4'1 k.' tail in geografia and reduced to PDF-faithful '(Véase…)'; moved opener stats to description.",
       "stats": {
         "habitantes": 90,
         "edificios": 24,
@@ -27,7 +28,7 @@
         "distancia_ayuntamiento_km": 4.1
       },
       "cross_references": [
-        "Sancellas",
+        "Costitx",
         "Inca",
         "Alcudia"
       ],

@@ -15,10 +15,10 @@
       "org_eclesiastica": "Dióc. de Mallorca, arciprestazgo de Palma; iglesia bajo la advocación de San Raimundo, aneja de la parroquial de Algaida.",
       "servicio_publico": "Recibe y expide la corr. por en. m. de Barcelona, Valencia y Alicante á Palma y en. de Manacor.",
       "obras_publicas": "Para sus transportes y relaciones, utiliza los caminos que cruzan por su tér.",
-      "instruccion_publica": "De fondos municipales tiene una escuela incompleta para niños de ambos sexos.",
+      "instruccion_publica": "De fondos municipales tiene una escuela incompleta para niños de ambos sexos, á la que asiste un regular número de alumnos.",
       "poblacion": "Ninguna particularidad ofrecen los edif. que la forman.",
       "industria": "La única ind. es la agrícola.",
-      "geografia": "Véase el artículo referente á su ayunt. (Algaida). Dista 4 k. de la cabecera.",
+      "geografia": "(Véase el artículo referente á su ayunt.).",
       "description": null,
       "stats": {
         "habitantes": 200,
@@ -30,7 +30,8 @@
       "cross_references": [
         "Algaida"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 6: instruccion_publica completada amb ', á la que asiste un regular número de alumnos.'; geografia simplificada a '(Véase el artículo referente á su ayunt.).' (eliminat afegit '(Algaida). Dista 4 k. de la cabecera' no inclòs en aquesta secció del PDF)."
     }
   ]
 }

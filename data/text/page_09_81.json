@@ -30,7 +30,8 @@
         "Mercadal",
         "Mahón"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 4: SAN CRISTÓBAL verificat verbatim contra el PDF."
     }
   ]
 }

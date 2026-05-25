@@ -31,7 +31,8 @@
         "Artá",
         "Capdepera"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 4: SON SERVERA verificat verbatim contra el PDF."
     }
   ]
 }

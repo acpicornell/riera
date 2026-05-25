@@ -18,7 +18,7 @@
       "instruccion_publica": "De fondos municipales se costean escuelas para niños y niñas, asistiendo á ellas un número de alumnos que está en relación con el de vec.",
       "poblacion": "La constituye el número de casas expresado, que por regla general, son de construcción sencilla, sin otras comodidades interiores que las puramente indispensables al género de vida de sus moradores y se hallan distribuidas en calles, algunas de ellas regulares. La iglesia nada de particular encierra.",
       "industria": "La ind. dominante en esta localidad es la agrícola; cuenta con las profesiones y of. mecánicos de más reconocida utilidad para el servicio del vecindario y con varios establecimientos de venta de diversos artículos.",
-      "geografia": "Agregado al ayunt. de Palma, del que dista 5'5 k. Enclavado en el tér. de su ayunt., véanse sus límites y demás en el artículo de su referencia.",
+      "geografia": "(Enclavado en el tér. de su ayunt., véanse sus límites y demás en el artículo de su referencia).",
       "description": null,
       "stats": {
         "habitantes": 960,
@@ -30,7 +30,8 @@
         "Palma",
         "Santa Cruz"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 4: LA VILETA — geografia restaurada a la forma verbatim del PDF \"(Enclavado en el tér. de su ayunt., véanse sus límites y demás en el artículo de su referencia)\"."
     }
   ]
 }

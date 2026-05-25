@@ -19,13 +19,15 @@
       "industria": "La ind. única es la agrícola.",
       "poblacion": "Ninguna particularidad ofrecen los 25 edif. que la forman.",
       "geografia": "(Véase el artículo referente á su ayunt.).",
-      "description": "Lugar agregado, dista 6'9 k. de Palma. Cuenta sobre unos 80 hab. y 25 edif., de los que 3 están habitados temporalmente.",
+      "description": "L. agreg. al ayunt. de Palma, del que dista 6'9 k. Cuenta sobre unos 80 hab. y 25 edif., de los que 3 están habitados temporalmente y 1 inhabitado.",
       "stats": {
         "habitantes": 80,
         "edificios": 25,
         "habitados_temporalmente": 3,
+        "inhabitados": 1,
         "distancia_km": 6.9
       },
+      "ocr_note": "Audit batch 3: description restituïda al text del PDF ('L. agreg. al ayunt. de Palma') i afegit 'y 1 inhabitado'.",
       "cross_references": [
         "Palma",
         "San Jaime"

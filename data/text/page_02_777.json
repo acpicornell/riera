@@ -2,6 +2,7 @@
   "vol": "02",
   "page": 777,
   "model": "claude-max",
+  "ocr_note": "Audit batch 3: corregits paràfrasis ('Está agreg.' → 'L./Ald. agreg.') i 'Sancellas' → 'Sanséllas' segons PDF; distància BINIARÁIX 2 k → 2'2 k.",
   "entries": [
     {
       "title": "BINIAMAR",
@@ -16,7 +17,7 @@
       "servicio_publico": "Recibe y envía la corr. por en. marítima de Barcelona, Valencia y Alicante á Palma, en. Alcudia, pt. Inca á Escorca.",
       "obras_publicas": "Se sirve de los caminos de su tér. municipal.",
       "instruccion_publica": null,
-      "poblacion": "La forman los edif. mencionados, que nada de particular ofrecen. Está agreg. al ayunt. de Selva, del que dista 5'5 k. Cuenta sobre unos 504 hab. y 126 edif.",
+      "poblacion": "La forman los edif. mencionados, que nada de particular ofrecen. Ald. agreg. al ayunt. de Selva, del que dista 5'5 k. Cuenta sobre unos 504 hab. y 126 edif.",
       "industria": "No hay más ind. que la agrícola.",
       "geografia": "(Véase el artículo de su ayunt.).",
       "description": null,
@@ -27,7 +28,8 @@
       "cross_references": [
         "Selva"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 4: tres artículos (BINIAMAR, BINIARÁIX, BINIÁLI) verificats verbatim contra el PDF."
     },
     {
       "title": "BINIARÁIX",
@@ -42,7 +44,7 @@
       "servicio_publico": "Recibe y emite la corr. por en. marítima de Barcelona, Valencia y Alicante á Palma, en. Soller.",
       "obras_publicas": "Se sirve de los caminos del tér. municipal.",
       "instruccion_publica": null,
-      "poblacion": "Consta de 152 edif. de construcción pobre y mediano aspecto, formando calles irregulares y feas. Está agreg. al ayunt. de Sóller, del que dista 2 k. Cuenta sobre unos 608 hab. y 152 edif.",
+      "poblacion": "Consta de 152 edif. de construcción pobre y mediano aspecto, formando calles irregulares y feas. L. agreg. al ayunt. de Soller, del que dista 2'2 k. Cuenta sobre unos 608 hab. y 152 edif.",
       "industria": "Su única ind. es la agrícola.",
       "geografia": "(Véase el artículo de su ayunt.).",
       "description": null,
@@ -53,7 +55,8 @@
       "cross_references": [
         "Sóller"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 4: tres artículos (BINIAMAR, BINIARÁIX, BINIÁLI) verificats verbatim contra el PDF."
     },
     {
       "title": "BINIÁLI",
@@ -68,7 +71,7 @@
       "servicio_publico": "Recibe y emite su corr. por en. marítima de Barcelona, Valencia y Alicante á Palma, en. Santa María á Costrix.",
       "obras_publicas": "Se sirve de los caminos del tér. de su ayunt.",
       "instruccion_publica": null,
-      "poblacion": "Fórmanla 138 edif. de pobre y antigua construcción. Está agreg. al ayunt. de Sancellas, de donde dista 3'4 k. Cuenta sobre unos 552 hab. y 138 edif.",
+      "poblacion": "Fórmanla 138 edif. de pobre y antigua construcción. L. agreg. al ayunt. de Sanséllas, de donde dista 3'4 k. Cuenta sobre unos 552 hab. y 138 edif.",
       "industria": "Dedícase el vecindario á la agricultura.",
       "geografia": "(Véase Sanséllas).",
       "description": null,
@@ -79,7 +82,8 @@
       "cross_references": [
         "Sanséllas"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 4: tres artículos (BINIAMAR, BINIARÁIX, BINIÁLI) verificats verbatim contra el PDF."
     }
   ]
 }

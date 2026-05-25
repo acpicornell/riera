@@ -14,11 +14,11 @@
       "org_economica": "Admon. de Hacienda de su prov.",
       "org_eclesiastica": "Dióc. de Mallorca, arciprestazgo de Manacor; iglesia parroquial bajo la advocación de Ntra. Sra. de los Angeles, curato de término.",
       "servicio_publico": "Recibe y expide la corr. por en. marítima de Barcelona, Valencia y Alicante á Palma de Mallorca, en. de Manacor y car. de Montuiri.",
-      "obras_publicas": "Para verificar sus transportes y relacionarse con las pob. limítrofes, cuenta con diferentes caminos vecinales en mejor ó peor estado de conservación.",
-      "instruccion_publica": "Costeadas con fondos del municipio hay las escuelas necesarias para niños de ambos sexos, perfectamente atendidas.",
-      "poblacion": "De 900 edif. constaba en la época del Sr. Madoz, el Nomenclátor de 1873 le da 1,001, número que ha aumentado. Distribuidos en varias calles y algunas plazas no muy anchas y tortuosas, irregulares las plazas; construcción sin nada particular. La iglesia parroquial es de regulares proporciones, no obra de arte. Casa consistorial modesta. Buen número de establecimientos para venta. Vecindario abastecido de aguas; celebra con gran pompa la festividad principal el día de su santo Patrono.",
-      "industria": "La ind. que más domina es la agrícola, sin embargo de que por algunos de sus moradores se ejercen todas aquellas profesiones y of. mecánicos de mayor necesidad.",
-      "geografia": "Al E. de la isla, en terreno llano y combatida por los vientos del O., clima templado y sano. Confina por los cuatro puntos cardinales con los de Llummayor, San Juan Bautista, Felanitx y Campos, comprendiendo varios montes, en regular estado de población. Terreno que participa de monte y llano, mediana calidad; corren algunos arroyos que prestan fertilidad é impulsan diversos artefactos. Prod.: cereales, legumbres, hortalizas, frutas y pastos; ganado lanar, vacuno, cabrío y de cerda; caza de pelo y pluma.",
+      "obras_publicas": "Para verificar sus transportes y sostener sus relaciones con las pob. limítrofes, cuenta con diferentes caminos vecinales en mejor ó peor estado de conservación.",
+      "instruccion_publica": "Costeadas con fondos del municipio hay las escuelas necesarias para niños de ambos sexos, perfectamente atendidas, y á las que asiste un número de alumnos en relación con el de hab.",
+      "poblacion": "De 900 edif. constaba ésta en la época en que el señor Madoz escribió su Diccionario, y el Nomenclátor de 1873 le da 1,001, número que en la actualidad ha aumentado todavía. Distribuidos se hallan en varias calles y algunas plazas no muy anchas y tortuosas las primeras, é irregulares las segundas, y la construcción de aquéllos, así en los modernos como en los antiguos nada absolutamente de particular encierra. A pesar de esto, y como excepción de la regla general se encuentra alguno con más agradable aspecto y con mejor distribución interior. La iglesia parroquial es de regulares proporciones, y aun cuando no carece de buen aspecto no puede considerársela, ni mucho ménos como obra de arte. La casa consistorial no pasa de responder á las necesidades de sus destinos respectivos. Hay un buen número de establecimientos para la venta de diversos artículos, está el vecindario perfectamente abastecido de aguas para el consumo doméstico, y celebra con gran pompa la festividad principal el día de su santo Patrono.",
+      "industria": "La ind. que más domina en esta localidad es la agrícola, sin embargo de que por algunos de sus moradores se ejercen todas aquellas profesiones y of. mecánicos de mayor necesidad.",
+      "geografia": "Al E. de la isla, en terreno llano y combatida por los vientos del O., disfrutando de clima templado y sano, encuéntrase situada esta v., cuyo tér. municipal confina por los cuatro puntos cardinales con los de Llummayor, San Juan Bautista, Felanitx y Campos, comprendiendo en el espacio que éstos abrazan varios montes, en regular estado de población, y pertenecientes al común de vecinos unos y á propiedad particular otros. El terreno, que participa de monte y llano, es de mediana calidad, corren por él algunos arroyos que, al par que prestan fertilidad al suelo impulsan diversos artefactos. Las prod. consisten en cereales, legumbres, hortalizas, frutas y pastos, merced á los que se mantiene un buen número de cabezas de ganado lanar, vacuno, cabrío y de cerda, y hay caza de pelo y pluma.",
       "description": null,
       "stats": {
         "habitantes": 4934,
@@ -35,7 +35,8 @@
         "Manacor",
         "Montuiri"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 4: PORRERAS — poblacion restaurada a la versió verbatim del PDF (era una paràfrasi resumida); instruccion_publica i obras_publicas completades."
     }
   ]
 }

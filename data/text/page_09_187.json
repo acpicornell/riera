@@ -5,7 +5,7 @@
   "entries": [
     {
       "title": "SAN JUAN BAUTISTA",
-      "place_type": "villa",
+      "place_type": "caserío",
       "island": "Ibiza",
       "municipality": "Sant Joan de Labritja",
       "org_judicial": "Hállase adscrito al part. jud. de Ibiza y á las aud. de lo criminal y territ. de Palma, distando 15 k. de la primera de dichas pob.",
@@ -16,10 +16,11 @@
       "servicio_publico": "Recibe y expide la corr. por en. marítima de Alicante á Palma de Mallorca, esf. y en. de Ibiza.",
       "obras_publicas": "Cuenta con diferentes caminos, ya carreteros, ya de herradura, en mejor ó peor estado de conservación, que lo relacionan, tanto con la cap. del part. cuanto con las demás pob. limítrofes, en regular estado de conservación.",
       "instruccion_publica": "Costeadas con fondos del municipio hay las escuelas necesarias para los dos sexos, perfectamente atendidas, y á las que asiste un número de alumnos en relación con el de hab.",
-      "poblacion": "Ninguna importancia ofrecen los edif. que la constituyen, hallándose en el mismo caso la iglesia parroquial y casa en que el ayunt. celebra sus reuniones, puesto que tanto unos como otros, aun cuando son de buena construcción, no hacen más que responder á las necesidades de sus moradores. Cuenta con algunos establecimientos para la venta de los artículos más necesarios; está el vecindario perfectamente abastecido de aguas para todos los usos, y celebra la principal festividad el día del Patrono del ayunt. Hállanse agreg. 39 cas. y grupos, edif., viv. y alb. ais. Cuenta con 4,238 hab. y 733 edif., de los que 8 están habitados temporalmente y 36 inhabitados.",
+      "poblacion": "Ninguna importancia ofrecen los edif. que la constituyen, hallándose en el mismo caso la iglesia parroquial y casa en que el ayunt. celebra sus reuniones, puesto que tanto unos como otros, aun cuando son de buena construcción, no hacen más que responder á las necesidades de sus moradores. Cuenta con algunos establecimientos para la venta de los artículos más necesarios; está el vecindario perfectamente abastecido de aguas para todos los usos, y celebra la principal festividad el día del Patrono del ayunt.",
       "industria": "La ind. que más domina en esta localidad es la agrícola, sin embargo de que por algunos de sus moradores se ejercen todas aquellas profesiones y of. mecánicos de mayor necesidad.",
       "geografia": "En terreno algún tanto accidentado, disfrutando de buena ventilación y clima sano, encuéntrase situado el que nos ocupa, cuyo tér. municipal confina por los cuatro puntos cardinales con los de Ibiza, Santa Eulalia y el mar, comprendiendo en el espacio que éstos abrazan, varios montes, en regular estado de conservación, y de los que unos pertenecen al común de vec. y á propiedad particular otros. El terreno es de mediana calidad y las prod. consisten en cereales, legumbres, hortalizas, frutas y pastos; se mantiene ganado lanar, vacuno, cabrío, de cerda y el necesario para las faenas agrícolas; hay caza de pelo y pluma y la pesca no escasea.",
-      "description": null,
+      "description": "Cas. con ayunt., al que se hallan agreg. 39 cas. y grupos, edif., viv. y alb. ais. Cuenta con 4,238 hab. y 733 edif., de los que 8 están habitados temporalmente y 36 inhabitados.",
+      "ocr_note": "Audited 2026-05-25: corrected place_type from 'villa' to 'caserío' (PDF: 'Cas. con ayunt.'); removed opener bleed from poblacion and placed it in description.",
       "stats": {
         "habitantes": 4238,
         "edificios": 733,

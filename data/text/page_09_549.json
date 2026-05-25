@@ -19,6 +19,8 @@
       "industria": "La ind. que más domina en esta localidad es la agrícola y por algunos de sus moradores se ejercen todas aquellas profesiones y of. mecánicos de mayor necesidad.",
       "poblacion": "Ninguna importancia ofrecen los 47 edif. que la forman, incluyendo en este número la iglesia parroquial y casa consistorial, pues aunque son de buena construcción, no hacen más que responder á las necesidades del objeto á que están destinados. Hay establecimientos para la venta de los artículos más necesarios; está el vecindario perfectamente abastecido de aguas para todos los usos y celebra la principal festividad el día del Patrono de la v.",
       "geografia": "Al N. de la isla, disfrutando de buena ventilación y clima sano, encuéntrase situada esta v., cuyo tér. municipal confina por los cuatro puntos cardinales con los de Ibiza, San Juan Bautista, San Antonio Abad y el mar. El terreno es de mediana calidad, le fertilizan algunas corrientes de poca importancia y las prod. consisten en trigo, vino, aceite, legumbres, frutas, hortalizas y pastos; se mantiene ganado lanar, vacuno, cabrío, de cerda y el necesario para las faenas agrícolas, hay caza de pelo y pluma y la pesca no escasea.",
+      "description": "V. con ayunt., á la que se hallan agreg. el l. de Santa Gertrudis y 39 cas. y grupos, edif., viv. y alb. ais. Cuenta con 5,241 hab. y 979 edif., de los que 9 están habitados temporalmente y 40 inhabitados; pero por los datos facilitados por el señor Secretario de este ayunt., refiriéndose al padrón de 1885, tiene 5,288 hab.",
+      "ocr_note": "Audited 2026-05-25: added missing description (PDF opener including 1885 padrón data).",
       "stats": {
         "habitantes": 5241,
         "habitantes_padron_1885": 5288,

@@ -26,7 +26,8 @@
       "cross_references": [
         "Mallorca"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 4: ISLAS BALEARES — eliminada description duplicada/truncada del camp geografia."
     },
     {
       "title": "ISLA FORMENTERA",
@@ -51,7 +52,7 @@
       ],
       "confidence": "high",
       "title_original": "ISLA FORMENTERA (Baleares)",
-      "ocr_note": "Body-bleed eliminat: la entrada peninsular següent al diccionari (ISLA GROSSA, davant la torre de Palos a Múrcia) s'havia enganxat al cos. L'article és només una cross-reference a FORMENTERA al Tom IV."
+      "ocr_note": "Body-bleed eliminat: la entrada peninsular següent al diccionari (ISLA GROSSA, davant la torre de Palos a Múrcia) s'havia enganxat al cos. L'article és només una cross-reference a FORMENTERA al Tom IV. | Audit batch 4: ISLAS BALEARES — eliminada description duplicada/truncada del camp geografia."
     },
     {
       "title": "ISLAS BALEARES",
@@ -69,8 +70,8 @@
       "poblacion": null,
       "industria": null,
       "geografia": "Estas islas no pertenecen sólo bajo el aspecto político á España, sino que también dependen geográficamente de la Península, debiendo considerarse que se hallan en la prolongación de una de sus cordilleras principales cuyas cimas van asomando á trechos sobre el nivel del Mediterráneo. Esta es la que pasa por la Sierra Sagra, y que cortada más al E. por el rio Segura, continúa con frecuentes interrupciones, y compuesta de varias cumbres aisladas hasta los cabos de San Martín y de la Náo en la prov. de Alicante: estos son los puntos más próximos á las Baleares, y distan sólo 85 k. de sus islotes más avanzados al Occidente. Tres son las islas principales que componen este grupo, llamadas de Mallorca, Menorca é Ibiza; dos más hay algo importantes, que son las de Formentera y Cabrera, y otras varias pequeñas con algunos islotes próximos á todas sus costas. Las Baleares se hallan comprendidas entre los 38° 38' 00\" de latitud N., que corresponden á la punta de Cala-Codolar, la más meridional de Formentera, y los 40° 6' 31\" á que avanza el cabo Caballería, el más septentrional de Menorca. Las longitudes extremas son: de 4° 49' 40\" al E. del Observatorio de Madrid, que pertenecen al más occidental de los islotes Bledas en la costa de Ibiza, y 8° 3' 29\" adonde sale el cabo de la Mola, punta oriental de Menorca. La distancia total en línea recta entre los puntos de Poniente y Levante que acabamos de señalar, es de 297 k., y la dirección ENE.",
-      "description": "Estas islas no pertenecen sólo bajo el aspecto político á España, sino que también dependen geográficamente de la Península, debiendo considerarse que se hallan en la prolongación de una de sus cordilleras principales cuyas cimas van asomando á trechos sobre el nivel del Mediterráneo. Esta es la que pasa por la Sierra Sagra, y que cortada más al E. por el rio Segura, continúa con frecuentes interrupciones, y compuesta de varias cumbres aisladas hasta los cabos de San Martín y de la Náo en la prov. de Alicante: estos son los puntos más próximos á las Baleares, y distan sólo 85 k.",
-      "ocr_note": "Province-level article — no admin sections specific to a settlement.",
+      "description": null,
+      "ocr_note": "Province-level article — no admin sections specific to a settlement. | Audit batch 4: ISLAS BALEARES — eliminada description duplicada/truncada del camp geografia.",
       "stats": null,
       "cross_references": [],
       "confidence": "high"

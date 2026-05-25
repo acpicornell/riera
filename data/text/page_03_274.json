@@ -9,7 +9,7 @@
       "island": "Mallorca",
       "municipality": "Campanet",
       "org_judicial": "Forma parte del part. jud. de Inca y corresponde á la aud. territ. de Palma de Mallorca.",
-      "org_civil": "Corresponde á la prov. de las Baleares, al dist. de Palma para las de Cortes.",
+      "org_civil": "Corresponde á la prov. de las Baleares, al 8.er dist. de su part. jud. para las elecciones de diputados provinciales y á la circunscripción de Palma para las de Cortes.",
       "org_militar": "C. G. de las Baleares y G. M. de Palma de Mallorca. Departamento marítimo de 1.a clase de Palma y ayudantía de 2.a clase de Alcudia.",
       "org_economica": "Depende de la admon. econ. de la prov. para el pago de contr. El presupuesto municipal del último año económico de 1881-82 asciende á la cantidad de 18,545'88 pts. nivelados gastos é ingresos.",
       "org_eclesiastica": "Pertenece á la dióc. de Palma de Mallorca y tiene una iglesia parroquial bajo la advocación de San Miguel, servida convenientemente, cuyo curato es de la categoría de 2.° ascenso.",
@@ -30,7 +30,8 @@
       "cross_references": [
         "Ullaró"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "ocr_note": "Audit batch 4: CAMPANET — org_civil completat (omissió de \"8.er dist. de su part. jud. para las elecciones de diputados provinciales y á la circunscripción\")."
     }
   ]
 }
