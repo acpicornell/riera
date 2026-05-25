@@ -524,42 +524,73 @@ GEO_LEMMA_PREFIX_RE = re.compile(
     re.I,
 )
 
-# Tokens that signal a Balearic toponym mention in the lemma or body
-# of a geographic-accident article. Used by the geographic rule (G).
+# Restrictive whitelist for the G-rule. The seven Balearic identifiers
+# that have NO peninsular or Canarian homonyms — so a bare token
+# match is unambiguous in any context. EXCLUDED versus _BAL_LOCATIONS:
 #
-# RESTRICTIVE whitelist: only the seven Balearic identifiers that
-# have NO peninsular or Canarian homonyms. Specifically EXCLUDED:
+#   • Palma     — La Palma (Canàries), Palma del Río (Córdoba), etc.
+#   • Cabrera   — Sierra de Cabrera (León / Almería).
+#   • Mahón     — too rare outside Balears to justify the risk.
+#   • Ciudadela — Cuban Ciudadela (Pinar del Río) exists.
 #
-#   • 'Palma'      — Palma del Río (Córdoba), Palma de Gandía
-#                    (Valencia), La Palma (Canàries) all share the
-#                    name. ISLA DE PALMA (Canàries) would be a
-#                    false positive.
-#   • 'Cabrera'    — Sierra de Cabrera (León / Almería).
-#   • 'Mahón'      — bare form is rare outside Balears but the
-#                    anchor 'isla de Mahón' would be needed for
-#                    safety; not worth the complexity for ~0 entries.
-#   • 'Ciudadela'  — Cuban Ciudadela (Pinar del Río) exists.
-#
-# The seats Palma/Mahón/Ciudadela are still recognised inside the
-# C-group anchors (Audiencia territorial de Palma, G. M. de Mahón,
-# etc.) where the institution name carries the disambiguating
-# context. For free-prose geographic bodies that lack such an
-# anchor we need the unambiguous island names.
-_BAL_BODY_REF_RE = re.compile(
-    r"\b(mallorca|menorca|ibiza|iviza|eivissa|formentera|"
-    r"bale[aà]res?|bale[aà]ric|bale[aà]riques|"
-    r"malloeca|menorea|mailorca)\b",
-    re.I,
+# The seats stay valid in the C-group because their institutional
+# anchor ('Audiencia territorial de Palma', 'G. M. de Mahón') carries
+# the disambiguating context. The G-rule has no such anchor.
+_BAL_GEO_TOKENS = (
+    "baleares", "mallorca", "menorca", "ibiza", "iviza", "eivissa",
+    "formentera",
 )
+_BAL_GEO_OCR_VARIANTS = {
+    # Common OCR mangles seen in the corpus
+    "baleare", "balear", "balsare", "bsleare", "baleat",
+    "mallorea", "malloeca", "mailorca",
+    "menorea",
+}
+
+
+def _is_geo_bal_token(token: str) -> bool:
+    """Symmetric to _is_bal_location but restricted to the seven
+    unambiguous Balearic identifiers (no Palma / Cabrera / Mahón /
+    Ciudadela seats). Three acceptance paths in increasing
+    permissiveness: exact match, known OCR variant, rapidfuzz ≥85
+    for tokens ≥7 chars."""
+    if not token:
+        return False
+    norm = _strip_accents_lower(token).strip()
+    norm = re.sub(r"^(?:la|las|el|los)\s+", "", norm).strip()
+    if not norm or len(norm) < 4:
+        return False
+    if norm in _BAL_GEO_TOKENS:
+        return True
+    if norm in _BAL_GEO_OCR_VARIANTS:
+        return True
+    if len(norm) < 7:
+        return False
+    try:
+        from rapidfuzz import process, fuzz
+    except ImportError:
+        return False
+    r = process.extractOne(norm, list(_BAL_GEO_TOKENS), scorer=fuzz.ratio)
+    return bool(r and r[1] >= 85)
+
+
+# Token candidates inside the geographic-body haystack. Tokens
+# shorter than 4 chars or longer than 15 are skipped — Balearic
+# identifiers all fall within 5..10 chars.
+_GEO_TOKEN_RE = re.compile(r"\b[A-Za-záéíóúñüÑÁÉÍÓÚÜ]{4,15}\b")
 
 
 def _has_geo_balearic_signal(lemma: str, body: str) -> bool:
-    """Geographic entry (CABO, ISLA, ISLETA, …) — accepts when an
-    unambiguous Balearic toponym appears in lemma or body[:600]."""
+    """Geographic entry (CABO, ISLA, ISLETA, …) — accepts when any
+    token in lemma+body[:600] fuzzy-matches one of the seven
+    unambiguous Balearic identifiers (or a known OCR variant)."""
     if not GEO_LEMMA_PREFIX_RE.match(lemma or ""):
         return False
     haystack = (lemma or "") + " " + (body or "")[:600]
-    return bool(_BAL_BODY_REF_RE.search(haystack))
+    for tok in _GEO_TOKEN_RE.findall(haystack):
+        if _is_geo_bal_token(tok):
+            return True
+    return False
 
 # Balearic toponym references — used by the geographic and unknown
 # branches. The narrower contextual patterns in the previous draft
