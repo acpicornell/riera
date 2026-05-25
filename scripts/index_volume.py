@@ -558,7 +558,18 @@ def extract_body_pdftotext(opener: dict, vol: str, max_lines: int = 200) -> str:
             next_char = norm_line[len(lemma_n)]
             if next_char.isalnum():
                 continue
+        # IMPORTANT: the lemma line itself usually carries content
+        # AFTER the '.—' separator that's the first sentence of the
+        # article. For admin entries it's the place-type abbreviation
+        # plus the head paragraph opener ('V. con ayunt., á la que
+        # se hallan agreg.'), for geographic accidents it's the
+        # opening description ('Está formado por una de las puntas
+        # …'). Skipping line i entirely loses this content. Capture
+        # it as the first body line.
+        m_post = re.search(r"\.?\s*[—\-~]+\s*(.+)$", lines[i])
         body_lines = []
+        if m_post and m_post.group(1).strip():
+            body_lines.append(m_post.group(1).strip())
         for j in range(i + 1, min(i + 1 + max_lines, len(lines))):
             l_stripped = lines[j].lstrip()
             if next_opener_re.match(l_stripped):
