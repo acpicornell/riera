@@ -35,3 +35,12 @@
 # It is NOT a separate article — the actual Santa María del
 # Camino article is SANTA MARIA tom09 p584.
 09 585  SANTA M A R I A
+
+# === Page-continuation header captured as a separate opener:
+# SAN JUAN tom09 p186 — duplicate of SAN JUAN BAUTISTA tom09 p187.
+# Riera prints the article on p187; p186 carries only the lemma
+# 'SAN JUAN' as a page-leaf header before the article itself
+# (Sant Joan de Labritja, Eivissa). PyMuPDF mistakes the header
+# for a fresh opener. Same body bleeds into both, the p187 entry
+# is more complete (has distancia_ibiza_km, temporals, inhabitats).
+09 186  SAN JUAN

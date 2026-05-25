@@ -65,7 +65,15 @@ SECTION_RE = re.compile(
 # Article opener: lemma is ≥2 consecutive caps at the start of the line.
 # The opener line itself may continue with lowercase (Riera writes the
 # place-type abbr V./L./C. after the dash, which is uppercase + dot).
-ENTRY_LEMMA_RE = re.compile(r"^[A-ZÁÉÍÓÚÑÜ]{2,}")
+#
+# Tolerance for OCR character substitutions in the FIRST position only:
+# the OCR engine occasionally renders 'I' as digit '1', 'O' as digit '0',
+# or 'l' (the geographic accent 'l. ' opener) as '1'. We accept a single
+# leading digit followed by ≥1 uppercase letter — e.g. `1BIZA.—C. con
+# ayunt.` is the city of Ibiza on tom V p630, which our strict regex was
+# silently rejecting until Nov 2026. Verified empirically against the
+# PDF that no real Riera lemma starts with a digit.
+ENTRY_LEMMA_RE = re.compile(r"^(?:[A-ZÁÉÍÓÚÑÜ]|[01](?=[A-ZÁÉÍÓÚÑÜ]))[A-ZÁÉÍÓÚÑÜ]+")
 # Real dictionary entries ALWAYS carry a dot-em-dash (or dot-hyphen)
 # separator between the lemma and the body within the first 70 chars.
 # Statistical-table headings inside long entries (BALEARES, CIUDADELA,
@@ -314,6 +322,13 @@ def clean_title(t: str) -> str:
     if m:
         t = m.group(1)
     t = t.strip(" '\"’.,;:•·-")
+    # Leading-digit OCR fix: '1BIZA' → 'IBIZA' (Ibiza city, tom V p630),
+    # '0RIENT' → 'ORIENT', etc. Only fires when a single digit appears
+    # at the very start of the lemma immediately before an uppercase
+    # letter — no real Riera lemma begins with a digit.
+    t = re.sub(r"^1(?=[A-ZÁÉÍÓÚÑÜ])", "I", t)
+    t = re.sub(r"^0(?=[A-ZÁÉÍÓÚÑÜ])", "O", t)
+    # Internal 1/l → I when surrounded by caps (existing rule).
     t = re.sub(r"(?<=[A-ZÁÉÍÓÚÑÜ])[1l](?=[A-ZÁÉÍÓÚÑÜ]|$|\b)", "I", t)
     # Trailing periods (post-stripping) are removed; internal periods
     # in compound lemmas like 'ISLA. CUNILLERA' are collapsed to a
