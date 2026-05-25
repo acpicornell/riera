@@ -533,6 +533,17 @@
   },
   {
     "vol": "05",
+    "page": 630,
+    "title": "IBIZA",
+    "island": "Ibiza",
+    "lon": 1.4326,
+    "lat": 38.9758,
+    "fallback": "island-centroid:Ibiza",
+    "source": "centroid",
+    "note": "no NGIB match for 'IBIZA'"
+  },
+  {
+    "vol": "05",
     "page": 678,
     "title": "INCA",
     "island": "Mallorca",
