@@ -46,6 +46,7 @@ CREATE TABLE IF NOT EXISTS text_entries (
     poblacion           TEXT,                    -- casas / pisos / calles / plazas
     industria           TEXT,                    -- agricultura / molinos / talleres / oficios
     geografia           TEXT,                    -- situación / clima / orografía / hidrografía / límites
+    historia            TEXT,                    -- Hist. y Biog.: fundación, conquistas, biografías de hijos ilustres
     description         TEXT,                    -- residual prose (Riera occasionally adds historical or anecdotal notes)
     ocr_note            TEXT,                    -- editor's note about OCR/transcription issues for this entry, shown collapsed in the UI
     stats               JSON,                    -- {vecinos, habitantes, edificios, viviendas, albergues, …}

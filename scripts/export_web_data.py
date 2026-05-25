@@ -64,7 +64,7 @@ def main() -> None:
                org_judicial, org_civil, org_militar, org_economica,
                org_eclesiastica, servicio_publico, obras_publicas,
                instruccion_publica, poblacion, industria, geografia,
-               description, ocr_note, stats, cross_references, confidence
+               historia, description, ocr_note, stats, cross_references, confidence
         FROM text_entries
         ORDER BY title
         """
@@ -75,7 +75,7 @@ def main() -> None:
         "org_judicial", "org_civil", "org_militar", "org_economica",
         "org_eclesiastica", "servicio_publico", "obras_publicas",
         "instruccion_publica", "poblacion", "industria", "geografia",
-        "description", "ocr_note", "stats", "cross_references", "confidence",
+        "historia", "description", "ocr_note", "stats", "cross_references", "confidence",
     ]
 
     entries = []

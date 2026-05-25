@@ -207,6 +207,7 @@ function toggleExpand(tr) {
     ["poblacion",          "Població"],
     ["industria",          "Indústria"],
     ["geografia",          "Situació geogràfica i topogràfica"],
+    ["historia",           "Història i biografia"],
   ];
   const toParas = (s) => esc(s).split(/\n{2,}/).map(p => `<p>${p.replace(/\n/g, " ")}</p>`).join("");
   const sectionsHtml = SECTION_LABELS
@@ -378,7 +379,7 @@ async function boot() {
   bindFilters();
   let payload;
   try {
-    const r = await fetch("data.json?v=11");
+    const r = await fetch("data.json?v=13");
     payload = await r.json();
   } catch (e) {
     console.error(e);
