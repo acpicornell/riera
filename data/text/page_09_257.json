@@ -19,7 +19,7 @@
       "poblacion": "Ninguna particularidad ofrecen los edif. que la forman. Cuenta sobre unos 550 hab. y 166 edif., de los que 16 están habitados temporalmente y 11 inhabitados. Dista 4,2 km de Mahón.",
       "industria": "La industria única es la agrícola.",
       "geografia": "Véase el artículo referente á su ayuntamiento (Mahón).",
-      "description": "Vila menorquina al SE de l'illa, a 4,2 km de Maó. 550 habitants i 166 edificis. Diòcesi de Menorca; església parroquial dedicada a Sant Lluís Rei. Fundada al s. XVIII pels francesos sota Lluís XV.",
+      "description": null,
       "ocr_note": "Indexer captured the lemma as 'SAN LTJIS' (LTJ→LU OCR error). The pdftotext body extraction bled into adjacent entries 'SAN LUIS (Cuba)' and 'SAN LUIS (Filipinas)' which appear immediately after the Menorca article; their content has been discarded for this record.",
       "stats": {
         "habitantes": 550,

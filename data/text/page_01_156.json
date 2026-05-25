@@ -19,7 +19,7 @@
       "poblacion": "Se hallan agreg. el lugar de Consell, 12 caseríos y 350 viviendas aisladas. Cuenta 4,879 hab. y 1,557 edif. Está formada de casas de uno á tres pisos.",
       "industria": "La industria es la agricultura, pero se encuentran molinos de aceite, fabricación de aguardiente, de fideos, jabón, tejares y telares de lienzo ordinario.",
       "geografia": "Situada en la falda de un cerro, rodeada de montañas de gran altura; clima muy sano, sin embargo de que en la clase jornalera se desarrollan con facilidad las fiebres intermitentes.",
-      "description": "Vila amb ajuntament de Mallorca al peu de la Serra de Tramuntana, partit judicial d'Inca i diòcesi de Palma. Té el llogaret de Consell agregat i suma 4.879 habitants i 1.557 edificis.",
+      "description": null,
       "ocr_note": "PyMuPDF captured the lemma as 'AL ARÓ' (space inside the toponym). Cleaned to 'ALARÓ'. Body section 'Situación geográfica' is partly contaminated by bleed from a subsequent (peninsular) article — the geografia field carries only the clean Mallorca paragraph.",
       "stats": {
         "habitantes": 4879,
