@@ -1,7 +1,7 @@
 """Load Phase 3 JSON extracts into the project DuckDB.
 
-Reads every ``data/text/page_<vol>_<page>.json`` produced by
-``extract_text.py`` and inserts one row per entry into the
+Reads every ``data/text/page_<vol>_<page>.json`` produced by the
+Claude Max subagent extraction and inserts one row per entry into the
 ``text_entries`` table defined in ``db/schema.sql``.
 
 Each run fully replaces the table — the JSON files are the source of

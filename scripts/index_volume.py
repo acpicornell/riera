@@ -1002,9 +1002,9 @@ def run_embeddings_audit(indexed_entries: list[dict]) -> None:
         )
         rows.append({**e, "_body": body, "_kind": "indexed"})
 
-    # Also gather pdftotext-only rejected openers (the same candidates
-    # the audit_pdftotext.py script reports) — to look for false
-    # negatives.
+    # Also gather pdftotext-only rejected openers — openers detected
+    # by a pure regex pass over pdftotext output that our indent-based
+    # pipeline did not catch — to look for false negatives.
     rejected = _audit_pdftotext_candidates(indexed_entries)
     for r in rejected:
         rows.append({**r, "_kind": "rejected"})
