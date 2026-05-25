@@ -6,7 +6,7 @@
 # even a back/forward navigation) always fetches the live deploy.
 # Trade-off vs. 'max-age=0, must-revalidate': we lose the 304 short
 # circuit, so every visit re-downloads the full payload. The site is
-# small (data.json ~180 KB, the rest <50 KB) and the project's whole
+# small (data.json ~338 KB, the rest <60 KB) and the project's whole
 # point is showing fresh data after a push, so the cost is fine.
 
 /*.html
@@ -34,7 +34,7 @@
 #   an inline SVG data: URI; the map basemap is served by CARTO.
 # - connect-src 'self' — only fetch on the site is data.json from
 #   the same origin.
-# - external Internet Archive / Wikipedia links are navigational
+# - external BDCyL / Wikipedia / GitHub links are navigational
 #   (<a href>), not embedded resources, so they don't need CSP
 #   allowances.
 /*
