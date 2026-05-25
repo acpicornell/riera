@@ -1,0 +1,29 @@
+{
+  "vol": "05",
+  "page": 724,
+  "model": "section-parser+claude-max",
+  "entries": [
+    {
+      "title": "ISLA CABRERA (Baleares)",
+      "place_type": "isla",
+      "island": null,
+      "municipality": null,
+      "org_judicial": null,
+      "org_civil": null,
+      "org_militar": null,
+      "org_economica": null,
+      "org_eclesiastica": null,
+      "servicio_publico": null,
+      "obras_publicas": null,
+      "instruccion_publica": null,
+      "poblacion": null,
+      "industria": null,
+      "geografia": null,
+      "description": "1SL GEOGRÁFICO-ESTADÍSTICO ISL 695 lia al SO. del cabo de Salinas, distante sólo 14 k de él, y ocupada una parte de este es- ció que forma un canal de poco fondo, por P jglita Conejera y otros islotes que marcan orfpctamente el enlace de entrambas. Su Wyor longitud de NE. á SO. es de 7 k., y superficie, comprendiendo las citadas isli- tas de 20 k. cuadrados. Nada notable hay en ella á no ser el puerto que lleva su mismo nombre bastante abrigado y de buen fondo; en el resto de su perímetro sólo hay calas in- significantes.",
+      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
+      "stats": null,
+      "cross_references": [],
+      "confidence": "low"
+    }
+  ]
+}

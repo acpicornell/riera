@@ -34,6 +34,38 @@
         "Conejera Grande"
       ],
       "confidence": "high"
+    },
+    {
+      "title": "SAN ANTONIO ABAD",
+      "place_type": "villa",
+      "island": "Ibiza",
+      "municipality": "Sant Antoni de Portmany",
+      "org_civil": "Corresponde á la prov. de Baleares, y al dist. de Ibiza para las elecciones de diputados provinciales y las de Córtes.",
+      "org_militar": "C. G. de Baleares y G. M. de Palma. Hay destacamento de Carabineros del Reino, perteneciente á la Comandancia de su prov., y en la parte marítima corresponde al departamento de Cartagena y prov. marítima de Ibiza.",
+      "org_eclesiastica": "Pertenece á la dióc. de Ibiza, que según el Concordato de 1851 se ha de unir á la de Mallorca, y tiene una iglesia parroquial, bajo la advocación de San Antonio, cuyo curato es de la categoría de 2.° ascenso.",
+      "org_judicial": "Hállase adscrita al part. jud. de Ibiza y á las aud. de lo criminal y territ. de Palma, distando 10 k. de la primera de dichas pob.",
+      "org_economica": "Para el pago de sus impuestos depende de la Admon. de Hacienda de su prov.",
+      "servicio_publico": "Recibe y expide la corr. por en. m. de Alicante á Valencia y Barcelona á Ibiza y Palma de Mallorca.",
+      "obras_publicas": "Para verificar sus transportes y sostener sus relaciones con las pob. limítrofes, cuenta con diferentes caminos vecinales, en regular estado de conservación.",
+      "instruccion_publica": "Costeadas con fondos del municipio hay las escuelas necesarias para los dos sexos, perfectamente atendidas y á las que asiste un número de alumnos en relación con el de hab.",
+      "industria": "Aunque la ind. que más domina en esta localidad es la agrícola, se ejercen por algunos de sus moradores todas aquellas profesiones y of. mecánicos de mayor necesidad.",
+      "poblacion": "Los 93 edif. que la constituyen, distribuidos en algunas calles y plazas irregulares, no se recomiendan ni por sus bellezas artísticas, ni por los recuerdos históricos que conservan; construcciones modestas, así los antiguos, como los de época más reciente, responden, mejor ó peor, á las necesidades de sus moradores. La iglesia parroquial y casa en que el ayunt. celebra sus reuniones, son edif. á propósito para el objeto á que están destinados. Cuenta con los establecimientos necesarios para la venta de los artículos de primera necesidad; está el vecindario perfectamente abastecido de aguas para todos los usos, y celebra la principal festividad el día del Patrono del pueblo.",
+      "geografia": "Entre montañas, libre á la influencia de todos los vientos, disfrutando de cielo alegre y clima sumamente sano, encuéntrase situado este l., cuyo tér. municipal confina por los cuatro puntos cardinales con los de Santa Eulalia, San José y el mar, comprendiendo en el espacio que éstos abrazan algunos montes en regular estado de población, pertenecientes al común de vec. unos y á propiedad particular otros. También se encuentra en su jurisdicción el puerto conocido con el nombre de Puerto Magno. Situado al O. y á no mucha distancia de la v. que le da nombre, este puerto cuya boca tiene unas dos millas de anchura; la costa es de mediana elevación y bien poblada de árboles, da comienzo en el cabo Negrete. Al SE. se encuentra el cabo Blanco, de regular altura. A media milla se encuentran las Puntas de las Cuevas Blancas. Entre éstas y aquél hay una cala de mediana capacidad, denominada de Moros, con buen fondeadero para el verano. La costa del SO. comienza en la cala de la Balsa; mediando una punta rasa, se encuentra la cala del Aceite, y al ESE. la punta de la Fuente. Constituye el abra de la parte exterior del puerto la punta de Revira y el cabo de Nono, si bien en gran parte le cubren la isla llamada Conejera Grande. Su entrada no ofrece inconveniente alguno; en verano muy bueno para buques de todo porte. No sucede lo mismo en invierno, á consecuencia de la subida del mar y los continuos vientos del N. y NO. El terreno de la v. es de mediana calidad, y las prod. generales consisten en cereales, legumbres, frutas, hortalizas y pastos; se mantiene algún ganado lanar, vacuno, cabrío, de cerda y el necesario para las faenas agrícolas; hay caza de pelo y pluma, y la pesca es tan abundante como exquisita y variada en el mar.",
+      "stats": {
+        "habitantes": 3864,
+        "edificios": 755,
+        "caserios_y_grupos_agregados": 42,
+        "inhabitados": 22
+      },
+      "cross_references": [
+        "Santa Eulalia",
+        "San José",
+        "Puerto Magno",
+        "Cabo Negrete",
+        "Cabo Blanco",
+        "Conejera Grande"
+      ],
+      "confidence": "high"
     }
   ]
 }

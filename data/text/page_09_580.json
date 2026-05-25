@@ -1,0 +1,29 @@
+{
+  "vol": "09",
+  "page": 580,
+  "model": "section-parser+claude-max",
+  "entries": [
+    {
+      "title": "SANTA MARGARITA",
+      "place_type": null,
+      "island": "Menorca",
+      "municipality": "Maó",
+      "org_judicial": null,
+      "org_civil": "Corresponde á l a prov. de\nBarcelona, al dist. de Igualada para las elecciones de diputados provinciales y al de Villanueva y Geltrú para las de Córtes.-",
+      "org_militar": null,
+      "org_economica": null,
+      "org_eclesiastica": null,
+      "servicio_publico": null,
+      "obras_publicas": null,
+      "instruccion_publica": null,
+      "poblacion": null,
+      "industria": null,
+      "geografia": null,
+      "description": "por los 1. de Els Monjes, La Rápita y 58 cas. y grupos, edif., viv. y alb. ais. La casa con- sistorial está en el referido 1. de Els Monjos. Cuenta con 1,114 hab. y 194edif., délos que 2 están habitados temporalmente y 20 inha- bitados.- Org. civ. Corresponde á l a prov. de Barcelona, al dist. de Igualada para las elec- ciones de diputados provinciales y al de Villa- nueva y Geltrú para las de Córtes.-Oy. mil. C. G. de Cataluña y G. M. de Barcelona.-Or^. ecle. Pertenece á la dióc. de Barcelona, al ar- ciprestazgo de Villafranca del Panadés. Como quiera que este ayunt. le componen diversas enti",
+      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
+      "stats": null,
+      "cross_references": [],
+      "confidence": "low"
+    }
+  ]
+}

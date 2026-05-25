@@ -4,37 +4,26 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "SAN JUAN DE CARBONELL",
-      "place_type": "lugar",
-      "island": "Menorca",
-      "municipality": "Es Mercadal",
-      "org_judicial": "Hállase adscrita al part. jud. de Inca y á las aud. de lo criminal y territ. de Palma.",
-      "org_civil": "Corresponde á la prov. de Baleares y contribuye, con su ayunt., para las elecciones de diputados provinciales y las de Cortes.",
-      "org_militar": "C. G. de Baleares y G. M. de Palma.",
-      "org_economica": "Para el pago de sus impuestos depende de la Delegación de Hacienda de su prov.",
-      "org_eclesiastica": "Pertenece á la dióc. de Mallorca, al arciprestazgo de Inca, y para sus atenciones religiosas se sirve de la iglesia más inmediata.",
-      "servicio_publico": "Recibe y expide la corr. por en. m. de Barcelona, Valencia y Alicante á Palma de Mallorca.",
-      "obras_publicas": "Utiliza los caminos que cruzan por su tér. para sus transportes y arrastres.",
-      "instruccion_publica": "La escuela radica en la cabecera de su ayunt.",
-      "poblacion": "Ninguna importancia ofrecen los edif. que la forman.",
-      "industria": "La única ind. de esta localidad es la agrícola.",
-      "geografia": "(Véase el artículo referente á su ayunt.).",
-      "description": "Llogaret agregat a l'ajuntament des Mercadal, a Menorca, situat a 5,5 km del nucli municipal; era un petit nucli rural dedicat a l'agricultura, sense escola pròpia ni església parroquial.",
-      "ocr_note": "Title OCR error: 'OARBONELL' should read 'CARBONELL' (C misread as O). Section markers garbled in source as 'Oy. civ.', 'Or^. mil.', 'Or^. ecle.', 'Or^. jud.', 'O/y. econ.' for 'Org. civ.', 'Org. mil.', etc. Body refers to ayunt. de Mercadal (Es Mercadal, Menorca), though eclesiastical org references dióc. de Mallorca / arciprestazgo de Inca, which appears to be a Riera source error since Menorca had its own diocese.",
-      "stats": {
-        "habitantes": 90,
-        "edificios": 35,
-        "casas": null,
-        "caserios_y_grupos": null
-      },
-      "cross_references": [
-        "Véase el artículo referente á su ayunt. (Mercadal)"
-      ],
-      "confidence": "high",
-      "vol": "09",
-      "page": 193,
-      "page_file": "data/text/page_09_193.json",
-      "title_original": "SAN JUAN DE OARBONELL"
+      "title": "SAN JUAN DE OARBONELL",
+      "place_type": null,
+      "island": null,
+      "municipality": null,
+      "org_judicial": null,
+      "org_civil": "Corresponde á la prov.\nde Baleares y contribuye, con su ayunt., para\nlas elecciones de diputados provinciales y las\nde Cortes.-",
+      "org_militar": null,
+      "org_economica": null,
+      "org_eclesiastica": null,
+      "servicio_publico": null,
+      "obras_publicas": null,
+      "instruccion_publica": null,
+      "poblacion": null,
+      "industria": null,
+      "geografia": null,
+      "description": "al ayunt. de Mercadal, del que dista 5'5 k. Cuenta sobre unos 90 hab. y 35 edif., de los que 4 están habitados temporalmente y 8 in- habitados.-Oy. civ. Corresponde á la prov. de Baleares y contribuye, con su ayunt., para las elecciones de diputados provinciales y las de Cortes.-Or^. mil. C. G. de Baleares y G. M. de Palma. - Org. ecle. Pertenece á la dióc. de Mallorca, al arciprestazgo de Inca, y para sus atenciones religiosas se sirve de la iglesia más inmediata.-Or^. jud. Hállase adscrita al part. jud. de Inca y á las aud. de lo criminal y territ. de Palma.-O/y. econ. Para el pago de sus im",
+      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
+      "stats": null,
+      "cross_references": [],
+      "confidence": "low"
     }
   ]
 }
