@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "SANTA M A R I A",
+      "title": "SANTA MARIA",
       "place_type": "villa",
       "island": "Mallorca",
       "municipality": "Santa Maria del Camí",
@@ -35,7 +35,8 @@
       "cross_references": [
         "Santa Maria del Camí"
       ],
-      "confidence": "medium"
+      "confidence": "medium",
+      "title_original": "SANTA M A R I A"
     }
   ]
 }
