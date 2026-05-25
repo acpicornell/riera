@@ -785,6 +785,16 @@
   },
   {
     "vol": "07",
+    "page": 1091,
+    "title": "PALMA",
+    "island": "Mallorca",
+    "lon": 2.65015754644235,
+    "lat": 39.56932607935965,
+    "matched": "Palma",
+    "source": "translated"
+  },
+  {
+    "vol": "07",
     "page": 206,
     "title": "MENORCA",
     "island": "Menorca",
@@ -1209,7 +1219,7 @@
   {
     "vol": "12",
     "page": 385,
-    "title": "MALLORCA (Obispado de) (addicional)",
+    "title": "MALLORCA (Obispado de)",
     "island": "Mallorca",
     "lon": 2.9489,
     "lat": 39.6953,

@@ -8,7 +8,7 @@
       "place_type": "cabo",
       "island": "Menorca",
       "municipality": null,
-      "description": "Está situado en la costa NE. de la isla de Menorca, formando una punta alta y peñascosa que se introduce bastante mar adentro. Es peligrosoel doblarlo por estar rodeado de escollos. Corresponde al dist. marítimo de Cindadela, prov. de Mahon y departamento de Cartagena",
+      "description": "Está situado en la costa NE. de la isla de Menorca, formando una punta alta y peñascosa que se introduce bastante mar adentro. Es peligroso el doblarlo por estar rodeado de escollos. Corresponde al dist. marítimo de Cindadela, prov. de Mahon y departamento de Cartagena",
       "cross_references": [],
       "confidence": "high"
     },
@@ -17,7 +17,7 @@
       "place_type": "cabo",
       "island": "Cabrera",
       "municipality": null,
-      "description": "Encuéntrase en la isla de Cabrera, otra del grupo de las Baleares, y es accidentado comotoda aquella isla. Corresponde al dist. de Cabrera, prov. de Mallorca y departamento de Cartagena",
+      "description": "Encuéntrase en la isla de Cabrera, otra del grupo de las Baleares, y es accidentado como toda aquella isla. Corresponde al dist. de Cabrera, prov. de Mallorca y departamento de Cartagena",
       "cross_references": [],
       "confidence": "high"
     },
@@ -26,7 +26,7 @@
       "place_type": "cabo",
       "island": "Mallorca",
       "municipality": null,
-      "description": "Está situado en lacosta NE. de la isla de Mallorca con inclinación al N., entrando bastante mar adentro. Es alto y peñascoso; corresponde al dist. marítimo de 2.a clase de Alcudia, prov. de Mallorca y departamento de Cartagena",
+      "description": "Está situado en la costa NE. de la isla de Mallorca con inclinación al N., entrando bastante mar adentro. Es alto y peñascoso; corresponde al dist. marítimo de 2.a clase de Alcudia, prov. de Mallorca y departamento de Cartagena",
       "cross_references": [],
       "confidence": "high"
     },
@@ -46,7 +46,7 @@
       "poblacion": null,
       "industria": null,
       "geografia": null,
-      "description": "En el tér. jurisdiccional dela v. de Pollenza, siendo la punta más avanzada por la parte NE. de la isla de Mallorca; corresponde al dist. marítimo de 2.a clase de Soller, prov. de Mallorca y departamento de Cartagena. En este cabo, parte N. de la isla, á 60 m. de la orilla del mar y á los 39° 57' 45\" latitud N. y los 9o 27' 8\" longitud E. del meridiano de San Fernando, está situado un faro con aparato de los de 2.° órden, cuya luz es giratoria con eclipses de 30 en 30 segundos: el foco alcanzará á una distancia de 19 millas, hallándose á la altura de 180^5 m. sobre el nivel del mar y á l",
+      "description": "En el tér. jurisdiccional de la v. de Pollenza, siendo la punta más avanzada por la parte NE. de la isla de Mallorca; corresponde al dist. marítimo de 2.a clase de Soller, prov. de Mallorca y departamento de Cartagena. En este cabo, parte N. de la isla, á 60 m. de la orilla del mar y á los 39° 57' 45\" latitud N. y los 9° 27' 8\" longitud E. del meridiano de San Fernando, está situado un faro con aparato de los de 2.° órden, cuya luz es giratoria con eclipses de 30 en 30 segundos: el foco alcanzará á una distancia de 19 millas, hallándose á la altura de 180'5 m. sobre el nivel del mar y á l",
       "ocr_note": "OCR llegible; títol presenta variant 'óFORMENTON' (sense espai). Coordenades referides al meridià de San Fernando (Cadis), conforme a l'època.",
       "stats": {
         "latitud": "39° 57' 45\" N",
