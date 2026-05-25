@@ -29,25 +29,25 @@
     },
     {
       "title": "MENORCA (Obispado de)",
-      "place_type": null,
+      "place_type": "obispado",
       "island": "Menorca",
-      "municipality": "Maó",
+      "municipality": "Ciudadela",
       "org_judicial": null,
       "org_civil": null,
       "org_militar": null,
       "org_economica": null,
-      "org_eclesiastica": null,
+      "org_eclesiastica": "Este obispado es sufragáneo del arz. de Valencia, comprende única y exclusivamente la isla de su nombre. En Ciudadela reside la silla episcopal y la catedral, cuyas dignidades y demás eclesiásticos son los que determina el Concordato de 1851.\n\nEn Ciudadela existe: la Santa iglesia Catedral; el Seminario Conciliar, en el edif. del suprimido convento de Agustinos, bajo la advocación de San Ildefonso; un convento de monjas de Santa Clara; Hospital y casa de expósitos asistidos por las hermanas Terciarias Carmelitas; Conferencias de San Vicente de Paul, de caballeros y de señoras; Escuelas Dominicales; una Sociedad de socorros mutuos de Santa Escolástica, para hombres; Sociedad de San Luis Gonzaga, de jóvenes; Coro ó escolanía de niños de la Inmaculada Concepción y otras diferentes cofradías religiosas consagradas á la Santísima Virgen y Santos. En Mahón, el convento de religiosas Concepcionistas; un hospital y casa de Expósitos, con Hermanas de la Caridad ó sea de San Vicente de Paúl; Residencia de PP. Jesuítas; Casa matriz de Hermanas Terciarias de San Vicente de Paúl, de señores y señoras; Escuelas Católicas de Santa Cruz, Niño Jesús y San Luis para contrarestar el Protestantismo; Escuelas dominicales; Corte Angélica de San Luis Gonzaga para jóvenes y muchas otras cofradías. En Alayor, un hospital con Hermanitas Terciarias del Carmen. En Fornells, Hermanas Carmelitas.",
       "servicio_publico": null,
       "obras_publicas": null,
       "instruccion_publica": null,
       "poblacion": null,
       "industria": null,
       "geografia": null,
-      "description": "Este ob.,que es sufragáneo del arz. de Valencia, compren- de única y exclusivamente la isla de sunom- bre. En Cindadela reside la silla episcopal y la catedral, cuyas dignidades y demás ecle- siásticos son los que determina el Concordato de 1851.Por el estado que á continuación in- sertamos puede verse el número de parroquias que comprende este ob., asícomo sus advoca- ciones y categorías. RELACION DE LOS CURATOS DELA DIÓCESIS DE MENORCA CON EXPRESION DE SU ADVOCACION Y CATEGORÍA. PUEBLOS. ADVOCACIONES. Ciudadela.. Mahon. Mayon Perrería Fornells Mercadal San Luis San Cristóbal. . . . San Cleme",
-      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
+      "description": null,
+      "ocr_note": "Article in Tom VII p206. Original carries a 3-column table (pueblo / advocación / categoría) listing the parishes of the diocese — omitted from the displayed text because pdftotext flattens it into an unreadable column sequence and several categoría values use OCR-prone ditto marks. The PDF facsimile remains the authoritative source for the table.",
       "stats": null,
       "cross_references": [],
-      "confidence": "low"
+      "confidence": "high"
     }
   ]
 }
