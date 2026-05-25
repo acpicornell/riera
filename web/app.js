@@ -379,7 +379,7 @@ async function boot() {
   bindFilters();
   let payload;
   try {
-    const r = await fetch("data.json?v=19");
+    const r = await fetch("data.json?v=20");
     payload = await r.json();
   } catch (e) {
     console.error(e);
@@ -536,7 +536,7 @@ function renderStats() {
   }
   densityRows.sort((a, b) => b[1] - a[1]);
   $("stats-chart-density").innerHTML = svgBars(
-    densityRows.slice(0, 25).map(r => [r[0], +r[1].toFixed(2), r[2]]),
+    densityRows.slice(0, 50).map(r => [r[0], +r[1].toFixed(2), r[2]]),
     { labelW: 220, valueSuffix: " hab/edif" }
   );
 
