@@ -6,21 +6,17 @@ postal, municipal, marítimo y eclesiástico de España y sus posesiones
 de ultramar* (Barcelona, Imprenta y librería religiosa y científica
 del heredero de Pablo Riera, 1881–1887, 12 vols.).
 
-Riera is the immediate successor to Pascual Madoz's *Diccionario*
-(1845–1850) and the last great pre-twentieth-century geographical
-dictionary of Spain. It records the country at the height of the
-Restoration: post-1857 disentailment, after the 1873–1874 First
-Republic, with the railway network largely completed, civil registry
-in place, and the modern municipal map essentially settled. For the
-Balearic Islands it captures the demographic shift between the Madoz
-census and the late-century filoxera / textile-industry transitions.
+Riera records the country at the height of the Restoration:
+post-1857 disentailment, after the 1873–1874 First Republic, with
+the railway network largely completed, civil registry in place, and
+the modern municipal map essentially settled. For the Balearic
+Islands the dictionary captures the demographic state of the islands
+shortly before the *filoxera* (1891) and the first wave of textile
+and tourist transformations.
 
 This repository extracts every article relating to Mallorca, Menorca,
 Eivissa, Formentera and Cabrera, structures the data into a relational
-schema, and (eventually) publishes a static website for consultation —
-mirroring the editorial choices and pipeline shape of the sibling
-projects [`../minano`](../minano) (Miñano, 1826–1829) and
-[`../madoz`](../madoz) (Madoz, 1845–1850).
+schema, and publishes a static website for consultation.
 
 ## Coverage
 
@@ -28,60 +24,69 @@ projects [`../minano`](../minano) (Miñano, 1826–1829) and
 |---|---|
 | Volumes processed | 12 / 12 (1881–1887) |
 | PDF pages indexed (dictionary body only) | 12 254 |
-| Total articles detected | **25 520** |
-| **Balearic articles detected** | **133** |
-| Balearic ratio | 0.52 % |
-| Public website | not yet built |
+| Total articles detected | ~25 520 |
+| **Balearic articles extracted** | **123** |
+| Balearic ratio | ~0.48 % |
+| DB schema | 12 narrative sections + `stats` JSON + `cross_references` |
+| Public website | static site under `web/` (HTML + CSS + JS vanilla + one JSON file) |
 | License | AGPL-3.0-or-later (code); original text in the public domain (CC0 per BDCyL) |
 
 ### Per-volume breakdown
 
-| Tom | PDF pp. | Body pp. | Articles | Balearic | Coverage (lemma range) |
-|:---:|:---:|:---:|:---:|:---:|---|
-| I | 1 021 | 24 – 1008 | 1 600 | 7 | A – AZ |
-| II | 1 071 | 11 – 1061 | 1 614 | 9 | B – BU |
-| III | 1 259 | 12 – 1247 | 2 287 | **27** | C – CUZ |
-| IV | 943 | 12 – 931 | 1 622 | 14 | D – F |
-| V | 1 239 | 9 – 1230 | 2 088 | 18 | G – J |
-| VI | 1 141 | 12 – 1130 | 1 581 | 9 | L – LL |
-| VII | 1 199 | 11 – 1191 | 2 503 | 11 | M – O |
-| VIII | 1 047 | 11 – 1038 | 2 191 | 9 | P |
-| IX | 1 197 | 11 – 1185 | **5 437** | 17 | S (saint-prefixed villages) |
-| X | 1 069 | 11 – 1053 | 1 767 | 4 | S – T |
-| XI | 997 | 51 – 988 | 1 546 | 4 | V – Z |
-| XII | 509 | 15 – 460 | 1 284 | 4 | Suplemento |
+| Tom | Year | PDF pp. | Balearic entries | Lemma range |
+|:---:|:---:|:---:|:---:|---|
+| I    | 1881 | 1 021 | 7  | A — AZ |
+| II   | 1882 | 1 071 | 7  | B — BU |
+| III  | 1882 | 1 259 | 23 | C — CUZ |
+| IV   | 1883 | 943   | 13 | D — F |
+| V    | 1884 | 1 239 | 17 | G — J |
+| VI   | 1884 | 1 141 | 11 | L — LL |
+| VII  | 1885 | 1 199 | 9  | M — O |
+| VIII | 1885 | 1 047 | 7  | P |
+| IX   | 1886 | 1 197 | 19 | S (saint-prefixed) |
+| X    | 1886 | 1 069 | 4  | S — T |
+| XI   | 1887 | 997   | 3  | V — Z |
+| XII  | 1887 | 509   | 3  | Supplement |
 
 Tom III is the densest Balearic volume — it absorbs every entry whose
-lemma begins with C (including the 13 capes recorded as autonomous
-entries: CABO BAJOLÍ, CABO BLANCO of Mallorca, CABO BLANCO of Ibiza,
+lemma begins with C, including the 13 capes recorded as autonomous
+entries (CABO BAJOLÍ, CABO BLANCO of Mallorca, CABO BLANCO of Ibiza,
 CABO CABALLERÍA, CABO CALAT FIGUERA, CABO CAMPANICH, CABO DARTUTX,
 CABO DE PERA, CABO FORMENTOR, CABO LAMOLA, CABO PINAR, CABO PONTINAT,
 CABO SALINAS), plus the inhabited municipalities CALONGE, CALVIÁ,
-CAMPANET, CAMPOS, CAPDEPERA, CIUDADELA, CONSELL, COSTITX. Tom IX is
-the largest volume by raw article count (5 437) because it carries all
-the *San* / *Santa* / *Santo* parishes of Spain, including the
-Eivissan parish villages (SAN ANTONIO ABAD, SAN JOSE, SAN JUAN
-BAUTISTA, SAN MIGUEL DE BALANZAT, SANTA EULALIA…) and Menorcan
-SAN CRISTÓBAL.
+CAMPANET, CAMPOS, CAPDEPERA, CIUDADELA, CONSELL, COSTITX. Tom IX
+contains all the *San* / *Santa* / *Santo* parishes of Spain,
+including the Eivissan parish villages (SAN ANTONIO ABAD, SAN JOSE,
+SAN JUAN BAUTISTA, SANTA EULALIA…) and Menorcan SAN CRISTÓBAL.
 
 ### Distribution by island and place type
 
-Of the 133 Balearic articles, 75 cross-validate against the NGIB
-(Nomenclàtor Geogràfic de les Illes Balears) gazetteer:
-
-| Island | Count |
+| Island | Entries |
 |---|:---:|
-| Mallorca | 60 |
-| Menorca | 9 |
-| Eivissa | 5 |
-| Formentera | 1 |
-| (no NGIB match — capes/islets/lagoons under Castilian forms) | 58 |
+| Mallorca | 86 |
+| Menorca | 21 |
+| Ibiza | 11 |
+| Cabrera | 2 |
+| Formentera | 2 |
+| Baleares (supramunicipal) | 1 |
+| **Total** | **123** |
 
-The 58 NGIB-unmatched entries are mostly maritime accidents
-(CABO X, ISLA X, ISLETA X, PUERTO X) under Riera's Castilian spelling,
-which differs structurally from NGIB's modern Catalan (CABO PINAR vs
-*Cap de Pinar*, ISLETA DEL AIRE vs *l'Illa de l'Aire*). A small
-override table will resolve them in stage 3.
+All 123 entries carry coordinates resolved in three categories:
+
+- **NGIB translation table** (~83 entries) — Castilian-to-Catalan
+  mapping against the *Nomenclàtor Geogràfic de les Illes Balears*
+  (Govern de les Illes Balears).
+- **Manual cape table** (~27 entries) — hand-curated lat/lon for
+  the 13 mallorcan + 7 menorcan + 7 ibizan capes whose NGIB form
+  (*Cap de Pinar*, *Cap de Formentor*…) diverges structurally from
+  Riera's Castilian (*Cabo Pinar*, *Cabo Formentor*).
+- **Island centroids** (~13 entries) — the genuinely-supramunicipal
+  articles (BALEARES, ISLA DE MALLORCA / MENORCA / IBIZA, the two
+  diocesan articles in tom XII).
+
+By place type: 55 villas, 25 lugares, 14 cabos, 7 islas, 5 agregados,
+4 ciudades, 3 isletas, 2 ayuntamientos, 1 aldea, 1 archipiélago,
+1 islotes, 1 santuario, 1 obispado.
 
 ## Source
 
@@ -126,8 +131,8 @@ the batch.
 ### Editorial scope (from Riera's own prologue)
 
 Riera explicitly bases his dictionary on the 1877 population census
-and excludes places that Madoz had catalogued but no longer existed
-as standalone population entities by 1881:
+and excludes places that had ceased to exist as standalone
+population entities by 1881:
 
 > *"Como base para nuestro DICCIONARIO hemos tomado el censo de
 > población de 1877, publicado por el Instituto Geográfico-
@@ -144,84 +149,185 @@ lives at S (not V):
 > *"hemos colocado los pueblos en la inicial con que principia su
 > verdadera denominación ó las con que generalmente se les conoce."*
 
-These two rules explain the 5–6× gap with Madoz's Balearic coverage:
+For the Balearic Islands, two consequences:
 
-| Work | Balearic articles | Per-volume |
-|---|:---:|---|
-| Miñano (1826–1829, 11 vols.) | ~ 182 | ~ 16 |
-| Madoz (1845–1850, 16 vols.) | ~ 700 | ~ 44 |
-| **Riera (1881–1887, 12 vols.)** | **133** | **~ 11** |
-
-Madoz exhaustively catalogued every *predio*, *alquería*, *cala*,
-*cabo*, *atalaya* and *islote*; Riera includes only inhabited places
-plus a small set of major coastal features (the 13 *cabos* in tom
-III, the islands of Cabrera / Dragonera / Espalmador / Espardell,
-the Eivissan parishes and Menorcan villages). The hundreds of
-Mallorcan *Son X* possessions Madoz listed are absent from Riera:
-the only `SON X` entries in the entire dictionary are **SON SARDINA**
-(Mallorca, agreg. al ayunt. de Palma) and **SON SERVERA** (now an
-independent municipality), both correctly detected by the indexer.
+- *La Pobla*, *La Vileta*, *La Bonanova*, *La Alquería Blanca* live
+  at L, not P, A or B. *San Antonio Abad*, *San Joan Bautista*,
+  *Santa Eulalia*, *Santa María* live at S, not A, J, E or M. The
+  corpus is scattered across all twelve volumes, never concentrated
+  in any single one.
+- The hundreds of Mallorcan *Son X* possessions that earlier
+  dictionaries catalogued exhaustively are absent: the only `SON X`
+  entries in the entire dictionary are **SON SARDINA** (agregado al
+  ayunt. de Palma) and **SON SERVERA** (independent municipality),
+  both correctly detected by the indexer.
 
 ## Pipeline
 
-The extraction is a four-stage pipeline. All stages are deterministic
-except the planned Anthropic-model call in stage 2; the model output
-will be checked into the repository as JSON so the database and
-website can be rebuilt without re-spending tokens.
+The extraction is a five-stage pipeline. The first three stages are
+deterministic; stages 4 and 5 use Anthropic's Claude (via the Claude
+Max subscription — never the paid API). All outputs are checked into
+the repository as JSON / DuckDB so the database and website rebuild
+without re-spending tokens.
 
-1. **OCR ingestion** (`scripts/fetch_volume.py`).
-   Download per-volume PDFs from BDCyL and run `pdftotext -raw` to
-   extract plain text. The text artefact under `data/txt/tomoNN.txt`
-   is kept for grep / inspection; it is *not* the source of truth for
-   the indexer.
+### Stage 1 — OCR ingestion (`scripts/fetch_volume.py`)
 
-2. **Article detection by INDENT** (`scripts/index_volume.py`).
-   Riera's print layout uses a typographic convention that
-   `pdftotext` discards: every entry's first line is indented
-   ~10-12 pt to the right of the body-text left margin. The indexer
-   uses PyMuPDF to read each line's `x0` coordinate, recovers the
-   left-column and right-column body baselines from the bimodal x0
-   distribution, and flags as an article opener every line whose x0
-   exceeds its column's baseline by ≥ 5 pt **and** whose lemma
-   matches `^[A-Z]{2,}` **and** whose first 70 chars contain a
-   `.—` / `. —` separator. Internal section headers (Organización
-   judicial / civil / militar / económica / eclesiástica, Servicio
-   público, Obras públicas, Instrucción pública, Población, Artes,
-   Situación, Historia) share the indent but begin with TitleCase, so
-   they are filtered out by an exclusion list rather than by
-   re-analysing the indent.
+Download per-volume PDFs from BDCyL and run `pdftotext -raw` to
+extract plain text. The text artefact under `data/txt/tomoNN.txt`
+is kept for grep / inspection; it is *not* the source of truth for
+the indexer.
 
-   The indent signal recovers ~30 % more articles than a pure text
-   regex on `pdftotext -raw` output, because the visual indent is a
-   property of the print rather than of the text and survives OCR
-   errors that break the textual `.—` pattern. It also lets the
-   indexer auto-crop front matter (introductions, abbreviation
-   tables, dedicatory texts) and trailing appendices (plate indexes,
-   *Cuba*, *Puerto Rico*) by detecting the first and last contiguous
-   block of pages where ≥ 2 indented all-caps openers carry a
-   place-type marker.
+### Stage 2 — Article detection by INDENT (`scripts/index_volume.py`)
 
-3. **Balearic classification.**
-   An article is Balearic iff its body's HEAD (first 40 lines, opener
-   line excluded) contains at least one unambiguous Balearic token —
-   one of `Mallorca`, `Menorca`, `Ibiza`, `Iviza`, `Eivissa`,
-   `Formentera`, `Cabrera`, `Baleares`, `Mahón`, `Ciudadela`,
-   `Palma de Mallorca`. Long entries (≥ 25 body lines) need ≥ 2 hits
-   to avoid false positives from peninsular cities that mention
-   Baleares once in an audiencia-territorial roster (BARCELONA,
-   CARTAGENA, VALENCIA…). The detector deliberately rejects place
-   names like *Alcudia*, *Andratx*, *Felanitx*, *Manacor* and *Inca*
-   from the token list — they all have peninsular homonyms or appear
-   in peninsular articles as cross-references (parishes named *anejo
-   de la parroquial de Alcudia*).
+Riera's print layout uses a typographic convention that `pdftotext`
+discards: every entry's first line is indented ~10–12 pt to the right
+of the body-text left margin. The indexer uses PyMuPDF to read each
+line's `x0` coordinate, recovers the left-column and right-column
+body baselines from the bimodal x0 distribution, and flags as an
+article opener every line whose x0 exceeds its column's baseline by
+≥ 5 pt **and** whose lemma matches `^[A-Z]{2,}` **and** whose first
+70 chars contain a `.—` / `. —` separator.
 
-4. **LLM extraction** *(TODO)*. Each Balearic article will be sent
-   to Claude Opus 4.7 along with surrounding context, returning a
-   structured JSON per article with title, place_type, island,
-   municipality, the nine-section administrative template, stats
-   and cross-references. The output will be loaded into a DuckDB
-   database (`db/riera.duckdb`, schema in `db/schema.sql`) and
-   exported as a single `web/data.json` consumed by a static site.
+Internal section headers (*Organización judicial / civil / militar /
+económica / eclesiástica*, *Servicio público*, *Obras públicas*,
+*Instrucción pública*, *Población*, *Artes*, *Situación*, *Historia*)
+share the indent but begin with TitleCase, so they are filtered out
+by an exclusion list rather than by re-analysing the indent.
+
+The indent signal recovers ~30 % more articles than a pure text
+regex on `pdftotext -raw` output, because the visual indent is a
+property of the print rather than of the text and survives OCR
+errors that break the textual `.—` pattern. It also lets the
+indexer auto-crop front matter (introductions, abbreviation
+tables, dedicatory texts) and trailing appendices (plate indexes,
+*Cuba*, *Puerto Rico*) by detecting the first and last contiguous
+block of pages where ≥ 2 indented all-caps openers carry a
+place-type marker.
+
+### Stage 3 — Balearic classification (`scripts/index_volume.py`)
+
+An article is Balearic iff its body's HEAD (first 40 lines, opener
+line excluded) contains at least one unambiguous Balearic token —
+one of `Mallorca`, `Menorca`, `Ibiza`, `Iviza`, `Eivissa`,
+`Formentera`, `Cabrera`, `Baleares`, `Mahón`, `Ciudadela`,
+`Palma de Mallorca`. Long entries (≥ 25 body lines) need ≥ 2 hits
+to avoid false positives from peninsular cities that mention
+Baleares once in an audiencia-territorial roster (BARCELONA,
+CARTAGENA, VALENCIA…). The detector deliberately rejects place
+names like *Alcudia*, *Andratx*, *Felanitx*, *Manacor* and *Inca*
+from the token list — they all have peninsular homonyms or appear
+in peninsular articles as cross-references (parishes named *anejo
+de la parroquial de Alcudia*).
+
+A manual exclusion list (`data/manual_exclusions.txt`) overrides
+the body-token heuristic for a handful of well-documented body-bleed
+false positives — chiefly Cuban / Filipino entries on the same page
+as a Balearic neighbour, and page-continuation headers (`SANTA
+M A R I A` printed with letter-spaced typography) that PyMuPDF
+mistakes for fresh openers.
+
+### Stage 4 — LLM extraction + DB load + web export
+
+The output of Stage 3 is a per-volume JSONL under `data/index/`
+listing each Balearic article with its lemma, body opener and
+fuzzy NGIB match. From there:
+
+- **`scripts/refresh_text.py`** reconciles `data/index/*.jsonl` ↔
+  `data/text/page_*.json`. New articles get a minimal placeholder
+  derived from the parser; deleted lemmas are pruned; existing
+  rich entries are preserved.
+- **Article descomposition.** Each Balearic article is read by
+  Anthropic Claude (Max subscription, via subagent dispatch or
+  in-session work — never the paid API) and broken down into the
+  twelve-section template that Riera himself uses:
+    - `org_judicial` · `org_civil` · `org_militar` · `org_economica`
+      · `org_eclesiastica`
+    - `servicio_publico` · `obras_publicas` · `instruccion_publica`
+    - `poblacion` · `industria` · `geografia` · `historia`
+    - plus a free-form `description`, a `stats` JSON
+      (habitantes, edificios, habitados_temporalmente,
+      inhabitados, caserios_y_grupos, presupuesto_municipal_pts…)
+      and a `cross_references` list.
+- **`scripts/load_text.py`** writes the per-page JSON into a
+  DuckDB database (`db/riera.duckdb`, schema `db/schema.sql`).
+- **`scripts/enrich_coords.py`** resolves lat/lon via NGIB
+  translation table + manual cape coordinates + island centroids
+  → `data/coords.json`.
+- **`scripts/export_web_data.py`** joins everything and produces
+  `web/data.json` (~338 KB, 123 entries), the only artefact the
+  static site consumes.
+
+### Stage 5 — OCR cleanup pipeline
+
+The text that PyMuPDF returns is faithful to the OCR but carries
+systematic typographic artefacts of the original composition:
+
+- End-of-line **soft hyphens** that were never stitched
+  (`resi-\ndencia` instead of `residencia`).
+- Italic passages **decompressed letter-by-letter**
+  (`T a r r a g o n a`, `A r a g ó n`, `D á m e t e`).
+- **Section markers destroyed** by OCR (`vS^. geog`, `Or^. júd`,
+  `Eist. y Biog`).
+- Archaic conjunctions and prepositions **fused** to the
+  neighbouring word (`flotaá conquistar`, `mallorquinesyá los
+  reyes`, `Aragóny Mallorca`).
+- Roman numerals scattered with spaces (`V I I`, `Cárlos II I`).
+
+Cleanup runs in two successive passes:
+
+1. **Mechanical pass** (deterministic regex): soft-hyphen stitching;
+   collapse of runs of 3+ singletons separated by spaces (for the
+   italic letter-spacing); normalisation of known broken section
+   markers; a curated dictionary of specific corrections verified
+   against the PDF (`huques`→`buques`, `iuz`→`luz`,
+   `Almudaína`→`Almudaina`…).
+
+2. **Semantic pass** via Claude Max subagents with PDF verification.
+   For each suspect word, the subagent opens the original PDF page
+   with PyMuPDF, verifies what Riera actually wrote, and only
+   corrects when the canonical form is unambiguously present in the
+   facsimile. **Absolute rule**: no invention, no translation, no
+   paraphrase. If the word is not recoverable from the PDF, it is
+   preserved as-is.
+
+The PALMA article (the largest in the corpus — ~40 KB spanning
+pp. 1091–1108 of tom VII, with ten intermediate pages of
+illegible statistical tables) required 77 semantic corrections by
+the subagent on top of 60+ mechanical corrections. The remaining
+76 Balearic articles were already clean enough from Stage 4 and
+contributed roughly fifty additional fixes between them.
+
+## Website
+
+The static site under `web/` consumes a single `web/data.json` and
+offers five tabs:
+
+- **Inici** — project overview, summary statistics and a five-card
+  grid (one per island) with entry counts and short descriptions.
+- **Explorar** — filterable table (search by title or text; filters
+  by island, municipality, place type, volume, confidence). Selecting
+  a row expands the full article rendered as the twelve administrative
+  sections, the demographic stats and the cross-references.
+- **Mapa** — Leaflet map with one circle marker per entry. Radius is
+  proportional to √habitants and colour identifies the island. Click
+  a marker to open the full article.
+- **Estadístiques** — six charts:
+    - Top 25 nuclei by population
+    - Building composition stacked bars (habitats establement /
+      temporally inhabited / uninhabited)
+    - Distribution by place type
+    - Demography per island as twin donuts (habitants / edificis)
+    - Density top 50 (habitants/edifici ratio)
+    - Municipality pyramid as tag-cloud groups
+- **Notes** — three-part guide: the dictionary itself (history,
+  editorial decisions, fitxa structure); the methodology of this
+  digital edition (sources, indent detection, OCR cleanup pipeline);
+  and Riera's most common abbreviations.
+
+The site is 100 % static (HTML + CSS + JS vanilla + Leaflet for the
+map). No backend, no build step, no framework. A clean clone with
+`riera.duckdb` and `data.json` already checked in serves the site
+without running any script.
 
 ## Running locally
 
@@ -232,31 +338,28 @@ uv venv && uv pip install -e .
 python scripts/fetch_volume.py 01      # one volume
 python scripts/fetch_volume.py --all   # all twelve
 
-# Stage 2 — Article + Balearic detection (writes data/index/tomoNN.jsonl)
+# Stage 2 + Stage 3 — Article detection + Balearic classification
 python scripts/index_volume.py --all
 
-# Aggregate report
-python scripts/report.py
+# Stage 4 — Reconcile, load, enrich, export
+python scripts/refresh_text.py         # data/index/*.jsonl ↔ data/text/page_*.json
+python scripts/load_text.py            # DuckDB
+python scripts/enrich_coords.py        # lat/lon resolution
+python scripts/export_web_data.py      # web/data.json
+
+# Stage 5 — OCR cleanup is dispatched per article via Claude Max
+# subagents; there is no CLI for it.
+
+# Serve locally
+python -m http.server 8000 --directory web
 ```
 
-Both stage 1 and stage 2 are idempotent: re-running overwrites in
-place, and the per-volume JSONL under `data/index/` is the canonical
-list of Balearic articles for downstream LLM extraction.
+All stages are idempotent: re-running overwrites in place. Aggregate
+status report:
 
-## Divergences from the Miñano source
-
-Unlike Internet Archive's chOCR (used by `../minano`), BDCyL does
-not publish a standalone OCR / METS-ALTO artefact. The text is only
-available inside the PDFs, and BDCyL serves no per-word bounding
-boxes. Two consequences:
-
-- The website will not be able to highlight matched text on the
-  facsimile in the way `minano` does on the IA reader. Article-level
-  page links to the BDCyL viewer remain available.
-- There is no leaf-vs-printed-page distinction. The PDF page index
-  is the only natural addressing scheme; printed page numbers
-  recovered from the OCR text would be brittle (Riera's running
-  headers are inconsistent across volumes).
+```bash
+python scripts/report.py
+```
 
 ## License
 
