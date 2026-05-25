@@ -23,9 +23,9 @@
       "stats": {
         "habitantes": 4238,
         "edificios": 733,
-        "edificios_habitados_temporalmente": 8,
-        "edificios_inhabitados": 36,
-        "caserios_agregados": 39,
+        "habitados_temporalmente": 8,
+        "inhabitados": 36,
+        "caserios_y_grupos": 39,
         "distancia_ibiza_km": 15
       },
       "cross_references": [],

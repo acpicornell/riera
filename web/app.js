@@ -379,7 +379,7 @@ async function boot() {
   bindFilters();
   let payload;
   try {
-    const r = await fetch("data.json?v=16");
+    const r = await fetch("data.json?v=17");
     payload = await r.json();
   } catch (e) {
     console.error(e);
@@ -498,10 +498,91 @@ function renderStats() {
   }
   compRows.sort((a, b) => b.total - a.total);
   $("stats-chart-buildings").innerHTML = renderBuildingsStacked(compRows.slice(0, 20));
+
+  // === Chart 3: place_type distribution ===
+  const typeCount = new Map();
+  for (const e of state.entries) {
+    const t = e.place_type || "(sense tipus)";
+    typeCount.set(t, (typeCount.get(t) || 0) + 1);
+  }
+  const typeRows = [...typeCount.entries()].sort((a, b) => b[1] - a[1]);
+  $("stats-chart-place-types").innerHTML = svgBars(typeRows, { labelW: 160, valueSuffix: " entrades" });
+
+  // === Chart 4: habitants + edificis per illa (twin bar) ===
+  const islandHab = new Map();
+  const islandEdif = new Map();
+  for (const e of state.entries) {
+    if (isIslandAggregate(e)) continue;
+    const s = statsOf(e);
+    if (!s) continue;
+    const key = e.island || "(altres)";
+    if (s.habitantes != null) islandHab.set(key, (islandHab.get(key) || 0) + s.habitantes);
+    if (s.edificios != null) islandEdif.set(key, (islandEdif.get(key) || 0) + s.edificios);
+  }
+  const islandKeys = [...new Set([...islandHab.keys(), ...islandEdif.keys()])];
+  const islandRows = islandKeys
+    .map(k => [k, islandHab.get(k) || 0, islandEdif.get(k) || 0])
+    .sort((a, b) => b[1] - a[1]);
+  $("stats-chart-by-island").innerHTML = renderIslandTwinBars(islandRows);
+
+  // === Chart 5: density (habitants / edifici) top 25 ===
+  const densityRows = [];
+  for (const e of state.entries) {
+    const s = statsOf(e);
+    if (!s || !s.habitantes || !s.edificios) continue;
+    if (isIslandAggregate(e)) continue;
+    const ratio = s.habitantes / s.edificios;
+    densityRows.push([e.title, ratio, `${fmt(s.habitantes)} hab / ${fmt(s.edificios)} edif`]);
+  }
+  densityRows.sort((a, b) => b[1] - a[1]);
+  $("stats-chart-density").innerHTML = svgBars(
+    densityRows.slice(0, 25).map(r => [r[0], +r[1].toFixed(2), r[2]]),
+    { labelW: 220, valueSuffix: " hab/edif" }
+  );
+
+  // === Chart 6: municipality pyramid (entries per municipality) ===
+  const muniCount = new Map();
+  for (const e of state.entries) {
+    const m = e.municipality;
+    if (!m) continue;
+    if (!muniCount.has(m)) muniCount.set(m, []);
+    muniCount.get(m).push(e.title);
+  }
+  const muniRows = [...muniCount.entries()]
+    .map(([m, titles]) => [m, titles.length, titles.length > 1 ? titles.join(", ") : null])
+    .filter(r => r[1] >= 2)
+    .sort((a, b) => b[1] - a[1]);
+  $("stats-chart-municipality-pyramid").innerHTML = svgBars(muniRows, { labelW: 180, valueSuffix: " entrades" });
 }
 
 
 // === Demographic chart renderers ===========================================
+
+// Twin-bar per island: habitants (blau) | etiqueta | edificis (taronja)
+function renderIslandTwinBars(rows) {
+  if (!rows.length) return '<p class="empty">Sense dades.</p>';
+  const W = 720, H = 30 + rows.length * 60;
+  const labelW = 120, mid = 14;
+  const sideW = (W - labelW - mid - 140) / 2;
+  const maxHab = Math.max(1, ...rows.map(r => r[1]));
+  const maxEdif = Math.max(1, ...rows.map(r => r[2]));
+  let svg = `<svg viewBox="0 0 ${W} ${H}" class="bars-svg" preserveAspectRatio="xMinYMin meet" role="img">`;
+  svg += `<text x="${labelW + sideW - 4}" y="14" text-anchor="end" class="bar-sub">habitants →</text>`;
+  svg += `<text x="${labelW + sideW + mid + 4}" y="14" text-anchor="start" class="bar-sub">← edificis</text>`;
+  rows.forEach(([isl, hab, edif], i) => {
+    const y = 28 + i * 60;
+    const wHab = (hab / maxHab) * sideW;
+    const wEdif = (edif / maxEdif) * sideW;
+    const hue = (typeof ISLAND_HUE !== "undefined" && ISLAND_HUE[isl]) || "#475569";
+    svg += `<text x="${labelW + sideW + mid / 2}" y="${y + 18}" text-anchor="middle" style="font-size:13px;font-weight:600">${esc(isl)}</text>`;
+    svg += `<rect x="${labelW + sideW - wHab}" y="${y}" width="${wHab}" height="28" rx="3" fill="${hue}" opacity="0.95"/>`;
+    svg += `<text x="${labelW + sideW - wHab - 6}" y="${y + 19}" text-anchor="end" class="bar-value">${fmt(hab)}</text>`;
+    svg += `<rect x="${labelW + sideW + mid}" y="${y}" width="${wEdif}" height="28" rx="3" fill="#f59e0b" opacity="0.85"/>`;
+    svg += `<text x="${labelW + sideW + mid + wEdif + 6}" y="${y + 19}" text-anchor="start" class="bar-value">${fmt(edif)}</text>`;
+  });
+  svg += `</svg>`;
+  return svg;
+}
 
 // Stacked horizontal bar per entry: habitats stables / temporals / inhabitats
 function renderBuildingsStacked(rows) {

@@ -23,10 +23,10 @@
       "stats": {
         "habitantes": 1316,
         "edificios": 917,
-        "edificios_habitados_temporalmente": 24,
-        "edificios_inhabitados": 240,
+        "habitados_temporalmente": 24,
+        "inhabitados": 240,
         "edificios_casco": 320,
-        "caserios_agregados": 111
+        "caserios_y_grupos": 111
       },
       "cross_references": [
         "Jornets",

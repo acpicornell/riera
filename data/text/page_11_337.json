@@ -23,8 +23,8 @@
       "stats": {
         "habitantes": 1165,
         "edificios": 283,
-        "edificios_habitados_temporalmente": 14,
-        "edificios_inhabitados": 43,
+        "habitados_temporalmente": 14,
+        "inhabitados": 43,
         "caserios_y_grupos": 27
       },
       "cross_references": [],

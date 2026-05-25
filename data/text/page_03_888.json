@@ -22,10 +22,10 @@
       "stats": {
         "habitantes": 7777,
         "edificios": 3936,
-        "edificios_habitados_temporalmente": 43,
-        "edificios_inhabitados": 2388,
+        "habitados_temporalmente": 43,
+        "inhabitados": 2388,
         "caserios_y_grupos": 2495,
-        "presupuesto_municipal": 67560
+        "presupuesto_municipal_pts": 67560
       },
       "cross_references": [
         "Menorca",

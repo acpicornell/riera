@@ -23,9 +23,9 @@
       "stats": {
         "habitantes": 3691,
         "edificios": 997,
-        "edificios_habitados_temporalmente": 41,
-        "edificios_inhabitados": 172,
-        "edificios_agregados": 204,
+        "habitados_temporalmente": 41,
+        "inhabitados": 172,
+        "caserios_y_grupos": 204,
         "distancia_manacor_km": 9,
         "distancia_palma_km": 83
       },

@@ -23,8 +23,8 @@
       "stats": {
         "habitantes": 430,
         "edificios": 129,
-        "edificios_habitados_temporalmente": 2,
-        "edificios_inhabitados": 20,
+        "habitados_temporalmente": 2,
+        "inhabitados": 20,
         "distancia_santany_km": 5.5
       },
       "cross_references": [

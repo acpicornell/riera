@@ -23,7 +23,7 @@
       "stats": {
         "habitantes": 220,
         "edificios": 64,
-        "edificios_inhabitados": 9
+        "inhabitados": 9
       },
       "cross_references": [
         "Esporlas"

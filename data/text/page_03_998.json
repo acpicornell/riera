@@ -23,7 +23,7 @@
       "stats": {
         "habitantes": 950,
         "edificios": 263,
-        "edificios_inhabitados": 26
+        "inhabitados": 26
       },
       "cross_references": [],
       "confidence": "high"

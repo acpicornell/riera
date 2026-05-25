@@ -23,9 +23,9 @@
       "stats": {
         "habitantes": 1625,
         "edificios": 393,
-        "edificios_habitados_temporalmente": 12,
-        "edificios_inhabitados": 57,
-        "caserios_agregados": 60,
+        "habitados_temporalmente": 12,
+        "inhabitados": 57,
+        "caserios_y_grupos": 60,
         "distancia_inca_km": 16,
         "distancia_palma_km": 44
       },

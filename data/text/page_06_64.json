@@ -26,9 +26,9 @@
         "edificios": 1085,
         "habitados_temporalmente": 25,
         "inhabitados": 190,
-        "casas_y_grupos": 168,
+        "caserios_y_grupos": 168,
         "casas_centro": 870,
-        "presupuesto_pts": 29895.4
+        "presupuesto_municipal_pts": 29895.4
       },
       "cross_references": [
         "Pollensa",
