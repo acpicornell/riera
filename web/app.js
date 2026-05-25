@@ -379,7 +379,7 @@ async function boot() {
   bindFilters();
   let payload;
   try {
-    const r = await fetch("data.json?v=17");
+    const r = await fetch("data.json?v=18");
     payload = await r.json();
   } catch (e) {
     console.error(e);
@@ -558,28 +558,56 @@ function renderStats() {
 
 // === Demographic chart renderers ===========================================
 
-// Twin-bar per island: habitants (blau) | etiqueta | edificis (taronja)
+// Twin-donut per illa: hab.left / edif.right. Donuts mostren les
+// proporcions; el desequilibri Mallorca-vs-resta queda visible sense
+// que les barres petites desapareguin.
 function renderIslandTwinBars(rows) {
   if (!rows.length) return '<p class="empty">Sense dades.</p>';
-  const W = 720, H = 30 + rows.length * 60;
-  const labelW = 120, mid = 14;
-  const sideW = (W - labelW - mid - 140) / 2;
-  const maxHab = Math.max(1, ...rows.map(r => r[1]));
-  const maxEdif = Math.max(1, ...rows.map(r => r[2]));
-  let svg = `<svg viewBox="0 0 ${W} ${H}" class="bars-svg" preserveAspectRatio="xMinYMin meet" role="img">`;
-  svg += `<text x="${labelW + sideW - 4}" y="14" text-anchor="end" class="bar-sub">habitants →</text>`;
-  svg += `<text x="${labelW + sideW + mid + 4}" y="14" text-anchor="start" class="bar-sub">← edificis</text>`;
-  rows.forEach(([isl, hab, edif], i) => {
-    const y = 28 + i * 60;
-    const wHab = (hab / maxHab) * sideW;
-    const wEdif = (edif / maxEdif) * sideW;
-    const hue = (typeof ISLAND_HUE !== "undefined" && ISLAND_HUE[isl]) || "#475569";
-    svg += `<text x="${labelW + sideW + mid / 2}" y="${y + 18}" text-anchor="middle" style="font-size:13px;font-weight:600">${esc(isl)}</text>`;
-    svg += `<rect x="${labelW + sideW - wHab}" y="${y}" width="${wHab}" height="28" rx="3" fill="${hue}" opacity="0.95"/>`;
-    svg += `<text x="${labelW + sideW - wHab - 6}" y="${y + 19}" text-anchor="end" class="bar-value">${fmt(hab)}</text>`;
-    svg += `<rect x="${labelW + sideW + mid}" y="${y}" width="${wEdif}" height="28" rx="3" fill="#f59e0b" opacity="0.85"/>`;
-    svg += `<text x="${labelW + sideW + mid + wEdif + 6}" y="${y + 19}" text-anchor="start" class="bar-value">${fmt(edif)}</text>`;
-  });
+  const totalHab = rows.reduce((s, r) => s + r[1], 0);
+  const totalEdif = rows.reduce((s, r) => s + r[2], 0);
+  const W = 720, H = 320;
+  const cx1 = 180, cx2 = 540, cy = 145, R = 96, r = 56;
+
+  const arcPath = (cx, cy, R, r, a0, a1) => {
+    const large = (a1 - a0) > Math.PI ? 1 : 0;
+    const x0 = cx + R * Math.cos(a0), y0 = cy + R * Math.sin(a0);
+    const x1 = cx + R * Math.cos(a1), y1 = cy + R * Math.sin(a1);
+    const x2 = cx + r * Math.cos(a1), y2 = cy + r * Math.sin(a1);
+    const x3 = cx + r * Math.cos(a0), y3 = cy + r * Math.sin(a0);
+    return `M${x0},${y0} A${R},${R} 0 ${large} 1 ${x1},${y1} L${x2},${y2} A${r},${r} 0 ${large} 0 ${x3},${y3} Z`;
+  };
+
+  const drawDonut = (cx, total, valueFn, label) => {
+    let svg = "";
+    let a = -Math.PI / 2;
+    for (const [isl, hab, edif] of rows) {
+      const v = valueFn(hab, edif);
+      if (!v) continue;
+      const sweep = (v / total) * Math.PI * 2;
+      const hue = (typeof ISLAND_HUE !== "undefined" && ISLAND_HUE[isl]) || "#475569";
+      const a1 = a + sweep;
+      const mid = (a + a1) / 2;
+      const pct = (v / total) * 100;
+      svg += `<path d="${arcPath(cx, cy, R, r, a, a1)}" fill="${hue}" opacity="0.9" stroke="#fff" stroke-width="2"><title>${esc(isl)}: ${fmt(v)} (${pct.toFixed(1)}%)</title></path>`;
+      // label outside if slice > 4%
+      if (pct >= 4) {
+        const lx = cx + (R + 18) * Math.cos(mid);
+        const ly = cy + (R + 18) * Math.sin(mid) + 4;
+        const anchor = Math.cos(mid) > 0.2 ? "start" : Math.cos(mid) < -0.2 ? "end" : "middle";
+        svg += `<text x="${lx}" y="${ly}" text-anchor="${anchor}" style="font-size:12px;fill:#1f2937">${esc(isl)} <tspan style="fill:#6b7280">(${pct.toFixed(0)}%)</tspan></text>`;
+      }
+      a = a1;
+    }
+    // Center text: total
+    svg += `<text x="${cx}" y="${cy - 4}" text-anchor="middle" style="font-size:22px;font-weight:700;fill:#1f2937">${fmt(total)}</text>`;
+    svg += `<text x="${cx}" y="${cy + 16}" text-anchor="middle" style="font-size:11px;fill:#6b7280;letter-spacing:0.5px;text-transform:uppercase">${label}</text>`;
+    svg += `<text x="${cx}" y="${H - 16}" text-anchor="middle" style="font-size:13px;font-weight:600;fill:#374151">${label === "habitants" ? "Habitants totals" : "Edificis totals"}</text>`;
+    return svg;
+  };
+
+  let svg = `<svg viewBox="0 0 ${W} ${H}" class="bars-svg" preserveAspectRatio="xMidYMid meet" role="img" style="max-height:340px">`;
+  svg += drawDonut(cx1, totalHab, (h) => h, "habitants");
+  svg += drawDonut(cx2, totalEdif, (_, e) => e, "edificis");
   svg += `</svg>`;
   return svg;
 }
