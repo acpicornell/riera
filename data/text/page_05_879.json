@@ -69,13 +69,14 @@
       "poblacion": null,
       "industria": null,
       "geografia": null,
-      "description": "(Véase Isla de Menorca). ISLETA DE SALVORA (Pontevedra).- Hállase situada en la entrada SO. de la ría de Arosa, frente el ayunt. de Grove",
+      "description": "(Véase Isla de Menorca).",
       "stats": {},
       "cross_references": [
         "Isla de Menorca"
       ],
       "confidence": "high",
-      "title_original": "ISLETA DEN COLOM (Baleares)"
+      "title_original": "ISLETA DEN COLOM (Baleares)",
+      "ocr_note": "Body-bleed eliminat: l'entrada gallega següent (ISLETA DE SALVORA, ria d'Arousa a Pontevedra) s'havia enganxat al cos. L'article és només una cross-reference a ISLA DE MENORCA."
     }
   ]
 }
