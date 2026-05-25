@@ -447,7 +447,7 @@
     <h3>Context editorial</h3>
     <p>
       El <em>Diccionario geográfico, estadístico, histórico, biográfico, postal, municipal,
-      marítimo y eclesiástico de España y sus posesiones de ultramar</em> fou publicat a
+      militar, marítimo y eclesiástico de España y sus posesiones de ultramar</em> fou publicat a
       <strong>Barcelona</strong> entre 1881 i 1887 per la <em>Imprenta y librería religiosa
       y científica del heredero de D. Pablo Riera</em>. L'obra completa comprèn
       <strong>dotze volums</strong> d'ordenació alfabètica i ascendeix a més de 12.000
@@ -462,12 +462,14 @@
     <h3>Relació amb Madoz: un Diccionari de successió</h3>
     <p>
       Riera arriba trenta anys després del <em>Diccionario geográfico-estadístico-histórico
-      de España</em> de Pascual Madoz (1845–1850), referent inevitable del gènere. El
-      pròleg del Tom I no és gens diplomàtic amb el seu antecedent: qualifica el Madoz
-      com «<em>en el día completamente inútil</em>» a causa dels canvis polítics ocorreguts
-      entre tots dos —la Sexenni Democràtic de 1868–1874, l'abolició de la jurisdicció
-      senyorial el 1873, la culminació del cadastre Ibáñez i el cens nacional de 1877.
-      Aquesta presa de distància es tradueix en dues decisions editorials de fons:
+      de España</em> de Pascual Madoz (1845–1850), referent inevitable del gènere. La
+      <em>Introducción</em> del Tom I dedica diversos paràgrafs a justificar la nova obra:
+      reconeix mèrits a Madoz («elogios merecen, así como indulgencia reclamamos también
+      nosotros»), però argumenta que els canvis administratius de tres dècades —la
+      consolidació del <strong>Instituto Geográfico-Estadístico</strong> sota la direcció
+      del general Ibáñez i el <strong>cens nacional de 1877</strong>— han fet inevitable
+      reescriure el corpus. Aquesta presa de distància es tradueix en dues decisions
+      editorials de fons:
     </p>
 
     <h3>Decisió 1: el cens de 1877 com a base d'inclusió</h3>
@@ -485,11 +487,11 @@
       constituir una entidad de población, y esto es lo que en nuestro libro consignamos.»
     </blockquote>
     <p>
-      L'efecte quantitatiu és contundent: a la lletra A, Madoz catalogava 104 entrades
-      balears (44 villas/lugars/ciutats + 35 predis/possessions + 25 accidents naturals);
-      Riera, en aplicar el filtre del cens, en consigna només 7 (els municipis amb
-      ajuntament + el lugar agregat d'Ariany). El gap proporcional s'observa a totes
-      les lletres del corpus.
+      A la pràctica, l'efecte del filtre del cens és contundent: la lletra A del corpus
+      balear es redueix a set entrades a Riera (els municipis Alaró, Alayor, Alcudia,
+      Algáida, Andráitx, Artá i el lloc agregat d'Ariani, dependent de Petra), molt
+      lluny dels llistats exhaustius que Madoz produïa per la mateixa lletra incloent-hi
+      predis, possessions i accidents geogràfics menors.
     </p>
 
     <h3>Decisió 2: la regla de la «verdadera denominación»</h3>
@@ -504,17 +506,19 @@
       La Almunia, que en aquéllos se le cita en la A, nosotros lo ponemos en la L.»
     </blockquote>
     <p>
-      Per a les Illes, això significa que entrades com <em>La Pobla</em>, <em>La Vileta</em>
-      o <em>Sant Joan de Labritja</em> apareixen a les lletres L i S respectivament, no a la
-      P. Per recuperar el corpus balear cal travessar els 12 volums sencers en lloc de
-      concentrar-se en uns pocs.
+      Per a les Illes, això significa que entrades com <em>La Puebla</em>, <em>La Vileta</em>
+      o <em>San Juan Bautista</em> apareixen a les lletres L i S respectivament, no a la P
+      ni a la J. Per recuperar el corpus balear cal travessar els 12 volums sencers en lloc
+      de concentrar-se en uns pocs.
     </p>
 
     <h3>L'estructura de la fitxa de població</h3>
     <p>
-      Cada entrada de població segueix un esquema templat de <strong>nou seccions
-      administratives</strong> (en versió completa) o <strong>nou abreviatures equivalents</strong>
-      (en versió compacta, per a agregats):
+      Cada entrada de població segueix un esquema templat: cinc blocs d'organització
+      administrativa, tres de serveis, un bloc descriptiu (població, indústria, situació
+      geogràfica) i, en els articles llargs, un tancament historicobiogràfic. En versió
+      compacta (per a llogarets agregats) cada secció es redueix a una sola línia
+      abreviada:
     </p>
     <ol class="riera-template">
       <li><em>Organización judicial</em> — partido judicial, audiencia territorial, distàncies</li>
@@ -526,6 +530,7 @@
       <li><em>Obras públicas y medios de comunicación</em> — carreteres, camins, ferrocarril, port</li>
       <li><em>Instrucción pública</em> — escoles, alumnes</li>
       <li><em>Población · Artes, oficios, industria · Situación geográfica y topográfica</em> — descripció arquitectònica i urbanística, indústria, agricultura, clima, hidrografia, límits</li>
+      <li><em>Hist. y Biog.</em> — fundació, conquestes, biografies de fills il·lustres (només als articles llargs: Palma, Mahón, Felanitx, Ibiza…)</li>
     </ol>
     <p>
       Els accidents geogràfics autònoms (caps, illots, illes) i els articles supramunicipals
@@ -570,9 +575,12 @@
     <p>
       Cada article balear es processa per un model de llenguatge d'<a
       href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>, que
-      el descomposa en les nou seccions templade de Riera més estadístiques i referències
-      creuades. Una validació contra el Nomenclàtor Geogràfic de les Illes Balears (NGIB)
-      verifica la grafia i resol la geolocalització per a la representació al mapa.
+      el descompon en les seccions templade de Riera (organització judicial / civil /
+      militar / econòmica / eclesiàstica, serveis públics, obres públiques, instrucció,
+      població, indústria, situació geogràfica i, quan correspon, història i biografies)
+      més estadístiques i referències creuades. Una validació contra el Nomenclàtor
+      Geogràfic de les Illes Balears (NGIB) verifica la grafia i resol la geolocalització
+      per a la representació al mapa.
     </p>
 
     <h3>Pipeline de neteja ortotipogràfica</h3>
@@ -603,11 +611,12 @@
         del PDF, es preserva tal com està.</li>
     </ol>
     <p>
-      L'article de Palma, el més complex del corpus (~40 KB repartits entre p1091 i
-      p1108 amb 10 pàgines intermèdies de quadres estadístics il·legibles), va requerir
-      77 correccions semàntiques per part del subagent més 60+ correccions mecàniques.
-      La resta dels 76 articles balears ja eren prou nets de la primera extracció i
-      sumen una cinquantena llarga de correccions addicionals.
+      L'article de Palma, el més complex del corpus (~42 KB repartits entre p1091 i
+      p1108 amb 10 pàgines intermèdies de quadres estadístics il·legibles, omesos),
+      va requerir 77 correccions semàntiques per part del subagent més 60+ correccions
+      mecàniques. La resta dels 122 articles balears van passar una auditoria
+      anti-hal·lucinació a càrrec de sis subagents paral·lels, amb un centenar llarg
+      de correccions verificades una a una contra el facsímil.
     </p>
 
     <h2>3. Abreviatures de referència</h2>
@@ -651,6 +660,7 @@
         <dt><code>Pob.</code></dt><dd>Población</dd>
         <dt><code>Art., of. ind.</code></dt><dd>Artes, oficios, industria</dd>
         <dt><code>Sit. geog. y top.</code></dt><dd>Situación geográfica y topográfica</dd>
+        <dt><code>Hist. y Biog.</code></dt><dd>Historia y Biografía (closing section a articles llargs)</dd>
         <dt><code>Fer. y merc.</code></dt><dd>Ferias y mercados</dd>
       </dl>
     </div>
@@ -730,6 +740,6 @@
   </p>
 </footer>
 
-<script src="app.js?v=30"></script>
+<script src="app.js?v=31"></script>
 </body>
 </html>
