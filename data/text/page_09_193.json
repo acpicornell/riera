@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "SAN JUAN DE OARBONELL",
+      "title": "SAN JUAN DE CARBONELL",
       "place_type": null,
       "island": null,
       "municipality": null,
@@ -23,7 +23,8 @@
       "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
       "stats": null,
       "cross_references": [],
-      "confidence": "low"
+      "confidence": "low",
+      "title_original": "SAN JUAN DE OARBONELL"
     }
   ]
 }

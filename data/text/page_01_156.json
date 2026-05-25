@@ -4,7 +4,7 @@
   "model": "section-parser+claude-max",
   "entries": [
     {
-      "title": "AL ARÓ",
+      "title": "ALARÓ",
       "place_type": null,
       "island": "Mallorca",
       "municipality": "Alaró",
@@ -23,7 +23,8 @@
       "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
       "stats": null,
       "cross_references": [],
-      "confidence": "low"
+      "confidence": "low",
+      "title_original": "AL ARÓ"
     }
   ]
 }

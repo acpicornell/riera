@@ -504,13 +504,23 @@ def extract_body_pdftotext(opener: dict, vol: str, max_lines: int = 200) -> str:
         r"|"
         # (b) Geographic entry — lemma is the type itself. Expanded
         #     from the 19th-century vocabulary Riera uses for marine /
-        #     orographic accidents: ENSENADA, CAYO, BAJO, ESTERO,
-        #     ARRECIFE, FONDEADERO, SURGIDERO, FARO, BANCO.
+        #     orographic accidents.
         r"(?:CABO|CALA|ISLA|ISLAS|ISLOTE|ISLOTES|ISLETA|ISLETAS|"
         r"PUNTA|PUERTO|SIERRA|MONTE|CASTILLO|BAH[ÍI]A|CORDILLERA|"
         r"R[ÍI]O|VALLE|LAGUNA|FUENTE|PROMONTORIO|PEÑ[ÓO]N|"
         r"ENSENADA|ESTERO|CAYO|BAJO|ARRECIFE|FONDEADERO|SURGIDERO|"
         r"FARO|BANCO|MORRO|GOLFO|ESTRECHO|PASO)\s+[A-ZÁÉÍÓÚÑÜ]"
+        r"|"
+        # (c) Free-prose opener — Tom XII supplement entries often
+        #     skip the V./L./C. place-type abbreviation and open
+        #     directly with descriptive prose: 'ALAYOR ó ALAÓ.—Según
+        #     el Censo de 1877…' or 'MALLORCA (Obispado de).—Una vez
+        #     que…'. We detect them by LEMMA followed by .—Capital-
+        #     letter-then-lowercase (a 'Word' starting with prose).
+        #     Statistical table headings like 'TOTAL.—NUMBERS' fail
+        #     to match because their continuation is ALL CAPS.
+        r"[A-ZÁÉÍÓÚÑÜ]{2,}[A-ZÁÉÍÓÚÑÜ0-9'óòoáéíúñ\.\(\) \-]{0,50}"
+        r"\.\s*[—\-~]+\s*[A-ZÁÉÍÓÚÑÜ][a-záéíóúñ]"
         r")"
     )
     # pdftotext sometimes wraps an opener across two lines:
@@ -627,12 +637,15 @@ def is_balearic(body: str, ngib_balearic: bool = False,
     """Decide if an article is Balearic.
 
     Single rule: the parser detects one of the canonical Balearic
-    admin-section phrases in the body (see ParsedEntry.is_balearic
-    for the exact list). No lemma-based gates, no negative-evidence
-    cascades — only the structural signals Riera himself writes.
+    admin-section phrases (C-group) or geographic-rule (G) signals
+    in the body. Trust the structural signal — if a body honestly
+    says 'dióc. de Mallorca', the article IS Balearic regardless of
+    what the lemma says.
 
-    `ngib_balearic` is propagated for downstream confirmation auditing
-    but does not affect the decision.
+    Cases like 'ALAYA (Filipinas)' whose body bleeds Balearic content
+    from an adjacent entry are a BODY-EXTRACTION issue, not a filter
+    issue: the proper fix is to stop body extraction at the next
+    opener's boundary, not to add ad-hoc lemma exclusions.
 
     Returns (decision, parsed_entry)."""
     parsed = parse_sections.parse_entry(body, lemma=lemma)

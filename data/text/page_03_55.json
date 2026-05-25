@@ -31,7 +31,7 @@
       "confidence": "high"
     },
     {
-      "title": "CABO FORMENTOR óFORMENTON",
+      "title": "CABO FORMENTOR",
       "place_type": "cabo",
       "island": "Mallorca",
       "municipality": "Pollença",
@@ -61,7 +61,8 @@
       "cross_references": [],
       "confidence": "high",
       "vol": "03",
-      "page": 55
+      "page": 55,
+      "title_original": "CABO FORMENTOR óFORMENTON"
     }
   ]
 }

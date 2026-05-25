@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "ISLETA DE TAGOMAGO (Baleares )",
+      "title": "ISLETA DE TAGOMAGO",
       "place_type": "isleta",
       "island": "Ibiza",
       "municipality": null,
@@ -24,10 +24,11 @@
       "cross_references": [
         "Isla de Ibiza"
       ],
-      "confidence": "high"
+      "confidence": "high",
+      "title_original": "ISLETA DE TAGOMAGO (Baleares )"
     },
     {
-      "title": "ISLETA DEL AIRE ( Baleares )",
+      "title": "ISLETA DEL AIRE",
       "place_type": "isleta",
       "island": "Menorca",
       "municipality": null,
@@ -48,10 +49,10 @@
         "Isla de Menorca"
       ],
       "confidence": "high",
-      "title_original": "ISLETA DEL AIRE ( Baleares ) — (Véase"
+      "title_original": "ISLETA DEL AIRE ( Baleares )"
     },
     {
-      "title": "ISLETA DEN COLOM (Baleares)",
+      "title": "ISLETA D'EN COLOM",
       "place_type": "isleta",
       "island": "Menorca",
       "municipality": null,
@@ -72,7 +73,7 @@
         "Isla de Menorca"
       ],
       "confidence": "high",
-      "title_original": "ISLETA DEN COLOM (Baleares) —(Véase"
+      "title_original": "ISLETA DEN COLOM (Baleares)"
     }
   ]
 }

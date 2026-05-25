@@ -82,16 +82,6 @@
   },
   {
     "vol": "02",
-    "page": 180,
-    "title": "BARCELONA",
-    "island": "Mallorca",
-    "lon": 2.9489,
-    "lat": 39.6953,
-    "fallback": "island-centroid:Mallorca",
-    "source": "centroid"
-  },
-  {
-    "vol": "02",
     "page": 777,
     "title": "BINIAMAR",
     "island": "Mallorca",
@@ -139,17 +129,6 @@
     "lat": 39.75837082737537,
     "matched": "Búger",
     "source": "translated"
-  },
-  {
-    "vol": "02",
-    "page": 93,
-    "title": "BALEARES --Prov civ marítima y mil",
-    "island": "Baleares",
-    "lon": 2.9489,
-    "lat": 39.6953,
-    "fallback": "island-centroid:Baleares",
-    "source": "centroid",
-    "note": "no NGIB match for 'BALEARES PROV CIV MARITIMA Y MIL'"
   },
   {
     "vol": "02",
@@ -230,17 +209,6 @@
     "lat": 39.70206096392829,
     "matched": "Capdepera",
     "source": "translated"
-  },
-  {
-    "vol": "03",
-    "page": 48,
-    "title": "CABO",
-    "island": "Menorca",
-    "lon": 4.0962,
-    "lat": 39.9684,
-    "fallback": "island-centroid:Menorca",
-    "source": "centroid",
-    "note": "no NGIB match for 'CABO'"
   },
   {
     "vol": "03",
@@ -345,13 +313,12 @@
   {
     "vol": "03",
     "page": 55,
-    "title": "CABO FORMENTOR óFORMENTON",
+    "title": "CABO FORMENTOR",
     "island": "Mallorca",
-    "lon": 2.9489,
-    "lat": 39.6953,
-    "fallback": "island-centroid:Mallorca",
-    "source": "centroid",
-    "note": "no NGIB match for 'CABO FORMENTOR OFORMENTON'"
+    "lon": 3.2138,
+    "lat": 39.9587,
+    "matched": "Cap de Formentor (Pollença)",
+    "source": "manual"
   },
   {
     "vol": "03",
@@ -505,16 +472,6 @@
   },
   {
     "vol": "04",
-    "page": 795,
-    "title": "FORMENTERA",
-    "island": "Formentera",
-    "lon": 1.4287473842207838,
-    "lat": 38.70535873420256,
-    "matched": "Formentera",
-    "source": "translated"
-  },
-  {
-    "vol": "04",
     "page": 797,
     "title": "FORNALUTX",
     "island": "Mallorca",
@@ -562,16 +519,6 @@
     "lon": 3.004656079765281,
     "lat": 39.64153306680964,
     "matched": "la Bonanova",
-    "source": "translated"
-  },
-  {
-    "vol": "05",
-    "page": 29,
-    "title": "GALILEA",
-    "island": "Mallorca",
-    "lon": 2.5058411191773104,
-    "lat": 39.61145999955232,
-    "matched": "Galilea",
     "source": "translated"
   },
   {
@@ -648,13 +595,12 @@
   {
     "vol": "05",
     "page": 879,
-    "title": "ISLETA DE TAGOMAGO (Baleares )",
+    "title": "ISLETA DE TAGOMAGO",
     "island": "Ibiza",
-    "lon": 1.4326,
-    "lat": 38.9758,
-    "fallback": "island-centroid:Ibiza",
-    "source": "centroid",
-    "note": "no NGIB match for 'ISLETA DE TAGOMAGO (BALEARES )'"
+    "lon": 1.6553,
+    "lat": 39.0386,
+    "matched": "illa de Tagomago (Santa Eulària)",
+    "source": "manual"
   },
   {
     "vol": "05",
@@ -669,12 +615,13 @@
   {
     "vol": "05",
     "page": 879,
-    "title": "ISLETA DEN COLOM",
+    "title": "ISLETA D'EN COLOM",
     "island": "Menorca",
-    "lon": 4.2942,
-    "lat": 39.9614,
-    "matched": "illa d'en Colom (Maó)",
-    "source": "manual"
+    "lon": 4.0962,
+    "lat": 39.9684,
+    "fallback": "island-centroid:Menorca",
+    "source": "centroid",
+    "note": "no NGIB match for \"ISLETA D'EN COLOM\""
   },
   {
     "vol": "05",
@@ -778,16 +725,6 @@
   },
   {
     "vol": "06",
-    "page": 588,
-    "title": "LLUCH-MAYOR",
-    "island": "Mallorca",
-    "lon": 2.8908,
-    "lat": 39.49,
-    "matched": "Llucmajor",
-    "source": "manual"
-  },
-  {
-    "vol": "06",
     "page": 589,
     "title": "LLUCH-MAYOR",
     "island": "Mallorca",
@@ -814,27 +751,6 @@
     "lon": 4.264428939070812,
     "lat": 39.889722491854904,
     "matched": "Maó",
-    "source": "translated"
-  },
-  {
-    "vol": "07",
-    "page": 1090,
-    "title": "PALMA (Audiencia Territorial)",
-    "island": "Mallorca",
-    "lon": 2.9489,
-    "lat": 39.6953,
-    "fallback": "island-centroid:Mallorca",
-    "source": "centroid",
-    "note": "no NGIB match for 'PALMA (AUDIENCIA TERRITORIAL)'"
-  },
-  {
-    "vol": "07",
-    "page": 206,
-    "title": "MENORCA",
-    "island": "Menorca",
-    "lon": 4.264428939070812,
-    "lat": 39.889722491854904,
-    "matched": "Menorca",
     "source": "translated"
   },
   {
@@ -949,16 +865,6 @@
   },
   {
     "vol": "08",
-    "page": 332,
-    "title": "PORTOCOLOM",
-    "island": "Mallorca",
-    "lon": 3.255847614092307,
-    "lat": 39.416413655388254,
-    "matched": "Portocolom",
-    "source": "translated"
-  },
-  {
-    "vol": "08",
     "page": 510,
     "title": "PUIGPUNENT",
     "island": "Mallorca",
@@ -1040,37 +946,6 @@
   },
   {
     "vol": "09",
-    "page": 193,
-    "title": "SAN JUAN DE CARBONELL",
-    "island": "Menorca",
-    "lon": 4.0789,
-    "lat": 39.9869,
-    "matched": "Carbonell (es Mercadal)",
-    "source": "manual"
-  },
-  {
-    "vol": "09",
-    "page": 241,
-    "title": "SAN LORENZO",
-    "island": "Eivissa",
-    "lon": 1.4326,
-    "lat": 38.9758,
-    "fallback": "island-centroid:Eivissa",
-    "source": "centroid",
-    "note": "no NGIB match for 'SAN LORENZO'"
-  },
-  {
-    "vol": "09",
-    "page": 257,
-    "title": "SAN LUIS",
-    "island": "Menorca",
-    "lon": 4.257554113122967,
-    "lat": 39.8490496453283,
-    "matched": "Sant Lluís",
-    "source": "translated"
-  },
-  {
-    "vol": "09",
     "page": 258,
     "title": "SAN LLORENS D' EL CORDASAR",
     "island": "Mallorca",
@@ -1081,9 +956,9 @@
   },
   {
     "vol": "09",
-    "page": 38,
-    "title": "SAN ANTONIO",
-    "island": "Eivissa",
+    "page": 39,
+    "title": "SAN ANTONIO ABAD",
+    "island": "Ibiza",
     "lon": 1.3003953171960487,
     "lat": 38.97888855487595,
     "matched": "Sant Antoni de Portmany",
@@ -1137,6 +1012,16 @@
     "lon": 1.4284939126171647,
     "lat": 38.998225015919225,
     "matched": "Santa Gertrudis de Fruitera",
+    "source": "translated"
+  },
+  {
+    "vol": "09",
+    "page": 580,
+    "title": "SANTA MARGARITA",
+    "island": "Menorca",
+    "lon": 4.2385510494078895,
+    "lat": 39.873962916888,
+    "matched": "Santa Margarita",
     "source": "translated"
   },
   {
@@ -1232,16 +1117,6 @@
     "source": "translated"
   },
   {
-    "vol": "10",
-    "page": 740,
-    "title": "ULLARÓ",
-    "island": "Mallorca",
-    "lon": 2.98595350340233,
-    "lat": 39.776651832492895,
-    "matched": "Ullaró",
-    "source": "translated"
-  },
-  {
     "vol": "11",
     "page": 297,
     "title": "VILLACARLOS",
@@ -1283,56 +1158,14 @@
   },
   {
     "vol": "12",
-    "page": 179,
-    "title": "ANDRAIX",
-    "island": "Mallorca",
-    "lon": 2.9489,
-    "lat": 39.6953,
-    "fallback": "island-centroid:Mallorca",
-    "source": "centroid",
-    "note": "no NGIB match for 'ANDRAIX'"
-  },
-  {
-    "vol": "12",
-    "page": 255,
-    "title": "CALONGE ó CALONGE DE CALAF",
-    "island": "Mallorca",
-    "lon": 2.9489,
-    "lat": 39.6953,
-    "fallback": "island-centroid:Mallorca",
-    "source": "centroid",
-    "note": "no NGIB match for 'CALONGE O CALONGE DE CALAF'"
-  },
-  {
-    "vol": "12",
     "page": 385,
-    "title": "MALLORCA (Obispado de)",
+    "title": "MALLOECA (Obispado de)",
     "island": "Mallorca",
     "lon": 2.9489,
     "lat": 39.6953,
     "fallback": "island-centroid:Mallorca",
     "source": "centroid",
-    "note": "no NGIB match for 'MALLORCA (OBISPADO DE)'"
-  },
-  {
-    "vol": "12",
-    "page": 385,
-    "title": "MANACOR",
-    "island": "Mallorca",
-    "lon": 3.2077458420218385,
-    "lat": 39.56913499279137,
-    "matched": "Manacor",
-    "source": "translated"
-  },
-  {
-    "vol": "12",
-    "page": 388,
-    "title": "MENORCA (Obispado de)",
-    "island": "Menorca",
-    "lon": 3.8355,
-    "lat": 40.0008,
-    "matched": "Catedral de Menorca, Ciutadella",
-    "source": "manual"
+    "note": "no NGIB match for 'MALLOECA (OBISPADO DE)'"
   },
   {
     "vol": "12",

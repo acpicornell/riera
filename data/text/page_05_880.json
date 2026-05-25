@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "ISLOTES BLEDAS (Baleares)",
+      "title": "ISLOTES BLEDAS",
       "place_type": "islotes",
       "island": "Ibiza",
       "municipality": null,
@@ -25,7 +25,7 @@
         "Isla de Ibiza"
       ],
       "confidence": "high",
-      "title_original": "ISLOTES BLEDAS (Baleares) — (Véase Is"
+      "title_original": "ISLOTES BLEDAS (Baleares)"
     }
   ]
 }

@@ -4,7 +4,7 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "LLUMMAYOR ó LLUCH-MAYOR",
+      "title": "LLUCH-MAYOR",
       "place_type": null,
       "island": "Mallorca",
       "municipality": "Llucmajor",
@@ -23,7 +23,8 @@
       "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
       "stats": null,
       "cross_references": [],
-      "confidence": "low"
+      "confidence": "low",
+      "title_original": "LLUMMAYOR ó LLUCH-MAYOR"
     }
   ]
 }

@@ -1,0 +1,19 @@
+# Manual exclusion list — false positives that the C-group / G-rule
+# pipeline accepts but human review flags as non-Balearic.
+#
+# Format: vol page lemma   (whitespace-separated; lemma may contain spaces
+# and parentheses)
+# Lines starting with '#' are comments. Order doesn't matter.
+#
+# Audit policy: each entry below MUST have a brief justification.
+# If you can't justify why a body-level Balearic signal must be
+# overridden, fix the body extractor instead.
+
+# === Cuban entries whose body bleeds Balearic content from neighbours ===
+# (Riera's parenthetical (Cuba)/(Filipinas) lemma marker is the
+# authoritative signal that the article describes a colonial place,
+# regardless of what neighbour content the body extractor pulled in.)
+06 1062 MAMPOSTEN (Cuba)
+06 1062 MANACAL (Cuba)
+06 1062 MANACAS (Cuba)
+09 39   SAN ANTONIO (Cuba)
