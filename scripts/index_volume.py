@@ -807,15 +807,21 @@ def index_volume(vol: str) -> dict:
         k = _key(e)
         if k not in seen or e.get("balearic_refs", 0) > seen[k].get("balearic_refs", 0):
             seen[k] = e
-    # Stage 2: dedup by (page, ngib_key) — pick the variant with the
-    # most Balearic anchors. Entries without an NGIB match pass through
-    # unchanged.
+    # Stage 2: dedup by (page, ngib_key, has_qualifier) — pick the
+    # variant with the most Balearic anchors. Entries without an NGIB
+    # match pass through unchanged. The has_qualifier flag (presence
+    # of a parenthetical like '(Obispado de)', '(Aud. territ.)',
+    # '(addicional)') prevents collapsing semantically-distinct
+    # articles about the same place: MENORCA (the redirect) and
+    # MENORCA (Obispado de) are two articles on the same page that
+    # both NGIB-match to 'MENORCA' — they must be kept separate.
     ngib_seen: dict = {}
     survivors: list = []
     for e in seen.values():
         ngib = e.get("ngib")
         if ngib and ngib.get("score", 0) >= 95:
-            nk = (e["page"], ngib["key"])
+            has_qualifier = "(" in e["lemma"]
+            nk = (e["page"], ngib["key"], has_qualifier)
             prev = ngib_seen.get(nk)
             if prev is None or e.get("balearic_refs", 0) > prev.get("balearic_refs", 0):
                 ngib_seen[nk] = e

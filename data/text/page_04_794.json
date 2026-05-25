@@ -1,0 +1,29 @@
+{
+  "vol": "04",
+  "page": 794,
+  "model": "section-parser+claude-max",
+  "entries": [
+    {
+      "title": "FORMENTERA",
+      "place_type": null,
+      "island": "Formentera",
+      "municipality": "Formentera",
+      "org_judicial": null,
+      "org_civil": null,
+      "org_militar": null,
+      "org_economica": null,
+      "org_eclesiastica": null,
+      "servicio_publico": null,
+      "obras_publicas": null,
+      "instruccion_publica": null,
+      "poblacion": null,
+      "industria": null,
+      "geografia": null,
+      "description": "Isla en elmar Mediterrá- neo, perteneciente en lo civil y militar á la prov. de Baleares, y en lo marítimo al depar- tamento de Cartagena, prov. de tercera clase de Ibiza. Como quiera que los hab. y cas. de esta isla van comprendidos en la de Ibiza, á cuyo part. jud. pertenece, al ocuparnos de aquélla trataremos también de cuanto con ésta se relaciona. (Véase Ibiza),",
+      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
+      "stats": null,
+      "cross_references": [],
+      "confidence": "low"
+    }
+  ]
+}

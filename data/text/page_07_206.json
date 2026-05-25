@@ -1,0 +1,51 @@
+{
+  "vol": "07",
+  "page": 206,
+  "model": "section-parser+claude-max",
+  "entries": [
+    {
+      "title": "MENORCA",
+      "place_type": null,
+      "island": "Menorca",
+      "municipality": "Maó",
+      "org_judicial": null,
+      "org_civil": null,
+      "org_militar": null,
+      "org_economica": null,
+      "org_eclesiastica": null,
+      "servicio_publico": null,
+      "obras_publicas": null,
+      "instruccion_publica": null,
+      "poblacion": null,
+      "industria": null,
+      "geografia": null,
+      "description": "(Véase Isla de Menorca.) MENORCA (Obispado de). —Este ob.,que es sufragáneo del arz. de Valencia, compren- de única y exclusivamente la isla de sunom- bre. En Cindadela reside la silla episcopal y la catedral, cuyas dignidades y demás ecle- siásticos son los que determina el Concordato de 1851.Por el estado que á continuación in- sertamos puede verse el número de parroquias que comprende este ob., asícomo sus advoca- ciones y categorías. RELACION DE LOS CURATOS DELA DIÓCESIS DE MENORCA CON EXPRESION DE SU ADVOCACION Y CATEGORÍA. PUEBLOS. ADVOCACIONES. Ciudadela.. Mahon. Mayon Perrería Fornells",
+      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
+      "stats": null,
+      "cross_references": [],
+      "confidence": "low"
+    },
+    {
+      "title": "MENORCA (Obispado de)",
+      "place_type": null,
+      "island": "Menorca",
+      "municipality": "Maó",
+      "org_judicial": null,
+      "org_civil": null,
+      "org_militar": null,
+      "org_economica": null,
+      "org_eclesiastica": null,
+      "servicio_publico": null,
+      "obras_publicas": null,
+      "instruccion_publica": null,
+      "poblacion": null,
+      "industria": null,
+      "geografia": null,
+      "description": "Este ob.,que es sufragáneo del arz. de Valencia, compren- de única y exclusivamente la isla de sunom- bre. En Cindadela reside la silla episcopal y la catedral, cuyas dignidades y demás ecle- siásticos son los que determina el Concordato de 1851.Por el estado que á continuación in- sertamos puede verse el número de parroquias que comprende este ob., asícomo sus advoca- ciones y categorías. RELACION DE LOS CURATOS DELA DIÓCESIS DE MENORCA CON EXPRESION DE SU ADVOCACION Y CATEGORÍA. PUEBLOS. ADVOCACIONES. Ciudadela.. Mahon. Mayon Perrería Fornells Mercadal San Luis San Cristóbal. . . . San Cleme",
+      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
+      "stats": null,
+      "cross_references": [],
+      "confidence": "low"
+    }
+  ]
+}

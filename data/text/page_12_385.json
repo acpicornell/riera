@@ -4,30 +4,26 @@
   "model": "claude-max",
   "entries": [
     {
-      "title": "MALLORCA (Obispado de)",
-      "place_type": "obispado",
+      "title": "MALLOECA (Obispado de)",
+      "place_type": null,
       "island": "Mallorca",
       "municipality": "Palma",
       "org_judicial": null,
-      "org_civil": "En lo civil, corresponde todo á la prov. de las Baleares, su capital es la ciudad de Palma.",
+      "org_civil": null,
       "org_militar": null,
       "org_economica": null,
-      "org_eclesiastica": "Obispado sufragáneo del arzobispado de Valencia, ratificado por el último Concordato. La diócesis comprende toda la isla de su propio nombre, sin pertenencia fuera de ella ni enclavado extraño dentro. Se encuentra distribuido en tres arciprestazgos: Inca, Manacor y Palma. Arciprestazgo de Inca: parroquias de Alaró (San Bartolomé, Término), Alcudia (San Jaime, 2.º ascenso), Benisalem (San Jaime, Término), Campanet (San Miguel, 2.º ascenso), Escorca (San Pedro, Entrada), Inca (Santa Maria la Mayor, Término), La Puebla (San Antonio, 2.º ascenso), Muro (San Juan), Pollensa (Ntra. Sra. de los Angeles), Sancellas (San Pedro), Selva (San Lorenzo), Sineu (Ntra. Sra. de los Angeles). Arciprestazgo de Manacor: Artá (La Transfiguración), Campos (San Julián), Felanitx (San Miguel), Manacor (La Virgen de los Dolores), Montuiri (San Bartolomé), Petra (San Pedro), Porreras (Ntra. Sra. de los Angeles), Santany (San Andrés), San Juan. Arciprestazgo de Palma: Algaida (San Pedro y San Pablo), Andratx (San Bartolomé), Bunyola (San Mateo), Calvià (San Juan Bautista), Esporles (San Pedro), Llucmajor (San Miguel), Marratxí (San Marcial), Palma (Almudaina, Santa Cruz, San Jaime — Santa Eulalia), Puigpunyent (San Miguel), Santa María (San Nicolás), Sóller (La Asunción), Valldemossa (Santa María — San Bartolomé). Comunidades religiosas: Seminario Conciliar, comunidades de Agustinas de Santa Magdalena, Concepcionistas, Carmelitas de Santa Teresa, Capuchinas, Jerónimas, Franciscas de Santa Clara y Dominicas de Santa Catalina de Sena, y una casa de Clérigos de San Vicente de Paul (todas en Palma); Jerónimas en Inca; Concepcionistas descalzas en Sineu.",
+      "org_eclesiastica": null,
       "servicio_publico": null,
       "obras_publicas": null,
       "instruccion_publica": null,
       "poblacion": null,
       "industria": null,
       "geografia": null,
-      "description": null,
-      "ocr_note": "Indexer captured the lemma as 'MALLOECA (Obispado de)' (E→R OCR error). Cleaned to 'MALLORCA (Obispado de)'. Tom XII supplement entry.",
+      "description": "Una vez que D. Jaime I de Aragón, hubo conquistado la Isla en el año 1229, trató de erigirla en Sede episcopal. Y efectivamente, no tardó en reali- zar su pensamiento, estableciendo la silla en la capital de la isla, merced á la correspon- diente Bula de autorización expedida por el Papa. Este obispado es sufragáneo del arz. de Valencia y queda lo mismo, según el últi- mo Concordato. La constituye toda la isla de su propio nombre, sin pertenencia fuera de ella, ni enclavado extraño, dentro.En lo civil, corresponde todo á la prov. de las Baleares, su capital es la ciudad de Palma. Se encuentra ",
+      "ocr_note": "auto-generated from parser fields; rich extraction pending LLM dispatch",
       "stats": null,
-      "cross_references": [
-        "Inca",
-        "Manacor",
-        "Palma"
-      ],
-      "confidence": "high"
+      "cross_references": [],
+      "confidence": "low"
     }
   ]
 }

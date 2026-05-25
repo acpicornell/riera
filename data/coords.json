@@ -472,6 +472,16 @@
   },
   {
     "vol": "04",
+    "page": 794,
+    "title": "FORMENTERA",
+    "island": "Formentera",
+    "lon": 1.4287473842207838,
+    "lat": 38.70535873420256,
+    "matched": "Formentera",
+    "source": "translated"
+  },
+  {
+    "vol": "04",
     "page": 797,
     "title": "FORNALUTX",
     "island": "Mallorca",
@@ -775,6 +785,26 @@
   },
   {
     "vol": "07",
+    "page": 206,
+    "title": "MENORCA",
+    "island": "Menorca",
+    "lon": 4.264428939070812,
+    "lat": 39.889722491854904,
+    "matched": "Menorca",
+    "source": "translated"
+  },
+  {
+    "vol": "07",
+    "page": 206,
+    "title": "MENORCA (Obispado de)",
+    "island": "Menorca",
+    "lon": 3.8355,
+    "lat": 40.0008,
+    "matched": "Catedral de Menorca, Ciutadella",
+    "source": "manual"
+  },
+  {
+    "vol": "07",
     "page": 29,
     "title": "MARÍA",
     "island": "Mallorca",
@@ -937,10 +967,10 @@
     "vol": "09",
     "page": 186,
     "title": "SAN JUAN",
-    "island": "Eivissa",
+    "island": "Ibiza",
     "lon": 1.4326,
     "lat": 38.9758,
-    "fallback": "island-centroid:Eivissa",
+    "fallback": "island-centroid:Ibiza",
     "source": "centroid",
     "note": "no NGIB match for 'Sant Joan'"
   },
@@ -1054,17 +1084,6 @@
     "lat": 39.64723564494599,
     "matched": "Santa Maria del Camí",
     "source": "translated"
-  },
-  {
-    "vol": "09",
-    "page": 585,
-    "title": "SANTA M A R I A",
-    "island": "Mallorca",
-    "lon": 2.9489,
-    "lat": 39.6953,
-    "fallback": "island-centroid:Mallorca",
-    "source": "centroid",
-    "note": "no NGIB match for 'SANTA M A R I A'"
   },
   {
     "vol": "09",

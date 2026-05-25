@@ -259,7 +259,15 @@ def _clean_province(raw: str) -> str:
 # mention 'prov. de Mallorca' as part of describing what's under
 # their jurisdiction.
 _PROV_RE = re.compile(
-    r"corresponde\s+[áa]?\s+(?:la\s+|al\s+)?"
+    # Accept the canonical 'Corresponde á la prov.' opener OR
+    # 'Pertenece(nte) en lo civil/militar/marítimo á la prov.'
+    # — Riera occasionally uses the latter for supramunicipal /
+    # geographic-administrative articles like FORMENTERA tom04 p795
+    # ('Isla … perteneciente en lo civil y militar á la prov. de
+    # Baleares').
+    r"(?:corresponde|pertenec(?:e|en|iente))\s+"
+    r"(?:en\s+lo\s+\w+(?:\s+y\s+\w+)?\s+)?"  # 'en lo civil y militar'
+    r"[áa]?\s+(?:la\s+|al\s+)?"
     r"prov\.?(?:incia)?\s*\.?\s*\n?\s*"
     r"de\s+(?:la\s+|las\s+)?"
     r"([A-Za-záéíóúñÑÁÉÍÓÚüÜ\s]{2,40})",
@@ -292,11 +300,15 @@ def parse_org_civ(text: str) -> dict:
 
 _DIOC_RE = re.compile(
     r"di[óo]c\.?(?:esis)?\s+(?:de\s+)?"
-    # Capture up to two words so 'Ciudad Real' is kept as one token,
-    # not truncated to 'Ciudad' (which would fuzzy-match 'Ciudadela').
-    # Second word must be ≥3 chars to skip 1-char connectors ('y',
-    # 'á') that follow a 1-word province name.
-    r"([A-Za-záéíóúñÑÁÉÍÓÚüÜ]+(?:\s+[A-Za-záéíóúñÑÁÉÍÓÚüÜ]{3,})?)",
+    # Capture up to two words so 'Ciudad Real' stays whole. Second
+    # word must be ≥3 chars AND must not be a Spanish connector
+    # (con/que/y/al/en/del/que/sus/los/las) — otherwise table
+    # captions like 'DIÓCESIS DE MENORCA CON EXPRESION DE SU
+    # ADVOCACION' would yield captured token 'menorca con' which
+    # then fails fuzzy-match against the canonical 'menorca'.
+    r"([A-Za-záéíóúñÑÁÉÍÓÚüÜ]+(?:\s+(?!con\b|que\b|al\b|en\b|del?\b|"
+    r"sus\b|los\b|las\b|por\b|para\b|sin\b)"
+    r"[A-Za-záéíóúñÑÁÉÍÓÚüÜ]{3,})?)",
     re.I,
 )
 # Spanish stopwords that the diocese regex occasionally captures when
@@ -691,6 +703,24 @@ class ParsedEntry:
         # homonyms.
         if _has_geo_balearic_signal(self.lemma, self.head or ""):
             return True
+        # R: redirect entry — body is just '(Véase X)' or starts with
+        # 'Véase X' and the referenced X carries an unambiguous
+        # Balearic identifier. Riera includes these short cross-
+        # reference entries to help readers find the canonical
+        # article. The MENORCA tom07 p206 entry — body '(Véase Isla
+        # de Menorca.)' — is the canonical example.
+        body = (self.head or "").strip()
+        if len(body) < 80:
+            m = re.match(r"\s*\(?\s*V[ée]ase\s+(.+?)\)?\s*\.?\s*$",
+                         body, re.I)
+            if m:
+                target = m.group(1)
+                # Tokenise the target and check if any token is
+                # unambiguously Balearic
+                for tok in re.findall(
+                        r"\b[A-Za-záéíóúñü]{4,15}\b", target):
+                    if _is_geo_bal_token(tok):
+                        return True
         return False
 
     def diagnosis(self) -> str:
