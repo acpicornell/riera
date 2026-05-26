@@ -37,6 +37,7 @@ function gotoTab(t) {
   document.querySelectorAll(".tab-content").forEach(sec =>
     sec.classList.toggle("active", sec.dataset.toptab === t));
   if (t === "stats") renderStats();
+  if (t === "demografia") renderDemografia();
   if (t === "map") renderMap();
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
@@ -394,10 +395,80 @@ async function boot() {
 }
 
 // ===========================================================================
-// === ESTADÍSTIQUES TAB =====================================================
+// === ESTADÍSTIQUES TAB (corpus structure) ==================================
 // ===========================================================================
 
-let statsRendered = false;
+let corpusStatsRendered = false;
+
+const VOL_LABEL = {
+  "01": "I", "02": "II", "03": "III", "04": "IV", "05": "V",  "06": "VI",
+  "07": "VII", "08": "VIII", "09": "IX", "10": "X", "11": "XI", "12": "XII",
+};
+
+function renderStats() {
+  if (corpusStatsRendered) return;
+  corpusStatsRendered = true;
+
+  const total = state.entries.length;
+  const totalEl = $("stats-total-entries");
+  if (totalEl) totalEl.textContent = fmt(total);
+
+  const count = key => {
+    const m = new Map();
+    for (const e of state.entries) {
+      const v = e[key];
+      if (v == null || v === "") continue;
+      m.set(v, (m.get(v) || 0) + 1);
+    }
+    return [...m.entries()].sort((a, b) => b[1] - a[1]);
+  };
+  const draw = (id, rows, opts = {}) => {
+    const host = $(id);
+    if (!host) return;
+    host.innerHTML = rows.length ? svgBars(rows, opts) : '<p class="empty">—</p>';
+  };
+
+  draw("stat-by-island", count("island"),
+       { barH: 22, gap: 10, labelW: 130 });
+  draw("stat-by-type",   count("place_type"),
+       { labelW: 160 });
+
+  // Volume coverage in natural tom order (01–12), not by count;
+  // re-labelled with the Roman numeral so it matches the rest of the UI.
+  const byVol = count("vol")
+    .sort((a, b) => a[0].localeCompare(b[0], "ca", { numeric: true }))
+    .map(([v, n]) => [`Tom ${VOL_LABEL[v] || v}`, n]);
+  draw("stat-by-vol", byVol, { labelW: 110 });
+
+  // Top municipalities: a tag-cloud per municipality (shows the actual
+  // dependent entry titles, not just a count). Only municipalities with
+  // 2+ entries — singletons add no structural info.
+  const muniMap = new Map();
+  for (const e of state.entries) {
+    const m = e.municipality;
+    if (!m) continue;
+    if (!muniMap.has(m)) muniMap.set(m, { titles: [], island: e.island });
+    muniMap.get(m).titles.push(e.title);
+  }
+  const muniGroups = [...muniMap.entries()]
+    .filter(([_, g]) => g.titles.length >= 2)
+    .sort((a, b) => b[1].titles.length - a[1].titles.length);
+  $("stat-by-muni").innerHTML = renderMunicipalityTags(muniGroups);
+
+  // Confidence breakdown.
+  const confLabel = { high: "Alta", medium: "Mitjana", low: "Baixa" };
+  const confOrder = ["high", "medium", "low"];
+  const confRows = confOrder
+    .map(k => [confLabel[k], state.entries.filter(e => e.confidence === k).length])
+    .filter(r => r[1] > 0);
+  draw("stat-by-conf", confRows, { barH: 22, gap: 10, labelW: 130 });
+}
+
+// ===========================================================================
+// === DEMOGRAFIA TAB ========================================================
+// ===========================================================================
+
+let demoRendered = false;
 
 function fmtCompact(n) {
   if (n >= 1e6) return `${(n / 1e6).toFixed(2)}M`;
@@ -453,9 +524,9 @@ function isPlaceEntry(e) {
   return !isIslandAggregate(e);
 }
 
-function renderStats() {
-  if (statsRendered) return;
-  statsRendered = true;
+function renderDemografia() {
+  if (demoRendered) return;
+  demoRendered = true;
 
   const total = state.entries.length;
   const numOf = (e, k) => {
@@ -499,16 +570,7 @@ function renderStats() {
   compRows.sort((a, b) => b.total - a.total);
   $("stats-chart-buildings").innerHTML = renderBuildingsStacked(compRows.slice(0, 20));
 
-  // === Chart 3: place_type distribution ===
-  const typeCount = new Map();
-  for (const e of state.entries) {
-    const t = e.place_type || "(sense tipus)";
-    typeCount.set(t, (typeCount.get(t) || 0) + 1);
-  }
-  const typeRows = [...typeCount.entries()].sort((a, b) => b[1] - a[1]);
-  $("stats-chart-place-types").innerHTML = svgBars(typeRows, { labelW: 160, valueSuffix: " entrades" });
-
-  // === Chart 4: habitants + edificis per illa (twin bar) ===
+  // === Chart 3: habitants + edificis per illa (twin bar) ===
   const islandHab = new Map();
   const islandEdif = new Map();
   for (const e of state.entries) {
@@ -539,19 +601,6 @@ function renderStats() {
     densityRows.slice(0, 50).map(r => [r[0], +r[1].toFixed(2), r[2]]),
     { labelW: 220, valueSuffix: " hab/edif" }
   );
-
-  // === Chart 6: municipality pyramid (entries per municipality) ===
-  const muniMap = new Map();
-  for (const e of state.entries) {
-    const m = e.municipality;
-    if (!m) continue;
-    if (!muniMap.has(m)) muniMap.set(m, { titles: [], island: e.island });
-    muniMap.get(m).titles.push(e.title);
-  }
-  const muniGroups = [...muniMap.entries()]
-    .filter(([_, g]) => g.titles.length >= 2)
-    .sort((a, b) => b[1].titles.length - a[1].titles.length);
-  $("stats-chart-municipality-pyramid").innerHTML = renderMunicipalityTags(muniGroups);
 }
 
 

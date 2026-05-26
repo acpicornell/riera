@@ -10,7 +10,7 @@
 <meta property="og:description" content="Articles balears del Diccionario geográfico-estadístico de España y sus posesiones de ultramar (1881–1887) de Pablo Riera, amb facsímils i text estructurat.">
 <meta property="og:locale" content="ca_ES">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%238b3a2f'%3E%3Cpath d='M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 <!-- Leaflet for the Mapa tab — loaded lazily by app.js on first tab click -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -30,6 +30,7 @@
   <button class="tab" data-toptab="explore">Explorar</button>
   <button class="tab" data-toptab="map">Mapa</button>
   <button class="tab" data-toptab="stats">Estadístiques</button>
+  <button class="tab" data-toptab="demografia">Demografia</button>
   <button class="tab" data-toptab="notes">Notes</button>
   <button class="tab" data-toptab="abbreviations">Abreviatures</button>
 </nav>
@@ -122,7 +123,8 @@
   <div class="home-actions">
     <button class="home-action" data-goto="explore"><strong>Explorar →</strong><span>Consulta del corpus amb filtres per illa, municipi, tipus de lloc, volum i confiança.</span></button>
     <button class="home-action" data-goto="map"><strong>Mapa →</strong><span>Distribució geogràfica de les 123 entrades amb cercles dimensionats per habitants.</span></button>
-    <button class="home-action" data-goto="stats"><strong>Estadístiques →</strong><span>Sis gràfiques demogràfiques i tipològiques del corpus balear.</span></button>
+    <button class="home-action" data-goto="stats"><strong>Estadístiques →</strong><span>Cobertura del Diccionari: entrades per illa, tipus de lloc, tom i municipi.</span></button>
+    <button class="home-action" data-goto="demografia"><strong>Demografia →</strong><span>Xifres del cens del 1877 segons Riera: habitants, edificis i densitat per nucli.</span></button>
     <button class="home-action" data-goto="notes"><strong>Notes →</strong><span>L'obra de Riera, context editorial i metodologia d'extracció del corpus digital.</span></button>
     <button class="home-action" data-goto="abbreviations"><strong>Abreviatures →</strong><span>Taula de referència del sistema d'abreviatures que Riera empra als articles del Diccionari.</span></button>
   </div>
@@ -388,7 +390,54 @@
 <!-- ===== ESTADÍSTIQUES ===== -->
 <section id="tab-stats" class="tab-content" data-toptab="stats">
   <div class="modern-intro">
-    <h2>Estadístiques balears segons Riera (1881–1887)</h2>
+    <h2>Estadístiques del corpus</h2>
+    <p>
+      Indicadors quantitatius sobre la composició del Diccionari Riera per a les
+      Balears: distribució de les <span id="stats-total-entries">…</span> entrades
+      per illa, per tipus de lloc, per tom dels dotze volums originals, i per
+      municipi modern.
+    </p>
+  </div>
+
+  <div class="demo-charts">
+
+    <div class="demo-card">
+      <h3>Per illa</h3>
+      <p class="demo-caption">Entrades balears del corpus agrupades per illa. Mallorca absorbeix la major part del corpus per pura demografia i superfície; <em>Baleares</em> recull l'article general de la província i el bisbat insular.</p>
+      <div id="stat-by-island" class="demo-chart"><p class="empty">—</p></div>
+    </div>
+
+    <div class="demo-card">
+      <h3>Nivell de confiança de l'extracció</h3>
+      <p class="demo-caption">Cada entrada porta una etiqueta de confiança (alta / mitjana / baixa) assignada pel model durant l'extracció estructurada. És un indicador de qualitat: una entrada de confiança baixa pot tenir camps mal segmentats o text OCR especialment problemàtic.</p>
+      <div id="stat-by-conf" class="demo-chart"><p class="empty">—</p></div>
+    </div>
+
+    <div class="demo-card">
+      <h3>Per tipus de lloc</h3>
+      <p class="demo-caption">Composició del corpus segons l'etiqueta de tipus que Riera assigna a cada entrada: villa, lugar, cabo, isla, agregado, ciudad, isleta, etc. Mostra que l'arxipèlag és majoritàriament rural (lugares i agregats) amb pocs centres urbans.</p>
+      <div id="stat-by-type" class="demo-chart"><p class="empty">—</p></div>
+    </div>
+
+    <div class="demo-card">
+      <h3>Cobertura per tom</h3>
+      <p class="demo-caption">Quantes entrades balears té cada un dels dotze toms del Diccionari original (1881–1887). La distribució no és uniforme: la regla d'ordenació de Riera per «verdadera denominación» —<em>La Puebla</em> a la L, <em>San Juan Bautista</em> a la S— escampa els articles balears entre tots els toms.</p>
+      <div id="stat-by-vol" class="demo-chart"><p class="empty">—</p></div>
+    </div>
+
+    <div class="demo-card demo-card-wide">
+      <h3>Top municipis (entrades penjades del municipi modern)</h3>
+      <p class="demo-caption">Per cada municipi balear actual, nombre d'entrades a Riera que hi pertanyen (incloent agregats, llogarets, caps, etc.). Mostra la jerarquia administrativa: Palma absorbeix La Bonanova, La Vileta, Establiments i Son Sardina; Selva agrupa Biniamar, Caimari, Mancor i Moscarí; Santanyí inclou Calonge, Llombarts i el Cabo Salinas.</p>
+      <div id="stat-by-muni" class="demo-chart"><p class="empty">—</p></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== DEMOGRAFIA ===== -->
+<section id="tab-demografia" class="tab-content" data-toptab="demografia">
+  <div class="modern-intro">
+    <h2>Demografia balear segons Riera (cens de 1877)</h2>
     <p>
       Dades quantitatives extretes directament dels articles del Diccionari. Les xifres
       demogràfiques de Riera procedeixen del <strong>cens del 1877</strong> (Instituto
@@ -416,12 +465,6 @@
     </div>
 
     <div class="demo-card">
-      <h3>Distribució per tipus de lloc</h3>
-      <p class="demo-caption">Composició del corpus segons l'etiqueta de tipus que Riera assigna a cada entrada: villa, lugar, cabo, isla, agregado, ciudad, isleta, etc. Mostra que l'arxipèlag és majoritàriament rural (lugares i agregats) amb pocs centres urbans.</p>
-      <div id="stats-chart-place-types" class="demo-chart"><p class="empty">Carregant…</p></div>
-    </div>
-
-    <div class="demo-card">
       <h3>Demografia per illa</h3>
       <p class="demo-caption">Suma d'habitants i edificis declarats per Riera, agrupats per illa. Mallorca concentra la població absoluta de l'arxipèlag, mentre Menorca i Eivissa mostren proporcions hab/edif diferents que reflecteixen el seu poblament rural dispers.</p>
       <div id="stats-chart-by-island" class="demo-chart"><p class="empty">Carregant…</p></div>
@@ -431,12 +474,6 @@
       <h3>Densitat de poblament: ratio habitants / edifici (top 50)</h3>
       <p class="demo-caption">Mitjana d'habitants per edifici a cada nucli. Indicador socio-espacial: les viles i ciutats concentrades a Mallorca (Palma, Manacor) tenen ratios alts, mentre llogarets i agregats dispersos tenen menys de 4 habitants per edifici.</p>
       <div id="stats-chart-density" class="demo-chart"><p class="empty">Carregant…</p></div>
-    </div>
-
-    <div class="demo-card">
-      <h3>Nuclis penjats per municipi modern</h3>
-      <p class="demo-caption">Per cada municipi balear actual, nombre d'entrades a Riera que hi pertanyen (incloent agregats, llogarets, caps, etc.). Mostra la jerarquia administrativa: Palma absorbeix La Bonanova, La Vileta, Establiments i Son Sardina; Selva agrupa Biniamar, Caimari, Mancor i Moscarí; Santanyí inclou Calonge, Llombarts i el Cabo Salinas.</p>
-      <div id="stats-chart-municipality-pyramid" class="demo-chart"><p class="empty">Carregant…</p></div>
     </div>
 
   </div>
@@ -767,6 +804,6 @@
   </p>
 </footer>
 
-<script src="app.js?v=33"></script>
+<script src="app.js?v=34"></script>
 </body>
 </html>
