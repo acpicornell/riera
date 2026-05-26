@@ -598,7 +598,7 @@ function renderDemografia() {
   }
   densityRows.sort((a, b) => b[1] - a[1]);
   $("stats-chart-density").innerHTML = svgBars(
-    densityRows.slice(0, 50).map(r => [r[0], +r[1].toFixed(2), r[2]]),
+    densityRows.slice(0, 20).map(r => [r[0], +r[1].toFixed(2), r[2]]),
     { labelW: 220, valueSuffix: " hab/edif" }
   );
 }
