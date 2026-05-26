@@ -377,3 +377,9 @@ available to its users.
 Original text (1881–1887) and the BDCyL facsimile derived from a
 public-domain edition are themselves in the public domain (CC0 per
 the BDCyL record).
+
+Coordinates in `data/coords.json` derive from the *Nomenclàtor
+Geogràfic de les Illes Balears* (NGIB), published by the Govern de
+les Illes Balears (IDEIB) under a Creative Commons Attribution
+licence (CC BY). Source dataset:
+<https://intranet.caib.es/opendatacataleg/es/dataset/lloc_anomenat>.
