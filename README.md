@@ -1,5 +1,7 @@
 # Riera · Balearic subset
 
+[![Deploy](https://github.com/acpicornell/riera/actions/workflows/deploy.yml/badge.svg)](https://github.com/acpicornell/riera/actions/workflows/deploy.yml)
+
 Digital edition of the **Balearic Islands articles** of Pablo Riera y
 Sans' *Diccionario geográfico, estadístico, histórico, biográfico,
 postal, municipal, marítimo y eclesiástico de España y sus posesiones
