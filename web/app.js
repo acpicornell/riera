@@ -470,12 +470,6 @@ function renderStats() {
 
 let demoRendered = false;
 
-function fmtCompact(n) {
-  if (n >= 1e6) return `${(n / 1e6).toFixed(2)}M`;
-  if (n >= 1e3) return `${(n / 1e3).toFixed(1)}K`;
-  return String(n);
-}
-
 // Inline horizontal-bar chart. `rows` is [[label, value, sub?], ...]
 // sorted descending. `fmtVal` formats the numeric value for display.
 function svgBars(rows, opts = {}) {
@@ -606,10 +600,10 @@ function renderDemografia() {
 
 // === Demographic chart renderers ===========================================
 
-// Twin-donut per illa. Mostren les proporcions; el desequilibri
-// Mallorca-vs-resta queda visible sense que les illes petites
-// desapareguin. Cada porció pintada amb ISLAND_HUE (el mateix
-// color que el mapa, sunburst i pyramid de la resta de l'app).
+// renderIslandTwinBars: dos donuts (habitants i edificis) repartits per
+// illa. Mostren les proporcions; el desequilibri Mallorca-vs-resta queda
+// visible sense que les illes petites desapareguin. Cada porció pintada
+// amb ISLAND_HUE (el mateix color que el mapa).
 function renderIslandTwinBars(rows) {
   if (!rows.length) return '<p class="empty">Sense dades.</p>';
   const totalHab = rows.reduce((s, r) => s + r[1], 0);
@@ -725,268 +719,7 @@ function renderBuildingsStacked(rows) {
 
 
 // ===========================================================================
-// === Chart helpers leveraging structured admin fields ======================
-// ===========================================================================
-
-// Pull the partido judicial name out of the org_judicial prose. Riera's
-// canonical phrasing is "Pertenece al partido judicial de X" or "Forma
-// parte del part. jud. de X"; OCR variants of "part. jud." are tolerated.
-function extractPartidoJudicial(orgJudicial) {
-  if (!orgJudicial) return null;
-  const m = orgJudicial.match(
-    /\bpart(?:ido|\.)\s*jud(?:icial|\.)?\s+(?:de\s+)?([A-Za-záéíóúñÑÁÉÍÓÚüÜ]+)/i
-  );
-  if (!m) return null;
-  // Trim trailing connectors / strip articles
-  let pj = m[1].replace(/^(?:la|las|el|los)\s+/i, "").trim();
-  // Capitalise for display
-  return pj.charAt(0).toUpperCase() + pj.slice(1).toLowerCase();
-}
-
-// Same idea for the diocese (we keep this even though parsed.diocesis
-// is already available in some cases — the web data only carries the
-// raw prose, not the parsed lowercased token).
-function extractDiocese(orgEcles) {
-  if (!orgEcles) return null;
-  const m = orgEcles.match(
-    /\bdi[óo]c\.?(?:esis)?\s+(?:de\s+)?([A-Za-záéíóúñÑÁÉÍÓÚüÜ]+)/i
-  );
-  if (!m) return null;
-  let d = m[1].trim();
-  return d.charAt(0).toUpperCase() + d.slice(1).toLowerCase();
-}
-
-// === Chart 1: side-by-side bars of habitantes and edificios per island ===
-function renderPopEdifPyramid(entries) {
-  const byIsl = new Map();
-  for (const e of entries) {
-    if (!e.island || isIslandAggregate(e)) continue;
-    const s = e.stats; if (!s) continue;
-    const r = byIsl.get(e.island) || { hab: 0, edif: 0, n: 0 };
-    r.hab += s.habitantes || 0;
-    r.edif += s.edificios || 0;
-    r.n += 1;
-    byIsl.set(e.island, r);
-  }
-  const rows = [...byIsl.entries()]
-    .filter(([, r]) => r.hab > 0 || r.edif > 0)
-    .sort((a, b) => b[1].hab - a[1].hab);
-  if (!rows.length) return '<p class="empty">Sense dades.</p>';
-  const W = 720, H = 40 + rows.length * 48;
-  const labelW = 110, midW = 12;
-  const sideW = (W - labelW - midW - 110) / 2;
-  const maxHab = Math.max(...rows.map(r => r[1].hab));
-  const maxEdif = Math.max(...rows.map(r => r[1].edif));
-  let svg = `<svg viewBox="0 0 ${W} ${H}" class="bars-svg pyramid-svg" preserveAspectRatio="xMinYMin meet" role="img">`;
-  svg += `<text x="${labelW + sideW - 4}" y="14" text-anchor="end" class="bar-axis">habitants</text>`;
-  svg += `<text x="${labelW + sideW + midW + 4}" y="14" text-anchor="start" class="bar-axis">edificis</text>`;
-  rows.forEach(([isl, r], i) => {
-    const y = 28 + i * 48;
-    const wHab = (r.hab / maxHab) * sideW;
-    const wEdif = (r.edif / maxEdif) * sideW;
-    const hue = ISLAND_HUE[isl] || "#475569";
-    // Island label centre
-    svg += `<text x="${labelW + sideW + midW / 2}" y="${y + 14}" text-anchor="middle" class="pyramid-island">${esc(isl)}</text>`;
-    svg += `<text x="${labelW + sideW + midW / 2}" y="${y + 30}" text-anchor="middle" class="pyramid-subnum">${r.n} entr.</text>`;
-    // Left bar (habitants)
-    svg += `<rect x="${labelW + sideW - wHab}" y="${y}" width="${wHab}" height="24" rx="2" fill="${hue}" opacity="0.92"/>`;
-    svg += `<text x="${labelW + sideW - wHab - 6}" y="${y + 17}" text-anchor="end" class="bar-value">${fmt(r.hab)}</text>`;
-    // Right bar (edificis)
-    svg += `<rect x="${labelW + sideW + midW}" y="${y}" width="${wEdif}" height="24" rx="2" fill="${lighten(hue, 0.35)}" opacity="0.95"/>`;
-    svg += `<text x="${labelW + sideW + midW + wEdif + 6}" y="${y + 17}" text-anchor="start" class="bar-value">${fmt(r.edif)}</text>`;
-  });
-  svg += "</svg>";
-  return svg;
-}
-
-// === Chart 2: scatter of edificios vs habitantes (log-log) ===============
-function renderDensityScatter(entries) {
-  const points = entries
-    .filter(e => isPlaceEntry(e) && e.stats?.habitantes && e.stats?.edificios
-      && e.stats.edificios > 0 && e.stats.habitantes > 0)
-    .map(e => ({
-      x: e.stats.edificios, y: e.stats.habitantes,
-      title: e.title, island: e.island,
-    }));
-  if (!points.length) return '<p class="empty">Sense dades.</p>';
-  const W = 720, H = 460;
-  const padL = 60, padR = 20, padT = 20, padB = 50;
-  const innerW = W - padL - padR;
-  const innerH = H - padT - padB;
-  const xs = points.map(p => p.x), ys = points.map(p => p.y);
-  const xMin = Math.log10(Math.min(...xs));
-  const xMax = Math.log10(Math.max(...xs));
-  const yMin = Math.log10(Math.min(...ys));
-  const yMax = Math.log10(Math.max(...ys));
-  const sx = v => padL + ((Math.log10(v) - xMin) / (xMax - xMin)) * innerW;
-  const sy = v => padT + innerH - ((Math.log10(v) - yMin) / (yMax - yMin)) * innerH;
-  let svg = `<svg viewBox="0 0 ${W} ${H}" class="scatter-svg" preserveAspectRatio="xMidYMid meet" role="img">`;
-  // Grid + ticks at log-decade boundaries
-  for (let dec = Math.floor(xMin); dec <= Math.ceil(xMax); dec++) {
-    const x = sx(Math.pow(10, dec));
-    if (x < padL || x > W - padR) continue;
-    svg += `<line x1="${x}" y1="${padT}" x2="${x}" y2="${padT + innerH}" style="stroke:var(--border)" stroke-width="1"/>`;
-    svg += `<text x="${x}" y="${H - padB + 18}" text-anchor="middle" class="scatter-tick">${fmt(Math.pow(10, dec))}</text>`;
-  }
-  for (let dec = Math.floor(yMin); dec <= Math.ceil(yMax); dec++) {
-    const y = sy(Math.pow(10, dec));
-    if (y < padT || y > H - padB) continue;
-    svg += `<line x1="${padL}" y1="${y}" x2="${padL + innerW}" y2="${y}" style="stroke:var(--border)" stroke-width="1"/>`;
-    svg += `<text x="${padL - 8}" y="${y + 4}" text-anchor="end" class="scatter-tick">${fmt(Math.pow(10, dec))}</text>`;
-  }
-  // Diagonal reference line: 4 hab per edif
-  const xDom = [Math.pow(10, xMin), Math.pow(10, xMax)];
-  svg += `<line x1="${sx(xDom[0])}" y1="${sy(xDom[0] * 4)}" x2="${sx(xDom[1])}" y2="${sy(xDom[1] * 4)}" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 4"/>`;
-  svg += `<text x="${sx(xDom[1])}" y="${sy(xDom[1] * 4) - 6}" text-anchor="end" class="scatter-tick">4 hab / edif</text>`;
-  // Axes labels
-  svg += `<text x="${padL + innerW / 2}" y="${H - 8}" text-anchor="middle" class="scatter-axis-label">edificis</text>`;
-  svg += `<text transform="translate(16,${padT + innerH / 2}) rotate(-90)" text-anchor="middle" class="scatter-axis-label">habitants</text>`;
-  // Points
-  for (const p of points) {
-    const c = ISLAND_HUE[p.island] || "#475569";
-    svg += `<circle cx="${sx(p.x)}" cy="${sy(p.y)}" r="5" fill="${c}" opacity="0.7" style="stroke:var(--surface)" stroke-width="0.8">` +
-           `<title>${esc(p.title)} · ${esc(p.island || "?")}: ${fmt(p.y)} hab. / ${fmt(p.x)} edif. (${(p.y / p.x).toFixed(2)})</title></circle>`;
-  }
-  // Legend
-  let lx = padL + 10, ly = padT + 10;
-  const islands = [...new Set(points.map(p => p.island))].filter(Boolean);
-  islands.forEach((isl, i) => {
-    const c = ISLAND_HUE[isl] || "#475569";
-    svg += `<rect x="${lx}" y="${ly + i * 16}" width="10" height="10" fill="${c}"/>`;
-    svg += `<text x="${lx + 14}" y="${ly + i * 16 + 9}" class="scatter-legend">${esc(isl)}</text>`;
-  });
-  svg += "</svg>";
-  return svg;
-}
-
-// === Chart 3: 3-level sunburst island → partit_jud → municipi ============
-function renderAdminSunburst(entries) {
-  const hier = new Map();
-  for (const e of entries) {
-    if (!e.island) continue;
-    const pj = extractPartidoJudicial(e.org_judicial) || "(sense partit)";
-    const muni = e.municipality || e.title;
-    const islMap = hier.get(e.island) || new Map();
-    const pjMap = islMap.get(pj) || new Map();
-    pjMap.set(muni, (pjMap.get(muni) || 0) + 1);
-    islMap.set(pj, pjMap);
-    hier.set(e.island, islMap);
-  }
-  const islandTotals = [...hier.entries()].map(([k, v]) => {
-    let n = 0; for (const pjMap of v.values()) for (const c of pjMap.values()) n += c;
-    return [k, v, n];
-  }).sort((a, b) => b[2] - a[2]);
-  const grandTotal = islandTotals.reduce((s, [, , n]) => s + n, 0);
-  if (grandTotal === 0) return '<p class="empty">Sense dades.</p>';
-  const W = 720, H = 560;
-  const cx = W / 2, cy = H / 2;
-  const r1 = 60, r2 = 130, r3 = 200, r4 = 270;
-  let svg = `<svg viewBox="0 0 ${W} ${H}" class="sunburst-svg" preserveAspectRatio="xMidYMid meet" role="img">`;
-  const TAU = 2 * Math.PI;
-  let a = -Math.PI / 2;
-  for (const [isl, pjMap, islN] of islandTotals) {
-    const islSpan = (islN / grandTotal) * TAU;
-    const a0 = a, a1 = a + islSpan;
-    const hue = ISLAND_HUE[isl] || "#475569";
-    svg += `<path d="${arcPath(cx, cy, r1, r2, a0, a1)}" fill="${hue}" style="stroke:var(--surface)" stroke-width="1.5" opacity="0.95">` +
-           `<title>${esc(isl)}: ${islN} entrades</title></path>`;
-    const pjEntries = [...pjMap.entries()].sort(([, a], [, b]) => {
-      const sumA = [...a.values()].reduce((s, v) => s + v, 0);
-      const sumB = [...b.values()].reduce((s, v) => s + v, 0);
-      return sumB - sumA;
-    });
-    let ap = a0;
-    for (const [pj, muniMap] of pjEntries) {
-      const pjN = [...muniMap.values()].reduce((s, v) => s + v, 0);
-      const pjSpan = (pjN / islN) * islSpan;
-      const ap0 = ap, ap1 = ap + pjSpan;
-      svg += `<path d="${arcPath(cx, cy, r2, r3, ap0, ap1)}" fill="${lighten(hue, 0.3)}" style="stroke:var(--surface)" stroke-width="0.8">` +
-             `<title>${esc(isl)} · ${esc(pj)}: ${pjN}</title></path>`;
-      if (pjSpan > 0.18) {
-        const mid = (ap0 + ap1) / 2, lr = (r2 + r3) / 2;
-        svg += `<text x="${cx + lr * Math.cos(mid)}" y="${cy + lr * Math.sin(mid)}" class="sunb-label-island" text-anchor="middle" dominant-baseline="middle" font-size="11">${esc(pj)}</text>`;
-      }
-      const munis = [...muniMap.entries()].sort((a, b) => b[1] - a[1]);
-      let am = ap0;
-      for (const [muni, n] of munis) {
-        const mSpan = (n / pjN) * pjSpan;
-        const am0 = am, am1 = am + mSpan;
-        svg += `<path d="${arcPath(cx, cy, r3, r4, am0, am1)}" fill="${lighten(hue, 0.55)}" style="stroke:var(--surface)" stroke-width="0.6">` +
-               `<title>${esc(isl)} · ${esc(pj)} · ${esc(muni)}: ${n}</title></path>`;
-        am = am1;
-      }
-      ap = ap1;
-    }
-    a = a1;
-  }
-  svg += `<text x="${cx}" y="${cy - 4}" text-anchor="middle" class="sunb-total">${fmt(grandTotal)}</text>`;
-  svg += `<text x="${cx}" y="${cy + 14}" text-anchor="middle" class="sunb-total-label">entrades</text>`;
-  svg += "</svg>";
-  return svg;
-}
-
-// === Chart 4: heatmap diocese × partit judicial =========================
-function renderDioceseVsPJ(entries) {
-  const matrix = new Map();
-  const dioceses = new Set();
-  const pjs = new Set();
-  for (const e of entries) {
-    const dioc = extractDiocese(e.org_eclesiastica);
-    const pj = extractPartidoJudicial(e.org_judicial);
-    if (!dioc || !pj) continue;
-    dioceses.add(dioc);
-    pjs.add(pj);
-    const key = `${dioc}|${pj}`;
-    matrix.set(key, (matrix.get(key) || 0) + 1);
-  }
-  if (!matrix.size) return '<p class="empty">No s\'han pogut extreure diòcesi i partit judicial.</p>';
-  // Order: dioceses by total count desc, partidos by total count desc
-  const diocTotals = new Map();
-  const pjTotals = new Map();
-  for (const [k, v] of matrix) {
-    const [d, p] = k.split("|");
-    diocTotals.set(d, (diocTotals.get(d) || 0) + v);
-    pjTotals.set(p, (pjTotals.get(p) || 0) + v);
-  }
-  const diocOrder = [...dioceses].sort((a, b) => (diocTotals.get(b) || 0) - (diocTotals.get(a) || 0));
-  const pjOrder = [...pjs].sort((a, b) => (pjTotals.get(b) || 0) - (pjTotals.get(a) || 0));
-  const cellW = 56, cellH = 32;
-  const labelLeftW = 140, labelTopH = 90;
-  const W = labelLeftW + pjOrder.length * cellW + 20;
-  const H = labelTopH + diocOrder.length * cellH + 30;
-  const maxVal = Math.max(...matrix.values());
-  let svg = `<svg viewBox="0 0 ${W} ${H}" class="heatmap-svg" preserveAspectRatio="xMinYMin meet" role="img">`;
-  // Top labels (partidos, rotated)
-  pjOrder.forEach((pj, j) => {
-    const x = labelLeftW + j * cellW + cellW / 2;
-    svg += `<text x="${x}" y="${labelTopH - 8}" text-anchor="start" transform="rotate(-45 ${x} ${labelTopH - 8})" class="heatmap-col-label">${esc(pj)}</text>`;
-  });
-  // Row labels and cells
-  diocOrder.forEach((dioc, i) => {
-    const y = labelTopH + i * cellH;
-    svg += `<text x="${labelLeftW - 8}" y="${y + cellH / 2 + 4}" text-anchor="end" class="heatmap-row-label">${esc(dioc)}</text>`;
-    pjOrder.forEach((pj, j) => {
-      const x = labelLeftW + j * cellW;
-      const v = matrix.get(`${dioc}|${pj}`) || 0;
-      const t = v / maxVal;
-      const fill = v === 0 ? "var(--num-bg)"
-        : `rgba(99, 102, 241, ${0.15 + t * 0.85})`;
-      svg += `<rect x="${x + 1}" y="${y + 1}" width="${cellW - 2}" height="${cellH - 2}" style="fill:${fill};stroke:var(--surface)" stroke-width="1">` +
-             `<title>${esc(dioc)} × ${esc(pj)}: ${v}</title></rect>`;
-      if (v > 0) {
-        const textColor = t > 0.5 ? "#fff" : "var(--text)";
-        svg += `<text x="${x + cellW / 2}" y="${y + cellH / 2 + 4}" text-anchor="middle" class="heatmap-val" style="fill:${textColor}">${v}</text>`;
-      }
-    });
-  });
-  svg += "</svg>";
-  return svg;
-}
-
-const SUNB_NO_TYP = "(sense tipus)";
-
-// ===========================================================================
-// === SUNBURST (island → regime → place_type) ==============================
+// === Island palette and SVG helpers =======================================
 // ===========================================================================
 
 const ISLAND_HUE = {
@@ -999,117 +732,6 @@ const ISLAND_HUE = {
   "Baleares":   "#475569",
 };
 
-function lighten(hex, t) {
-  const r = parseInt(hex.slice(1, 3), 16);
-  const g = parseInt(hex.slice(3, 5), 16);
-  const b = parseInt(hex.slice(5, 7), 16);
-  const f = c => Math.round(c + (255 - c) * (1 - t));
-  return `rgb(${f(r)},${f(g)},${f(b)})`;
-}
-
-function arcPath(cx, cy, rInner, rOuter, a0, a1) {
-  const x0 = cx + rInner * Math.cos(a0), y0 = cy + rInner * Math.sin(a0);
-  const x1 = cx + rOuter * Math.cos(a0), y1 = cy + rOuter * Math.sin(a0);
-  const x2 = cx + rOuter * Math.cos(a1), y2 = cy + rOuter * Math.sin(a1);
-  const x3 = cx + rInner * Math.cos(a1), y3 = cy + rInner * Math.sin(a1);
-  const large = (a1 - a0) > Math.PI ? 1 : 0;
-  return `M${x0},${y0} L${x1},${y1} A${rOuter},${rOuter} 0 ${large} 1 ${x2},${y2} ` +
-         `L${x3},${y3} A${rInner},${rInner} 0 ${large} 0 ${x0},${y0} Z`;
-}
-
-function renderSunburst(entries) {
-  const hier = new Map();
-  for (const e of entries) {
-    const isl = e.island || "(altres)";
-    const typ = e.place_type || SUNB_NO_TYP;
-    if (!hier.has(isl)) hier.set(isl, new Map());
-    const tm = hier.get(isl);
-    tm.set(typ, (tm.get(typ) || 0) + 1);
-  }
-  const islandTotals = [...hier.entries()].map(([k, v]) => {
-    let n = 0; for (const tn of v.values()) n += tn;
-    return [k, v, n];
-  }).sort((a, b) => b[2] - a[2]);
-  const grandTotal = islandTotals.reduce((s, [, , n]) => s + n, 0);
-  if (grandTotal === 0) return '<p class="empty">Sense dades.</p>';
-
-  const W = 720, H = 540;
-  const cx = W / 2, cy = H / 2;
-  const r1 = 80, r2 = 160, r3 = 240;
-  let svg = `<svg viewBox="0 0 ${W} ${H}" class="sunburst-svg" preserveAspectRatio="xMidYMid meet" role="img">`;
-  const labels = [];
-
-  let a = -Math.PI / 2;
-  const TAU = 2 * Math.PI;
-  for (const [isl, typeMap, islN] of islandTotals) {
-    const islSpan = (islN / grandTotal) * TAU;
-    const a0 = a, a1 = a + islSpan;
-    const hue = ISLAND_HUE[isl] || "#475569";
-    const islPct = (islN / grandTotal * 100).toFixed(1);
-    svg += `<path d="${arcPath(cx, cy, r1, r2, a0, a1)}" fill="${hue}" style="stroke:var(--surface)" stroke-width="1.5" opacity="0.95"` +
-           ` class="sunb-seg" data-level="1" data-island="${esc(isl)}" data-count="${islN}" data-pct="${islPct}">` +
-           `<title>${esc(isl)}: ${islN} entrades (${islPct}%)</title></path>`;
-    if (islSpan > 0.25) {
-      const mid = (a0 + a1) / 2, lr = (r1 + r2) / 2;
-      labels.push(`<text x="${cx + lr * Math.cos(mid)}" y="${cy + lr * Math.sin(mid)}" class="sunb-label-island" text-anchor="middle" dominant-baseline="middle">${esc(isl)}</text>`);
-    }
-
-    const types = [...typeMap.entries()].sort((a, b) => b[1] - a[1]);
-    let at = a0;
-    for (const [typ, n] of types) {
-      const tSpan = (n / islN) * islSpan;
-      const at0 = at, at1 = at + tSpan;
-      const tPct = (n / islN * 100).toFixed(0);
-      svg += `<path d="${arcPath(cx, cy, r2, r3, at0, at1)}" fill="${lighten(hue, 0.5)}" style="stroke:var(--surface)" stroke-width="0.8"` +
-             ` class="sunb-seg" data-level="2" data-island="${esc(isl)}" data-type="${esc(typ)}" data-count="${n}" data-pct="${tPct}">` +
-             `<title>${esc(isl)} · ${esc(typ)}: ${n}</title></path>`;
-      at = at1;
-    }
-    a = a1;
-  }
-
-  svg += labels.join("");
-  svg += `<text x="${cx}" y="${cy - 4}" text-anchor="middle" class="sunb-total">${fmt(grandTotal)}</text>`;
-  svg += `<text x="${cx}" y="${cy + 14}" text-anchor="middle" class="sunb-total-label">entrades</text>`;
-  svg += "</svg>";
-  return svg;
-}
-
-// Attach hover/click listeners to the freshly rendered sunburst so users
-// can see what each segment represents (the static <title> tooltip works
-// but is browser-specific and slow to appear).
-function wireSunburstHover() {
-  const host = $("stats-chart-sunburst");
-  const panel = $("stats-sunburst-info");
-  if (!host || !panel) return;
-  const segs = host.querySelectorAll(".sunb-seg");
-  if (!segs.length) return;
-
-  const show = (el) => {
-    const lvl = el.dataset.level;
-    const isl = el.dataset.island;
-    const typ = el.dataset.type;
-    const n = el.dataset.count;
-    const pct = el.dataset.pct;
-    const islHTML = `<span class="sunb-info-isl" style="color:${ISLAND_HUE[isl] || '#475569'}">${esc(isl)}</span>`;
-    let path;
-    if (lvl === "1") path = `${islHTML}`;
-    else path = `${islHTML} <span class="sunb-info-sep">›</span> <strong>${esc(typ)}</strong>`;
-    panel.innerHTML =
-      `<span class="sunb-info-path">${path}</span>` +
-      `<span class="sunb-info-count"><strong>${fmt(n)}</strong> entrades · ${pct}%</span>`;
-  };
-  const reset = () => {
-    panel.innerHTML = '<span class="sunb-info-prompt">Passa el cursor per sobre d\'un segment per veure\'n el detall ↑</span>';
-  };
-  for (const el of segs) {
-    el.addEventListener("mouseenter", () => show(el));
-    el.addEventListener("focus", () => show(el));
-    el.addEventListener("click", () => show(el));
-  }
-  host.addEventListener("mouseleave", reset);
-}
-
 // ===========================================================================
 // === MAPA TAB ===============================================================
 // ===========================================================================
@@ -1118,17 +740,7 @@ let mapInstance = null;
 let mapMarkersAll = [];
 let mapLeafletLoading = null;
 
-const ISLAND_COLOUR = {
-  "Mallorca":   "#0070b8",
-  "Menorca":    "#0f766e",
-  "Ibiza":      "#c2410c",
-  "Eivissa":    "#c2410c",
-  "Formentera": "#a04545",
-  "Cabrera":    "#7c3aed",
-  "Baleares":   "#475569",
-};
-
-// Lazy-load Leaflet's JS bundle from the CDN. Returns a promise that
+// Lazy-load Leaflet's JS bundle from web/vendor/. Returns a promise that
 // resolves once window.L is available. Subsequent calls reuse the same
 // promise so we don't fetch twice.
 function loadLeaflet() {
@@ -1202,7 +814,7 @@ async function renderMap() {
     for (const e of state.entries) {
       if (typeof e.lon !== "number" || typeof e.lat !== "number") continue;
       const r = radiusForHabitantes(e.stats?.habitantes);
-      const colour = ISLAND_COLOUR[e.island] || "#475569";
+      const colour = ISLAND_HUE[e.island] || "#475569";
       const m = L.circleMarker([e.lat, e.lon], {
         radius: r,
         color: "#fff",

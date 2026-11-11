@@ -1,5 +1,6 @@
-/* 1860 Nomenclator — clear academic palette. Slim version for riera
-   (no map / no demografia / no statistics tab; the corpus is smaller). */
+/* Riera, Diccionario geográfico, estadístico, municipal de España (1881-1887)
+   — clear academic palette. Tabs: Inici, Explorar, Mapa, Estadístiques,
+   Demografia, Notes and Abreviatures. */
 :root {
   --bg: #fdfaf3;
   --surface: #ffffff;
@@ -17,11 +18,8 @@
   --conf-medium: #b87333;
   --on-accent: #fff;
   --map-bg: #e8eef2;
-  --tag-abbyy-bg: #f4e3c2; --tag-abbyy: #6f5018;
-  --tag-rare-bg: #f4d4d4; --tag-rare: #6e2828;
-  --tag-partial-bg: #e2e2e2; --tag-partial: #555;
   --tag-supl-bg: #d4e1f0; --tag-supl: #2c4a6e;
-  --tomo-rare: #a04545; --tomo-abbyy: #b8862d; --tomo-supl: #5a7fa8;
+  --tomo-supl: #5a7fa8;
   --muni-line: #e5e7eb; --muni-count-bg: #f3f4f6; --muni-count: #374151;
   --muni-tag-bg: #f9fafb; --muni-tag: #4b5563;
 }
@@ -49,11 +47,8 @@
     --conf-medium: #e0a26a;
     --on-accent: #1a0f0c;
     --map-bg: #1d2226;
-    --tag-abbyy-bg: #3a2e18; --tag-abbyy: #e6c784;
-    --tag-rare-bg: #3a2020; --tag-rare: #eba3a3;
-    --tag-partial-bg: #2e2e2e; --tag-partial: #c4c4c4;
     --tag-supl-bg: #1e2b3a; --tag-supl: #a8c3e3;
-    --tomo-rare: #e08a8a; --tomo-abbyy: #e0b45a; --tomo-supl: #8fb2da;
+    --tomo-supl: #8fb2da;
     --muni-line: #3a332c; --muni-count-bg: #2c2620; --muni-count: #d6cdc2;
     --muni-tag-bg: #24201b; --muni-tag: #c2b8ac;
     --card: #1e1a17;
@@ -77,11 +72,8 @@
   --conf-medium: #e0a26a;
   --on-accent: #1a0f0c;
   --map-bg: #1d2226;
-  --tag-abbyy-bg: #3a2e18; --tag-abbyy: #e6c784;
-  --tag-rare-bg: #3a2020; --tag-rare: #eba3a3;
-  --tag-partial-bg: #2e2e2e; --tag-partial: #c4c4c4;
   --tag-supl-bg: #1e2b3a; --tag-supl: #a8c3e3;
-  --tomo-rare: #e08a8a; --tomo-abbyy: #e0b45a; --tomo-supl: #8fb2da;
+  --tomo-supl: #8fb2da;
   --muni-line: #3a332c; --muni-count-bg: #2c2620; --muni-count: #d6cdc2;
   --muni-tag-bg: #24201b; --muni-tag: #c2b8ac;
   --card: #1e1a17;
@@ -334,20 +326,6 @@ tbody tr.riera-expand td {
 .riera-article {
   padding: 1em 1.4em 1.2em;
   border-left: 3px solid var(--accent);
-}
-.entry-admin {
-  font-size: 0.88em;
-  color: var(--text-muted);
-  margin-bottom: 0.7em;
-}
-.entry-admin strong { color: var(--text); font-weight: 600; }
-.riera-body {
-  font-size: 0.95em;
-  line-height: 1.65;
-  text-align: justify;
-  hyphens: auto;
-  margin: 0 0 1em;
-  font-family: Georgia, "Times New Roman", serif;
 }
 .entry-stats, .entry-crefs {
   margin: 0.6em 0 0;
@@ -617,14 +595,8 @@ tbody tr.riera-expand td {
   background: var(--border);
   color: var(--text);
 }
-.tag-abbyy   { background: var(--tag-abbyy-bg); color: var(--tag-abbyy); }
-.tag-rare    { background: var(--tag-rare-bg); color: var(--tag-rare); }
-.tag-partial { background: var(--tag-partial-bg); color: var(--tag-partial); }
 .tag-supl    { background: var(--tag-supl-bg); color: var(--tag-supl); }
 
-.tomo-row-partial td { opacity: 0.7; }
-.tomo-row-rare .tom-num    { color: var(--tomo-rare); }
-.tomo-row-abbyy .tom-num   { color: var(--tomo-abbyy); }
 .tomo-row-supl .tom-num    { color: var(--tomo-supl); }
 
 .home-actions {
@@ -852,13 +824,6 @@ tbody tr.riera-expand td {
 }
 .demo-caption p { margin: 0 0 0.6em; }
 .demo-caption p:last-child { margin-bottom: 0; }
-.sunburst-legend {
-  margin: 0 0 0.7em;
-  padding-left: 1.2em;
-  list-style: disc;
-}
-.sunburst-legend li { margin-bottom: 0.15em; }
-.sunburst-legend strong { color: var(--text); }
 .demo-card-wide { grid-column: 1 / -1; }
 .demo-chart { overflow-x: auto; }
 /* Municipality tag-list (replaces svgBars when text lists are too long) */
@@ -869,68 +834,10 @@ tbody tr.riera-expand td {
 .muni-count { margin-left: auto; background: var(--muni-count-bg); color: var(--muni-count); font-size: 0.78rem; font-weight: 600; padding: 0.1rem 0.5rem; border-radius: 999px; font-variant-numeric: tabular-nums; }
 .muni-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
 .muni-tag { display: inline-block; font-size: 0.74rem; padding: 0.15rem 0.5rem; background: var(--muni-tag-bg); border: 1px solid var(--muni-line); border-radius: 4px; color: var(--muni-tag); letter-spacing: 0.01em; }
-/* === New stats charts (pyramid, scatter, admin sunburst, heatmap) === */
-.pyramid-svg { width: 100%; height: auto; display: block; font-family: inherit; }
-.pyramid-svg .pyramid-island { font-size: 12px; font-weight: 700; fill: var(--text); }
-.pyramid-svg .pyramid-subnum { font-size: 9px; fill: var(--text-muted); text-transform: uppercase; }
-.pyramid-svg .bar-value { font-size: 11px; fill: var(--text); font-variant-numeric: tabular-nums; font-weight: 600; }
-.pyramid-svg .bar-axis  { font-size: 10px; fill: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
-.pyramid-svg rect { transition: opacity 0.15s; }
-.pyramid-svg rect:hover { opacity: 0.7; }
-
-.scatter-svg { width: 100%; height: auto; display: block; font-family: inherit; }
-.scatter-svg .scatter-tick { font-size: 10px; fill: var(--text-muted); font-variant-numeric: tabular-nums; }
-.scatter-svg .scatter-axis-label { font-size: 11px; fill: var(--text); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
-.scatter-svg .scatter-legend { font-size: 11px; fill: var(--text); }
-.scatter-svg circle { cursor: default; transition: r 0.12s; }
-.scatter-svg circle:hover { r: 7; opacity: 1 !important; }
-
-.heatmap-svg { width: 100%; height: auto; display: block; font-family: inherit; }
-.heatmap-svg .heatmap-col-label { font-size: 11px; fill: var(--text); font-weight: 500; }
-.heatmap-svg .heatmap-row-label { font-size: 12px; fill: var(--text); font-weight: 600; }
-.heatmap-svg .heatmap-val { font-size: 11px; font-weight: 600; font-variant-numeric: tabular-nums; }
-.heatmap-svg rect { cursor: default; transition: opacity 0.12s; }
-.heatmap-svg rect:hover { opacity: 0.7; }
-
 .bars-svg { width: 100%; height: auto; display: block; font-family: inherit; }
 .bars-svg .bar-label  { font-size: 11px; fill: var(--text); font-variant-numeric: tabular-nums; }
 .bars-svg .bar-value  { font-size: 11px; fill: var(--text); font-variant-numeric: tabular-nums; font-weight: 600; }
 .bars-svg .bar-sub    { fill: var(--text-muted); font-weight: 400; font-size: 10px; }
-
-/* Sunburst */
-.sunburst-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-.sunburst-svg path { transition: opacity 0.15s ease; cursor: default; }
-.sunburst-svg path:hover { opacity: 0.65; }
-.sunburst-svg .sunb-label-island { font-size: 13px; font-weight: 700; fill: #fff; pointer-events: none; }
-.sunburst-svg .sunb-total        { font-size: 26px; font-weight: 700; fill: var(--text); font-variant-numeric: tabular-nums; }
-.sunburst-svg .sunb-total-label  { font-size: 11px; fill: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
-.sunburst-svg .sunb-seg { cursor: pointer; transition: filter 0.12s ease; }
-.sunburst-svg .sunb-seg:hover { filter: brightness(1.07) drop-shadow(0 0 3px rgba(0,0,0,0.18)); }
-
-.sunburst-info {
-  margin: 0.6em 0 0;
-  padding: 0.7em 1em;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.7em;
-  min-height: 38px;
-}
-.sunburst-info .sunb-info-prompt { color: var(--text-muted); font-style: italic; font-size: 0.9em; }
-.sunburst-info .sunb-info-path   { font-size: 0.98em; color: var(--text); }
-.sunburst-info .sunb-info-isl    { font-weight: 700; font-family: Georgia, serif; }
-.sunburst-info .sunb-info-sep    { color: var(--text-muted); margin: 0 0.25em; }
-.sunburst-info .sunb-info-count  { font-size: 0.9em; color: var(--text-muted); font-variant-numeric: tabular-nums; }
-.sunburst-info .sunb-info-count strong { color: var(--accent-dark); font-size: 1.05em; }
 
 @media (max-width: 920px) {
   .demo-charts { grid-template-columns: 1fr; }
@@ -958,11 +865,6 @@ footer p:last-child { margin-bottom: 0; }
 }
 .repo-link:hover { color: var(--accent-dark); }
 .repo-icon { width: 1em; height: 1em; }
-
-/* The sunburst draws white separators between its arcs as SVG attributes; a
-   CSS property outranks a presentation attribute, so they take the page's
-   surface colour and stay separators in either theme. */
-.sunburst-svg path { stroke: var(--surface); }
 
 /* The map in the dark theme. OpenStreetMap publishes no dark tiles, so the
    light ones are inverted and dimmed -- the usual treatment, as on minano and
