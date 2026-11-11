@@ -637,18 +637,18 @@ function renderIslandTwinBars(rows) {
       const a1 = a + sweep;
       const mid = (a + a1) / 2;
       const pct = (v / total) * 100;
-      svg += `<path d="${arcPath(cx, cy, R, r, a, a1)}" fill="${hue}" stroke="#fff" stroke-width="2"><title>${esc(isl)}: ${fmt(v)} (${pct.toFixed(1)}%)</title></path>`;
+      svg += `<path d="${arcPath(cx, cy, R, r, a, a1)}" fill="${hue}" style="stroke:var(--surface)" stroke-width="2"><title>${esc(isl)}: ${fmt(v)} (${pct.toFixed(1)}%)</title></path>`;
       if (pct >= 4) {
         const lx = cx + (R + 18) * Math.cos(mid);
         const ly = cy + (R + 18) * Math.sin(mid) + 4;
         const anchor = Math.cos(mid) > 0.2 ? "start" : Math.cos(mid) < -0.2 ? "end" : "middle";
-        svg += `<text x="${lx}" y="${ly}" text-anchor="${anchor}" style="font-size:12px;fill:#1f2937">${esc(isl)} <tspan style="fill:#6b7280">(${pct.toFixed(0)}%)</tspan></text>`;
+        svg += `<text x="${lx}" y="${ly}" text-anchor="${anchor}" style="font-size:12px;fill:var(--text)">${esc(isl)} <tspan style="fill:var(--text-muted)">(${pct.toFixed(0)}%)</tspan></text>`;
       }
       a = a1;
     }
-    svg += `<text x="${cx}" y="${cy - 4}" text-anchor="middle" style="font-size:22px;font-weight:700;fill:#1f2937">${fmt(total)}</text>`;
-    svg += `<text x="${cx}" y="${cy + 16}" text-anchor="middle" style="font-size:11px;fill:#6b7280;letter-spacing:0.5px;text-transform:uppercase">${label}</text>`;
-    svg += `<text x="${cx}" y="${H - 16}" text-anchor="middle" style="font-size:13px;font-weight:600;fill:#374151">${label === "habitants" ? "Habitants totals" : "Edificis totals"}</text>`;
+    svg += `<text x="${cx}" y="${cy - 4}" text-anchor="middle" style="font-size:22px;font-weight:700;fill:var(--text)">${fmt(total)}</text>`;
+    svg += `<text x="${cx}" y="${cy + 16}" text-anchor="middle" style="font-size:11px;fill:var(--text-muted);letter-spacing:0.5px;text-transform:uppercase">${label}</text>`;
+    svg += `<text x="${cx}" y="${H - 16}" text-anchor="middle" style="font-size:13px;font-weight:600;fill:var(--text)">${label === "habitants" ? "Habitants totals" : "Edificis totals"}</text>`;
     return svg;
   };
 
@@ -825,13 +825,13 @@ function renderDensityScatter(entries) {
   for (let dec = Math.floor(xMin); dec <= Math.ceil(xMax); dec++) {
     const x = sx(Math.pow(10, dec));
     if (x < padL || x > W - padR) continue;
-    svg += `<line x1="${x}" y1="${padT}" x2="${x}" y2="${padT + innerH}" stroke="#e5e7eb" stroke-width="1"/>`;
+    svg += `<line x1="${x}" y1="${padT}" x2="${x}" y2="${padT + innerH}" style="stroke:var(--border)" stroke-width="1"/>`;
     svg += `<text x="${x}" y="${H - padB + 18}" text-anchor="middle" class="scatter-tick">${fmt(Math.pow(10, dec))}</text>`;
   }
   for (let dec = Math.floor(yMin); dec <= Math.ceil(yMax); dec++) {
     const y = sy(Math.pow(10, dec));
     if (y < padT || y > H - padB) continue;
-    svg += `<line x1="${padL}" y1="${y}" x2="${padL + innerW}" y2="${y}" stroke="#e5e7eb" stroke-width="1"/>`;
+    svg += `<line x1="${padL}" y1="${y}" x2="${padL + innerW}" y2="${y}" style="stroke:var(--border)" stroke-width="1"/>`;
     svg += `<text x="${padL - 8}" y="${y + 4}" text-anchor="end" class="scatter-tick">${fmt(Math.pow(10, dec))}</text>`;
   }
   // Diagonal reference line: 4 hab per edif
@@ -844,7 +844,7 @@ function renderDensityScatter(entries) {
   // Points
   for (const p of points) {
     const c = ISLAND_HUE[p.island] || "#475569";
-    svg += `<circle cx="${sx(p.x)}" cy="${sy(p.y)}" r="5" fill="${c}" opacity="0.7" stroke="#fff" stroke-width="0.8">` +
+    svg += `<circle cx="${sx(p.x)}" cy="${sy(p.y)}" r="5" fill="${c}" opacity="0.7" style="stroke:var(--surface)" stroke-width="0.8">` +
            `<title>${esc(p.title)} · ${esc(p.island || "?")}: ${fmt(p.y)} hab. / ${fmt(p.x)} edif. (${(p.y / p.x).toFixed(2)})</title></circle>`;
   }
   // Legend
@@ -888,7 +888,7 @@ function renderAdminSunburst(entries) {
     const islSpan = (islN / grandTotal) * TAU;
     const a0 = a, a1 = a + islSpan;
     const hue = ISLAND_HUE[isl] || "#475569";
-    svg += `<path d="${arcPath(cx, cy, r1, r2, a0, a1)}" fill="${hue}" stroke="#fff" stroke-width="1.5" opacity="0.95">` +
+    svg += `<path d="${arcPath(cx, cy, r1, r2, a0, a1)}" fill="${hue}" style="stroke:var(--surface)" stroke-width="1.5" opacity="0.95">` +
            `<title>${esc(isl)}: ${islN} entrades</title></path>`;
     const pjEntries = [...pjMap.entries()].sort(([, a], [, b]) => {
       const sumA = [...a.values()].reduce((s, v) => s + v, 0);
@@ -900,7 +900,7 @@ function renderAdminSunburst(entries) {
       const pjN = [...muniMap.values()].reduce((s, v) => s + v, 0);
       const pjSpan = (pjN / islN) * islSpan;
       const ap0 = ap, ap1 = ap + pjSpan;
-      svg += `<path d="${arcPath(cx, cy, r2, r3, ap0, ap1)}" fill="${lighten(hue, 0.3)}" stroke="#fff" stroke-width="0.8">` +
+      svg += `<path d="${arcPath(cx, cy, r2, r3, ap0, ap1)}" fill="${lighten(hue, 0.3)}" style="stroke:var(--surface)" stroke-width="0.8">` +
              `<title>${esc(isl)} · ${esc(pj)}: ${pjN}</title></path>`;
       if (pjSpan > 0.18) {
         const mid = (ap0 + ap1) / 2, lr = (r2 + r3) / 2;
@@ -911,7 +911,7 @@ function renderAdminSunburst(entries) {
       for (const [muni, n] of munis) {
         const mSpan = (n / pjN) * pjSpan;
         const am0 = am, am1 = am + mSpan;
-        svg += `<path d="${arcPath(cx, cy, r3, r4, am0, am1)}" fill="${lighten(hue, 0.55)}" stroke="#fff" stroke-width="0.6">` +
+        svg += `<path d="${arcPath(cx, cy, r3, r4, am0, am1)}" fill="${lighten(hue, 0.55)}" style="stroke:var(--surface)" stroke-width="0.6">` +
                `<title>${esc(isl)} · ${esc(pj)} · ${esc(muni)}: ${n}</title></path>`;
         am = am1;
       }
@@ -969,13 +969,13 @@ function renderDioceseVsPJ(entries) {
       const x = labelLeftW + j * cellW;
       const v = matrix.get(`${dioc}|${pj}`) || 0;
       const t = v / maxVal;
-      const fill = v === 0 ? "#f3f4f6"
+      const fill = v === 0 ? "var(--num-bg)"
         : `rgba(99, 102, 241, ${0.15 + t * 0.85})`;
-      svg += `<rect x="${x + 1}" y="${y + 1}" width="${cellW - 2}" height="${cellH - 2}" fill="${fill}" stroke="#fff" stroke-width="1">` +
+      svg += `<rect x="${x + 1}" y="${y + 1}" width="${cellW - 2}" height="${cellH - 2}" style="fill:${fill};stroke:var(--surface)" stroke-width="1">` +
              `<title>${esc(dioc)} × ${esc(pj)}: ${v}</title></rect>`;
       if (v > 0) {
-        const textColor = t > 0.5 ? "#fff" : "#1f2937";
-        svg += `<text x="${x + cellW / 2}" y="${y + cellH / 2 + 4}" text-anchor="middle" class="heatmap-val" fill="${textColor}">${v}</text>`;
+        const textColor = t > 0.5 ? "#fff" : "var(--text)";
+        svg += `<text x="${x + cellW / 2}" y="${y + cellH / 2 + 4}" text-anchor="middle" class="heatmap-val" style="fill:${textColor}">${v}</text>`;
       }
     });
   });
@@ -1046,7 +1046,7 @@ function renderSunburst(entries) {
     const a0 = a, a1 = a + islSpan;
     const hue = ISLAND_HUE[isl] || "#475569";
     const islPct = (islN / grandTotal * 100).toFixed(1);
-    svg += `<path d="${arcPath(cx, cy, r1, r2, a0, a1)}" fill="${hue}" stroke="#fff" stroke-width="1.5" opacity="0.95"` +
+    svg += `<path d="${arcPath(cx, cy, r1, r2, a0, a1)}" fill="${hue}" style="stroke:var(--surface)" stroke-width="1.5" opacity="0.95"` +
            ` class="sunb-seg" data-level="1" data-island="${esc(isl)}" data-count="${islN}" data-pct="${islPct}">` +
            `<title>${esc(isl)}: ${islN} entrades (${islPct}%)</title></path>`;
     if (islSpan > 0.25) {
@@ -1060,7 +1060,7 @@ function renderSunburst(entries) {
       const tSpan = (n / islN) * islSpan;
       const at0 = at, at1 = at + tSpan;
       const tPct = (n / islN * 100).toFixed(0);
-      svg += `<path d="${arcPath(cx, cy, r2, r3, at0, at1)}" fill="${lighten(hue, 0.5)}" stroke="#fff" stroke-width="0.8"` +
+      svg += `<path d="${arcPath(cx, cy, r2, r3, at0, at1)}" fill="${lighten(hue, 0.5)}" style="stroke:var(--surface)" stroke-width="0.8"` +
              ` class="sunb-seg" data-level="2" data-island="${esc(isl)}" data-type="${esc(typ)}" data-count="${n}" data-pct="${tPct}">` +
              `<title>${esc(isl)} · ${esc(typ)}: ${n}</title></path>`;
       at = at1;
