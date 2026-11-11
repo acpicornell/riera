@@ -1,7 +1,7 @@
 """Aggregate report: per-volume Balearic counts + island/type breakdown.
 
 Reads data/index/tomoNN.jsonl produced by scripts/index_volume.py and
-prints a compact summary suitable for inclusion in the README's
+prints a compact summary suitable for inclusion in docs/CORPUS.md's
 *Coverage* section.
 """
 from __future__ import annotations
